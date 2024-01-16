@@ -1,0 +1,339 @@
+# VoucherifySdk::RedemptionsApi
+
+All URIs are relative to *https://api.voucherify.io*
+
+| Method | HTTP request | Description |
+| ------ | ------------ | ----------- |
+| [**get_redemption**](RedemptionsApi.md#get_redemption) | **GET** /v1/redemptions/{redemptionId} | Get Redemption |
+| [**get_voucher_redemptions**](RedemptionsApi.md#get_voucher_redemptions) | **GET** /v1/vouchers/{code}/redemption | Get Voucher&#39;s Redemptions |
+| [**list_redemptions**](RedemptionsApi.md#list_redemptions) | **GET** /v1/redemptions | List Redemptions |
+| [**rollback_redemption**](RedemptionsApi.md#rollback_redemption) | **POST** /v1/redemptions/{redemptionId}/rollback | Rollback Redemption |
+
+
+## get_redemption
+
+> <RedemptionsGetResponseBody> get_redemption(redemption_id)
+
+Get Redemption
+
+Return a redemption or redemption rollback object. This object can either be a successfull or failed redemption or redemption rollback.
+
+### Examples
+
+```ruby
+require 'time'
+require 'VoucherifySdk'
+# setup authorization
+VoucherifySdk.configure do |config|
+  # Configure API key authorization: X-App-Id-1
+  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+
+  # Configure API key authorization: X-App-Token-1
+  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+end
+
+api_instance = VoucherifySdk::RedemptionsApi.new
+redemption_id = 'redemption_id_example' # String | ID of previously created redemption.
+
+begin
+  # Get Redemption
+  result = api_instance.get_redemption(redemption_id)
+  p result
+rescue VoucherifySdk::ApiError => e
+  puts "Error when calling RedemptionsApi->get_redemption: #{e}"
+end
+```
+
+#### Using the get_redemption_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<RedemptionsGetResponseBody>, Integer, Hash)> get_redemption_with_http_info(redemption_id)
+
+```ruby
+begin
+  # Get Redemption
+  data, status_code, headers = api_instance.get_redemption_with_http_info(redemption_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <RedemptionsGetResponseBody>
+rescue VoucherifySdk::ApiError => e
+  puts "Error when calling RedemptionsApi->get_redemption_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **redemption_id** | **String** | ID of previously created redemption. |  |
+
+### Return type
+
+[**RedemptionsGetResponseBody**](RedemptionsGetResponseBody.md)
+
+### Authorization
+
+[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_voucher_redemptions
+
+> <VouchersRedemptionGetResponseBody> get_voucher_redemptions(code)
+
+Get Voucher's Redemptions
+
+Retrieve the number of times a voucher was redeemed and each of the redemption details.
+
+### Examples
+
+```ruby
+require 'time'
+require 'VoucherifySdk'
+# setup authorization
+VoucherifySdk.configure do |config|
+  # Configure API key authorization: X-App-Id-1
+  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+
+  # Configure API key authorization: X-App-Token-1
+  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+end
+
+api_instance = VoucherifySdk::RedemptionsApi.new
+code = 'code_example' # String | A **code** that identifies the voucher.
+
+begin
+  # Get Voucher's Redemptions
+  result = api_instance.get_voucher_redemptions(code)
+  p result
+rescue VoucherifySdk::ApiError => e
+  puts "Error when calling RedemptionsApi->get_voucher_redemptions: #{e}"
+end
+```
+
+#### Using the get_voucher_redemptions_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<VouchersRedemptionGetResponseBody>, Integer, Hash)> get_voucher_redemptions_with_http_info(code)
+
+```ruby
+begin
+  # Get Voucher's Redemptions
+  data, status_code, headers = api_instance.get_voucher_redemptions_with_http_info(code)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <VouchersRedemptionGetResponseBody>
+rescue VoucherifySdk::ApiError => e
+  puts "Error when calling RedemptionsApi->get_voucher_redemptions_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **code** | **String** | A **code** that identifies the voucher. |  |
+
+### Return type
+
+[**VouchersRedemptionGetResponseBody**](VouchersRedemptionGetResponseBody.md)
+
+### Authorization
+
+[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## list_redemptions
+
+> <RedemptionsListResponseBody> list_redemptions(opts)
+
+List Redemptions
+
+Returns a list of redemptions previously created. The redemptions are returned in a sorted order, with the most recent redemptions appearing first. The response returns a list of redemptions of all vouchers.   ## Filtering results The result can be narrowed according to specified (or default) filters, for example, you can sort redemptions by date: `https://api.voucherify.io/v1/redemptions?limit=3&[created_at][before]=2017-09-08T13:52:18.227Z`. A filter based on the object `created_at` field narrows down the results and lists redemptions done before or after a particular date time. You can use the following options: `[created_at][after]`, `[created_at][before]`. A date value must be presented in ISO 8601 format (`2016-11-16T14:14:31Z` or `2016-11-16`). An example: `[created_at][before]=2017-09-08T13:52:18.227Z`.  ## Failed Redemptions  A redemption may fail for various reasons. You can figure out an exact reason from the `failure_code`: - `resource_not_found` - voucher with given code does not exist - `voucher_not_active` - voucher is not active yet (before start date) - `voucher_expired` - voucher has already expired (after expiration date) - `voucher_disabled` -  voucher has been disabled (`active: false`) - `quantity_exceeded` - voucher's redemptions limit has been exceeded - `gift_amount_exceeded` - gift amount has been exceeded - `customer_rules_violated` - customer did not match the segment - `order_rules_violated` - order did not match validation rules - `invalid_order` - order was specified incorrectly - `invalid_amount` - order amount was specified incorrectly - `missing_amount` - order amount was not specified - `missing_order_items` - order items were not specified - `missing_customer` - customer was not specified
+
+### Examples
+
+```ruby
+require 'time'
+require 'VoucherifySdk'
+# setup authorization
+VoucherifySdk.configure do |config|
+  # Configure API key authorization: X-App-Id-1
+  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+
+  # Configure API key authorization: X-App-Token-1
+  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+end
+
+api_instance = VoucherifySdk::RedemptionsApi.new
+opts = {
+  limit: 56, # Integer | A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
+  page: 56, # Integer | Which page of results to return.
+  result: 'result_example', # String | A filter on the list based on the redemption result. Available options are: `SUCCESS`, `FAILURE`. You can provide multiple values by repeating the param.
+  campaign: 'campaign_example', # String | A filter by the campaign **name** that the redemption resources originate from.
+  customer: 'customer_example', # String | Return redemptions performed by the customer with given `id`.
+  order: VoucherifySdk::ParameterOrderListRedemptions::CREATED_AT, # ParameterOrderListRedemptions | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
+  created_at: VoucherifySdk::ParameterCreatedBeforeAfter.new, # ParameterCreatedBeforeAfter | A filter on the list based on the object `created_at` field. The value is a dictionary with the following options: `before`, `after`. A date value must be presented in ISO 8601 format (`2016-11-16T14:14:31Z` or `2016-11-16`). An example: `[created_at][before]=2017-09-08T13:52:18.227Z`
+  filters: VoucherifySdk::ParameterFiltersListRedemptions.new # ParameterFiltersListRedemptions | Filters for listing responses.
+}
+
+begin
+  # List Redemptions
+  result = api_instance.list_redemptions(opts)
+  p result
+rescue VoucherifySdk::ApiError => e
+  puts "Error when calling RedemptionsApi->list_redemptions: #{e}"
+end
+```
+
+#### Using the list_redemptions_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<RedemptionsListResponseBody>, Integer, Hash)> list_redemptions_with_http_info(opts)
+
+```ruby
+begin
+  # List Redemptions
+  data, status_code, headers = api_instance.list_redemptions_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <RedemptionsListResponseBody>
+rescue VoucherifySdk::ApiError => e
+  puts "Error when calling RedemptionsApi->list_redemptions_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **limit** | **Integer** | A limit on the number of objects to be returned. Limit can range between 1 and 100 items. | [optional] |
+| **page** | **Integer** | Which page of results to return. | [optional] |
+| **result** | **String** | A filter on the list based on the redemption result. Available options are: &#x60;SUCCESS&#x60;, &#x60;FAILURE&#x60;. You can provide multiple values by repeating the param. | [optional] |
+| **campaign** | **String** | A filter by the campaign **name** that the redemption resources originate from. | [optional] |
+| **customer** | **String** | Return redemptions performed by the customer with given &#x60;id&#x60;. | [optional] |
+| **order** | [**ParameterOrderListRedemptions**](.md) | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
+| **created_at** | [**ParameterCreatedBeforeAfter**](.md) | A filter on the list based on the object &#x60;created_at&#x60; field. The value is a dictionary with the following options: &#x60;before&#x60;, &#x60;after&#x60;. A date value must be presented in ISO 8601 format (&#x60;2016-11-16T14:14:31Z&#x60; or &#x60;2016-11-16&#x60;). An example: &#x60;[created_at][before]&#x3D;2017-09-08T13:52:18.227Z&#x60; | [optional] |
+| **filters** | [**ParameterFiltersListRedemptions**](.md) | Filters for listing responses. | [optional] |
+
+### Return type
+
+[**RedemptionsListResponseBody**](RedemptionsListResponseBody.md)
+
+### Authorization
+
+[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## rollback_redemption
+
+> <RedemptionsRollbackCreateResponseBody> rollback_redemption(redemption_id, opts)
+
+Rollback Redemption
+
+Your business logic may include a case when you need to undo a redemption. You can revert a redemption by calling this API endpoint.    ## Effect  The operation  - creates a rollback entry in voucher's redemption history (`redemption.redemption_entries`) and  - gives 1 redemption back to the pool (decreases `redeemed_quantity` by 1).  ## Returned funds  In case of *gift card vouchers*, this method returns funds back according to the source redemption. In case of *loyalty card vouchers*, this method returns points back according to the source redemption.
+
+### Examples
+
+```ruby
+require 'time'
+require 'VoucherifySdk'
+# setup authorization
+VoucherifySdk.configure do |config|
+  # Configure API key authorization: X-App-Id-1
+  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+
+  # Configure API key authorization: X-App-Token-1
+  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+end
+
+api_instance = VoucherifySdk::RedemptionsApi.new
+redemption_id = 'redemption_id_example' # String | The original redemption ID to be rolled back (undone).
+opts = {
+  reason: 'reason_example', # String | Reason for the rollback.
+  tracking_id: 'tracking_id_example', # String | Customer's `source_id`.
+  redemptions_rollback_create_request_body: VoucherifySdk::RedemptionsRollbackCreateRequestBody.new # RedemptionsRollbackCreateRequestBody | Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body.
+}
+
+begin
+  # Rollback Redemption
+  result = api_instance.rollback_redemption(redemption_id, opts)
+  p result
+rescue VoucherifySdk::ApiError => e
+  puts "Error when calling RedemptionsApi->rollback_redemption: #{e}"
+end
+```
+
+#### Using the rollback_redemption_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<RedemptionsRollbackCreateResponseBody>, Integer, Hash)> rollback_redemption_with_http_info(redemption_id, opts)
+
+```ruby
+begin
+  # Rollback Redemption
+  data, status_code, headers = api_instance.rollback_redemption_with_http_info(redemption_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <RedemptionsRollbackCreateResponseBody>
+rescue VoucherifySdk::ApiError => e
+  puts "Error when calling RedemptionsApi->rollback_redemption_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **redemption_id** | **String** | The original redemption ID to be rolled back (undone). |  |
+| **reason** | **String** | Reason for the rollback. | [optional] |
+| **tracking_id** | **String** | Customer&#39;s &#x60;source_id&#x60;. | [optional] |
+| **redemptions_rollback_create_request_body** | [**RedemptionsRollbackCreateRequestBody**](RedemptionsRollbackCreateRequestBody.md) | Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body. | [optional] |
+
+### Return type
+
+[**RedemptionsRollbackCreateResponseBody**](RedemptionsRollbackCreateResponseBody.md)
+
+### Authorization
+
+[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
