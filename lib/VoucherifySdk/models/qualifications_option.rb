@@ -14,34 +14,21 @@ require 'date'
 require 'time'
 
 module VoucherifySdk
-  # Assignments of business validation rule
-  class BusValRuleAssignment
-    # The unique identifier for a assignment
-    attr_accessor :id
+  # Configure parameters returned in the response.
+  class QualificationsOption
+    # The maximum number of redeemables to be returned in the API request. The actual number of returned redeemables will be determined by the API. The default value is set to 5
+    attr_accessor :limit
 
-    # The unique identifier for a rule
-    attr_accessor :rule_id
+    # Cursor used for paging.
+    attr_accessor :starting_after
 
-    # The unique identifier for a related object
-    attr_accessor :related_object_id
+    attr_accessor :filters
 
-    # The type of related object
-    attr_accessor :related_object_type
+    # The expand array lets you configure the parameters included in the response. Depending on the strings included in the array, the response will contain different details.   | **Expand Option** | **Response Body** | |:---|:---| | [\"redeemable\"] | - Returns the redeemables' metadata. | | [\"category\"] | - Returns an expanded `categories` object, showing details about the category. | | [\"validation_rules\"] | - Returns an expanded `validation_rules` object, showing details about the validation rules. |
+    attr_accessor :expand
 
-    # Timestamp representing the date and time when the object was created in ISO 8601 format.
-    attr_accessor :created_at
-
-    # Timestamp representing the date and time when the object was last updated in ISO 8601 format.
-    attr_accessor :updated_at
-
-    # The type of object represented by JSON.
-    attr_accessor :object
-
-    # The validation status of the assignment
-    attr_accessor :validation_status
-
-    # The list of omitted rules
-    attr_accessor :validation_omitted_rules
+    # Is used to determine the order in which data is displayed in the result array.    - `DEFAULT` - Sorting descending by `created_at`   - `BEST_DEAL` - Sorting descending by `total_applied_discount_amount`   - `LEAST_DEAL` - Sorting ascending by `total_applied_discount_amount`
+    attr_accessor :sorting_rule
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -68,15 +55,11 @@ module VoucherifySdk
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'id',
-        :'rule_id' => :'rule_id',
-        :'related_object_id' => :'related_object_id',
-        :'related_object_type' => :'related_object_type',
-        :'created_at' => :'created_at',
-        :'updated_at' => :'updated_at',
-        :'object' => :'object',
-        :'validation_status' => :'validation_status',
-        :'validation_omitted_rules' => :'validation_omitted_rules'
+        :'limit' => :'limit',
+        :'starting_after' => :'starting_after',
+        :'filters' => :'filters',
+        :'expand' => :'expand',
+        :'sorting_rule' => :'sorting_rule'
       }
     end
 
@@ -88,21 +71,18 @@ module VoucherifySdk
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'id' => :'String',
-        :'rule_id' => :'String',
-        :'related_object_id' => :'String',
-        :'related_object_type' => :'String',
-        :'created_at' => :'Time',
-        :'updated_at' => :'Time',
-        :'object' => :'String',
-        :'validation_status' => :'String',
-        :'validation_omitted_rules' => :'Array<String>'
+        :'limit' => :'Integer',
+        :'starting_after' => :'Time',
+        :'filters' => :'QualificationsOptionFilters',
+        :'expand' => :'Array<String>',
+        :'sorting_rule' => :'String'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'starting_after',
       ])
     end
 
@@ -110,63 +90,37 @@ module VoucherifySdk
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `VoucherifySdk::BusValRuleAssignment` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `VoucherifySdk::QualificationsOption` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `VoucherifySdk::BusValRuleAssignment`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `VoucherifySdk::QualificationsOption`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'id')
-        self.id = attributes[:'id']
-      else
-        self.id = nil
+      if attributes.key?(:'limit')
+        self.limit = attributes[:'limit']
       end
 
-      if attributes.key?(:'rule_id')
-        self.rule_id = attributes[:'rule_id']
-      else
-        self.rule_id = nil
+      if attributes.key?(:'starting_after')
+        self.starting_after = attributes[:'starting_after']
       end
 
-      if attributes.key?(:'related_object_id')
-        self.related_object_id = attributes[:'related_object_id']
-      else
-        self.related_object_id = nil
+      if attributes.key?(:'filters')
+        self.filters = attributes[:'filters']
       end
 
-      if attributes.key?(:'related_object_type')
-        self.related_object_type = attributes[:'related_object_type']
-      else
-        self.related_object_type = nil
-      end
-
-      if attributes.key?(:'created_at')
-        self.created_at = attributes[:'created_at']
-      end
-
-      if attributes.key?(:'updated_at')
-        self.updated_at = attributes[:'updated_at']
-      end
-
-      if attributes.key?(:'object')
-        self.object = attributes[:'object']
-      else
-        self.object = 'validation_rules_assignment'
-      end
-
-      if attributes.key?(:'validation_status')
-        self.validation_status = attributes[:'validation_status']
-      end
-
-      if attributes.key?(:'validation_omitted_rules')
-        if (value = attributes[:'validation_omitted_rules']).is_a?(Array)
-          self.validation_omitted_rules = value
+      if attributes.key?(:'expand')
+        if (value = attributes[:'expand']).is_a?(Array)
+          self.expand = value
         end
+      end
+
+      if attributes.key?(:'sorting_rule')
+        self.sorting_rule = attributes[:'sorting_rule']
       end
     end
 
@@ -175,24 +129,8 @@ module VoucherifySdk
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @id.nil?
-        invalid_properties.push('invalid value for "id", id cannot be nil.')
-      end
-
-      if @rule_id.nil?
-        invalid_properties.push('invalid value for "rule_id", rule_id cannot be nil.')
-      end
-
-      if @related_object_id.nil?
-        invalid_properties.push('invalid value for "related_object_id", related_object_id cannot be nil.')
-      end
-
-      if @related_object_type.nil?
-        invalid_properties.push('invalid value for "related_object_type", related_object_type cannot be nil.')
-      end
-
-      if @object.nil?
-        invalid_properties.push('invalid value for "object", object cannot be nil.')
+      if !@limit.nil? && @limit > 100
+        invalid_properties.push('invalid value for "limit", must be smaller than or equal to 100.')
       end
 
       invalid_properties
@@ -202,36 +140,34 @@ module VoucherifySdk
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @id.nil?
-      return false if @rule_id.nil?
-      return false if @related_object_id.nil?
-      return false if @related_object_type.nil?
-      return false if @object.nil?
-      object_validator = EnumAttributeValidator.new('String', ["validation_rules_assignment"])
-      return false unless object_validator.valid?(@object)
-      validation_status_validator = EnumAttributeValidator.new('String', ["VALID", "PARTIALLY_VALID", "INVALID"])
-      return false unless validation_status_validator.valid?(@validation_status)
+      return false if !@limit.nil? && @limit > 100
+      sorting_rule_validator = EnumAttributeValidator.new('String', ["BEST_DEAL", "LEAST_DEAL", "DEFAULT"])
+      return false unless sorting_rule_validator.valid?(@sorting_rule)
       true
     end
 
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] object Object to be assigned
-    def object=(object)
-      validator = EnumAttributeValidator.new('String', ["validation_rules_assignment"])
-      unless validator.valid?(object)
-        fail ArgumentError, "invalid value for \"object\", must be one of #{validator.allowable_values}."
+    # Custom attribute writer method with validation
+    # @param [Object] limit Value to be assigned
+    def limit=(limit)
+      if limit.nil?
+        fail ArgumentError, 'limit cannot be nil'
       end
-      @object = object
+
+      if limit > 100
+        fail ArgumentError, 'invalid value for "limit", must be smaller than or equal to 100.'
+      end
+
+      @limit = limit
     end
 
     # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] validation_status Object to be assigned
-    def validation_status=(validation_status)
-      validator = EnumAttributeValidator.new('String', ["VALID", "PARTIALLY_VALID", "INVALID"])
-      unless validator.valid?(validation_status)
-        fail ArgumentError, "invalid value for \"validation_status\", must be one of #{validator.allowable_values}."
+    # @param [Object] sorting_rule Object to be assigned
+    def sorting_rule=(sorting_rule)
+      validator = EnumAttributeValidator.new('String', ["BEST_DEAL", "LEAST_DEAL", "DEFAULT"])
+      unless validator.valid?(sorting_rule)
+        fail ArgumentError, "invalid value for \"sorting_rule\", must be one of #{validator.allowable_values}."
       end
-      @validation_status = validation_status
+      @sorting_rule = sorting_rule
     end
 
     # Checks equality by comparing each attribute.
@@ -239,15 +175,11 @@ module VoucherifySdk
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          id == o.id &&
-          rule_id == o.rule_id &&
-          related_object_id == o.related_object_id &&
-          related_object_type == o.related_object_type &&
-          created_at == o.created_at &&
-          updated_at == o.updated_at &&
-          object == o.object &&
-          validation_status == o.validation_status &&
-          validation_omitted_rules == o.validation_omitted_rules
+          limit == o.limit &&
+          starting_after == o.starting_after &&
+          filters == o.filters &&
+          expand == o.expand &&
+          sorting_rule == o.sorting_rule
     end
 
     # @see the `==` method
@@ -259,7 +191,7 @@ module VoucherifySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, rule_id, related_object_id, related_object_type, created_at, updated_at, object, validation_status, validation_omitted_rules].hash
+      [limit, starting_after, filters, expand, sorting_rule].hash
     end
 
     # Builds the object from hash

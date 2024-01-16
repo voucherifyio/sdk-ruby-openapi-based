@@ -14,34 +14,21 @@ require 'date'
 require 'time'
 
 module VoucherifySdk
-  # Assignments of business validation rule
-  class BusValRuleAssignment
-    # The unique identifier for a assignment
-    attr_accessor :id
+  # A set of filters to return only a specific category or type of redeemable.
+  class QualificationsOptionFilters
+    attr_accessor :junction
 
-    # The unique identifier for a rule
-    attr_accessor :rule_id
+    attr_accessor :category_id
 
-    # The unique identifier for a related object
-    attr_accessor :related_object_id
+    attr_accessor :campaign_id
 
-    # The type of related object
-    attr_accessor :related_object_type
+    attr_accessor :resource_id
 
-    # Timestamp representing the date and time when the object was created in ISO 8601 format.
-    attr_accessor :created_at
+    attr_accessor :resource_type
 
-    # Timestamp representing the date and time when the object was last updated in ISO 8601 format.
-    attr_accessor :updated_at
+    attr_accessor :voucher_type
 
-    # The type of object represented by JSON.
-    attr_accessor :object
-
-    # The validation status of the assignment
-    attr_accessor :validation_status
-
-    # The list of omitted rules
-    attr_accessor :validation_omitted_rules
+    attr_accessor :code
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -68,15 +55,13 @@ module VoucherifySdk
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'id',
-        :'rule_id' => :'rule_id',
-        :'related_object_id' => :'related_object_id',
-        :'related_object_type' => :'related_object_type',
-        :'created_at' => :'created_at',
-        :'updated_at' => :'updated_at',
-        :'object' => :'object',
-        :'validation_status' => :'validation_status',
-        :'validation_omitted_rules' => :'validation_omitted_rules'
+        :'junction' => :'junction',
+        :'category_id' => :'category_id',
+        :'campaign_id' => :'campaign_id',
+        :'resource_id' => :'resource_id',
+        :'resource_type' => :'resource_type',
+        :'voucher_type' => :'voucher_type',
+        :'code' => :'code'
       }
     end
 
@@ -88,15 +73,13 @@ module VoucherifySdk
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'id' => :'String',
-        :'rule_id' => :'String',
-        :'related_object_id' => :'String',
-        :'related_object_type' => :'String',
-        :'created_at' => :'Time',
-        :'updated_at' => :'Time',
-        :'object' => :'String',
-        :'validation_status' => :'String',
-        :'validation_omitted_rules' => :'Array<String>'
+        :'junction' => :'Junction',
+        :'category_id' => :'QualificationsFieldConditions',
+        :'campaign_id' => :'QualificationsFieldConditions',
+        :'resource_id' => :'QualificationsFieldConditions',
+        :'resource_type' => :'QualificationsFieldConditions',
+        :'voucher_type' => :'QualificationsFieldConditions',
+        :'code' => :'QualificationsFieldConditions'
       }
     end
 
@@ -110,63 +93,43 @@ module VoucherifySdk
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `VoucherifySdk::BusValRuleAssignment` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `VoucherifySdk::QualificationsOptionFilters` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `VoucherifySdk::BusValRuleAssignment`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `VoucherifySdk::QualificationsOptionFilters`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'id')
-        self.id = attributes[:'id']
-      else
-        self.id = nil
+      if attributes.key?(:'junction')
+        self.junction = attributes[:'junction']
       end
 
-      if attributes.key?(:'rule_id')
-        self.rule_id = attributes[:'rule_id']
-      else
-        self.rule_id = nil
+      if attributes.key?(:'category_id')
+        self.category_id = attributes[:'category_id']
       end
 
-      if attributes.key?(:'related_object_id')
-        self.related_object_id = attributes[:'related_object_id']
-      else
-        self.related_object_id = nil
+      if attributes.key?(:'campaign_id')
+        self.campaign_id = attributes[:'campaign_id']
       end
 
-      if attributes.key?(:'related_object_type')
-        self.related_object_type = attributes[:'related_object_type']
-      else
-        self.related_object_type = nil
+      if attributes.key?(:'resource_id')
+        self.resource_id = attributes[:'resource_id']
       end
 
-      if attributes.key?(:'created_at')
-        self.created_at = attributes[:'created_at']
+      if attributes.key?(:'resource_type')
+        self.resource_type = attributes[:'resource_type']
       end
 
-      if attributes.key?(:'updated_at')
-        self.updated_at = attributes[:'updated_at']
+      if attributes.key?(:'voucher_type')
+        self.voucher_type = attributes[:'voucher_type']
       end
 
-      if attributes.key?(:'object')
-        self.object = attributes[:'object']
-      else
-        self.object = 'validation_rules_assignment'
-      end
-
-      if attributes.key?(:'validation_status')
-        self.validation_status = attributes[:'validation_status']
-      end
-
-      if attributes.key?(:'validation_omitted_rules')
-        if (value = attributes[:'validation_omitted_rules']).is_a?(Array)
-          self.validation_omitted_rules = value
-        end
+      if attributes.key?(:'code')
+        self.code = attributes[:'code']
       end
     end
 
@@ -175,26 +138,6 @@ module VoucherifySdk
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @id.nil?
-        invalid_properties.push('invalid value for "id", id cannot be nil.')
-      end
-
-      if @rule_id.nil?
-        invalid_properties.push('invalid value for "rule_id", rule_id cannot be nil.')
-      end
-
-      if @related_object_id.nil?
-        invalid_properties.push('invalid value for "related_object_id", related_object_id cannot be nil.')
-      end
-
-      if @related_object_type.nil?
-        invalid_properties.push('invalid value for "related_object_type", related_object_type cannot be nil.')
-      end
-
-      if @object.nil?
-        invalid_properties.push('invalid value for "object", object cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -202,36 +145,7 @@ module VoucherifySdk
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @id.nil?
-      return false if @rule_id.nil?
-      return false if @related_object_id.nil?
-      return false if @related_object_type.nil?
-      return false if @object.nil?
-      object_validator = EnumAttributeValidator.new('String', ["validation_rules_assignment"])
-      return false unless object_validator.valid?(@object)
-      validation_status_validator = EnumAttributeValidator.new('String', ["VALID", "PARTIALLY_VALID", "INVALID"])
-      return false unless validation_status_validator.valid?(@validation_status)
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] object Object to be assigned
-    def object=(object)
-      validator = EnumAttributeValidator.new('String', ["validation_rules_assignment"])
-      unless validator.valid?(object)
-        fail ArgumentError, "invalid value for \"object\", must be one of #{validator.allowable_values}."
-      end
-      @object = object
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] validation_status Object to be assigned
-    def validation_status=(validation_status)
-      validator = EnumAttributeValidator.new('String', ["VALID", "PARTIALLY_VALID", "INVALID"])
-      unless validator.valid?(validation_status)
-        fail ArgumentError, "invalid value for \"validation_status\", must be one of #{validator.allowable_values}."
-      end
-      @validation_status = validation_status
     end
 
     # Checks equality by comparing each attribute.
@@ -239,15 +153,13 @@ module VoucherifySdk
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          id == o.id &&
-          rule_id == o.rule_id &&
-          related_object_id == o.related_object_id &&
-          related_object_type == o.related_object_type &&
-          created_at == o.created_at &&
-          updated_at == o.updated_at &&
-          object == o.object &&
-          validation_status == o.validation_status &&
-          validation_omitted_rules == o.validation_omitted_rules
+          junction == o.junction &&
+          category_id == o.category_id &&
+          campaign_id == o.campaign_id &&
+          resource_id == o.resource_id &&
+          resource_type == o.resource_type &&
+          voucher_type == o.voucher_type &&
+          code == o.code
     end
 
     # @see the `==` method
@@ -259,7 +171,7 @@ module VoucherifySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, rule_id, related_object_id, related_object_type, created_at, updated_at, object, validation_status, validation_omitted_rules].hash
+      [junction, category_id, campaign_id, resource_id, resource_type, voucher_type, code].hash
     end
 
     # Builds the object from hash

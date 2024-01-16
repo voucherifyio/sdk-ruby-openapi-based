@@ -181,8 +181,6 @@ module VoucherifySdk
 
       if attributes.key?(:'id')
         self.id = attributes[:'id']
-      else
-        self.id = nil
       end
 
       if attributes.key?(:'source_id')
@@ -279,10 +277,6 @@ module VoucherifySdk
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @id.nil?
-        invalid_properties.push('invalid value for "id", id cannot be nil.')
-      end
-
       if @object.nil?
         invalid_properties.push('invalid value for "object", object cannot be nil.')
       end
@@ -294,7 +288,6 @@ module VoucherifySdk
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @id.nil?
       status_validator = EnumAttributeValidator.new('String', ["CREATED", "PAID", "CANCELED", "FULFILLED"])
       return false unless status_validator.valid?(@status)
       return false if @object.nil?

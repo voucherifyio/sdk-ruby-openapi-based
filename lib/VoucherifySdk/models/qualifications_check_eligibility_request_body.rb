@@ -82,7 +82,7 @@ module VoucherifySdk
         :'mode' => :'String',
         :'tracking_id' => :'String',
         :'scenario' => :'String',
-        :'options' => :'ClientQualificationsCheckEligibilityRequestBodyOptions',
+        :'options' => :'QualificationsOption',
         :'metadata' => :'Object'
       }
     end

@@ -49,6 +49,13 @@ Include the Ruby code directly using `-I` as follows:
 ruby -Ilib script.rb
 ```
 
+## Run local tests with docker
+
+1. Copy `.env.example` to `.env` and fill in the values.
+2. Run `docker build -t ruby .` to build the image.
+3. Run `docker run --rm ruby` to run the tests and delete container immediately after.
+4. Make changes Your desire and run again command from step 3. It uses volumes so no need to rebuild the image.
+
 ## Getting Started
 
 Please follow the [installation](#installation) procedure and then run the following code:
@@ -295,8 +302,6 @@ Class | Method | HTTP request | Description
  - [VoucherifySdk::ClientEventsCreateRequestBodyReferral](docs/ClientEventsCreateRequestBodyReferral.md)
  - [VoucherifySdk::ClientEventsCreateResponseBody](docs/ClientEventsCreateResponseBody.md)
  - [VoucherifySdk::ClientQualificationsCheckEligibilityRequestBody](docs/ClientQualificationsCheckEligibilityRequestBody.md)
- - [VoucherifySdk::ClientQualificationsCheckEligibilityRequestBodyOptions](docs/ClientQualificationsCheckEligibilityRequestBodyOptions.md)
- - [VoucherifySdk::ClientQualificationsCheckEligibilityRequestBodyOptionsFilters](docs/ClientQualificationsCheckEligibilityRequestBodyOptionsFilters.md)
  - [VoucherifySdk::ClientQualificationsCheckEligibilityResponseBody](docs/ClientQualificationsCheckEligibilityResponseBody.md)
  - [VoucherifySdk::ClientRedemptionsRedeemRequestBody](docs/ClientRedemptionsRedeemRequestBody.md)
  - [VoucherifySdk::ClientRedemptionsRedeemRequestBodyAllOfOptions](docs/ClientRedemptionsRedeemRequestBodyAllOfOptions.md)
@@ -714,6 +719,8 @@ Class | Method | HTTP request | Description
  - [VoucherifySdk::QualificationsCheckEligibilityResponseBody](docs/QualificationsCheckEligibilityResponseBody.md)
  - [VoucherifySdk::QualificationsFieldConditions](docs/QualificationsFieldConditions.md)
  - [VoucherifySdk::QualificationsFiltersCondition](docs/QualificationsFiltersCondition.md)
+ - [VoucherifySdk::QualificationsOption](docs/QualificationsOption.md)
+ - [VoucherifySdk::QualificationsOptionFilters](docs/QualificationsOptionFilters.md)
  - [VoucherifySdk::QualificationsRedeemable](docs/QualificationsRedeemable.md)
  - [VoucherifySdk::QualificationsRedeemableBase](docs/QualificationsRedeemableBase.md)
  - [VoucherifySdk::QualificationsRedeemables](docs/QualificationsRedeemables.md)
