@@ -46,7 +46,7 @@ module VoucherifySdk
         :'redeemables' => :'QualificationsRedeemables',
         :'tracking_id' => :'String',
         :'order' => :'OrderCalculated',
-        :'stacking_rules' => :'QualificationsStackingRules'
+        :'stacking_rules' => :'StackingRules'
       }
     end
 
