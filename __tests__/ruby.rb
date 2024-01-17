@@ -228,13 +228,13 @@ rescue VoucherifySdk::ApiError => e
   puts "Error when calling QualificationsApi->check_eligibility: #{e}"
 end
 
-one_applicable_voucher_qualifications = $qualifications.redeemables.data.select { |e| e.object == "voucher" }.take(1)
+$one_applicable_voucher_qualifications = $qualifications.redeemables.data.select { |e| e.object == "voucher" }.take(1)
 puts "One Applicable Voucher Qualifications:";
-puts JSON.pretty_generate(one_applicable_voucher_qualifications.map { |e| e.to_hash });
+puts JSON.pretty_generate($one_applicable_voucher_qualifications.map { |e| e.to_hash });
 puts;
-three_applicable_promotion_tier_qualifications = $qualifications.redeemables.data.select { |e| e.object == "promotion_tier" }.take(3)
+$three_applicable_promotion_tier_qualifications = $qualifications.redeemables.data.select { |e| e.object == "promotion_tier" }.take(3)
 puts "Three Applicable Promotion Tier Qualifications:";
-puts JSON.pretty_generate(three_applicable_promotion_tier_qualifications.map { |e| e.to_hash });
+puts JSON.pretty_generate($three_applicable_promotion_tier_qualifications.map { |e| e.to_hash });
 puts;
 #
 
