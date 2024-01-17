@@ -14,21 +14,21 @@ require 'date'
 require 'time'
 
 module VoucherifySdk
-  # A set of filters to return only a specific category or type of redeemable.
-  class ClientQualificationsCheckEligibilityRequestBodyOptionsFilters
-    attr_accessor :junction
+  # Configure parameters returned in the response.
+  class QualificationsOption
+    # The maximum number of redeemables to be returned in the API request. The actual number of returned redeemables will be determined by the API. The default value is set to 5
+    attr_accessor :limit
 
-    attr_accessor :category_id
+    # Cursor used for paging.
+    attr_accessor :starting_after
 
-    attr_accessor :campaign_id
+    attr_accessor :filters
 
-    attr_accessor :resource_id
+    # The expand array lets you configure the parameters included in the response. Depending on the strings included in the array, the response will contain different details.   | **Expand Option** | **Response Body** | |:---|:---| | [\"redeemable\"] | - Returns the redeemables' metadata. | | [\"category\"] | - Returns an expanded `categories` object, showing details about the category. | | [\"validation_rules\"] | - Returns an expanded `validation_rules` object, showing details about the validation rules. |
+    attr_accessor :expand
 
-    attr_accessor :resource_type
-
-    attr_accessor :voucher_type
-
-    attr_accessor :code
+    # Is used to determine the order in which data is displayed in the result array.    - `DEFAULT` - Sorting descending by `created_at`   - `BEST_DEAL` - Sorting descending by `total_applied_discount_amount`   - `LEAST_DEAL` - Sorting ascending by `total_applied_discount_amount`
+    attr_accessor :sorting_rule
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -55,13 +55,11 @@ module VoucherifySdk
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'junction' => :'junction',
-        :'category_id' => :'category_id',
-        :'campaign_id' => :'campaign_id',
-        :'resource_id' => :'resource_id',
-        :'resource_type' => :'resource_type',
-        :'voucher_type' => :'voucher_type',
-        :'code' => :'code'
+        :'limit' => :'limit',
+        :'starting_after' => :'starting_after',
+        :'filters' => :'filters',
+        :'expand' => :'expand',
+        :'sorting_rule' => :'sorting_rule'
       }
     end
 
@@ -73,19 +71,18 @@ module VoucherifySdk
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'junction' => :'Junction',
-        :'category_id' => :'QualificationsFieldConditions',
-        :'campaign_id' => :'QualificationsFieldConditions',
-        :'resource_id' => :'QualificationsFieldConditions',
-        :'resource_type' => :'QualificationsFieldConditions',
-        :'voucher_type' => :'QualificationsFieldConditions',
-        :'code' => :'QualificationsFieldConditions'
+        :'limit' => :'Integer',
+        :'starting_after' => :'Time',
+        :'filters' => :'QualificationsOptionFilters',
+        :'expand' => :'Array<String>',
+        :'sorting_rule' => :'String'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'starting_after',
       ])
     end
 
@@ -93,43 +90,37 @@ module VoucherifySdk
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `VoucherifySdk::ClientQualificationsCheckEligibilityRequestBodyOptionsFilters` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `VoucherifySdk::QualificationsOption` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `VoucherifySdk::ClientQualificationsCheckEligibilityRequestBodyOptionsFilters`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `VoucherifySdk::QualificationsOption`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'junction')
-        self.junction = attributes[:'junction']
+      if attributes.key?(:'limit')
+        self.limit = attributes[:'limit']
       end
 
-      if attributes.key?(:'category_id')
-        self.category_id = attributes[:'category_id']
+      if attributes.key?(:'starting_after')
+        self.starting_after = attributes[:'starting_after']
       end
 
-      if attributes.key?(:'campaign_id')
-        self.campaign_id = attributes[:'campaign_id']
+      if attributes.key?(:'filters')
+        self.filters = attributes[:'filters']
       end
 
-      if attributes.key?(:'resource_id')
-        self.resource_id = attributes[:'resource_id']
+      if attributes.key?(:'expand')
+        if (value = attributes[:'expand']).is_a?(Array)
+          self.expand = value
+        end
       end
 
-      if attributes.key?(:'resource_type')
-        self.resource_type = attributes[:'resource_type']
-      end
-
-      if attributes.key?(:'voucher_type')
-        self.voucher_type = attributes[:'voucher_type']
-      end
-
-      if attributes.key?(:'code')
-        self.code = attributes[:'code']
+      if attributes.key?(:'sorting_rule')
+        self.sorting_rule = attributes[:'sorting_rule']
       end
     end
 
@@ -138,6 +129,10 @@ module VoucherifySdk
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
+      if !@limit.nil? && @limit > 100
+        invalid_properties.push('invalid value for "limit", must be smaller than or equal to 100.')
+      end
+
       invalid_properties
     end
 
@@ -145,7 +140,34 @@ module VoucherifySdk
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      return false if !@limit.nil? && @limit > 100
+      sorting_rule_validator = EnumAttributeValidator.new('String', ["BEST_DEAL", "LEAST_DEAL", "DEFAULT"])
+      return false unless sorting_rule_validator.valid?(@sorting_rule)
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] limit Value to be assigned
+    def limit=(limit)
+      if limit.nil?
+        fail ArgumentError, 'limit cannot be nil'
+      end
+
+      if limit > 100
+        fail ArgumentError, 'invalid value for "limit", must be smaller than or equal to 100.'
+      end
+
+      @limit = limit
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] sorting_rule Object to be assigned
+    def sorting_rule=(sorting_rule)
+      validator = EnumAttributeValidator.new('String', ["BEST_DEAL", "LEAST_DEAL", "DEFAULT"])
+      unless validator.valid?(sorting_rule)
+        fail ArgumentError, "invalid value for \"sorting_rule\", must be one of #{validator.allowable_values}."
+      end
+      @sorting_rule = sorting_rule
     end
 
     # Checks equality by comparing each attribute.
@@ -153,13 +175,11 @@ module VoucherifySdk
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          junction == o.junction &&
-          category_id == o.category_id &&
-          campaign_id == o.campaign_id &&
-          resource_id == o.resource_id &&
-          resource_type == o.resource_type &&
-          voucher_type == o.voucher_type &&
-          code == o.code
+          limit == o.limit &&
+          starting_after == o.starting_after &&
+          filters == o.filters &&
+          expand == o.expand &&
+          sorting_rule == o.sorting_rule
     end
 
     # @see the `==` method
@@ -171,7 +191,7 @@ module VoucherifySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [junction, category_id, campaign_id, resource_id, resource_type, voucher_type, code].hash
+      [limit, starting_after, filters, expand, sorting_rule].hash
     end
 
     # Builds the object from hash

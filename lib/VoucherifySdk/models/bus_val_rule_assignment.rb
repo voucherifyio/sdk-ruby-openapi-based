@@ -161,16 +161,12 @@ module VoucherifySdk
 
       if attributes.key?(:'validation_status')
         self.validation_status = attributes[:'validation_status']
-      else
-        self.validation_status = nil
       end
 
       if attributes.key?(:'validation_omitted_rules')
         if (value = attributes[:'validation_omitted_rules']).is_a?(Array)
           self.validation_omitted_rules = value
         end
-      else
-        self.validation_omitted_rules = nil
       end
     end
 
@@ -199,14 +195,6 @@ module VoucherifySdk
         invalid_properties.push('invalid value for "object", object cannot be nil.')
       end
 
-      if @validation_status.nil?
-        invalid_properties.push('invalid value for "validation_status", validation_status cannot be nil.')
-      end
-
-      if @validation_omitted_rules.nil?
-        invalid_properties.push('invalid value for "validation_omitted_rules", validation_omitted_rules cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -221,10 +209,8 @@ module VoucherifySdk
       return false if @object.nil?
       object_validator = EnumAttributeValidator.new('String', ["validation_rules_assignment"])
       return false unless object_validator.valid?(@object)
-      return false if @validation_status.nil?
       validation_status_validator = EnumAttributeValidator.new('String', ["VALID", "PARTIALLY_VALID", "INVALID"])
       return false unless validation_status_validator.valid?(@validation_status)
-      return false if @validation_omitted_rules.nil?
       true
     end
 
