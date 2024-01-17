@@ -2,8 +2,6 @@ FROM ruby:3.3
 
 WORKDIR /app
 
-VOLUME /app/data
-
 COPY . .
 
 RUN gem build VoucherifySdk.gemspec
