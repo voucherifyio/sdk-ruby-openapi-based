@@ -39,7 +39,7 @@ module VoucherifySdk
     # The total amount of the order item (price * quantity).
     attr_accessor :amount
 
-    #  Sum of all order-item-level discounts applied to the order.
+    # Sum of all order-item-level discounts applied to the order.
     attr_accessor :discount_amount
 
     # This field shows the order-level discount applied.

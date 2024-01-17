@@ -39,8 +39,11 @@ module VoucherifySdk
     # The total amount of the order item (price * quantity).
     attr_accessor :amount
 
-    #  Sum of all order-item-level discounts applied to the order.
+    # Sum of all order-item-level discounts applied to the order.
     attr_accessor :discount_amount
+
+    # This field shows the order-level discount applied.
+    attr_accessor :applied_discount_amount
 
     # A positive integer in the smallest currency unit (e.g. 100 cents for $1.00) representing the total amount of the order. This is the sum of the order items' amounts.
     attr_accessor :initial_amount
@@ -98,6 +101,7 @@ module VoucherifySdk
         :'initial_quantity' => :'initial_quantity',
         :'amount' => :'amount',
         :'discount_amount' => :'discount_amount',
+        :'applied_discount_amount' => :'applied_discount_amount',
         :'initial_amount' => :'initial_amount',
         :'total_applied_discount_amount' => :'total_applied_discount_amount',
         :'price' => :'price',
@@ -126,6 +130,7 @@ module VoucherifySdk
         :'initial_quantity' => :'Integer',
         :'amount' => :'Integer',
         :'discount_amount' => :'Integer',
+        :'applied_discount_amount' => :'Integer',
         :'initial_amount' => :'Integer',
         :'total_applied_discount_amount' => :'Integer',
         :'price' => :'Integer',
@@ -192,6 +197,10 @@ module VoucherifySdk
 
       if attributes.key?(:'discount_amount')
         self.discount_amount = attributes[:'discount_amount']
+      end
+
+      if attributes.key?(:'applied_discount_amount')
+        self.applied_discount_amount = attributes[:'applied_discount_amount']
       end
 
       if attributes.key?(:'initial_amount')
@@ -287,6 +296,7 @@ module VoucherifySdk
           initial_quantity == o.initial_quantity &&
           amount == o.amount &&
           discount_amount == o.discount_amount &&
+          applied_discount_amount == o.applied_discount_amount &&
           initial_amount == o.initial_amount &&
           total_applied_discount_amount == o.total_applied_discount_amount &&
           price == o.price &&
@@ -306,7 +316,7 @@ module VoucherifySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [sku_id, product_id, related_object, source_id, quantity, discount_quantity, initial_quantity, amount, discount_amount, initial_amount, total_applied_discount_amount, price, subtotal_amount, product, sku, object, metadata].hash
+      [sku_id, product_id, related_object, source_id, quantity, discount_quantity, initial_quantity, amount, discount_amount, applied_discount_amount, initial_amount, total_applied_discount_amount, price, subtotal_amount, product, sku, object, metadata].hash
     end
 
     # Builds the object from hash
