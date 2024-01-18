@@ -237,30 +237,45 @@ $three_applicable_promotion_tier_qualifications = $qualifications.redeemables.da
 puts "Three Applicable Promotion Tier Qualifications:";
 puts JSON.pretty_generate($three_applicable_promotion_tier_qualifications.map { |e| e.to_hash });
 puts;
+$validations_validate_request_body_redeemables = (
+  $one_applicable_voucher_qualifications.map { |e| VoucherifySdk::RedeemVoucher.new({
+      object: "voucher", id: e.id
+  })}.concat(
+    $three_applicable_promotion_tier_qualifications.map { |e| VoucherifySdk::RedeemPromotionTier.new({
+    object: "promotion_tier", id: e.id
+    })}
+  )
+)
 
 begin
-  # Redeem Stackable Discounts
-  result = stackable_discounts_api_instance.redeem_stacked_discounts({
-    redemptions_redeem_request_body: VoucherifySdk::StackableValidateRedeemBaseRedeemablesItem.new({
-        redeemables:
-            $one_applicable_voucher_qualifications.map { |e| VoucherifySdk::RedeemVoucher.new({
-                object: "voucher",
-                id: e.id
-            })
-        order: VoucherifySdk::Order.new({
-            amount: 20000,
-        }),
+  # Validate Stackable Discounts
+  result = stackable_discounts_api_instance.validate_stacked_discounts({
+    validations_validate_request_body: VoucherifySdk::ValidationsValidateRequestBody.new({
+      redeemables: $validations_validate_request_body_redeemables,
+      order: VoucherifySdk::Order.new(amount: 20000)
     })
   })
-  p result
+  puts "Validate Stackable Discounts:";
+  puts JSON.pretty_generate(result.to_hash);
+  puts;
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling StackableDiscountsApi->redeem_stacked_discounts: #{e}"
 end
 
-
-#
-
-#
+begin
+  # Redeem Stackable Discounts
+  result = stackable_discounts_api_instance.redeem_stacked_discounts({
+    redemptions_redeem_request_body: VoucherifySdk::RedemptionsRedeemRequestBody.new({
+      redeemables: $validations_validate_request_body_redeemables,
+      order: VoucherifySdk::Order.new(amount: 20000)
+    })
+  })
+  puts "Redeem Stackable Discounts:";
+  puts JSON.pretty_generate(result.to_hash);
+  puts;
+rescue VoucherifySdk::ApiError => e
+  puts "Error when calling StackableDiscountsApi->redeem_stacked_discounts: #{e}"
+end
 
 begin
   # Delete Discount Campaign
