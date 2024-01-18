@@ -33,6 +33,7 @@ campaigns_api_instance = VoucherifySdk::CampaignsApi.new()
 validation_rules_api_instance = VoucherifySdk::ValidationRulesApi.new()
 publications_api_instance = VoucherifySdk::PublicationsApi.new()
 qualifications_api_instance = VoucherifySdk::QualificationsApi.new()
+stackable_discounts_api_instance = VoucherifySdk::StackableDiscountsApi.new()
 
 # create variables to store products data
 $created_product;
@@ -236,6 +237,16 @@ $three_applicable_promotion_tier_qualifications = $qualifications.redeemables.da
 puts "Three Applicable Promotion Tier Qualifications:";
 puts JSON.pretty_generate($three_applicable_promotion_tier_qualifications.map { |e| e.to_hash });
 puts;
+
+begin
+  # Redeem Stackable Discounts
+  result = api_instance.redeem_stacked_discounts(opts)
+  p result
+rescue VoucherifySdk::ApiError => e
+  puts "Error when calling StackableDiscountsApi->redeem_stacked_discounts: #{e}"
+end
+
+
 #
 
 #
