@@ -65,15 +65,15 @@ require 'VoucherifySdk'
 
 # Setup authorization
 VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id-1
-  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
 
-  # Configure API key authorization: X-App-Token-1
-  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
 end
 
 api_instance = VoucherifySdk::CampaignsApi.new
@@ -905,38 +905,31 @@ Class | Method | HTTP request | Description
 
 
 Authentication schemes defined for the API:
-### X-App-Id-1
+### X-App-Id
 
 
 - **Type**: API key
 - **API key parameter name**: X-App-Id
 - **Location**: HTTP header
 
-### X-App-Token-1
+### X-App-Token
 
 
 - **Type**: API key
 - **API key parameter name**: X-App-Token
 - **Location**: HTTP header
 
-### X-Client-Token-1
+### X-Client-Token
 
 
 - **Type**: API key
 - **API key parameter name**: X-Client-Token
 - **Location**: HTTP header
 
-### X-Client-Application-Id-1
+### X-Client-Application-Id
 
 
 - **Type**: API key
 - **API key parameter name**: X-Client-Application-Id
 - **Location**: HTTP header
-
-### Download-Token-1
-
-
-- **Type**: API key
-- **API key parameter name**: token
-- **Location**: URL query string
 

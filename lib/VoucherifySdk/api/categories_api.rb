@@ -64,7 +64,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'CategoriesCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CategoriesApi.create_category",
@@ -125,7 +125,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type]
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CategoriesApi.delete_category",
@@ -188,7 +188,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'CategoriesGetResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CategoriesApi.get_category",
@@ -245,7 +245,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'CategoriesListResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CategoriesApi.list_categories",
@@ -315,7 +315,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'CategoriesUpdateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CategoriesApi.update_category",

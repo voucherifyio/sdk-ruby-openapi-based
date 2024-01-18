@@ -64,7 +64,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'ProductsCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"ProductsApi.create_product",
@@ -134,7 +134,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'ProductsSkusCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"ProductsApi.create_sku",
@@ -198,7 +198,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type]
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"ProductsApi.delete_product",
@@ -268,7 +268,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type]
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"ProductsApi.delete_sku",
@@ -331,7 +331,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'ProductsGetResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"ProductsApi.get_product",
@@ -394,7 +394,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'SkusGetResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"ProductsApi.get_sku",
@@ -463,7 +463,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'ProductsImportCsvCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"ProductsApi.import_products_using_csv",
@@ -532,7 +532,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'SkusImportCsvCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"ProductsApi.import_skus_using_csv",
@@ -616,7 +616,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'ProductsListResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"ProductsApi.list_products",
@@ -706,7 +706,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'ProductsSkusListResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"ProductsApi.list_skus_in_product",
@@ -776,7 +776,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'ProductsUpdateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"ProductsApi.update_product",
@@ -840,7 +840,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'ProductsUpdateInBulkResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"ProductsApi.update_products_in_bulk",
@@ -904,7 +904,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'ProductsMetadataUpdateInBulkResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"ProductsApi.update_products_metadata_in_bulk",
@@ -980,7 +980,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'ProductsSkusUpdateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"ProductsApi.update_sku",

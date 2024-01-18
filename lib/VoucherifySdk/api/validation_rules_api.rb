@@ -64,7 +64,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'ValidationRulesCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"ValidationRulesApi.create_validation_rules",
@@ -131,7 +131,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type]
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"ValidationRulesApi.delete_validation_rule_assignment",
@@ -192,7 +192,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type]
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"ValidationRulesApi.delete_validation_rules",
@@ -255,7 +255,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'ValidationRulesGetResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"ValidationRulesApi.get_validation_rule",
@@ -339,7 +339,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'ValidationRulesAssignmentsListResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"ValidationRulesApi.list_validation_rule_assignments",
@@ -423,7 +423,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'ValidationRulesListResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"ValidationRulesApi.list_validation_rules",
@@ -507,7 +507,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'ValidationRulesAssignmentsListResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"ValidationRulesApi.list_validation_rules_assignments",
@@ -577,7 +577,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'ValidationRulesUpdateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"ValidationRulesApi.update_validation_rule",

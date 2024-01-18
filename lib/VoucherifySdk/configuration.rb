@@ -234,40 +234,33 @@ module VoucherifySdk
     # Returns Auth Settings hash for api client.
     def auth_settings
       {
-        'X-App-Id-1' =>
+        'X-App-Id' =>
           {
             type: 'api_key',
             in: 'header',
             key: 'X-App-Id',
-            value: api_key_with_prefix('X-App-Id-1')
+            value: api_key_with_prefix('X-App-Id')
           },
-        'X-App-Token-1' =>
+        'X-App-Token' =>
           {
             type: 'api_key',
             in: 'header',
             key: 'X-App-Token',
-            value: api_key_with_prefix('X-App-Token-1')
+            value: api_key_with_prefix('X-App-Token')
           },
-        'X-Client-Token-1' =>
+        'X-Client-Token' =>
           {
             type: 'api_key',
             in: 'header',
             key: 'X-Client-Token',
-            value: api_key_with_prefix('X-Client-Token-1')
+            value: api_key_with_prefix('X-Client-Token')
           },
-        'X-Client-Application-Id-1' =>
+        'X-Client-Application-Id' =>
           {
             type: 'api_key',
             in: 'header',
             key: 'X-Client-Application-Id',
-            value: api_key_with_prefix('X-Client-Application-Id-1')
-          },
-        'Download-Token-1' =>
-          {
-            type: 'api_key',
-            in: 'query',
-            key: 'token',
-            value: api_key_with_prefix('Download-Token-1')
+            value: api_key_with_prefix('X-Client-Application-Id')
           },
       }
     end

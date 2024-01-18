@@ -76,7 +76,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'CampaignsVouchersCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CampaignsApi.add_voucher_with_specific_code_to_campaign",
@@ -149,7 +149,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'CampaignsVouchersCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CampaignsApi.add_vouchers_to_campaign",
@@ -213,7 +213,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'CampaignsCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CampaignsApi.create_campaign",
@@ -279,7 +279,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'CampaignsDeleteResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CampaignsApi.delete_campaign",
@@ -342,7 +342,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'CampaignsDisableResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CampaignsApi.disable_campaign",
@@ -405,7 +405,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'CampaignsEnableResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CampaignsApi.enable_campaign",
@@ -468,7 +468,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'CampaignsGetResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CampaignsApi.get_campaign",
@@ -538,7 +538,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'CampaignsImportCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CampaignsApi.import_vouchers_to_campaign",
@@ -613,7 +613,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'CampaignsImportCsvCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CampaignsApi.import_vouchers_to_campaign_using_csv",
@@ -697,7 +697,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'CampaignsListResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CampaignsApi.list_campaigns",
@@ -767,7 +767,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'CampaignsUpdateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CampaignsApi.update_campaign",

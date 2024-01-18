@@ -64,7 +64,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'EventsCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"EventsApi.track_custom_event",
@@ -135,7 +135,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'ClientEventsCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-Client-Application-Id-1', 'X-Client-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-Client-Application-Id', 'X-Client-Token']
 
       new_options = opts.merge(
         :operation => :"EventsApi.track_custom_event_client_side",

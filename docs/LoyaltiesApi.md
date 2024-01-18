@@ -47,15 +47,15 @@ require 'time'
 require 'VoucherifySdk'
 # setup authorization
 VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id-1
-  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
 
-  # Configure API key authorization: X-App-Token-1
-  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
 end
 
 api_instance = VoucherifySdk::LoyaltiesApi.new
@@ -104,7 +104,7 @@ end
 
 ### Authorization
 
-[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
 
 ### HTTP request headers
 
@@ -127,15 +127,15 @@ require 'time'
 require 'VoucherifySdk'
 # setup authorization
 VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id-1
-  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
 
-  # Configure API key authorization: X-App-Token-1
-  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
 end
 
 api_instance = VoucherifySdk::LoyaltiesApi.new
@@ -181,7 +181,7 @@ nil (empty response body)
 
 ### Authorization
 
-[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
 
 ### HTTP request headers
 
@@ -204,15 +204,15 @@ require 'time'
 require 'VoucherifySdk'
 # setup authorization
 VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id-1
-  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
 
-  # Configure API key authorization: X-App-Token-1
-  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
 end
 
 api_instance = VoucherifySdk::LoyaltiesApi.new
@@ -261,7 +261,7 @@ end
 
 ### Authorization
 
-[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
 
 ### HTTP request headers
 
@@ -284,15 +284,15 @@ require 'time'
 require 'VoucherifySdk'
 # setup authorization
 VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id-1
-  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
 
-  # Configure API key authorization: X-App-Token-1
-  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
 end
 
 api_instance = VoucherifySdk::LoyaltiesApi.new
@@ -338,7 +338,7 @@ nil (empty response body)
 
 ### Authorization
 
-[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
 
 ### HTTP request headers
 
@@ -361,15 +361,15 @@ require 'time'
 require 'VoucherifySdk'
 # setup authorization
 VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id-1
-  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
 
-  # Configure API key authorization: X-App-Token-1
-  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
 end
 
 api_instance = VoucherifySdk::LoyaltiesApi.new
@@ -416,7 +416,7 @@ end
 
 ### Authorization
 
-[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
 
 ### HTTP request headers
 
@@ -439,15 +439,15 @@ require 'time'
 require 'VoucherifySdk'
 # setup authorization
 VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id-1
-  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
 
-  # Configure API key authorization: X-App-Token-1
-  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
 end
 
 api_instance = VoucherifySdk::LoyaltiesApi.new
@@ -494,7 +494,7 @@ end
 
 ### Authorization
 
-[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
 
 ### HTTP request headers
 
@@ -517,15 +517,15 @@ require 'time'
 require 'VoucherifySdk'
 # setup authorization
 VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id-1
-  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
 
-  # Configure API key authorization: X-App-Token-1
-  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
 end
 
 api_instance = VoucherifySdk::LoyaltiesApi.new
@@ -574,7 +574,7 @@ end
 
 ### Authorization
 
-[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
 
 ### HTTP request headers
 
@@ -597,15 +597,15 @@ require 'time'
 require 'VoucherifySdk'
 # setup authorization
 VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id-1
-  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
 
-  # Configure API key authorization: X-App-Token-1
-  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
 end
 
 api_instance = VoucherifySdk::LoyaltiesApi.new
@@ -656,7 +656,7 @@ end
 
 ### Authorization
 
-[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
 
 ### HTTP request headers
 
@@ -679,15 +679,15 @@ require 'time'
 require 'VoucherifySdk'
 # setup authorization
 VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id-1
-  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
 
-  # Configure API key authorization: X-App-Token-1
-  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
 end
 
 api_instance = VoucherifySdk::LoyaltiesApi.new
@@ -734,7 +734,7 @@ end
 
 ### Authorization
 
-[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
 
 ### HTTP request headers
 
@@ -757,15 +757,15 @@ require 'time'
 require 'VoucherifySdk'
 # setup authorization
 VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id-1
-  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
 
-  # Configure API key authorization: X-App-Token-1
-  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
 end
 
 api_instance = VoucherifySdk::LoyaltiesApi.new
@@ -812,7 +812,7 @@ end
 
 ### Authorization
 
-[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
 
 ### HTTP request headers
 
@@ -835,15 +835,15 @@ require 'time'
 require 'VoucherifySdk'
 # setup authorization
 VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id-1
-  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
 
-  # Configure API key authorization: X-App-Token-1
-  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
 end
 
 api_instance = VoucherifySdk::LoyaltiesApi.new
@@ -890,7 +890,7 @@ end
 
 ### Authorization
 
-[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
 
 ### HTTP request headers
 
@@ -913,15 +913,15 @@ require 'time'
 require 'VoucherifySdk'
 # setup authorization
 VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id-1
-  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
 
-  # Configure API key authorization: X-App-Token-1
-  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
 end
 
 api_instance = VoucherifySdk::LoyaltiesApi.new
@@ -968,7 +968,7 @@ end
 
 ### Authorization
 
-[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
 
 ### HTTP request headers
 
@@ -991,15 +991,15 @@ require 'time'
 require 'VoucherifySdk'
 # setup authorization
 VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id-1
-  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
 
-  # Configure API key authorization: X-App-Token-1
-  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
 end
 
 api_instance = VoucherifySdk::LoyaltiesApi.new
@@ -1046,7 +1046,7 @@ end
 
 ### Authorization
 
-[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
 
 ### HTTP request headers
 
@@ -1069,15 +1069,15 @@ require 'time'
 require 'VoucherifySdk'
 # setup authorization
 VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id-1
-  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
 
-  # Configure API key authorization: X-App-Token-1
-  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
 end
 
 api_instance = VoucherifySdk::LoyaltiesApi.new
@@ -1128,7 +1128,7 @@ end
 
 ### Authorization
 
-[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
 
 ### HTTP request headers
 
@@ -1151,15 +1151,15 @@ require 'time'
 require 'VoucherifySdk'
 # setup authorization
 VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id-1
-  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
 
-  # Configure API key authorization: X-App-Token-1
-  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
 end
 
 api_instance = VoucherifySdk::LoyaltiesApi.new
@@ -1212,7 +1212,7 @@ end
 
 ### Authorization
 
-[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
 
 ### HTTP request headers
 
@@ -1235,15 +1235,15 @@ require 'time'
 require 'VoucherifySdk'
 # setup authorization
 VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id-1
-  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
 
-  # Configure API key authorization: X-App-Token-1
-  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
 end
 
 api_instance = VoucherifySdk::LoyaltiesApi.new
@@ -1296,7 +1296,7 @@ end
 
 ### Authorization
 
-[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
 
 ### HTTP request headers
 
@@ -1319,15 +1319,15 @@ require 'time'
 require 'VoucherifySdk'
 # setup authorization
 VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id-1
-  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
 
-  # Configure API key authorization: X-App-Token-1
-  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
 end
 
 api_instance = VoucherifySdk::LoyaltiesApi.new
@@ -1374,7 +1374,7 @@ end
 
 ### Authorization
 
-[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
 
 ### HTTP request headers
 
@@ -1397,15 +1397,15 @@ require 'time'
 require 'VoucherifySdk'
 # setup authorization
 VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id-1
-  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
 
-  # Configure API key authorization: X-App-Token-1
-  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
 end
 
 api_instance = VoucherifySdk::LoyaltiesApi.new
@@ -1456,7 +1456,7 @@ end
 
 ### Authorization
 
-[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
 
 ### HTTP request headers
 
@@ -1479,15 +1479,15 @@ require 'time'
 require 'VoucherifySdk'
 # setup authorization
 VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id-1
-  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
 
-  # Configure API key authorization: X-App-Token-1
-  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
 end
 
 api_instance = VoucherifySdk::LoyaltiesApi.new
@@ -1532,7 +1532,7 @@ end
 
 ### Authorization
 
-[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
 
 ### HTTP request headers
 
@@ -1555,15 +1555,15 @@ require 'time'
 require 'VoucherifySdk'
 # setup authorization
 VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id-1
-  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
 
-  # Configure API key authorization: X-App-Token-1
-  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
 end
 
 api_instance = VoucherifySdk::LoyaltiesApi.new
@@ -1612,7 +1612,7 @@ end
 
 ### Authorization
 
-[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
 
 ### HTTP request headers
 
@@ -1635,15 +1635,15 @@ require 'time'
 require 'VoucherifySdk'
 # setup authorization
 VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id-1
-  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
 
-  # Configure API key authorization: X-App-Token-1
-  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
 end
 
 api_instance = VoucherifySdk::LoyaltiesApi.new
@@ -1696,7 +1696,7 @@ end
 
 ### Authorization
 
-[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
 
 ### HTTP request headers
 
@@ -1719,15 +1719,15 @@ require 'time'
 require 'VoucherifySdk'
 # setup authorization
 VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id-1
-  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
 
-  # Configure API key authorization: X-App-Token-1
-  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
 end
 
 api_instance = VoucherifySdk::LoyaltiesApi.new
@@ -1776,7 +1776,7 @@ end
 
 ### Authorization
 
-[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
 
 ### HTTP request headers
 
@@ -1799,15 +1799,15 @@ require 'time'
 require 'VoucherifySdk'
 # setup authorization
 VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id-1
-  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
 
-  # Configure API key authorization: X-App-Token-1
-  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
 end
 
 api_instance = VoucherifySdk::LoyaltiesApi.new
@@ -1858,7 +1858,7 @@ end
 
 ### Authorization
 
-[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
 
 ### HTTP request headers
 
@@ -1881,15 +1881,15 @@ require 'time'
 require 'VoucherifySdk'
 # setup authorization
 VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id-1
-  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
 
-  # Configure API key authorization: X-App-Token-1
-  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
 end
 
 api_instance = VoucherifySdk::LoyaltiesApi.new
@@ -1940,7 +1940,7 @@ end
 
 ### Authorization
 
-[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
 
 ### HTTP request headers
 
@@ -1963,15 +1963,15 @@ require 'time'
 require 'VoucherifySdk'
 # setup authorization
 VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id-1
-  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
 
-  # Configure API key authorization: X-App-Token-1
-  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
 end
 
 api_instance = VoucherifySdk::LoyaltiesApi.new
@@ -2020,7 +2020,7 @@ end
 
 ### Authorization
 
-[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
 
 ### HTTP request headers
 
@@ -2043,15 +2043,15 @@ require 'time'
 require 'VoucherifySdk'
 # setup authorization
 VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id-1
-  config.api_key['X-App-Id-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
 
-  # Configure API key authorization: X-App-Token-1
-  config.api_key['X-App-Token-1'] = 'YOUR API KEY'
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token-1'] = 'Bearer'
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
 end
 
 api_instance = VoucherifySdk::LoyaltiesApi.new
@@ -2102,7 +2102,7 @@ end
 
 ### Authorization
 
-[X-App-Id-1](../README.md#X-App-Id-1), [X-App-Token-1](../README.md#X-App-Token-1)
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
 
 ### HTTP request headers
 

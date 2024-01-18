@@ -64,7 +64,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'OrdersCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"OrdersApi.create_order",
@@ -128,7 +128,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'OrdersExportCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"OrdersApi.create_order_export",
@@ -191,7 +191,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'OrdersGetResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"OrdersApi.get_order",
@@ -255,7 +255,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'OrdersImportCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"OrdersApi.import_orders",
@@ -333,7 +333,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'OrdersListResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"OrdersApi.list_orders",
@@ -403,7 +403,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'OrdersUpdateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"OrdersApi.update_order",

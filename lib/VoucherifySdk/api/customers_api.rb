@@ -64,7 +64,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'CustomersCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CustomersApi.create_customer",
@@ -127,7 +127,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'CustomersPermanentDeletionCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CustomersApi.customer_permanently_deletion",
@@ -188,7 +188,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type]
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CustomersApi.delete_customer",
@@ -251,7 +251,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'CustomersGetResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CustomersApi.get_customer",
@@ -320,7 +320,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'CustomersImportCsvCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CustomersApi.import_customers_using_csv",
@@ -418,7 +418,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'CustomersActivitiesListResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CustomersApi.list_customer_activities",
@@ -481,7 +481,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'CustomersSegmentsListResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CustomersApi.list_customer_segments",
@@ -586,7 +586,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'CustomersListResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CustomersApi.list_customers",
@@ -656,7 +656,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'CustomersUpdateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CustomersApi.update_customer",
@@ -724,7 +724,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type]
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CustomersApi.update_customers_consents",
@@ -792,7 +792,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type]
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-Client-Application-Id-1', 'X-Client-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-Client-Application-Id', 'X-Client-Token']
 
       new_options = opts.merge(
         :operation => :"CustomersApi.update_customers_consents_client_side",
@@ -856,7 +856,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'CustomersUpdateInBulkResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CustomersApi.update_customers_in_bulk",
@@ -920,7 +920,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'CustomersMetadataUpdateInBulkResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"CustomersApi.update_customers_metadata_in_bulk",

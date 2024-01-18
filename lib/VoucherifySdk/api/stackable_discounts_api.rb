@@ -64,7 +64,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'RedemptionsRedeemResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"StackableDiscountsApi.redeem_stacked_discounts",
@@ -135,7 +135,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'ClientRedemptionsRedeemResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-Client-Application-Id-1', 'X-Client-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-Client-Application-Id', 'X-Client-Token']
 
       new_options = opts.merge(
         :operation => :"StackableDiscountsApi.redeem_stacked_discounts_client_side",
@@ -211,7 +211,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'RedemptionsRollbacksCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"StackableDiscountsApi.rollback_stacked_redemptions",
@@ -275,7 +275,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'ValidationsValidateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"StackableDiscountsApi.validate_stacked_discounts",
@@ -346,7 +346,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'ClientValidationsValidateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-Client-Application-Id-1', 'X-Client-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-Client-Application-Id', 'X-Client-Token']
 
       new_options = opts.merge(
         :operation => :"StackableDiscountsApi.validate_stacked_discounts_client_side",

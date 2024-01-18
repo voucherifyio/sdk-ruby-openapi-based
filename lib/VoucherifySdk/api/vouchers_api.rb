@@ -64,7 +64,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type]
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"VouchersApi.delete_voucher",
@@ -127,7 +127,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'VouchersDisableResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"VouchersApi.disable_voucher",
@@ -190,7 +190,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'VouchersEnableResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"VouchersApi.enable_voucher",
@@ -260,7 +260,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'VouchersTransactionsExportCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"VouchersApi.export_voucher_transactions",
@@ -323,7 +323,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'VouchersGetResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"VouchersApi.get_voucher",
@@ -392,7 +392,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'VouchersImportCsvCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"VouchersApi.import_vouchers_using_csv",
@@ -473,7 +473,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'VouchersTransactionsListResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"VouchersApi.list_voucher_transactions",
@@ -540,7 +540,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type]
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"VouchersApi.release_validation_session",
@@ -614,7 +614,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'VouchersBalanceUpdateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"VouchersApi.update_voucher_balance",

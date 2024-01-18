@@ -63,7 +63,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'RedemptionsGetResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"RedemptionsApi.get_redemption",
@@ -126,7 +126,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'VouchersRedemptionGetResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"RedemptionsApi.get_voucher_redemptions",
@@ -219,7 +219,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'RedemptionsListResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"RedemptionsApi.list_redemptions",
@@ -295,7 +295,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'RedemptionsRollbackCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"RedemptionsApi.rollback_redemption",

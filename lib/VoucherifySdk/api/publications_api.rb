@@ -67,7 +67,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'PublicationsCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"PublicationsApi.create_publication",
@@ -146,7 +146,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'PublicationsCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"PublicationsApi.create_publication1",
@@ -248,7 +248,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'PublicationsListResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"PublicationsApi.list_publications",

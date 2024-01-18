@@ -64,7 +64,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'CampaignsCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"PromotionsApi.create_campaign",
@@ -134,7 +134,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'PromotionsStacksCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"PromotionsApi.create_promotion_stack",
@@ -201,7 +201,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type]
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"PromotionsApi.delete_promotion_stack",
@@ -262,7 +262,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type]
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"PromotionsApi.delete_promotion_tier",
@@ -325,7 +325,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'PromotionsTiersDisableResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"PromotionsApi.disable_promotion_tier",
@@ -388,7 +388,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'PromotionsTiersEnableResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"PromotionsApi.enable_promotion_tier",
@@ -457,7 +457,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'PromotionsStacksGetResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"PromotionsApi.get_promotion_stack",
@@ -520,7 +520,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'PromotionsTiersGetResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"PromotionsApi.get_promotion_tier",
@@ -604,7 +604,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'PromotionsStacksListResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"PromotionsApi.list_all_promotion_stacks",
@@ -667,7 +667,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'PromotionsStacksListResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"PromotionsApi.list_promotion_stacks_in_campaign",
@@ -730,7 +730,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'PromotionsTiersListResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"PromotionsApi.list_promotion_tiers_from_campaign",
@@ -806,7 +806,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'PromotionsStacksUpdateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"PromotionsApi.update_promotion_stack",

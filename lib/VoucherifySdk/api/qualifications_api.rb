@@ -64,7 +64,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'QualificationsCheckEligibilityResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"QualificationsApi.check_eligibility",
@@ -128,7 +128,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'ClientQualificationsCheckEligibilityResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-Client-Application-Id-1', 'X-Client-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-Client-Application-Id', 'X-Client-Token']
 
       new_options = opts.merge(
         :operation => :"QualificationsApi.check_eligibility_client_side",

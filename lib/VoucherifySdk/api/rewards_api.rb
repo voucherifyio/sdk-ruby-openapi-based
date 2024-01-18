@@ -70,7 +70,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'RewardsAssignmentsCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"RewardsApi.create_reward_assignment",
@@ -131,7 +131,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type]
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"RewardsApi.delete_reward",
@@ -198,7 +198,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type]
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"RewardsApi.delete_reward_assignment",
@@ -267,7 +267,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'RewardsAssignmentsGetResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"RewardsApi.get_reward_assignment",
@@ -348,7 +348,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'RewardsAssignmentsListResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"RewardsApi.list_reward_assignments",
@@ -424,7 +424,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'RewardsAssignmentsUpdateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"RewardsApi.update_reward_assignment",

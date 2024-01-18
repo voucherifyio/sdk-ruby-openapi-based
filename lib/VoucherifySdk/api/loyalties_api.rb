@@ -70,7 +70,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'Array<LoyaltyTier>'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"LoyaltiesApi.create_in_bulk_loyalty_tiers",
@@ -137,7 +137,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type]
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"LoyaltiesApi.delete_earning_rule",
@@ -203,7 +203,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'LoyaltiesDeleteResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"LoyaltiesApi.delete_loyalty_program",
@@ -270,7 +270,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type]
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"LoyaltiesApi.delete_reward_assignment1",
@@ -339,7 +339,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'LoyaltiesEarningRulesDisableResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"LoyaltiesApi.disable_earning_rule",
@@ -408,7 +408,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'LoyaltiesEarningRulesEnableResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"LoyaltiesApi.enable_earning_rule",
@@ -478,7 +478,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'LoyaltiesMembersTransactionsExportCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"LoyaltiesApi.export_loyalty_card_transactions",
@@ -554,7 +554,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'LoyaltiesMembersTransactionsExportCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"LoyaltiesApi.export_loyalty_card_transactions1",
@@ -623,7 +623,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'LoyaltiesEarningRulesGetResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"LoyaltiesApi.get_earning_rule",
@@ -692,7 +692,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'LoyaltiesTiersGetResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"LoyaltiesApi.get_loyalty_tier",
@@ -761,7 +761,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'LoyaltiesRewardAssignmentsGetResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"LoyaltiesApi.get_reward_assignment1",
@@ -830,7 +830,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'LoyaltiesRewardsGetResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"LoyaltiesApi.get_reward_assignment2",
@@ -899,7 +899,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'LoyaltiesRewardAssignmentsRewardGetResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"LoyaltiesApi.get_reward_details",
@@ -980,7 +980,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'LoyaltiesMembersTransactionsListResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"LoyaltiesApi.list_loyalty_card_transactions",
@@ -1067,7 +1067,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'LoyaltiesMembersTransactionsListResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"LoyaltiesApi.list_loyalty_card_transactions1",
@@ -1154,7 +1154,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'LoyaltiesTiersEarningRulesListResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"LoyaltiesApi.list_loyalty_tier_earning_rules",
@@ -1223,7 +1223,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'LoyaltiesTiersRewardsListResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"LoyaltiesApi.list_loyalty_tier_rewards",
@@ -1300,7 +1300,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'LoyaltiesTiersListResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"LoyaltiesApi.list_loyalty_tiers",
@@ -1363,7 +1363,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'LoyaltiesMembersTiersListResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"LoyaltiesApi.list_member_loyalty_tier",
@@ -1429,7 +1429,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'LoyaltiesMembersRewardsListResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"LoyaltiesApi.list_member_rewards",
@@ -1516,7 +1516,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'LoyaltiesMembersPointsExpirationListResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"LoyaltiesApi.list_points_expiration",
@@ -1586,7 +1586,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'LoyaltiesMembersRedemptionRedeemResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"LoyaltiesApi.redeem_reward",
@@ -1662,7 +1662,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'LoyaltiesMembersRedemptionRedeemResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"LoyaltiesApi.redeem_reward1",
@@ -1738,7 +1738,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'LoyaltiesMembersTransfersCreateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"LoyaltiesApi.transfer_points",
@@ -1808,7 +1808,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'LoyaltiesMembersBalanceUpdateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"LoyaltiesApi.update_loyalty_card_balance",
@@ -1884,7 +1884,7 @@ module VoucherifySdk
       return_type = opts[:debug_return_type] || 'LoyaltiesMembersBalanceUpdateResponseBody'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['X-App-Id-1', 'X-App-Token-1']
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
         :operation => :"LoyaltiesApi.update_loyalty_card_balance1",
