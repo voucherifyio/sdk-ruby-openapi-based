@@ -15,7 +15,7 @@ require 'time'
 
 module VoucherifySdk
   # Defines stacking rules for redeemables. Read more in the [Help Center](https://support.voucherify.io/article/604-stacking-rules)
-  class QualificationsStackingRules
+  class StackingRules
     # Defines how many redeemables can be sent in one stacking request (note: more redeemables means more processing time!).
     attr_accessor :redeemables_limit
 
@@ -25,11 +25,42 @@ module VoucherifySdk
     # Defines how many redeemables with an exclusive category can be applied in one request.
     attr_accessor :applicable_exclusive_redeemables_limit
 
+    # Defines how many redeemables per category can be applied in one request.
+    attr_accessor :applicable_redeemables_per_category_limit
+
     # Lists all exclusive categories. A redeemable from a campaign with an exclusive category is the only redeemable to be redeemed when applied with redeemables from other campaigns unless these campaigns are exclusive or joint.
     attr_accessor :exclusive_categories
 
     # Lists all joint categories. A campaign with a joint category is always applied regardless of the exclusivity of other campaigns.
     attr_accessor :joint_categories
+
+    # Defines redeemables application mode.
+    attr_accessor :redeemables_application_mode
+
+    # Defines redeemables sorting rule.
+    attr_accessor :redeemables_sorting_rule
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -37,8 +68,11 @@ module VoucherifySdk
         :'redeemables_limit' => :'redeemables_limit',
         :'applicable_redeemables_limit' => :'applicable_redeemables_limit',
         :'applicable_exclusive_redeemables_limit' => :'applicable_exclusive_redeemables_limit',
+        :'applicable_redeemables_per_category_limit' => :'applicable_redeemables_per_category_limit',
         :'exclusive_categories' => :'exclusive_categories',
-        :'joint_categories' => :'joint_categories'
+        :'joint_categories' => :'joint_categories',
+        :'redeemables_application_mode' => :'redeemables_application_mode',
+        :'redeemables_sorting_rule' => :'redeemables_sorting_rule'
       }
     end
 
@@ -53,8 +87,11 @@ module VoucherifySdk
         :'redeemables_limit' => :'Integer',
         :'applicable_redeemables_limit' => :'Integer',
         :'applicable_exclusive_redeemables_limit' => :'Integer',
+        :'applicable_redeemables_per_category_limit' => :'Integer',
         :'exclusive_categories' => :'Array<String>',
-        :'joint_categories' => :'Array<String>'
+        :'joint_categories' => :'Array<String>',
+        :'redeemables_application_mode' => :'String',
+        :'redeemables_sorting_rule' => :'String'
       }
     end
 
@@ -68,13 +105,13 @@ module VoucherifySdk
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `VoucherifySdk::QualificationsStackingRules` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `VoucherifySdk::StackingRules` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `VoucherifySdk::QualificationsStackingRules`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `VoucherifySdk::StackingRules`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -97,6 +134,12 @@ module VoucherifySdk
         self.applicable_exclusive_redeemables_limit = 1
       end
 
+      if attributes.key?(:'applicable_redeemables_per_category_limit')
+        self.applicable_redeemables_per_category_limit = attributes[:'applicable_redeemables_per_category_limit']
+      else
+        self.applicable_redeemables_per_category_limit = 1
+      end
+
       if attributes.key?(:'exclusive_categories')
         if (value = attributes[:'exclusive_categories']).is_a?(Array)
           self.exclusive_categories = value
@@ -111,6 +154,16 @@ module VoucherifySdk
         end
       else
         self.joint_categories = nil
+      end
+
+      if attributes.key?(:'redeemables_application_mode')
+        self.redeemables_application_mode = attributes[:'redeemables_application_mode']
+      end
+
+      if attributes.key?(:'redeemables_sorting_rule')
+        self.redeemables_sorting_rule = attributes[:'redeemables_sorting_rule']
+      else
+        self.redeemables_sorting_rule = 'REQUESTED_ORDER'
       end
     end
 
@@ -155,6 +208,14 @@ module VoucherifySdk
         invalid_properties.push('invalid value for "applicable_exclusive_redeemables_limit", must be greater than or equal to 1.')
       end
 
+      if !@applicable_redeemables_per_category_limit.nil? && @applicable_redeemables_per_category_limit > 30
+        invalid_properties.push('invalid value for "applicable_redeemables_per_category_limit", must be smaller than or equal to 30.')
+      end
+
+      if !@applicable_redeemables_per_category_limit.nil? && @applicable_redeemables_per_category_limit < 1
+        invalid_properties.push('invalid value for "applicable_redeemables_per_category_limit", must be greater than or equal to 1.')
+      end
+
       if @exclusive_categories.nil?
         invalid_properties.push('invalid value for "exclusive_categories", exclusive_categories cannot be nil.')
       end
@@ -179,8 +240,14 @@ module VoucherifySdk
       return false if @applicable_exclusive_redeemables_limit.nil?
       return false if @applicable_exclusive_redeemables_limit > 30
       return false if @applicable_exclusive_redeemables_limit < 1
+      return false if !@applicable_redeemables_per_category_limit.nil? && @applicable_redeemables_per_category_limit > 30
+      return false if !@applicable_redeemables_per_category_limit.nil? && @applicable_redeemables_per_category_limit < 1
       return false if @exclusive_categories.nil?
       return false if @joint_categories.nil?
+      redeemables_application_mode_validator = EnumAttributeValidator.new('String', ["ALL", "PARTIAL"])
+      return false unless redeemables_application_mode_validator.valid?(@redeemables_application_mode)
+      redeemables_sorting_rule_validator = EnumAttributeValidator.new('String', ["CATEGORY_HIERARCHY", "REQUESTED_ORDER"])
+      return false unless redeemables_sorting_rule_validator.valid?(@redeemables_sorting_rule)
       true
     end
 
@@ -238,6 +305,44 @@ module VoucherifySdk
       @applicable_exclusive_redeemables_limit = applicable_exclusive_redeemables_limit
     end
 
+    # Custom attribute writer method with validation
+    # @param [Object] applicable_redeemables_per_category_limit Value to be assigned
+    def applicable_redeemables_per_category_limit=(applicable_redeemables_per_category_limit)
+      if applicable_redeemables_per_category_limit.nil?
+        fail ArgumentError, 'applicable_redeemables_per_category_limit cannot be nil'
+      end
+
+      if applicable_redeemables_per_category_limit > 30
+        fail ArgumentError, 'invalid value for "applicable_redeemables_per_category_limit", must be smaller than or equal to 30.'
+      end
+
+      if applicable_redeemables_per_category_limit < 1
+        fail ArgumentError, 'invalid value for "applicable_redeemables_per_category_limit", must be greater than or equal to 1.'
+      end
+
+      @applicable_redeemables_per_category_limit = applicable_redeemables_per_category_limit
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] redeemables_application_mode Object to be assigned
+    def redeemables_application_mode=(redeemables_application_mode)
+      validator = EnumAttributeValidator.new('String', ["ALL", "PARTIAL"])
+      unless validator.valid?(redeemables_application_mode)
+        fail ArgumentError, "invalid value for \"redeemables_application_mode\", must be one of #{validator.allowable_values}."
+      end
+      @redeemables_application_mode = redeemables_application_mode
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] redeemables_sorting_rule Object to be assigned
+    def redeemables_sorting_rule=(redeemables_sorting_rule)
+      validator = EnumAttributeValidator.new('String', ["CATEGORY_HIERARCHY", "REQUESTED_ORDER"])
+      unless validator.valid?(redeemables_sorting_rule)
+        fail ArgumentError, "invalid value for \"redeemables_sorting_rule\", must be one of #{validator.allowable_values}."
+      end
+      @redeemables_sorting_rule = redeemables_sorting_rule
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -246,8 +351,11 @@ module VoucherifySdk
           redeemables_limit == o.redeemables_limit &&
           applicable_redeemables_limit == o.applicable_redeemables_limit &&
           applicable_exclusive_redeemables_limit == o.applicable_exclusive_redeemables_limit &&
+          applicable_redeemables_per_category_limit == o.applicable_redeemables_per_category_limit &&
           exclusive_categories == o.exclusive_categories &&
-          joint_categories == o.joint_categories
+          joint_categories == o.joint_categories &&
+          redeemables_application_mode == o.redeemables_application_mode &&
+          redeemables_sorting_rule == o.redeemables_sorting_rule
     end
 
     # @see the `==` method
@@ -259,7 +367,7 @@ module VoucherifySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [redeemables_limit, applicable_redeemables_limit, applicable_exclusive_redeemables_limit, exclusive_categories, joint_categories].hash
+      [redeemables_limit, applicable_redeemables_limit, applicable_exclusive_redeemables_limit, applicable_redeemables_per_category_limit, exclusive_categories, joint_categories, redeemables_application_mode, redeemables_sorting_rule].hash
     end
 
     # Builds the object from hash
