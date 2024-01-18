@@ -240,7 +240,18 @@ puts;
 
 begin
   # Redeem Stackable Discounts
-  result = api_instance.redeem_stacked_discounts(opts)
+  result = stackable_discounts_api_instance.redeem_stacked_discounts({
+    redemptions_redeem_request_body: VoucherifySdk::StackableValidateRedeemBaseRedeemablesItem.new({
+        redeemables:
+            $one_applicable_voucher_qualifications.map { |e| VoucherifySdk::RedeemVoucher.new({
+                object: "voucher",
+                id: e.id
+            })
+        order: VoucherifySdk::Order.new({
+            amount: 20000,
+        }),
+    })
+  })
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling StackableDiscountsApi->redeem_stacked_discounts: #{e}"
