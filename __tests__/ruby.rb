@@ -32,6 +32,8 @@ products_api_instance = VoucherifySdk::ProductsApi.new()
 campaigns_api_instance = VoucherifySdk::CampaignsApi.new()
 validation_rules_api_instance = VoucherifySdk::ValidationRulesApi.new()
 publications_api_instance = VoucherifySdk::PublicationsApi.new()
+qualifications_api_instance = VoucherifySdk::QualificationsApi.new()
+stackable_discounts_api_instance = VoucherifySdk::StackableDiscountsApi.new()
 
 # create variables to store products data
 $created_product;
@@ -203,17 +205,85 @@ begin
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling PublicationsApi->create_publication: #{e}"
 end
-#
 
-#
+$qualifications
+begin
+  # Check Eligibility
+  $qualifications = qualifications_api_instance.check_eligibility({
+    qualifications_check_eligibility_request_body: VoucherifySdk::QualificationsCheckEligibilityRequestBody.new({
+        customer: VoucherifySdk::Customer.new({
+          id: $created_customer.id
+        }),
+        order: VoucherifySdk::Order.new({
+            amount: 20000,
+        }),
+        options: VoucherifySdk::QualificationsOption.new({
+            limit: 100
+        })
+    })
+  })
+  puts "Check Eligibility:";
+  puts JSON.pretty_generate($qualifications.to_hash);
+  puts;
+rescue VoucherifySdk::ApiError => e
+  puts "Error when calling QualificationsApi->check_eligibility: #{e}"
+end
+
+$one_applicable_voucher_qualifications = $qualifications.redeemables.data.select { |e| e.object == "voucher" }.take(1)
+puts "One Applicable Voucher Qualifications:";
+puts JSON.pretty_generate($one_applicable_voucher_qualifications.map { |e| e.to_hash });
+puts;
+$three_applicable_promotion_tier_qualifications = $qualifications.redeemables.data.select { |e| e.object == "promotion_tier" }.take(3)
+puts "Three Applicable Promotion Tier Qualifications:";
+puts JSON.pretty_generate($three_applicable_promotion_tier_qualifications.map { |e| e.to_hash });
+puts;
+$validations_validate_request_body_redeemables = (
+  $one_applicable_voucher_qualifications.map { |e| VoucherifySdk::RedeemVoucher.new({
+      object: "voucher", id: e.id
+  })}.concat(
+    $three_applicable_promotion_tier_qualifications.map { |e| VoucherifySdk::RedeemPromotionTier.new({
+    object: "promotion_tier", id: e.id
+    })}
+  )
+)
 
 begin
-  # Delete Disctount Campaign
+  # Validate Stackable Discounts
+  result = stackable_discounts_api_instance.validate_stacked_discounts({
+    validations_validate_request_body: VoucherifySdk::ValidationsValidateRequestBody.new({
+      redeemables: $validations_validate_request_body_redeemables,
+      order: VoucherifySdk::Order.new(amount: 20000)
+    })
+  })
+  puts "Validate Stackable Discounts:";
+  puts JSON.pretty_generate(result.to_hash);
+  puts;
+rescue VoucherifySdk::ApiError => e
+  puts "Error when calling StackableDiscountsApi->redeem_stacked_discounts: #{e}"
+end
+
+begin
+  # Redeem Stackable Discounts
+  result = stackable_discounts_api_instance.redeem_stacked_discounts({
+    redemptions_redeem_request_body: VoucherifySdk::RedemptionsRedeemRequestBody.new({
+      redeemables: $validations_validate_request_body_redeemables,
+      order: VoucherifySdk::Order.new(amount: 20000)
+    })
+  })
+  puts "Redeem Stackable Discounts:";
+  puts JSON.pretty_generate(result.to_hash);
+  puts;
+rescue VoucherifySdk::ApiError => e
+  puts "Error when calling StackableDiscountsApi->redeem_stacked_discounts: #{e}"
+end
+
+begin
+  # Delete Discount Campaign
   result = campaigns_api_instance.delete_campaign($created_discount_campaign.id, {
     force: true
   })
   puts "Delete Discount Campaign:";
-  puts JSON.pretty_generate($result);
+  puts JSON.pretty_generate(result.to_hash);
   puts;
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling CampaignsApi->delete_campaign: #{e}"
@@ -225,7 +295,7 @@ begin
     force: true
   })
   puts "Delete Promotion Campaign:";
-  puts JSON.pretty_generate($result);
+  puts JSON.pretty_generate(result.to_hash);
   puts;
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling CampaignsApi->delete_campaign: #{e}"
