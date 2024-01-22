@@ -17,17 +17,9 @@ module VoucherifySdk
   class ExportPointsExpirationFilters
     attr_accessor :junction
 
-    attr_accessor :id
-
     attr_accessor :campaign_id
 
     attr_accessor :voucher_id
-
-    attr_accessor :points
-
-    attr_accessor :status
-
-    attr_accessor :expires_at
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -55,12 +47,8 @@ module VoucherifySdk
     def self.attribute_map
       {
         :'junction' => :'junction',
-        :'id' => :'id',
         :'campaign_id' => :'campaign_id',
-        :'voucher_id' => :'voucher_id',
-        :'points' => :'points',
-        :'status' => :'status',
-        :'expires_at' => :'expires_at'
+        :'voucher_id' => :'voucher_id'
       }
     end
 
@@ -73,12 +61,8 @@ module VoucherifySdk
     def self.openapi_types
       {
         :'junction' => :'Junction',
-        :'id' => :'FieldConditions',
         :'campaign_id' => :'FieldConditions',
-        :'voucher_id' => :'FieldConditions',
-        :'points' => :'FieldConditions',
-        :'status' => :'FieldConditions',
-        :'expires_at' => :'FieldConditions'
+        :'voucher_id' => :'FieldConditions'
       }
     end
 
@@ -107,28 +91,12 @@ module VoucherifySdk
         self.junction = attributes[:'junction']
       end
 
-      if attributes.key?(:'id')
-        self.id = attributes[:'id']
-      end
-
       if attributes.key?(:'campaign_id')
         self.campaign_id = attributes[:'campaign_id']
       end
 
       if attributes.key?(:'voucher_id')
         self.voucher_id = attributes[:'voucher_id']
-      end
-
-      if attributes.key?(:'points')
-        self.points = attributes[:'points']
-      end
-
-      if attributes.key?(:'status')
-        self.status = attributes[:'status']
-      end
-
-      if attributes.key?(:'expires_at')
-        self.expires_at = attributes[:'expires_at']
       end
     end
 
@@ -153,12 +121,8 @@ module VoucherifySdk
       return true if self.equal?(o)
       self.class == o.class &&
           junction == o.junction &&
-          id == o.id &&
           campaign_id == o.campaign_id &&
-          voucher_id == o.voucher_id &&
-          points == o.points &&
-          status == o.status &&
-          expires_at == o.expires_at
+          voucher_id == o.voucher_id
     end
 
     # @see the `==` method
@@ -170,7 +134,7 @@ module VoucherifySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [junction, id, campaign_id, voucher_id, points, status, expires_at].hash
+      [junction, campaign_id, voucher_id].hash
     end
 
     # Builds the object from hash

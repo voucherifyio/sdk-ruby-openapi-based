@@ -15,21 +15,11 @@ require 'time'
 
 module VoucherifySdk
   class ExportPointsExpirationOrder
-    ID = "id".freeze
-    ID2 = "-id".freeze
-    CAMPAIGN_ID = "campaign_id".freeze
-    CAMPAIGN_ID2 = "-campaign_id".freeze
-    VOUCHER_ID = "voucher_id".freeze
-    VOUCHER_ID2 = "-voucher_id".freeze
-    POINTS = "points".freeze
-    POINTS2 = "-points".freeze
-    STATUS = "status".freeze
-    STATUS2 = "-status".freeze
-    EXPIRES_AT = "expires_at".freeze
-    EXPIRES_AT2 = "-expires_at".freeze
+    EXPIRES_AT = "-expires_at".freeze
+    EXPIRES_AT2 = "expires_at".freeze
 
     def self.all_vars
-      @all_vars ||= [ID, ID2, CAMPAIGN_ID, CAMPAIGN_ID2, VOUCHER_ID, VOUCHER_ID2, POINTS, POINTS2, STATUS, STATUS2, EXPIRES_AT, EXPIRES_AT2].freeze
+      @all_vars ||= [EXPIRES_AT, EXPIRES_AT2].freeze
     end
 
     # Builds the enum from string

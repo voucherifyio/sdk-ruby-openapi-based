@@ -15,33 +15,11 @@ require 'time'
 
 module VoucherifySdk
   class ExportVoucherTransactionsOrder
-    ID = "id".freeze
-    ID2 = "-id".freeze
-    CAMPAIGN_ID = "campaign_id".freeze
-    CAMPAIGN_ID2 = "-campaign_id".freeze
-    VOUCHER_ID = "voucher_id".freeze
-    VOUCHER_ID2 = "-voucher_id".freeze
-    TYPE = "type".freeze
-    TYPE2 = "-type".freeze
-    SOURCE_ID = "source_id".freeze
-    SOURCE_ID2 = "-source_id".freeze
-    REASON = "reason".freeze
-    REASON2 = "-reason".freeze
-    SOURCE = "source".freeze
-    SOURCE2 = "-source".freeze
-    BALANCE = "balance".freeze
-    BALANCE2 = "-balance".freeze
-    AMOUNT = "amount".freeze
-    AMOUNT2 = "-amount".freeze
-    RELATED_TRANSACTION_ID = "related_transaction_id".freeze
-    RELATED_TRANSACTION_ID2 = "-related_transaction_id".freeze
-    CREATED_AT = "created_at".freeze
-    CREATED_AT2 = "-created_at".freeze
-    DETAILS = "details".freeze
-    DETAILS2 = "-details".freeze
+    CREATED_AT = "-created_at".freeze
+    CREATED_AT2 = "created_at".freeze
 
     def self.all_vars
-      @all_vars ||= [ID, ID2, CAMPAIGN_ID, CAMPAIGN_ID2, VOUCHER_ID, VOUCHER_ID2, TYPE, TYPE2, SOURCE_ID, SOURCE_ID2, REASON, REASON2, SOURCE, SOURCE2, BALANCE, BALANCE2, AMOUNT, AMOUNT2, RELATED_TRANSACTION_ID, RELATED_TRANSACTION_ID2, CREATED_AT, CREATED_AT2, DETAILS, DETAILS2].freeze
+      @all_vars ||= [CREATED_AT, CREATED_AT2].freeze
     end
 
     # Builds the enum from string

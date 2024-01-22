@@ -4,7 +4,6 @@ All URIs are relative to *https://api.voucherify.io*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**create_campaign**](PromotionsApi.md#create_campaign) | **POST** /v1/campaigns | Create Campaign |
 | [**create_promotion_stack**](PromotionsApi.md#create_promotion_stack) | **POST** /v1/promotions/{campaignId}/stacks | Create Promotion Stack |
 | [**delete_promotion_stack**](PromotionsApi.md#delete_promotion_stack) | **DELETE** /v1/promotions/{campaignId}/stacks/{stackId} | Delete Promotion Stack |
 | [**delete_promotion_tier**](PromotionsApi.md#delete_promotion_tier) | **DELETE** /v1/promotions/tiers/{promotionTierId} | Delete Promotion Tier |
@@ -16,84 +15,6 @@ All URIs are relative to *https://api.voucherify.io*
 | [**list_promotion_stacks_in_campaign**](PromotionsApi.md#list_promotion_stacks_in_campaign) | **GET** /v1/promotions/{campaignId}/stacks | List Promotion Stacks in Campaign |
 | [**list_promotion_tiers_from_campaign**](PromotionsApi.md#list_promotion_tiers_from_campaign) | **GET** /v1/promotions/{campaignId}/tiers | List Promotion Tiers from Campaign |
 | [**update_promotion_stack**](PromotionsApi.md#update_promotion_stack) | **PUT** /v1/promotions/{campaignId}/stacks/{stackId} | Update Promotion Stack |
-
-
-## create_campaign
-
-> <CampaignsCreateResponseBody> create_campaign(opts)
-
-Create Campaign
-
-Method to create a batch of vouchers aggregated in one campaign. You can choose a variety of voucher types and define a unique pattern for generating codes.   <!-- theme: info -->  > 📘 Global uniqueness > > All campaign codes are unique across the whole project. Voucherify will not allow you to generate 2 campaigns with the same coupon code.   <!-- theme: warning --> > 🚧 Code generation status > > This is an asynchronous action; you can't read or modify a newly created campaign until the code generation is completed. See the `creation_status` field in the <!-- [campaign object](OpenAPI.json/components/schemas/Campaign) -->[campaign object](ref:get-campaign) description.
-
-### Examples
-
-```ruby
-require 'time'
-require 'VoucherifySdk'
-# setup authorization
-VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-App-Id
-  config.api_key['X-App-Id'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Id'] = 'Bearer'
-
-  # Configure API key authorization: X-App-Token
-  config.api_key['X-App-Token'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-App-Token'] = 'Bearer'
-end
-
-api_instance = VoucherifySdk::PromotionsApi.new
-opts = {
-  campaigns_create_request_body: VoucherifySdk::CampaignsCreateDiscountCouponsCampaign.new # CampaignsCreateRequestBody | Specify the details of the campaign that you would like to create.
-}
-
-begin
-  # Create Campaign
-  result = api_instance.create_campaign(opts)
-  p result
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling PromotionsApi->create_campaign: #{e}"
-end
-```
-
-#### Using the create_campaign_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CampaignsCreateResponseBody>, Integer, Hash)> create_campaign_with_http_info(opts)
-
-```ruby
-begin
-  # Create Campaign
-  data, status_code, headers = api_instance.create_campaign_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CampaignsCreateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling PromotionsApi->create_campaign_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **campaigns_create_request_body** | [**CampaignsCreateRequestBody**](CampaignsCreateRequestBody.md) | Specify the details of the campaign that you would like to create. | [optional] |
-
-### Return type
-
-[**CampaignsCreateResponseBody**](CampaignsCreateResponseBody.md)
-
-### Authorization
-
-[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
 
 
 ## create_promotion_stack

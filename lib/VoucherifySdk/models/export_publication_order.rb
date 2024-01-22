@@ -15,25 +15,21 @@ require 'time'
 
 module VoucherifySdk
   class ExportPublicationOrder
-    VOUCHER_CODE = "voucher_code".freeze
-    VOUCHER_CODE2 = "-voucher_code".freeze
-    CUSTOMER_ID = "customer_id".freeze
-    CUSTOMER_ID2 = "-customer_id".freeze
-    CUSTOMER_SOURCE_ID = "customer_source_id".freeze
-    CUSTOMER_SOURCE_ID2 = "-customer_source_id".freeze
-    DATE = "date".freeze
-    DATE2 = "-date".freeze
-    CHANNEL = "channel".freeze
-    CHANNEL2 = "-channel".freeze
-    CAMPAIGN = "campaign".freeze
-    CAMPAIGN2 = "-campaign".freeze
-    IS_WINNER = "is_winner".freeze
-    IS_WINNER2 = "-is_winner".freeze
-    METADATA = "metadata".freeze
-    METADATA2 = "-metadata".freeze
+    ID = "-id".freeze
+    ID2 = "id".freeze
+    VOUCHER_CODE = "-voucher_code".freeze
+    VOUCHER_CODE2 = "voucher_code".freeze
+    TRACKING_ID = "-tracking_id".freeze
+    TRACKING_ID2 = "tracking_id".freeze
+    CUSTOMER_ID = "-customer_id".freeze
+    CUSTOMER_ID2 = "customer_id".freeze
+    CREATED_AT = "-created_at".freeze
+    CREATED_AT2 = "created_at".freeze
+    CHANNEL = "-channel".freeze
+    CHANNEL2 = "channel".freeze
 
     def self.all_vars
-      @all_vars ||= [VOUCHER_CODE, VOUCHER_CODE2, CUSTOMER_ID, CUSTOMER_ID2, CUSTOMER_SOURCE_ID, CUSTOMER_SOURCE_ID2, DATE, DATE2, CHANNEL, CHANNEL2, CAMPAIGN, CAMPAIGN2, IS_WINNER, IS_WINNER2, METADATA, METADATA2].freeze
+      @all_vars ||= [ID, ID2, VOUCHER_CODE, VOUCHER_CODE2, TRACKING_ID, TRACKING_ID2, CUSTOMER_ID, CUSTOMER_ID2, CREATED_AT, CREATED_AT2, CHANNEL, CHANNEL2].freeze
     end
 
     # Builds the enum from string

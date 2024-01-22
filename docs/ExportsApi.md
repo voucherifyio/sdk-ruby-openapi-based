@@ -6,6 +6,7 @@ All URIs are relative to *https://api.voucherify.io*
 | ------ | ------------ | ----------- |
 | [**create_export**](ExportsApi.md#create_export) | **POST** /v1/exports | Create Export |
 | [**delete_export**](ExportsApi.md#delete_export) | **DELETE** /v1/exports/{exportId} | Delete Export |
+| [**download_export**](ExportsApi.md#download_export) | **GET** /v1/exports/{export_Id} | Download Export |
 | [**get_export**](ExportsApi.md#get_export) | **GET** /v1/exports/{exportId} | Get Export |
 | [**list_exports**](ExportsApi.md#list_exports) | **GET** /v1/exports | List Exports |
 
@@ -161,6 +162,74 @@ nil (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+
+## download_export
+
+> String download_export(export_id, opts)
+
+Download Export
+
+Download the contents of the exported CSV file.   <!-- theme: info -->  > 📘 Important notes > > **Base URL:**  > - `https://download.voucherify.io` (Europe)  > - `https://us1.download.voucherify.io` (US)  > - `https://as1.download.voucherify.io` (Asia)  > > **Token:** Can be found within the `result` parameter of the <!-- [Get Export](OpenAPI.json/paths/~1exports~1{exportId}/get) -->[Get Export](ref:get-export) method response.
+
+### Examples
+
+```ruby
+require 'time'
+require 'VoucherifySdk'
+
+api_instance = VoucherifySdk::ExportsApi.new
+export_id = 'exp_ex6zq0x0EEa9S0N68QcqhxcQ' # String | Unique export object ID.
+opts = {
+  token: 'token_example' # String | Token that was issued to the export, to get this token, get the export first
+}
+
+begin
+  # Download Export
+  result = api_instance.download_export(export_id, opts)
+  p result
+rescue VoucherifySdk::ApiError => e
+  puts "Error when calling ExportsApi->download_export: #{e}"
+end
+```
+
+#### Using the download_export_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(String, Integer, Hash)> download_export_with_http_info(export_id, opts)
+
+```ruby
+begin
+  # Download Export
+  data, status_code, headers = api_instance.download_export_with_http_info(export_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => String
+rescue VoucherifySdk::ApiError => e
+  puts "Error when calling ExportsApi->download_export_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **export_id** | **String** | Unique export object ID. |  |
+| **token** | **String** | Token that was issued to the export, to get this token, get the export first | [optional] |
+
+### Return type
+
+**String**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: text/plain
 
 
 ## get_export
