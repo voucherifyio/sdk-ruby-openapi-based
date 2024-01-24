@@ -15,69 +15,21 @@ require 'time'
 
 module VoucherifySdk
   class ExportCustomerOrder
-    NAME = "name".freeze
-    NAME2 = "-name".freeze
-    ID = "id".freeze
-    ID2 = "-id".freeze
-    DESCRIPTION = "description".freeze
-    DESCRIPTION2 = "-description".freeze
-    EMAIL = "email".freeze
-    EMAIL2 = "-email".freeze
-    SOURCE_ID = "source_id".freeze
-    SOURCE_ID2 = "-source_id".freeze
-    CREATED_AT = "created_at".freeze
-    CREATED_AT2 = "-created_at".freeze
-    ADDRESS_CITY = "address_city".freeze
-    ADDRESS_CITY2 = "-address_city".freeze
-    ADDRESS_STATE = "address_state".freeze
-    ADDRESS_STATE2 = "-address_state".freeze
-    ADDRESS_LINE_1 = "address_line_1".freeze
-    ADDRESS_LINE_12 = "-address_line_1".freeze
-    ADDRESS_LINE_2 = "address_line_2".freeze
-    ADDRESS_LINE_22 = "-address_line_2".freeze
-    ADDRESS_COUNTRY = "address_country".freeze
-    ADDRESS_COUNTRY2 = "-address_country".freeze
-    ADDRESS_POSTAL_CODE = "address_postal_code".freeze
-    ADDRESS_POSTAL_CODE2 = "-address_postal_code".freeze
-    REDEMPTIONS_TOTAL_REDEEMED = "redemptions_total_redeemed".freeze
-    REDEMPTIONS_TOTAL_REDEEMED2 = "-redemptions_total_redeemed".freeze
-    REDEMPTIONS_TOTAL_FAILED = "redemptions_total_failed".freeze
-    REDEMPTIONS_TOTAL_FAILED2 = "-redemptions_total_failed".freeze
-    REDEMPTIONS_TOTAL_SUCCEEDED = "redemptions_total_succeeded".freeze
-    REDEMPTIONS_TOTAL_SUCCEEDED2 = "-redemptions_total_succeeded".freeze
-    REDEMPTIONS_TOTAL_ROLLED_BACK = "redemptions_total_rolled_back".freeze
-    REDEMPTIONS_TOTAL_ROLLED_BACK2 = "-redemptions_total_rolled_back".freeze
-    REDEMPTIONS_TOTAL_ROLLBACK_FAILED = "redemptions_total_rollback_failed".freeze
-    REDEMPTIONS_TOTAL_ROLLBACK_FAILED2 = "-redemptions_total_rollback_failed".freeze
-    REDEMPTIONS_TOTAL_ROLLBACK_SUCCEEDED = "redemptions_total_rollback_succeeded".freeze
-    REDEMPTIONS_TOTAL_ROLLBACK_SUCCEEDED2 = "-redemptions_total_rollback_succeeded".freeze
-    ORDERS_TOTAL_AMOUNT = "orders_total_amount".freeze
-    ORDERS_TOTAL_AMOUNT2 = "-orders_total_amount".freeze
-    ORDERS_TOTAL_COUNT = "orders_total_count".freeze
-    ORDERS_TOTAL_COUNT2 = "-orders_total_count".freeze
-    ORDERS_AVERAGE_AMOUNT = "orders_average_amount".freeze
-    ORDERS_AVERAGE_AMOUNT2 = "-orders_average_amount".freeze
-    ORDERS_LAST_ORDER_AMOUNT = "orders_last_order_amount".freeze
-    ORDERS_LAST_ORDER_AMOUNT2 = "-orders_last_order_amount".freeze
-    ORDERS_LAST_ORDER_DATE = "orders_last_order_date".freeze
-    ORDERS_LAST_ORDER_DATE2 = "-orders_last_order_date".freeze
-    LOYALTY_POINTS = "loyalty_points".freeze
-    LOYALTY_POINTS2 = "-loyalty_points".freeze
-    LOYALTY_REFERRED_CUSTOMERS = "loyalty_referred_customers".freeze
-    LOYALTY_REFERRED_CUSTOMERS2 = "-loyalty_referred_customers".freeze
-    UPDATED_AT = "updated_at".freeze
-    UPDATED_AT2 = "-updated_at".freeze
-    PHONE = "phone".freeze
-    PHONE2 = "-phone".freeze
-    BIRTHDAY = "birthday".freeze
-    BIRTHDAY2 = "-birthday".freeze
-    METADATA = "metadata".freeze
-    METADATA2 = "-metadata".freeze
-    BIRTHDATE = "birthdate".freeze
-    BIRTHDATE2 = "-birthdate".freeze
+    NAME = "-name".freeze
+    NAME2 = "name".freeze
+    ID = "-id".freeze
+    ID2 = "id".freeze
+    EMAIL = "-email".freeze
+    EMAIL2 = "email".freeze
+    SOURCE_ID = "-source_id".freeze
+    SOURCE_ID2 = "source_id".freeze
+    CREATED_AT = "-created_at".freeze
+    CREATED_AT2 = "created_at".freeze
+    UPDATED_AT = "-updated_at".freeze
+    UPDATED_AT2 = "updated_at".freeze
 
     def self.all_vars
-      @all_vars ||= [NAME, NAME2, ID, ID2, DESCRIPTION, DESCRIPTION2, EMAIL, EMAIL2, SOURCE_ID, SOURCE_ID2, CREATED_AT, CREATED_AT2, ADDRESS_CITY, ADDRESS_CITY2, ADDRESS_STATE, ADDRESS_STATE2, ADDRESS_LINE_1, ADDRESS_LINE_12, ADDRESS_LINE_2, ADDRESS_LINE_22, ADDRESS_COUNTRY, ADDRESS_COUNTRY2, ADDRESS_POSTAL_CODE, ADDRESS_POSTAL_CODE2, REDEMPTIONS_TOTAL_REDEEMED, REDEMPTIONS_TOTAL_REDEEMED2, REDEMPTIONS_TOTAL_FAILED, REDEMPTIONS_TOTAL_FAILED2, REDEMPTIONS_TOTAL_SUCCEEDED, REDEMPTIONS_TOTAL_SUCCEEDED2, REDEMPTIONS_TOTAL_ROLLED_BACK, REDEMPTIONS_TOTAL_ROLLED_BACK2, REDEMPTIONS_TOTAL_ROLLBACK_FAILED, REDEMPTIONS_TOTAL_ROLLBACK_FAILED2, REDEMPTIONS_TOTAL_ROLLBACK_SUCCEEDED, REDEMPTIONS_TOTAL_ROLLBACK_SUCCEEDED2, ORDERS_TOTAL_AMOUNT, ORDERS_TOTAL_AMOUNT2, ORDERS_TOTAL_COUNT, ORDERS_TOTAL_COUNT2, ORDERS_AVERAGE_AMOUNT, ORDERS_AVERAGE_AMOUNT2, ORDERS_LAST_ORDER_AMOUNT, ORDERS_LAST_ORDER_AMOUNT2, ORDERS_LAST_ORDER_DATE, ORDERS_LAST_ORDER_DATE2, LOYALTY_POINTS, LOYALTY_POINTS2, LOYALTY_REFERRED_CUSTOMERS, LOYALTY_REFERRED_CUSTOMERS2, UPDATED_AT, UPDATED_AT2, PHONE, PHONE2, BIRTHDAY, BIRTHDAY2, METADATA, METADATA2, BIRTHDATE, BIRTHDATE2].freeze
+      @all_vars ||= [NAME, NAME2, ID, ID2, EMAIL, EMAIL2, SOURCE_ID, SOURCE_ID2, CREATED_AT, CREATED_AT2, UPDATED_AT, UPDATED_AT2].freeze
     end
 
     # Builds the enum from string

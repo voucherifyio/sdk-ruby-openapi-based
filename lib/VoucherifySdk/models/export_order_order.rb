@@ -15,35 +15,15 @@ require 'time'
 
 module VoucherifySdk
   class ExportOrderOrder
-    ID = "id".freeze
-    ID2 = "-id".freeze
-    SOURCE_ID = "source_id".freeze
-    SOURCE_ID2 = "-source_id".freeze
-    CREATED_AT = "created_at".freeze
-    CREATED_AT2 = "-created_at".freeze
-    UPDATED_AT = "updated_at".freeze
-    UPDATED_AT2 = "-updated_at".freeze
-    STATUS = "status".freeze
-    STATUS2 = "-status".freeze
-    AMOUNT = "amount".freeze
-    AMOUNT2 = "-amount".freeze
-    DISCOUNT_AMOUNT = "discount_amount".freeze
-    DISCOUNT_AMOUNT2 = "-discount_amount".freeze
-    ITEMS_DISCOUNT_AMOUNT = "items_discount_amount".freeze
-    ITEMS_DISCOUNT_AMOUNT2 = "-items_discount_amount".freeze
-    TOTAL_DISCOUNT_AMOUNT = "total_discount_amount".freeze
-    TOTAL_DISCOUNT_AMOUNT2 = "-total_discount_amount".freeze
-    TOTAL_AMOUNT = "total_amount".freeze
-    TOTAL_AMOUNT2 = "-total_amount".freeze
-    CUSTOMER_ID = "customer_id".freeze
-    CUSTOMER_ID2 = "-customer_id".freeze
-    REFERRER_ID = "referrer_id".freeze
-    REFERRER_ID2 = "-referrer_id".freeze
-    METADATA = "metadata".freeze
-    METADATA2 = "-metadata".freeze
+    CREATED_AT = "-created_at".freeze
+    CREATED_AT2 = "created_at".freeze
+    UPDATED_AT = "-updated_at".freeze
+    UPDATED_AT2 = "updated_at".freeze
+    STATUS = "-status".freeze
+    STATUS2 = "status".freeze
 
     def self.all_vars
-      @all_vars ||= [ID, ID2, SOURCE_ID, SOURCE_ID2, CREATED_AT, CREATED_AT2, UPDATED_AT, UPDATED_AT2, STATUS, STATUS2, AMOUNT, AMOUNT2, DISCOUNT_AMOUNT, DISCOUNT_AMOUNT2, ITEMS_DISCOUNT_AMOUNT, ITEMS_DISCOUNT_AMOUNT2, TOTAL_DISCOUNT_AMOUNT, TOTAL_DISCOUNT_AMOUNT2, TOTAL_AMOUNT, TOTAL_AMOUNT2, CUSTOMER_ID, CUSTOMER_ID2, REFERRER_ID, REFERRER_ID2, METADATA, METADATA2].freeze
+      @all_vars ||= [CREATED_AT, CREATED_AT2, UPDATED_AT, UPDATED_AT2, STATUS, STATUS2].freeze
     end
 
     # Builds the enum from string

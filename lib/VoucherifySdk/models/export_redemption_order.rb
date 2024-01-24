@@ -15,43 +15,19 @@ require 'time'
 
 module VoucherifySdk
   class ExportRedemptionOrder
-    ID = "id".freeze
-    ID2 = "-id".freeze
-    OBJECT = "object".freeze
-    OBJECT2 = "-object".freeze
-    DATE = "date".freeze
-    DATE2 = "-date".freeze
-    VOUCHER_CODE = "voucher_code".freeze
-    VOUCHER_CODE2 = "-voucher_code".freeze
-    CAMPAIGN = "campaign".freeze
-    CAMPAIGN2 = "-campaign".freeze
-    PROMOTION_TIER_ID = "promotion_tier_id".freeze
-    PROMOTION_TIER_ID2 = "-promotion_tier_id".freeze
-    CUSTOMER_ID = "customer_id".freeze
-    CUSTOMER_ID2 = "-customer_id".freeze
-    CUSTOMER_SOURCE_ID = "customer_source_id".freeze
-    CUSTOMER_SOURCE_ID2 = "-customer_source_id".freeze
-    CUSTOMER_NAME = "customer_name".freeze
-    CUSTOMER_NAME2 = "-customer_name".freeze
-    TRACKING_ID = "tracking_id".freeze
-    TRACKING_ID2 = "-tracking_id".freeze
-    ORDER_AMOUNT = "order_amount".freeze
-    ORDER_AMOUNT2 = "-order_amount".freeze
-    GIFT_AMOUNT = "gift_amount".freeze
-    GIFT_AMOUNT2 = "-gift_amount".freeze
-    LOYALTY_POINTS = "loyalty_points".freeze
-    LOYALTY_POINTS2 = "-loyalty_points".freeze
-    RESULT = "result".freeze
-    RESULT2 = "-result".freeze
-    FAILURE_CODE = "failure_code".freeze
-    FAILURE_CODE2 = "-failure_code".freeze
-    FAILURE_MESSAGE = "failure_message".freeze
-    FAILURE_MESSAGE2 = "-failure_message".freeze
-    METADATA = "metadata".freeze
-    METADATA2 = "-metadata".freeze
+    ID = "-id".freeze
+    ID2 = "id".freeze
+    VOUCHER_CODE = "-voucher_code".freeze
+    VOUCHER_CODE2 = "voucher_code".freeze
+    TRACKING_ID = "-tracking_id".freeze
+    TRACKING_ID2 = "tracking_id".freeze
+    CUSTOMER_ID = "-customer_id".freeze
+    CUSTOMER_ID2 = "customer_id".freeze
+    CREATED_AT = "-created_at".freeze
+    CREATED_AT2 = "created_at".freeze
 
     def self.all_vars
-      @all_vars ||= [ID, ID2, OBJECT, OBJECT2, DATE, DATE2, VOUCHER_CODE, VOUCHER_CODE2, CAMPAIGN, CAMPAIGN2, PROMOTION_TIER_ID, PROMOTION_TIER_ID2, CUSTOMER_ID, CUSTOMER_ID2, CUSTOMER_SOURCE_ID, CUSTOMER_SOURCE_ID2, CUSTOMER_NAME, CUSTOMER_NAME2, TRACKING_ID, TRACKING_ID2, ORDER_AMOUNT, ORDER_AMOUNT2, GIFT_AMOUNT, GIFT_AMOUNT2, LOYALTY_POINTS, LOYALTY_POINTS2, RESULT, RESULT2, FAILURE_CODE, FAILURE_CODE2, FAILURE_MESSAGE, FAILURE_MESSAGE2, METADATA, METADATA2].freeze
+      @all_vars ||= [ID, ID2, VOUCHER_CODE, VOUCHER_CODE2, TRACKING_ID, TRACKING_ID2, CUSTOMER_ID, CUSTOMER_ID2, CREATED_AT, CREATED_AT2].freeze
     end
 
     # Builds the enum from string

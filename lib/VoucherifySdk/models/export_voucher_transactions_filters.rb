@@ -17,29 +17,11 @@ module VoucherifySdk
   class ExportVoucherTransactionsFilters
     attr_accessor :junction
 
-    attr_accessor :id
-
-    attr_accessor :campaign_id
+    attr_accessor :created_at
 
     attr_accessor :voucher_id
 
-    attr_accessor :type
-
-    attr_accessor :source_id
-
-    attr_accessor :reason
-
-    attr_accessor :source
-
-    attr_accessor :balance
-
-    attr_accessor :amount
-
-    attr_accessor :related_transaction_id
-
-    attr_accessor :created_at
-
-    attr_accessor :details
+    attr_accessor :campaign_id
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -67,18 +49,9 @@ module VoucherifySdk
     def self.attribute_map
       {
         :'junction' => :'junction',
-        :'id' => :'id',
-        :'campaign_id' => :'campaign_id',
-        :'voucher_id' => :'voucher_id',
-        :'type' => :'type',
-        :'source_id' => :'source_id',
-        :'reason' => :'reason',
-        :'source' => :'source',
-        :'balance' => :'balance',
-        :'amount' => :'amount',
-        :'related_transaction_id' => :'related_transaction_id',
         :'created_at' => :'created_at',
-        :'details' => :'details'
+        :'voucher_id' => :'voucher_id',
+        :'campaign_id' => :'campaign_id'
       }
     end
 
@@ -91,18 +64,9 @@ module VoucherifySdk
     def self.openapi_types
       {
         :'junction' => :'Junction',
-        :'id' => :'FieldConditions',
-        :'campaign_id' => :'FieldConditions',
-        :'voucher_id' => :'FieldConditions',
-        :'type' => :'FieldConditions',
-        :'source_id' => :'FieldConditions',
-        :'reason' => :'FieldConditions',
-        :'source' => :'FieldConditions',
-        :'balance' => :'FieldConditions',
-        :'amount' => :'FieldConditions',
-        :'related_transaction_id' => :'FieldConditions',
         :'created_at' => :'FieldConditions',
-        :'details' => :'FieldConditions'
+        :'voucher_id' => :'FieldConditions',
+        :'campaign_id' => :'FieldConditions'
       }
     end
 
@@ -131,52 +95,16 @@ module VoucherifySdk
         self.junction = attributes[:'junction']
       end
 
-      if attributes.key?(:'id')
-        self.id = attributes[:'id']
-      end
-
-      if attributes.key?(:'campaign_id')
-        self.campaign_id = attributes[:'campaign_id']
+      if attributes.key?(:'created_at')
+        self.created_at = attributes[:'created_at']
       end
 
       if attributes.key?(:'voucher_id')
         self.voucher_id = attributes[:'voucher_id']
       end
 
-      if attributes.key?(:'type')
-        self.type = attributes[:'type']
-      end
-
-      if attributes.key?(:'source_id')
-        self.source_id = attributes[:'source_id']
-      end
-
-      if attributes.key?(:'reason')
-        self.reason = attributes[:'reason']
-      end
-
-      if attributes.key?(:'source')
-        self.source = attributes[:'source']
-      end
-
-      if attributes.key?(:'balance')
-        self.balance = attributes[:'balance']
-      end
-
-      if attributes.key?(:'amount')
-        self.amount = attributes[:'amount']
-      end
-
-      if attributes.key?(:'related_transaction_id')
-        self.related_transaction_id = attributes[:'related_transaction_id']
-      end
-
-      if attributes.key?(:'created_at')
-        self.created_at = attributes[:'created_at']
-      end
-
-      if attributes.key?(:'details')
-        self.details = attributes[:'details']
+      if attributes.key?(:'campaign_id')
+        self.campaign_id = attributes[:'campaign_id']
       end
     end
 
@@ -201,18 +129,9 @@ module VoucherifySdk
       return true if self.equal?(o)
       self.class == o.class &&
           junction == o.junction &&
-          id == o.id &&
-          campaign_id == o.campaign_id &&
-          voucher_id == o.voucher_id &&
-          type == o.type &&
-          source_id == o.source_id &&
-          reason == o.reason &&
-          source == o.source &&
-          balance == o.balance &&
-          amount == o.amount &&
-          related_transaction_id == o.related_transaction_id &&
           created_at == o.created_at &&
-          details == o.details
+          voucher_id == o.voucher_id &&
+          campaign_id == o.campaign_id
     end
 
     # @see the `==` method
@@ -224,7 +143,7 @@ module VoucherifySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [junction, id, campaign_id, voucher_id, type, source_id, reason, source, balance, amount, related_transaction_id, created_at, details].hash
+      [junction, created_at, voucher_id, campaign_id].hash
     end
 
     # Builds the object from hash

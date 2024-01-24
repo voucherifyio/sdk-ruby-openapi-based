@@ -132,6 +132,7 @@ Class | Method | HTTP request | Description
 *VoucherifySdk::EventsApi* | [**track_custom_event_client_side**](docs/EventsApi.md#track_custom_event_client_side) | **POST** /client/v1/events | Track Custom Event (client-side)
 *VoucherifySdk::ExportsApi* | [**create_export**](docs/ExportsApi.md#create_export) | **POST** /v1/exports | Create Export
 *VoucherifySdk::ExportsApi* | [**delete_export**](docs/ExportsApi.md#delete_export) | **DELETE** /v1/exports/{exportId} | Delete Export
+*VoucherifySdk::ExportsApi* | [**download_export**](docs/ExportsApi.md#download_export) | **GET** /v1/exports/{export_Id} | Download Export
 *VoucherifySdk::ExportsApi* | [**get_export**](docs/ExportsApi.md#get_export) | **GET** /v1/exports/{exportId} | Get Export
 *VoucherifySdk::ExportsApi* | [**list_exports**](docs/ExportsApi.md#list_exports) | **GET** /v1/exports | List Exports
 *VoucherifySdk::LoyaltiesApi* | [**create_in_bulk_loyalty_tiers**](docs/LoyaltiesApi.md#create_in_bulk_loyalty_tiers) | **POST** /v1/loyalties/{campaignId}/tiers | Create loyalty tiers
@@ -185,7 +186,6 @@ Class | Method | HTTP request | Description
 *VoucherifySdk::ProductsApi* | [**update_products_in_bulk**](docs/ProductsApi.md#update_products_in_bulk) | **POST** /v1/products/bulk/async | Update Products in bulk
 *VoucherifySdk::ProductsApi* | [**update_products_metadata_in_bulk**](docs/ProductsApi.md#update_products_metadata_in_bulk) | **POST** /v1/products/metadata/async | Update Products' Metadata in bulk
 *VoucherifySdk::ProductsApi* | [**update_sku**](docs/ProductsApi.md#update_sku) | **PUT** /v1/products/{productId}/skus/{skuId} | Update SKU
-*VoucherifySdk::PromotionsApi* | [**create_campaign**](docs/PromotionsApi.md#create_campaign) | **POST** /v1/campaigns | Create Campaign
 *VoucherifySdk::PromotionsApi* | [**create_promotion_stack**](docs/PromotionsApi.md#create_promotion_stack) | **POST** /v1/promotions/{campaignId}/stacks | Create Promotion Stack
 *VoucherifySdk::PromotionsApi* | [**delete_promotion_stack**](docs/PromotionsApi.md#delete_promotion_stack) | **DELETE** /v1/promotions/{campaignId}/stacks/{stackId} | Delete Promotion Stack
 *VoucherifySdk::PromotionsApi* | [**delete_promotion_tier**](docs/PromotionsApi.md#delete_promotion_tier) | **DELETE** /v1/promotions/tiers/{promotionTierId} | Delete Promotion Tier
@@ -482,13 +482,11 @@ Class | Method | HTTP request | Description
  - [VoucherifySdk::ExportCustomerBase](docs/ExportCustomerBase.md)
  - [VoucherifySdk::ExportCustomerBaseParameters](docs/ExportCustomerBaseParameters.md)
  - [VoucherifySdk::ExportCustomerFields](docs/ExportCustomerFields.md)
- - [VoucherifySdk::ExportCustomerFilters](docs/ExportCustomerFilters.md)
  - [VoucherifySdk::ExportCustomerOrder](docs/ExportCustomerOrder.md)
  - [VoucherifySdk::ExportCustomerScheduled](docs/ExportCustomerScheduled.md)
  - [VoucherifySdk::ExportOrder](docs/ExportOrder.md)
  - [VoucherifySdk::ExportOrderBase](docs/ExportOrderBase.md)
  - [VoucherifySdk::ExportOrderFields](docs/ExportOrderFields.md)
- - [VoucherifySdk::ExportOrderFilters](docs/ExportOrderFilters.md)
  - [VoucherifySdk::ExportOrderOrder](docs/ExportOrderOrder.md)
  - [VoucherifySdk::ExportOrderScheduled](docs/ExportOrderScheduled.md)
  - [VoucherifySdk::ExportPointsExpiration](docs/ExportPointsExpiration.md)
@@ -502,14 +500,12 @@ Class | Method | HTTP request | Description
  - [VoucherifySdk::ExportPublicationBase](docs/ExportPublicationBase.md)
  - [VoucherifySdk::ExportPublicationBaseParameters](docs/ExportPublicationBaseParameters.md)
  - [VoucherifySdk::ExportPublicationFields](docs/ExportPublicationFields.md)
- - [VoucherifySdk::ExportPublicationFilters](docs/ExportPublicationFilters.md)
  - [VoucherifySdk::ExportPublicationOrder](docs/ExportPublicationOrder.md)
  - [VoucherifySdk::ExportPublicationScheduled](docs/ExportPublicationScheduled.md)
  - [VoucherifySdk::ExportRedemption](docs/ExportRedemption.md)
  - [VoucherifySdk::ExportRedemptionBase](docs/ExportRedemptionBase.md)
  - [VoucherifySdk::ExportRedemptionBaseParameters](docs/ExportRedemptionBaseParameters.md)
  - [VoucherifySdk::ExportRedemptionFields](docs/ExportRedemptionFields.md)
- - [VoucherifySdk::ExportRedemptionFilters](docs/ExportRedemptionFilters.md)
  - [VoucherifySdk::ExportRedemptionOrder](docs/ExportRedemptionOrder.md)
  - [VoucherifySdk::ExportRedemptionScheduled](docs/ExportRedemptionScheduled.md)
  - [VoucherifySdk::ExportScheduledBase](docs/ExportScheduledBase.md)
@@ -517,7 +513,6 @@ Class | Method | HTTP request | Description
  - [VoucherifySdk::ExportVoucherBase](docs/ExportVoucherBase.md)
  - [VoucherifySdk::ExportVoucherBaseParameters](docs/ExportVoucherBaseParameters.md)
  - [VoucherifySdk::ExportVoucherFields](docs/ExportVoucherFields.md)
- - [VoucherifySdk::ExportVoucherFilters](docs/ExportVoucherFilters.md)
  - [VoucherifySdk::ExportVoucherOrder](docs/ExportVoucherOrder.md)
  - [VoucherifySdk::ExportVoucherScheduled](docs/ExportVoucherScheduled.md)
  - [VoucherifySdk::ExportVoucherTransactions](docs/ExportVoucherTransactions.md)

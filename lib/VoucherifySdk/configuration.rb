@@ -278,25 +278,10 @@ module VoucherifySdk
                 enum_values: [
                   "api",
                   "us1.api",
-                  "as1.api"
-                ]
-              }
-            }
-        },
-        {
-          url: "https://download.voucherify.io",
-          description: "EU Download Export Base URL",
-        },
-        {
-          url: "https://{downloadcluster}.download.voucherify.io",
-          description: "US and AS Download Export Base URL",
-          variables: {
-            downloadcluster: {
-                description: "No description provided",
-                default_value: "us1",
-                enum_values: [
-                  "us1",
-                  "as1"
+                  "as1.api",
+                  "download",
+                  "us1.download",
+                  "as1.download"
                 ]
               }
             }
