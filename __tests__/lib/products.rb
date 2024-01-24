@@ -16,3 +16,14 @@ def create_product(products_api_instance, price)
     return nil
   end
 end
+
+def delete_product(products_api_instance, product_id)
+  begin
+    result = products_api_instance.delete_product(product_id, {
+      force: true
+    })
+    return result
+  rescue VoucherifySdk::ApiError => e
+    return nil
+  end
+end

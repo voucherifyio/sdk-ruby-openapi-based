@@ -28,15 +28,45 @@ module Config
     customers_api_instance = VoucherifySdk::CustomersApi.new()
     exports_api_instance = VoucherifySdk::ExportsApi.new()
     redemptions_api_instance = VoucherifySdk::RedemptionsApi.new()
-    products_api_instance = VoucherifySdk::ProductsApi.new()
-    campaigns_api_instance = VoucherifySdk::CampaignsApi.new()
     validation_rules_api_instance = VoucherifySdk::ValidationRulesApi.new()
     publications_api_instance = VoucherifySdk::PublicationsApi.new()
     qualifications_api_instance = VoucherifySdk::QualificationsApi.new()
     stackable_discounts_api_instance = VoucherifySdk::StackableDiscountsApi.new()
 
     def self.products_api_instance
-        return VoucherifySdk::ProductsApi.new()
+      return VoucherifySdk::ProductsApi.new()
+    end
+
+    def self.campaigns_api_instance
+      return VoucherifySdk::CampaignsApi.new()
+    end
+
+    def self.validation_rules_api_instance
+      return VoucherifySdk::ValidationRulesApi.new()
+    end
+
+    def self.customers_api_instance
+      return VoucherifySdk::CustomersApi.new()
+    end
+
+    def self.exports_api_instance
+      return VoucherifySdk::ExportsApi.new()
+    end
+
+    def self.redemptions_api_instance
+      return VoucherifySdk::RedemptionsApi.new()
+    end
+
+    def self.publications_api_instance
+      return VoucherifySdk::PublicationsApi.new()
+    end
+
+    def self.qualifications_api_instance
+      return VoucherifySdk::QualificationsApi.new()
+    end
+
+    def self.stackable_discounts_api_instance
+      return VoucherifySdk::StackableDiscountsApi.new()
     end
 
     def generate_random_string(length=10)
