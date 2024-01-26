@@ -20,7 +20,7 @@ If you prefer to run tests locally, here are the steps you need to follow.
 1. Go into `root` directory
 2. Follow the steps described in [main README.md](../README.md) for building SDK locally
 3. Run `gem install rspec` command
-4. Go into `__tests__` directory (You should already be there)
+4. Go into `__tests__` directory
 5. Run `rspec ./spec` command
 
 ## Contributing
