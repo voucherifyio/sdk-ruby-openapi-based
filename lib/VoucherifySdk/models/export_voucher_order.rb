@@ -15,69 +15,15 @@ require 'time'
 
 module VoucherifySdk
   class ExportVoucherOrder
-    CODE = "code".freeze
-    CODE2 = "-code".freeze
-    VOUCHER_TYPE = "voucher_type".freeze
-    VOUCHER_TYPE2 = "-voucher_type".freeze
-    VALUE = "value".freeze
-    VALUE2 = "-value".freeze
-    DISCOUNT_TYPE = "discount_type".freeze
-    DISCOUNT_TYPE2 = "-discount_type".freeze
-    CAMPAIGN = "campaign".freeze
-    CAMPAIGN2 = "-campaign".freeze
-    CATEGORY = "category".freeze
-    CATEGORY2 = "-category".freeze
-    START_DATE = "start_date".freeze
-    START_DATE2 = "-start_date".freeze
-    EXPIRATION_DATE = "expiration_date".freeze
-    EXPIRATION_DATE2 = "-expiration_date".freeze
-    GIFT_BALANCE = "gift_balance".freeze
-    GIFT_BALANCE2 = "-gift_balance".freeze
-    LOYALTY_BALANCE = "loyalty_balance".freeze
-    LOYALTY_BALANCE2 = "-loyalty_balance".freeze
-    REDEMPTION_QUANTITY = "redemption_quantity".freeze
-    REDEMPTION_QUANTITY2 = "-redemption_quantity".freeze
-    REDEMPTION_COUNT = "redemption_count".freeze
-    REDEMPTION_COUNT2 = "-redemption_count".freeze
-    ACTIVE = "active".freeze
-    ACTIVE2 = "-active".freeze
-    QR_CODE = "qr_code".freeze
-    QR_CODE2 = "-qr_code".freeze
-    BAR_CODE = "bar_code".freeze
-    BAR_CODE2 = "-bar_code".freeze
-    METADATA = "metadata".freeze
-    METADATA2 = "-metadata".freeze
-    ID = "id".freeze
-    ID2 = "-id".freeze
-    IS_REFERRAL_CODE = "is_referral_code".freeze
-    IS_REFERRAL_CODE2 = "-is_referral_code".freeze
-    CREATED_AT = "created_at".freeze
-    CREATED_AT2 = "-created_at".freeze
-    UPDATED_AT = "updated_at".freeze
-    UPDATED_AT2 = "-updated_at".freeze
-    VALIDITY_TIMEFRAME_INTERVAL = "validity_timeframe_interval".freeze
-    VALIDITY_TIMEFRAME_INTERVAL2 = "-validity_timeframe_interval".freeze
-    VALIDITY_TIMEFRAME_DURATION = "validity_timeframe_duration".freeze
-    VALIDITY_TIMEFRAME_DURATION2 = "-validity_timeframe_duration".freeze
-    VALIDITY_DAY_OF_WEEK = "validity_day_of_week".freeze
-    VALIDITY_DAY_OF_WEEK2 = "-validity_day_of_week".freeze
-    DISCOUNT_AMOUNT_LIMIT = "discount_amount_limit".freeze
-    DISCOUNT_AMOUNT_LIMIT2 = "-discount_amount_limit".freeze
-    CAMPAIGN_ID = "campaign_id".freeze
-    CAMPAIGN_ID2 = "-campaign_id".freeze
-    ADDITIONAL_INFO = "additional_info".freeze
-    ADDITIONAL_INFO2 = "-additional_info".freeze
-    CUSTOMER_ID = "customer_id".freeze
-    CUSTOMER_ID2 = "-customer_id".freeze
-    DISCOUNT_UNIT_TYPE = "discount_unit_type".freeze
-    DISCOUNT_UNIT_TYPE2 = "-discount_unit_type".freeze
-    DISCOUNT_UNIT_EFFECT = "discount_unit_effect".freeze
-    DISCOUNT_UNIT_EFFECT2 = "-discount_unit_effect".freeze
-    CUSTOMER_SOURCE_ID = "customer_source_id".freeze
-    CUSTOMER_SOURCE_ID2 = "-customer_source_id".freeze
+    CREATED_AT = "-created_at".freeze
+    CREATED_AT2 = "created_at".freeze
+    UPDATED_AT = "-updated_at".freeze
+    UPDATED_AT2 = "updated_at".freeze
+    CODE = "-code".freeze
+    CODE2 = "code".freeze
 
     def self.all_vars
-      @all_vars ||= [CODE, CODE2, VOUCHER_TYPE, VOUCHER_TYPE2, VALUE, VALUE2, DISCOUNT_TYPE, DISCOUNT_TYPE2, CAMPAIGN, CAMPAIGN2, CATEGORY, CATEGORY2, START_DATE, START_DATE2, EXPIRATION_DATE, EXPIRATION_DATE2, GIFT_BALANCE, GIFT_BALANCE2, LOYALTY_BALANCE, LOYALTY_BALANCE2, REDEMPTION_QUANTITY, REDEMPTION_QUANTITY2, REDEMPTION_COUNT, REDEMPTION_COUNT2, ACTIVE, ACTIVE2, QR_CODE, QR_CODE2, BAR_CODE, BAR_CODE2, METADATA, METADATA2, ID, ID2, IS_REFERRAL_CODE, IS_REFERRAL_CODE2, CREATED_AT, CREATED_AT2, UPDATED_AT, UPDATED_AT2, VALIDITY_TIMEFRAME_INTERVAL, VALIDITY_TIMEFRAME_INTERVAL2, VALIDITY_TIMEFRAME_DURATION, VALIDITY_TIMEFRAME_DURATION2, VALIDITY_DAY_OF_WEEK, VALIDITY_DAY_OF_WEEK2, DISCOUNT_AMOUNT_LIMIT, DISCOUNT_AMOUNT_LIMIT2, CAMPAIGN_ID, CAMPAIGN_ID2, ADDITIONAL_INFO, ADDITIONAL_INFO2, CUSTOMER_ID, CUSTOMER_ID2, DISCOUNT_UNIT_TYPE, DISCOUNT_UNIT_TYPE2, DISCOUNT_UNIT_EFFECT, DISCOUNT_UNIT_EFFECT2, CUSTOMER_SOURCE_ID, CUSTOMER_SOURCE_ID2].freeze
+      @all_vars ||= [CREATED_AT, CREATED_AT2, UPDATED_AT, UPDATED_AT2, CODE, CODE2].freeze
     end
 
     # Builds the enum from string

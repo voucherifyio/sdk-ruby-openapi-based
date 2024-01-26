@@ -152,7 +152,7 @@ module VoucherifySdk
     # @option opts [Integer] :page Which page of results to return.
     # @option opts [String] :result A filter on the list based on the redemption result. Available options are: &#x60;SUCCESS&#x60;, &#x60;FAILURE&#x60;. You can provide multiple values by repeating the param.
     # @option opts [String] :campaign A filter by the campaign **name** that the redemption resources originate from.
-    # @option opts [String] :customer Return redemptions performed by the customer with given &#x60;id&#x60;.
+    # @option opts [String] :customer Return redemptions performed by the customer with given &#x60;id&#x60; or &#x60;source_id&#x60;.
     # @option opts [ParameterOrderListRedemptions] :order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
     # @option opts [ParameterCreatedBeforeAfter] :created_at A filter on the list based on the object &#x60;created_at&#x60; field. The value is a dictionary with the following options: &#x60;before&#x60;, &#x60;after&#x60;. A date value must be presented in ISO 8601 format (&#x60;2016-11-16T14:14:31Z&#x60; or &#x60;2016-11-16&#x60;). An example: &#x60;[created_at][before]&#x3D;2017-09-08T13:52:18.227Z&#x60;
     # @option opts [ParameterFiltersListRedemptions] :filters Filters for listing responses.
@@ -169,7 +169,7 @@ module VoucherifySdk
     # @option opts [Integer] :page Which page of results to return.
     # @option opts [String] :result A filter on the list based on the redemption result. Available options are: &#x60;SUCCESS&#x60;, &#x60;FAILURE&#x60;. You can provide multiple values by repeating the param.
     # @option opts [String] :campaign A filter by the campaign **name** that the redemption resources originate from.
-    # @option opts [String] :customer Return redemptions performed by the customer with given &#x60;id&#x60;.
+    # @option opts [String] :customer Return redemptions performed by the customer with given &#x60;id&#x60; or &#x60;source_id&#x60;.
     # @option opts [ParameterOrderListRedemptions] :order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
     # @option opts [ParameterCreatedBeforeAfter] :created_at A filter on the list based on the object &#x60;created_at&#x60; field. The value is a dictionary with the following options: &#x60;before&#x60;, &#x60;after&#x60;. A date value must be presented in ISO 8601 format (&#x60;2016-11-16T14:14:31Z&#x60; or &#x60;2016-11-16&#x60;). An example: &#x60;[created_at][before]&#x3D;2017-09-08T13:52:18.227Z&#x60;
     # @option opts [ParameterFiltersListRedemptions] :filters Filters for listing responses.

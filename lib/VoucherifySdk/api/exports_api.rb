@@ -144,6 +144,72 @@ module VoucherifySdk
       return data, status_code, headers
     end
 
+    # Download Export
+    # Download the contents of the exported CSV file.   <!-- theme: info -->  > 📘 Important notes > > **Base URL:**  > - `https://download.voucherify.io` (Europe)  > - `https://us1.download.voucherify.io` (US)  > - `https://as1.download.voucherify.io` (Asia)  > > **Token:** Can be found within the `result` parameter of the <!-- [Get Export](OpenAPI.json/paths/~1exports~1{exportId}/get) -->[Get Export](ref:get-export) method response.
+    # @param export_id [String] Unique export object ID.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :token Token that was issued to the export, to get this token, get the export first
+    # @return [String]
+    def download_export(export_id, opts = {})
+      data, _status_code, _headers = download_export_with_http_info(export_id, opts)
+      data
+    end
+
+    # Download Export
+    # Download the contents of the exported CSV file.   &lt;!-- theme: info --&gt;  &gt; 📘 Important notes &gt; &gt; **Base URL:**  &gt; - &#x60;https://download.voucherify.io&#x60; (Europe)  &gt; - &#x60;https://us1.download.voucherify.io&#x60; (US)  &gt; - &#x60;https://as1.download.voucherify.io&#x60; (Asia)  &gt; &gt; **Token:** Can be found within the &#x60;result&#x60; parameter of the &lt;!-- [Get Export](OpenAPI.json/paths/~1exports~1{exportId}/get) --&gt;[Get Export](ref:get-export) method response.
+    # @param export_id [String] Unique export object ID.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :token Token that was issued to the export, to get this token, get the export first
+    # @return [Array<(String, Integer, Hash)>] String data, response status code and response headers
+    def download_export_with_http_info(export_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ExportsApi.download_export ...'
+      end
+      # verify the required parameter 'export_id' is set
+      if @api_client.config.client_side_validation && export_id.nil?
+        fail ArgumentError, "Missing the required parameter 'export_id' when calling ExportsApi.download_export"
+      end
+      # resource path
+      local_var_path = '/v1/exports/{export_Id}'.sub('{' + 'export_Id' + '}', CGI.escape(export_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'token'] = opts[:'token'] if !opts[:'token'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['text/plain'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'String'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"ExportsApi.download_export",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ExportsApi#download_export\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Get Export
     # Retrieves the URL of the downloadable file, which was generated via the <!-- [Create Export](OpenAPI.json/paths/~1exports/post) -->[Create Export](ref:create-export) method.
     # @param export_id [String] Unique export object ID of previously created export. This object can be a: &#x60;voucher&#x60;, &#x60;redemption&#x60;, &#x60;publication&#x60;, &#x60;customer&#x60;, &#x60;order&#x60;, &#x60;points_expiration&#x60;, or &#x60;voucher_transactions&#x60;.

@@ -21,6 +21,7 @@ module VoucherifySdk
     # Array of strings containing the data in the export. These fields define the headers in the CSV file.
     attr_accessor :fields
 
+    # Allowed additional properties must start with \"metadata.\"
     attr_accessor :filters
 
     class EnumAttributeValidator
@@ -64,7 +65,7 @@ module VoucherifySdk
       {
         :'order' => :'ExportRedemptionOrder',
         :'fields' => :'Array<ExportRedemptionFields>',
-        :'filters' => :'ExportRedemptionFilters'
+        :'filters' => :'Object'
       }
     end
 
