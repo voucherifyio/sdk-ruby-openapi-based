@@ -23,6 +23,8 @@ If you prefer to run tests locally, here are the steps you need to follow.
 4. Go into `__tests__` directory
 5. Run `rspec ./spec` command
 
+**Note that running tests will affect your Voucherify project data. Run tests only on development projects.**
+
 ## Contributing
 
 All new tests should be added to the `spec` directory. 
