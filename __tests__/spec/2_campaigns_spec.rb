@@ -39,22 +39,22 @@ RSpec.describe 'Campaigns API', :order => :defined do
     $created_promotion_campaign = created_promotion_campaign
   end
 
-  it 'create a promotion campaign', :order => :thrid do
+  it 'create a loyalty campaign', :order => :fourth do
     created_loyalty_campaign = create_loyalty_campaign(@campaigns_api_instance)
 
     expect(created_loyalty_campaign).not_to be_nil
 
     $created_loyalty_campaign = created_loyalty_campaign
+    @voucherify_data.set_loyalty_campaign(created_loyalty_campaign)
   end
   
-
-  it 'delete the promotion campaign', :order => :fourth do
+  it 'delete the promotion campaign', :order => :fifth do
     deleted_promotion_campaign = delete_campaign(@campaigns_api_instance, $created_promotion_campaign.id)
 
     expect(deleted_promotion_campaign).not_to be_nil
   end
 
-  it 'create a voucher', :order => :fifth do
+  it 'create a voucher', :order => :sixth do
     created_voucher = @campaigns_api_instance.add_vouchers_to_campaign($created_discount_campaign.id, {
         vouchers_count: 1,
     })
@@ -62,10 +62,18 @@ RSpec.describe 'Campaigns API', :order => :defined do
     expect(created_voucher).not_to be_nil
   end
 
-  it 'create a bundle of vouchers', :order => :sixth do
+  it 'create a bundle of vouchers', :order => :seventh do
     async_action = @campaigns_api_instance.add_vouchers_to_campaign($created_discount_campaign.id, {
         vouchers_count: 5,
     })
     expect(async_action).not_to be_nil
+  end
+
+  it 'create a loyalty card', :order => :sixth do
+    created_loyalty_card = @campaigns_api_instance.add_vouchers_to_campaign($created_loyalty_campaign.id, {
+        vouchers_count: 1,
+    })
+    @voucherify_data.set_loyalty_card(created_loyalty_card)
+    expect(created_loyalty_card).not_to be_nil
   end
 end

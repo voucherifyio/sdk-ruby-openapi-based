@@ -26,14 +26,14 @@ RSpec.describe 'Campaigns API', :order => :defined do
     expect(voucher).not_to be_nil
   end
 
-  it 'update voucher balance', :order => :fourth do
+  it 'update loyalty card balance', :order => :fourth do
     vouchers_balance_update_request_body = VoucherifySdk::VouchersBalanceUpdateRequestBody.new({
         source_id: generate_random_string(),
         amount: 10000,
         reason: "Regular customer"
       })
     
-    response = @vouchers_api_instance.update_voucher_balance(@voucherify_data.get_voucher().code, vouchers_balance_update_request_body)
+    response = @vouchers_api_instance.update_voucher_balance(@voucherify_data.get_loyalty_card().code, vouchers_balance_update_request_body)
 
     expect(response).not_to be_nil
   end

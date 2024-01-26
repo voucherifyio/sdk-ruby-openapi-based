@@ -9,7 +9,9 @@ class VoucherifyData
     @product = nil
     @customer = nil
     @discount_campaign = nil
+    @loyalty_campaign = nil
     @voucher = nil
+    @loyalty_card = nil
   end
 
   def set_discount_campaign(discount_campaign)
@@ -42,5 +44,21 @@ class VoucherifyData
 
   def get_voucher
     @voucher
+  end
+
+  def get_loyalty_campaign
+    @loyalty_campaign
+  end
+
+  def set_loyalty_campaign(loyalty_campaign)
+    @loyalty_campaign = loyalty_campaign
+  end
+
+  def get_loyalty_card
+    @loyalty_card
+  end
+
+  def set_loyalty_card(loyalty_card)
+    @loyalty_card = loyalty_card
   end
 end
