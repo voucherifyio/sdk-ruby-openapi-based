@@ -70,6 +70,17 @@ def create_promotion_campaign(campaigns_api_instance)
     end 
 end
 
+def create_loyalty_campaign(campaigns_api_instance)
+    begin
+        campaign = campaigns_api_instance.create_campaign({
+            campaigns_create_request_body: VoucherifySdk::CampaignsCreateLoyaltyCampaign.new({
+                campaign_type: "LOYALTY_CARD",
+                name: generate_random_string()
+            })
+        })
+    end
+end
+
 def delete_campaign(campaigns_api_instance, campaign_id)
     begin
         result = campaigns_api_instance.delete_campaign(campaign_id)

@@ -12,6 +12,7 @@ RSpec.describe 'Campaigns API', :order => :defined do
   $created_validation_rule = nil
   $created_discount_campaign = nil
   $created_promotion_campaign = nil
+  $created_loyalty_campaign = nil
 
   it 'create a campaign with validation rule', :order => :first do
     created_validation_rule = create_validation_rule(@validation_rules_api_instance, @voucherify_data.get_product.id)
@@ -37,6 +38,15 @@ RSpec.describe 'Campaigns API', :order => :defined do
 
     $created_promotion_campaign = created_promotion_campaign
   end
+
+  it 'create a promotion campaign', :order => :thrid do
+    created_loyalty_campaign = create_loyalty_campaign(@campaigns_api_instance)
+
+    expect(created_loyalty_campaign).not_to be_nil
+
+    $created_loyalty_campaign = created_loyalty_campaign
+  end
+  
 
   it 'delete the promotion campaign', :order => :fourth do
     deleted_promotion_campaign = delete_campaign(@campaigns_api_instance, $created_promotion_campaign.id)
