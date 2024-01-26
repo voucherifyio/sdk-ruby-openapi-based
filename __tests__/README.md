@@ -1,13 +1,13 @@
 ## Introductions
 
-This is the test suite for the Voucherify Ruby SDK, which is based on OpenAPI. 
-Instead of using an automatically generated SDK, the test suite was created manually. 
-The main reason for this is to ensure that the most crucial parts of the SDK are working impeccably.
+This is the test suite for the Voucherify Ruby SDK, which is based on the OpenAPI specification. 
+Instead of relying on an automatically generated SDK tests, this test suite has been manually crafted. 
+The primary reason for this approach is to ensure that the most critical aspects of the SDK function flawlessly.
 
 ## Running tests
 
-We're eagerly advising to run the tests with `Dockerfile` provided in root directory. If You want to run tests locally,
-here are the steps You need to follow:
+We strongly recommend running the tests using the Dockerfile provided in the root directory. 
+If you prefer to run tests locally, here are the steps you need to follow.
 
 ### Requirements 
 
@@ -25,8 +25,9 @@ here are the steps You need to follow:
 
 ## Contributing
 
-All new tests should be added to `spec` directory. This directory should only contain test suits and minimal logic. 
-Place all the advanced in `lib` directory. Maintain the appropriate division of modules and functions and keep the
-indispensable global login in the `voucherify_data.rb` singleton. 
+All new tests should be added to the `spec` directory. 
+This directory is intended exclusively for test suites and should contain minimal logic. 
+Place all advanced logic in the `lib` directory. It's important to maintain an appropriate division of modules and functions. 
+Keep any essential global logic in the `voucherify_data.rb` singleton.
 
-**Remember that in current state of tests suite some tests are dependent on each other. All tests are running in alphanumeric order within the `spec` directory.**
+**Please note that in the current state of the test suite, some tests are interdependent. All tests run in alphanumeric order within the `spec` directory.**
