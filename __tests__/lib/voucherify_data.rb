@@ -12,6 +12,8 @@ class VoucherifyData
     @loyalty_campaign = nil
     @voucher = nil
     @loyalty_card = nil
+    @product_ids = []
+    @sku = nil
   end
 
   def set_discount_campaign(discount_campaign)
@@ -24,6 +26,22 @@ class VoucherifyData
 
   def set_customer(customer)
     @customer = customer
+  end
+
+  def add_product_id(product_id)
+    @product_ids.push(product_id)
+  end
+
+  def get_product_ids
+    @product_ids
+  end
+
+  def set_sku(sku)
+    @sku = sku
+  end
+
+  def get_sku
+    @sku
   end
 
   def set_voucher(voucher)

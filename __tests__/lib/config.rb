@@ -24,15 +24,7 @@ module Config
       # config.api_key_prefix['X-App-Token'] = 'Bearer'
       config.host = ENV['VOUCHERIFY_HOST'] || 'https://api.voucherify.io'
     end
-
-    customers_api_instance = VoucherifySdk::CustomersApi.new()
-    exports_api_instance = VoucherifySdk::ExportsApi.new()
-    redemptions_api_instance = VoucherifySdk::RedemptionsApi.new()
-    validation_rules_api_instance = VoucherifySdk::ValidationRulesApi.new()
-    publications_api_instance = VoucherifySdk::PublicationsApi.new()
-    qualifications_api_instance = VoucherifySdk::QualificationsApi.new()
-    stackable_discounts_api_instance = VoucherifySdk::StackableDiscountsApi.new()
-
+    
     def self.products_api_instance
       return VoucherifySdk::ProductsApi.new()
     end
@@ -71,6 +63,10 @@ module Config
 
     def self.vouchers_api_instance
       return VoucherifySdk::VouchersApi.new()
+    end
+
+    def self.events_api_instance
+      return VoucherifySdk::EventsApi.new()
     end
 
     def generate_random_string(length=10)
