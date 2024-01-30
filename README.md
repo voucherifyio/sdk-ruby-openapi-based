@@ -115,6 +115,11 @@ Class | Method | HTTP request | Description
 *VoucherifySdk::CategoriesApi* | [**get_category**](docs/CategoriesApi.md#get_category) | **GET** /v1/categories/{categoryId} | Get Category
 *VoucherifySdk::CategoriesApi* | [**list_categories**](docs/CategoriesApi.md#list_categories) | **GET** /v1/categories | List Categories
 *VoucherifySdk::CategoriesApi* | [**update_category**](docs/CategoriesApi.md#update_category) | **PUT** /v1/categories/{categoryId} | Update Category
+*VoucherifySdk::ClientSideApi* | [**check_eligibility_client_side**](docs/ClientSideApi.md#check_eligibility_client_side) | **POST** /client/v1/qualifications | Check Eligibility (client-side)
+*VoucherifySdk::ClientSideApi* | [**redeem_stacked_discounts_client_side**](docs/ClientSideApi.md#redeem_stacked_discounts_client_side) | **POST** /client/v1/redemptions | Redeem Stackable Discounts (client-side)
+*VoucherifySdk::ClientSideApi* | [**track_custom_event_client_side**](docs/ClientSideApi.md#track_custom_event_client_side) | **POST** /client/v1/events | Track Custom Event (client-side)
+*VoucherifySdk::ClientSideApi* | [**update_customers_consents_client_side**](docs/ClientSideApi.md#update_customers_consents_client_side) | **PUT** /client/v1/customers/{customerId}/consents | Update Customer's consents (client-side)
+*VoucherifySdk::ClientSideApi* | [**validate_stacked_discounts_client_side**](docs/ClientSideApi.md#validate_stacked_discounts_client_side) | **POST** /client/v1/validations | Validate Stackable Discounts (client-side)
 *VoucherifySdk::CustomersApi* | [**create_customer**](docs/CustomersApi.md#create_customer) | **POST** /v1/customers | Create Customer
 *VoucherifySdk::CustomersApi* | [**customer_permanently_deletion**](docs/CustomersApi.md#customer_permanently_deletion) | **POST** /v1/customers/{customerId}/permanent-deletion | Delete Customer Permanently
 *VoucherifySdk::CustomersApi* | [**delete_customer**](docs/CustomersApi.md#delete_customer) | **DELETE** /v1/customers/{customerId} | Delete Customer
@@ -125,11 +130,9 @@ Class | Method | HTTP request | Description
 *VoucherifySdk::CustomersApi* | [**list_customers**](docs/CustomersApi.md#list_customers) | **GET** /v1/customers | List Customers
 *VoucherifySdk::CustomersApi* | [**update_customer**](docs/CustomersApi.md#update_customer) | **PUT** /v1/customers/{customerId} | Update Customer
 *VoucherifySdk::CustomersApi* | [**update_customers_consents**](docs/CustomersApi.md#update_customers_consents) | **PUT** /v1/customers/{customerId}/consents | Update Customer's consents
-*VoucherifySdk::CustomersApi* | [**update_customers_consents_client_side**](docs/CustomersApi.md#update_customers_consents_client_side) | **PUT** /client/v1/customers/{customerId}/consents | Update Customer's consents (client-side)
 *VoucherifySdk::CustomersApi* | [**update_customers_in_bulk**](docs/CustomersApi.md#update_customers_in_bulk) | **POST** /v1/customers/bulk/async | Update Customers in bulk
 *VoucherifySdk::CustomersApi* | [**update_customers_metadata_in_bulk**](docs/CustomersApi.md#update_customers_metadata_in_bulk) | **POST** /v1/customers/metadata/async | Update Customers' Metadata in bulk
 *VoucherifySdk::EventsApi* | [**track_custom_event**](docs/EventsApi.md#track_custom_event) | **POST** /v1/events | Track Custom Event
-*VoucherifySdk::EventsApi* | [**track_custom_event_client_side**](docs/EventsApi.md#track_custom_event_client_side) | **POST** /client/v1/events | Track Custom Event (client-side)
 *VoucherifySdk::ExportsApi* | [**create_export**](docs/ExportsApi.md#create_export) | **POST** /v1/exports | Create Export
 *VoucherifySdk::ExportsApi* | [**delete_export**](docs/ExportsApi.md#delete_export) | **DELETE** /v1/exports/{exportId} | Delete Export
 *VoucherifySdk::ExportsApi* | [**download_export**](docs/ExportsApi.md#download_export) | **GET** /v1/exports/{export_Id} | Download Export
@@ -201,11 +204,12 @@ Class | Method | HTTP request | Description
 *VoucherifySdk::PublicationsApi* | [**create_publication1**](docs/PublicationsApi.md#create_publication1) | **GET** /v1/publications/create | Create Publication
 *VoucherifySdk::PublicationsApi* | [**list_publications**](docs/PublicationsApi.md#list_publications) | **GET** /v1/publications | List Publications
 *VoucherifySdk::QualificationsApi* | [**check_eligibility**](docs/QualificationsApi.md#check_eligibility) | **POST** /v1/qualifications | Check Eligibility
-*VoucherifySdk::QualificationsApi* | [**check_eligibility_client_side**](docs/QualificationsApi.md#check_eligibility_client_side) | **POST** /client/v1/qualifications | Check Eligibility (client-side)
 *VoucherifySdk::RedemptionsApi* | [**get_redemption**](docs/RedemptionsApi.md#get_redemption) | **GET** /v1/redemptions/{redemptionId} | Get Redemption
 *VoucherifySdk::RedemptionsApi* | [**get_voucher_redemptions**](docs/RedemptionsApi.md#get_voucher_redemptions) | **GET** /v1/vouchers/{code}/redemption | Get Voucher's Redemptions
 *VoucherifySdk::RedemptionsApi* | [**list_redemptions**](docs/RedemptionsApi.md#list_redemptions) | **GET** /v1/redemptions | List Redemptions
+*VoucherifySdk::RedemptionsApi* | [**redeem_stacked_discounts**](docs/RedemptionsApi.md#redeem_stacked_discounts) | **POST** /v1/redemptions | Redeem Stackable Discounts
 *VoucherifySdk::RedemptionsApi* | [**rollback_redemption**](docs/RedemptionsApi.md#rollback_redemption) | **POST** /v1/redemptions/{redemptionId}/rollback | Rollback Redemption
+*VoucherifySdk::RedemptionsApi* | [**rollback_stacked_redemptions**](docs/RedemptionsApi.md#rollback_stacked_redemptions) | **POST** /v1/redemptions/{parentRedemptionId}/rollbacks | Rollback Stackable Redemptions
 *VoucherifySdk::RewardsApi* | [**create_reward_assignment**](docs/RewardsApi.md#create_reward_assignment) | **POST** /v1/rewards/{rewardId}/assignments | Create Reward Assignment
 *VoucherifySdk::RewardsApi* | [**delete_reward**](docs/RewardsApi.md#delete_reward) | **DELETE** /v1/rewards/{rewardId} | Delete Reward
 *VoucherifySdk::RewardsApi* | [**delete_reward_assignment**](docs/RewardsApi.md#delete_reward_assignment) | **DELETE** /v1/rewards/{rewardId}/assignments/{assignmentId} | Delete Reward Assignment
@@ -213,11 +217,6 @@ Class | Method | HTTP request | Description
 *VoucherifySdk::RewardsApi* | [**list_reward_assignments**](docs/RewardsApi.md#list_reward_assignments) | **GET** /v1/rewards/{rewardId}/assignments | List Reward Assignments
 *VoucherifySdk::RewardsApi* | [**update_reward_assignment**](docs/RewardsApi.md#update_reward_assignment) | **PUT** /v1/rewards/{rewardId}/assignments/{assignmentId} | Update Reward Assignment
 *VoucherifySdk::SegmentsApi* | [**delete_segment**](docs/SegmentsApi.md#delete_segment) | **DELETE** /v1/segments/{segmentId} | Delete Segment
-*VoucherifySdk::StackableDiscountsApi* | [**redeem_stacked_discounts**](docs/StackableDiscountsApi.md#redeem_stacked_discounts) | **POST** /v1/redemptions | Redeem Stackable Discounts
-*VoucherifySdk::StackableDiscountsApi* | [**redeem_stacked_discounts_client_side**](docs/StackableDiscountsApi.md#redeem_stacked_discounts_client_side) | **POST** /client/v1/redemptions | Redeem Stackable Discounts (client-side)
-*VoucherifySdk::StackableDiscountsApi* | [**rollback_stacked_redemptions**](docs/StackableDiscountsApi.md#rollback_stacked_redemptions) | **POST** /v1/redemptions/{parentRedemptionId}/rollbacks | Rollback Stackable Redemptions
-*VoucherifySdk::StackableDiscountsApi* | [**validate_stacked_discounts**](docs/StackableDiscountsApi.md#validate_stacked_discounts) | **POST** /v1/validations | Validate Stackable Discounts
-*VoucherifySdk::StackableDiscountsApi* | [**validate_stacked_discounts_client_side**](docs/StackableDiscountsApi.md#validate_stacked_discounts_client_side) | **POST** /client/v1/validations | Validate Stackable Discounts (client-side)
 *VoucherifySdk::ValidationRulesApi* | [**create_validation_rules**](docs/ValidationRulesApi.md#create_validation_rules) | **POST** /v1/validation-rules | Create Validation Rules
 *VoucherifySdk::ValidationRulesApi* | [**delete_validation_rule_assignment**](docs/ValidationRulesApi.md#delete_validation_rule_assignment) | **DELETE** /v1/validation-rules/{validationRuleId}/assignments/{assignmentId} | Delete Validation Rule Assignment
 *VoucherifySdk::ValidationRulesApi* | [**delete_validation_rules**](docs/ValidationRulesApi.md#delete_validation_rules) | **DELETE** /v1/validation-rules/{validationRuleId} | Delete Validation Rule
@@ -226,6 +225,7 @@ Class | Method | HTTP request | Description
 *VoucherifySdk::ValidationRulesApi* | [**list_validation_rules**](docs/ValidationRulesApi.md#list_validation_rules) | **GET** /v1/validation-rules | List Validation Rules
 *VoucherifySdk::ValidationRulesApi* | [**list_validation_rules_assignments**](docs/ValidationRulesApi.md#list_validation_rules_assignments) | **GET** /v1/validation-rules-assignments | List Validation Rules' Assignment(s)
 *VoucherifySdk::ValidationRulesApi* | [**update_validation_rule**](docs/ValidationRulesApi.md#update_validation_rule) | **PUT** /v1/validation-rules/{validationRuleId} | Update Validation Rule
+*VoucherifySdk::ValidationsApi* | [**validate_stacked_discounts**](docs/ValidationsApi.md#validate_stacked_discounts) | **POST** /v1/validations | Validate Stackable Discounts
 *VoucherifySdk::VouchersApi* | [**delete_voucher**](docs/VouchersApi.md#delete_voucher) | **DELETE** /v1/vouchers/{code} | Delete Voucher
 *VoucherifySdk::VouchersApi* | [**disable_voucher**](docs/VouchersApi.md#disable_voucher) | **POST** /v1/vouchers/{code}/disable | Disable Voucher
 *VoucherifySdk::VouchersApi* | [**enable_voucher**](docs/VouchersApi.md#enable_voucher) | **POST** /v1/vouchers/{code}/enable | Enable Voucher

@@ -676,6 +676,7 @@ require 'VoucherifySdk/models/vouchers_transactions_list_response_body'
 # APIs
 require 'VoucherifySdk/api/campaigns_api'
 require 'VoucherifySdk/api/categories_api'
+require 'VoucherifySdk/api/client_side_api'
 require 'VoucherifySdk/api/customers_api'
 require 'VoucherifySdk/api/events_api'
 require 'VoucherifySdk/api/exports_api'
@@ -689,8 +690,8 @@ require 'VoucherifySdk/api/qualifications_api'
 require 'VoucherifySdk/api/redemptions_api'
 require 'VoucherifySdk/api/rewards_api'
 require 'VoucherifySdk/api/segments_api'
-require 'VoucherifySdk/api/stackable_discounts_api'
 require 'VoucherifySdk/api/validation_rules_api'
+require 'VoucherifySdk/api/validations_api'
 require 'VoucherifySdk/api/vouchers_api'
 
 module VoucherifySdk

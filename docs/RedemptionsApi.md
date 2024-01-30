@@ -7,7 +7,9 @@ All URIs are relative to *https://api.voucherify.io*
 | [**get_redemption**](RedemptionsApi.md#get_redemption) | **GET** /v1/redemptions/{redemptionId} | Get Redemption |
 | [**get_voucher_redemptions**](RedemptionsApi.md#get_voucher_redemptions) | **GET** /v1/vouchers/{code}/redemption | Get Voucher&#39;s Redemptions |
 | [**list_redemptions**](RedemptionsApi.md#list_redemptions) | **GET** /v1/redemptions | List Redemptions |
+| [**redeem_stacked_discounts**](RedemptionsApi.md#redeem_stacked_discounts) | **POST** /v1/redemptions | Redeem Stackable Discounts |
 | [**rollback_redemption**](RedemptionsApi.md#rollback_redemption) | **POST** /v1/redemptions/{redemptionId}/rollback | Rollback Redemption |
+| [**rollback_stacked_redemptions**](RedemptionsApi.md#rollback_stacked_redemptions) | **POST** /v1/redemptions/{parentRedemptionId}/rollbacks | Rollback Stackable Redemptions |
 
 
 ## get_redemption
@@ -254,6 +256,84 @@ end
 - **Accept**: application/json
 
 
+## redeem_stacked_discounts
+
+> <RedemptionsRedeemResponseBody> redeem_stacked_discounts(opts)
+
+Redeem Stackable Discounts
+
+## How API returns calculated discounts and order amounts in the response  In the table below, you can see the logic the API follows to calculate discounts and amounts:  | **Field** | **Calculation** | **Description** | |:---|:---|:---| | amount | N/A | This field shows the order amount before applying any discount | | total_amount | `total_amount` = `amount` - `total_discount_amount` | This field shows the order amount after applying all the discounts | | discount_amount | `discount_amount` = `previous_discount_amount` + `applied_discount_amount` | This field sums up all order-level discounts up to and including the specific discount being calculated for the stacked redemption. | | items_discount_amount | sum(items, i => i.discount_amount) | This field sums up all product-specific discounts | | total_discount_amount | `total_discount_amount` = `discount_amount` + `items_discount_amount` | This field sums up all order-level and all product-specific discounts | | applied_discount_amount | N/A | This field shows the order-level discount applied in a particular request | | items_applied_discount_amount | sum(items, i => i.applied_discount_amount) | This field sums up all product-specific discounts applied in a particular request | | total_applied_discount_amount | `total_applied_discount_amount` = `applied_discount_amount` + `items_applied_discount_amount` | This field sums up all order-level and all product-specific discounts applied in a particular request |  <!-- theme: info --> > 📘 Rollbacks > > You can't roll back a child redemption. When you call rollback on a stacked redemption, all child redemptions will be rolled back. You need to refer to a parent redemption ID in your <!-- [rollback request](OpenAPI.json/paths/~1redemptions~1{parentRedemptionId}~1rollbacks/post) -->[rollback request](ref:rollback-stacked-redemptions).      <!-- theme: info --> > 📘 Also available on client-side > > This method is also accessible through public keys which you can use in client-side​ apps: mobile and web browser apps. Go to the dedicated [endpoint](ref:redeem-stacked-discounts-client-side) to learn more. > - Use `X-Client-Application-Id` as the application ID header. > - Use `X-Client-Token` as the appliction secret key header. > - Use client-side base URL. > - Use an `origin` header for your custom domain.
+
+### Examples
+
+```ruby
+require 'time'
+require 'VoucherifySdk'
+# setup authorization
+VoucherifySdk.configure do |config|
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
+
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
+end
+
+api_instance = VoucherifySdk::RedemptionsApi.new
+opts = {
+  redemptions_redeem_request_body: VoucherifySdk::RedemptionsRedeemRequestBody.new({redeemables: [VoucherifySdk::RedeemGiftCard.new({object: 'voucher', id: 'id_example'})]}) # RedemptionsRedeemRequestBody | 
+}
+
+begin
+  # Redeem Stackable Discounts
+  result = api_instance.redeem_stacked_discounts(opts)
+  p result
+rescue VoucherifySdk::ApiError => e
+  puts "Error when calling RedemptionsApi->redeem_stacked_discounts: #{e}"
+end
+```
+
+#### Using the redeem_stacked_discounts_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<RedemptionsRedeemResponseBody>, Integer, Hash)> redeem_stacked_discounts_with_http_info(opts)
+
+```ruby
+begin
+  # Redeem Stackable Discounts
+  data, status_code, headers = api_instance.redeem_stacked_discounts_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <RedemptionsRedeemResponseBody>
+rescue VoucherifySdk::ApiError => e
+  puts "Error when calling RedemptionsApi->redeem_stacked_discounts_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **redemptions_redeem_request_body** | [**RedemptionsRedeemRequestBody**](RedemptionsRedeemRequestBody.md) |  | [optional] |
+
+### Return type
+
+[**RedemptionsRedeemResponseBody**](RedemptionsRedeemResponseBody.md)
+
+### Authorization
+
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## rollback_redemption
 
 > <RedemptionsRollbackCreateResponseBody> rollback_redemption(redemption_id, opts)
@@ -327,6 +407,90 @@ end
 ### Return type
 
 [**RedemptionsRollbackCreateResponseBody**](RedemptionsRollbackCreateResponseBody.md)
+
+### Authorization
+
+[X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## rollback_stacked_redemptions
+
+> <RedemptionsRollbacksCreateResponseBody> rollback_stacked_redemptions(parent_redemption_id, opts)
+
+Rollback Stackable Redemptions
+
+Rollback a stackable redemption. When you rollback a stacked redemption, all child redemptions will be rolled back. Provide the parent redemption ID as the path parameter.
+
+### Examples
+
+```ruby
+require 'time'
+require 'VoucherifySdk'
+# setup authorization
+VoucherifySdk.configure do |config|
+  # Configure API key authorization: X-App-Id
+  config.api_key['X-App-Id'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['X-App-Id'] = 'Bearer'
+
+  # Configure API key authorization: X-App-Token
+  config.api_key['X-App-Token'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['X-App-Token'] = 'Bearer'
+end
+
+api_instance = VoucherifySdk::RedemptionsApi.new
+parent_redemption_id = 'parent_redemption_id_example' # String | Unique identifier of a parent redemption, e.g. `r_JQfm73zWSJFQxs3bGxweYjgm`.
+opts = {
+  reason: 'reason_example', # String | Reason for the rollback.
+  tracking_id: 'tracking_id_example', # String | Customer's `source_id`.
+  redemptions_rollbacks_create_request_body: VoucherifySdk::RedemptionsRollbacksCreateRequestBody.new # RedemptionsRollbacksCreateRequestBody | Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body.
+}
+
+begin
+  # Rollback Stackable Redemptions
+  result = api_instance.rollback_stacked_redemptions(parent_redemption_id, opts)
+  p result
+rescue VoucherifySdk::ApiError => e
+  puts "Error when calling RedemptionsApi->rollback_stacked_redemptions: #{e}"
+end
+```
+
+#### Using the rollback_stacked_redemptions_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<RedemptionsRollbacksCreateResponseBody>, Integer, Hash)> rollback_stacked_redemptions_with_http_info(parent_redemption_id, opts)
+
+```ruby
+begin
+  # Rollback Stackable Redemptions
+  data, status_code, headers = api_instance.rollback_stacked_redemptions_with_http_info(parent_redemption_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <RedemptionsRollbacksCreateResponseBody>
+rescue VoucherifySdk::ApiError => e
+  puts "Error when calling RedemptionsApi->rollback_stacked_redemptions_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **parent_redemption_id** | **String** | Unique identifier of a parent redemption, e.g. &#x60;r_JQfm73zWSJFQxs3bGxweYjgm&#x60;. |  |
+| **reason** | **String** | Reason for the rollback. | [optional] |
+| **tracking_id** | **String** | Customer&#39;s &#x60;source_id&#x60;. | [optional] |
+| **redemptions_rollbacks_create_request_body** | [**RedemptionsRollbacksCreateRequestBody**](RedemptionsRollbacksCreateRequestBody.md) | Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body. | [optional] |
+
+### Return type
+
+[**RedemptionsRollbacksCreateResponseBody**](RedemptionsRollbacksCreateResponseBody.md)
 
 ### Authorization
 

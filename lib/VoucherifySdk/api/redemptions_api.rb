@@ -238,6 +238,70 @@ module VoucherifySdk
       return data, status_code, headers
     end
 
+    # Redeem Stackable Discounts
+    # ## How API returns calculated discounts and order amounts in the response  In the table below, you can see the logic the API follows to calculate discounts and amounts:  | **Field** | **Calculation** | **Description** | |:---|:---|:---| | amount | N/A | This field shows the order amount before applying any discount | | total_amount | `total_amount` = `amount` - `total_discount_amount` | This field shows the order amount after applying all the discounts | | discount_amount | `discount_amount` = `previous_discount_amount` + `applied_discount_amount` | This field sums up all order-level discounts up to and including the specific discount being calculated for the stacked redemption. | | items_discount_amount | sum(items, i => i.discount_amount) | This field sums up all product-specific discounts | | total_discount_amount | `total_discount_amount` = `discount_amount` + `items_discount_amount` | This field sums up all order-level and all product-specific discounts | | applied_discount_amount | N/A | This field shows the order-level discount applied in a particular request | | items_applied_discount_amount | sum(items, i => i.applied_discount_amount) | This field sums up all product-specific discounts applied in a particular request | | total_applied_discount_amount | `total_applied_discount_amount` = `applied_discount_amount` + `items_applied_discount_amount` | This field sums up all order-level and all product-specific discounts applied in a particular request |  <!-- theme: info --> > 📘 Rollbacks > > You can't roll back a child redemption. When you call rollback on a stacked redemption, all child redemptions will be rolled back. You need to refer to a parent redemption ID in your <!-- [rollback request](OpenAPI.json/paths/~1redemptions~1{parentRedemptionId}~1rollbacks/post) -->[rollback request](ref:rollback-stacked-redemptions).      <!-- theme: info --> > 📘 Also available on client-side > > This method is also accessible through public keys which you can use in client-side​ apps: mobile and web browser apps. Go to the dedicated [endpoint](ref:redeem-stacked-discounts-client-side) to learn more. > - Use `X-Client-Application-Id` as the application ID header. > - Use `X-Client-Token` as the appliction secret key header. > - Use client-side base URL. > - Use an `origin` header for your custom domain.
+    # @param [Hash] opts the optional parameters
+    # @option opts [RedemptionsRedeemRequestBody] :redemptions_redeem_request_body 
+    # @return [RedemptionsRedeemResponseBody]
+    def redeem_stacked_discounts(opts = {})
+      data, _status_code, _headers = redeem_stacked_discounts_with_http_info(opts)
+      data
+    end
+
+    # Redeem Stackable Discounts
+    # ## How API returns calculated discounts and order amounts in the response  In the table below, you can see the logic the API follows to calculate discounts and amounts:  | **Field** | **Calculation** | **Description** | |:---|:---|:---| | amount | N/A | This field shows the order amount before applying any discount | | total_amount | &#x60;total_amount&#x60; &#x3D; &#x60;amount&#x60; - &#x60;total_discount_amount&#x60; | This field shows the order amount after applying all the discounts | | discount_amount | &#x60;discount_amount&#x60; &#x3D; &#x60;previous_discount_amount&#x60; + &#x60;applied_discount_amount&#x60; | This field sums up all order-level discounts up to and including the specific discount being calculated for the stacked redemption. | | items_discount_amount | sum(items, i &#x3D;&gt; i.discount_amount) | This field sums up all product-specific discounts | | total_discount_amount | &#x60;total_discount_amount&#x60; &#x3D; &#x60;discount_amount&#x60; + &#x60;items_discount_amount&#x60; | This field sums up all order-level and all product-specific discounts | | applied_discount_amount | N/A | This field shows the order-level discount applied in a particular request | | items_applied_discount_amount | sum(items, i &#x3D;&gt; i.applied_discount_amount) | This field sums up all product-specific discounts applied in a particular request | | total_applied_discount_amount | &#x60;total_applied_discount_amount&#x60; &#x3D; &#x60;applied_discount_amount&#x60; + &#x60;items_applied_discount_amount&#x60; | This field sums up all order-level and all product-specific discounts applied in a particular request |  &lt;!-- theme: info --&gt; &gt; 📘 Rollbacks &gt; &gt; You can&#39;t roll back a child redemption. When you call rollback on a stacked redemption, all child redemptions will be rolled back. You need to refer to a parent redemption ID in your &lt;!-- [rollback request](OpenAPI.json/paths/~1redemptions~1{parentRedemptionId}~1rollbacks/post) --&gt;[rollback request](ref:rollback-stacked-redemptions).      &lt;!-- theme: info --&gt; &gt; 📘 Also available on client-side &gt; &gt; This method is also accessible through public keys which you can use in client-side​ apps: mobile and web browser apps. Go to the dedicated [endpoint](ref:redeem-stacked-discounts-client-side) to learn more. &gt; - Use &#x60;X-Client-Application-Id&#x60; as the application ID header. &gt; - Use &#x60;X-Client-Token&#x60; as the appliction secret key header. &gt; - Use client-side base URL. &gt; - Use an &#x60;origin&#x60; header for your custom domain.
+    # @param [Hash] opts the optional parameters
+    # @option opts [RedemptionsRedeemRequestBody] :redemptions_redeem_request_body 
+    # @return [Array<(RedemptionsRedeemResponseBody, Integer, Hash)>] RedemptionsRedeemResponseBody data, response status code and response headers
+    def redeem_stacked_discounts_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: RedemptionsApi.redeem_stacked_discounts ...'
+      end
+      # resource path
+      local_var_path = '/v1/redemptions'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'redemptions_redeem_request_body'])
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'RedemptionsRedeemResponseBody'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
+
+      new_options = opts.merge(
+        :operation => :"RedemptionsApi.redeem_stacked_discounts",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: RedemptionsApi#redeem_stacked_discounts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Rollback Redemption
     # Your business logic may include a case when you need to undo a redemption. You can revert a redemption by calling this API endpoint.    ## Effect  The operation  - creates a rollback entry in voucher's redemption history (`redemption.redemption_entries`) and  - gives 1 redemption back to the pool (decreases `redeemed_quantity` by 1).  ## Returned funds  In case of *gift card vouchers*, this method returns funds back according to the source redemption. In case of *loyalty card vouchers*, this method returns points back according to the source redemption.
     # @param redemption_id [String] The original redemption ID to be rolled back (undone).
@@ -310,6 +374,82 @@ module VoucherifySdk
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: RedemptionsApi#rollback_redemption\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Rollback Stackable Redemptions
+    # Rollback a stackable redemption. When you rollback a stacked redemption, all child redemptions will be rolled back. Provide the parent redemption ID as the path parameter.
+    # @param parent_redemption_id [String] Unique identifier of a parent redemption, e.g. &#x60;r_JQfm73zWSJFQxs3bGxweYjgm&#x60;.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :reason Reason for the rollback.
+    # @option opts [String] :tracking_id Customer&#39;s &#x60;source_id&#x60;.
+    # @option opts [RedemptionsRollbacksCreateRequestBody] :redemptions_rollbacks_create_request_body Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body.
+    # @return [RedemptionsRollbacksCreateResponseBody]
+    def rollback_stacked_redemptions(parent_redemption_id, opts = {})
+      data, _status_code, _headers = rollback_stacked_redemptions_with_http_info(parent_redemption_id, opts)
+      data
+    end
+
+    # Rollback Stackable Redemptions
+    # Rollback a stackable redemption. When you rollback a stacked redemption, all child redemptions will be rolled back. Provide the parent redemption ID as the path parameter.
+    # @param parent_redemption_id [String] Unique identifier of a parent redemption, e.g. &#x60;r_JQfm73zWSJFQxs3bGxweYjgm&#x60;.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :reason Reason for the rollback.
+    # @option opts [String] :tracking_id Customer&#39;s &#x60;source_id&#x60;.
+    # @option opts [RedemptionsRollbacksCreateRequestBody] :redemptions_rollbacks_create_request_body Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body.
+    # @return [Array<(RedemptionsRollbacksCreateResponseBody, Integer, Hash)>] RedemptionsRollbacksCreateResponseBody data, response status code and response headers
+    def rollback_stacked_redemptions_with_http_info(parent_redemption_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: RedemptionsApi.rollback_stacked_redemptions ...'
+      end
+      # verify the required parameter 'parent_redemption_id' is set
+      if @api_client.config.client_side_validation && parent_redemption_id.nil?
+        fail ArgumentError, "Missing the required parameter 'parent_redemption_id' when calling RedemptionsApi.rollback_stacked_redemptions"
+      end
+      # resource path
+      local_var_path = '/v1/redemptions/{parentRedemptionId}/rollbacks'.sub('{' + 'parentRedemptionId' + '}', CGI.escape(parent_redemption_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'reason'] = opts[:'reason'] if !opts[:'reason'].nil?
+      query_params[:'tracking_id'] = opts[:'tracking_id'] if !opts[:'tracking_id'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'redemptions_rollbacks_create_request_body'])
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'RedemptionsRollbacksCreateResponseBody'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
+
+      new_options = opts.merge(
+        :operation => :"RedemptionsApi.rollback_stacked_redemptions",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: RedemptionsApi#rollback_stacked_redemptions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

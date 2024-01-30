@@ -14,7 +14,6 @@ All URIs are relative to *https://api.voucherify.io*
 | [**list_customers**](CustomersApi.md#list_customers) | **GET** /v1/customers | List Customers |
 | [**update_customer**](CustomersApi.md#update_customer) | **PUT** /v1/customers/{customerId} | Update Customer |
 | [**update_customers_consents**](CustomersApi.md#update_customers_consents) | **PUT** /v1/customers/{customerId}/consents | Update Customer&#39;s consents |
-| [**update_customers_consents_client_side**](CustomersApi.md#update_customers_consents_client_side) | **PUT** /client/v1/customers/{customerId}/consents | Update Customer&#39;s consents (client-side) |
 | [**update_customers_in_bulk**](CustomersApi.md#update_customers_in_bulk) | **POST** /v1/customers/bulk/async | Update Customers in bulk |
 | [**update_customers_metadata_in_bulk**](CustomersApi.md#update_customers_metadata_in_bulk) | **POST** /v1/customers/metadata/async | Update Customers&#39; Metadata in bulk |
 
@@ -824,85 +823,6 @@ nil (empty response body)
 ### Authorization
 
 [X-App-Id](../README.md#X-App-Id), [X-App-Token](../README.md#X-App-Token)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-
-## update_customers_consents_client_side
-
-> update_customers_consents_client_side(customer_id, opts)
-
-Update Customer's consents (client-side)
-
-Update marketing permissions for the specified customer.
-
-### Examples
-
-```ruby
-require 'time'
-require 'VoucherifySdk'
-# setup authorization
-VoucherifySdk.configure do |config|
-  # Configure API key authorization: X-Client-Application-Id
-  config.api_key['X-Client-Application-Id'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-Client-Application-Id'] = 'Bearer'
-
-  # Configure API key authorization: X-Client-Token
-  config.api_key['X-Client-Token'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-Client-Token'] = 'Bearer'
-end
-
-api_instance = VoucherifySdk::CustomersApi.new
-customer_id = 'customer_id_example' # String | A Voucherify customer identifier or `source_id`
-opts = {
-  body: { ... } # Object | Key-value pairs where the key is the consent identifier and value is a boolean that identifies if a customer has given the consent or not. To deny all consents use \"unsubscribed\" as a consent identifier and \"true\" as its value.    #### Examples  <!-- title: \"Request Body\" lineNumbers: true --> ```json {     \"cnst_aIdUulAh0SCsOCaS3005y7yS\": true,     \"cnst_aIdUulAhwewqaS31213fdsfds\": false } ```  Opt-out from all communication:  <!-- title: \"Request Body\" lineNumbers: true --> ```json {     \"unsubscribed\": true } ```
-}
-
-begin
-  # Update Customer's consents (client-side)
-  api_instance.update_customers_consents_client_side(customer_id, opts)
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling CustomersApi->update_customers_consents_client_side: #{e}"
-end
-```
-
-#### Using the update_customers_consents_client_side_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> update_customers_consents_client_side_with_http_info(customer_id, opts)
-
-```ruby
-begin
-  # Update Customer's consents (client-side)
-  data, status_code, headers = api_instance.update_customers_consents_client_side_with_http_info(customer_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling CustomersApi->update_customers_consents_client_side_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **customer_id** | **String** | A Voucherify customer identifier or &#x60;source_id&#x60; |  |
-| **body** | **Object** | Key-value pairs where the key is the consent identifier and value is a boolean that identifies if a customer has given the consent or not. To deny all consents use \&quot;unsubscribed\&quot; as a consent identifier and \&quot;true\&quot; as its value.    #### Examples  &lt;!-- title: \&quot;Request Body\&quot; lineNumbers: true --&gt; &#x60;&#x60;&#x60;json {     \&quot;cnst_aIdUulAh0SCsOCaS3005y7yS\&quot;: true,     \&quot;cnst_aIdUulAhwewqaS31213fdsfds\&quot;: false } &#x60;&#x60;&#x60;  Opt-out from all communication:  &lt;!-- title: \&quot;Request Body\&quot; lineNumbers: true --&gt; &#x60;&#x60;&#x60;json {     \&quot;unsubscribed\&quot;: true } &#x60;&#x60;&#x60; | [optional] |
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[X-Client-Application-Id](../README.md#X-Client-Application-Id), [X-Client-Token](../README.md#X-Client-Token)
 
 ### HTTP request headers
 
