@@ -10,21 +10,12 @@ dotenv_path = File.join(parent_directory, '.env')
 Dotenv.load(dotenv_path)
 
 module Config
-
-    # setup authorization
     VoucherifySdk.configure do |config|
-      # Configure API key authorization: X-App-Id
       config.api_key['X-App-Id'] = ENV['X_APP_ID']
-      # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-      # config.api_key_prefix['X-App-Id'] = 'Bearer'
-
-      # Configure API key authorization: X-App-Token
       config.api_key['X-App-Token'] = ENV['X_APP_TOKEN']
-      # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-      # config.api_key_prefix['X-App-Token'] = 'Bearer'
       config.host = ENV['VOUCHERIFY_HOST'] || 'https://api.voucherify.io'
     end
-    
+
     def self.products_api_instance
       return VoucherifySdk::ProductsApi.new()
     end
