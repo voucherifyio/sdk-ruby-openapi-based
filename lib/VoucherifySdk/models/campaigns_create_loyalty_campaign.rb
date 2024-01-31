@@ -241,7 +241,7 @@ module VoucherifySdk
       if attributes.key?(:'campaign_type')
         self.campaign_type = attributes[:'campaign_type']
       else
-        self.campaign_type = 'LOYALTY_CARD'
+        self.campaign_type = 'LOYALTY_PROGRAM'
       end
 
       if attributes.key?(:'voucher')
@@ -268,7 +268,7 @@ module VoucherifySdk
       type_validator = EnumAttributeValidator.new('String', ["AUTO_UPDATE", "STATIC"])
       return false unless type_validator.valid?(@type)
       return false if !@validation_rules.nil? && @validation_rules.length > 1
-      campaign_type_validator = EnumAttributeValidator.new('String', ["LOYALTY_CARD"])
+      campaign_type_validator = EnumAttributeValidator.new('String', ["LOYALTY_PROGRAM"])
       return false unless campaign_type_validator.valid?(@campaign_type)
       true
     end
@@ -300,7 +300,7 @@ module VoucherifySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] campaign_type Object to be assigned
     def campaign_type=(campaign_type)
-      validator = EnumAttributeValidator.new('String', ["LOYALTY_CARD"])
+      validator = EnumAttributeValidator.new('String', ["LOYALTY_PROGRAM"])
       unless validator.valid?(campaign_type)
         fail ArgumentError, "invalid value for \"campaign_type\", must be one of #{validator.allowable_values}."
       end

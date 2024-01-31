@@ -35,8 +35,6 @@ module VoucherifySdk
 
     attr_accessor :session
 
-    attr_accessor :stacking_rules
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -46,8 +44,7 @@ module VoucherifySdk
         :'inapplicable_redeemables' => :'inapplicable_redeemables',
         :'order' => :'order',
         :'tracking_id' => :'tracking_id',
-        :'session' => :'session',
-        :'stacking_rules' => :'stacking_rules'
+        :'session' => :'session'
       }
     end
 
@@ -65,8 +62,7 @@ module VoucherifySdk
         :'inapplicable_redeemables' => :'Array<ValidationsRedeemableInapplicable>',
         :'order' => :'OrderCalculated',
         :'tracking_id' => :'String',
-        :'session' => :'Session',
-        :'stacking_rules' => :'StackingRules'
+        :'session' => :'Session'
       }
     end
 
@@ -128,10 +124,6 @@ module VoucherifySdk
       if attributes.key?(:'session')
         self.session = attributes[:'session']
       end
-
-      if attributes.key?(:'stacking_rules')
-        self.stacking_rules = attributes[:'stacking_rules']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -170,8 +162,7 @@ module VoucherifySdk
           inapplicable_redeemables == o.inapplicable_redeemables &&
           order == o.order &&
           tracking_id == o.tracking_id &&
-          session == o.session &&
-          stacking_rules == o.stacking_rules
+          session == o.session
     end
 
     # @see the `==` method
@@ -183,7 +174,7 @@ module VoucherifySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [valid, redeemables, skipped_redeemables, inapplicable_redeemables, order, tracking_id, session, stacking_rules].hash
+      [valid, redeemables, skipped_redeemables, inapplicable_redeemables, order, tracking_id, session].hash
     end
 
     # Builds the object from hash

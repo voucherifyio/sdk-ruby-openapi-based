@@ -11,5 +11,4 @@
 | **order** | [**OrderCalculated**](OrderCalculated.md) |  | [optional] |
 | **tracking_id** | **String** | Hashed customer source ID. | [optional] |
 | **session** | [**Session**](Session.md) |  | [optional] |
-| **stacking_rules** | [**StackingRules**](StackingRules.md) |  | [optional] |
 

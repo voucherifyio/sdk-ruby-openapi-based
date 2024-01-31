@@ -14,21 +14,17 @@ require 'date'
 require 'time'
 
 module VoucherifySdk
-  # A set of filters to return only a specific category or type of redeemable.
-  class QualificationsOptionFilters
-    attr_accessor :junction
+  # Data filters used to narrow the data records to be returned in the result.
+  class QualificationsOptionFiltersResourceTypeConditions
+    attr_accessor :is
 
-    attr_accessor :category_id
+    attr_accessor :is_not
 
-    attr_accessor :campaign_id
+    # Array of qualified redeemables. Accepts more than one value. Returns the resource types entered in the array.
+    attr_accessor :_in
 
-    attr_accessor :resource_id
-
-    attr_accessor :resource_type
-
-    attr_accessor :voucher_type
-
-    attr_accessor :code
+    # Array of qualified redeemables. Accepts more than one value. Returns the resource types except those entered in the array.
+    attr_accessor :not_in
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -55,13 +51,10 @@ module VoucherifySdk
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'junction' => :'junction',
-        :'category_id' => :'category_id',
-        :'campaign_id' => :'campaign_id',
-        :'resource_id' => :'resource_id',
-        :'resource_type' => :'resource_type',
-        :'voucher_type' => :'voucher_type',
-        :'code' => :'code'
+        :'is' => :'$is',
+        :'is_not' => :'$is_not',
+        :'_in' => :'$in',
+        :'not_in' => :'$not_in'
       }
     end
 
@@ -73,13 +66,10 @@ module VoucherifySdk
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'junction' => :'Junction',
-        :'category_id' => :'QualificationsFieldConditions',
-        :'campaign_id' => :'QualificationsFieldConditions',
-        :'resource_id' => :'QualificationsFieldConditions',
-        :'resource_type' => :'QualificationsOptionFiltersResourceType',
-        :'voucher_type' => :'QualificationsFieldConditions',
-        :'code' => :'QualificationsFieldConditions'
+        :'is' => :'ResourceTypes',
+        :'is_not' => :'ResourceTypes',
+        :'_in' => :'Array<ResourceTypes>',
+        :'not_in' => :'Array<ResourceTypes>'
       }
     end
 
@@ -93,43 +83,35 @@ module VoucherifySdk
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `VoucherifySdk::QualificationsOptionFilters` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `VoucherifySdk::QualificationsOptionFiltersResourceTypeConditions` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `VoucherifySdk::QualificationsOptionFilters`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `VoucherifySdk::QualificationsOptionFiltersResourceTypeConditions`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'junction')
-        self.junction = attributes[:'junction']
+      if attributes.key?(:'is')
+        self.is = attributes[:'is']
       end
 
-      if attributes.key?(:'category_id')
-        self.category_id = attributes[:'category_id']
+      if attributes.key?(:'is_not')
+        self.is_not = attributes[:'is_not']
       end
 
-      if attributes.key?(:'campaign_id')
-        self.campaign_id = attributes[:'campaign_id']
+      if attributes.key?(:'_in')
+        if (value = attributes[:'_in']).is_a?(Array)
+          self._in = value
+        end
       end
 
-      if attributes.key?(:'resource_id')
-        self.resource_id = attributes[:'resource_id']
-      end
-
-      if attributes.key?(:'resource_type')
-        self.resource_type = attributes[:'resource_type']
-      end
-
-      if attributes.key?(:'voucher_type')
-        self.voucher_type = attributes[:'voucher_type']
-      end
-
-      if attributes.key?(:'code')
-        self.code = attributes[:'code']
+      if attributes.key?(:'not_in')
+        if (value = attributes[:'not_in']).is_a?(Array)
+          self.not_in = value
+        end
       end
     end
 
@@ -153,13 +135,10 @@ module VoucherifySdk
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          junction == o.junction &&
-          category_id == o.category_id &&
-          campaign_id == o.campaign_id &&
-          resource_id == o.resource_id &&
-          resource_type == o.resource_type &&
-          voucher_type == o.voucher_type &&
-          code == o.code
+          is == o.is &&
+          is_not == o.is_not &&
+          _in == o._in &&
+          not_in == o.not_in
     end
 
     # @see the `==` method
@@ -171,7 +150,7 @@ module VoucherifySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [junction, category_id, campaign_id, resource_id, resource_type, voucher_type, code].hash
+      [is, is_not, _in, not_in].hash
     end
 
     # Builds the object from hash
