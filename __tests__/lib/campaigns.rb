@@ -74,7 +74,7 @@ def create_loyalty_campaign(campaigns_api_instance)
     begin
         campaign = campaigns_api_instance.create_campaign({
             campaigns_create_request_body: VoucherifySdk::CampaignsCreateLoyaltyCampaign.new({
-                campaign_type: "LOYALTY_PROGRAM",
+                campaign_type: "LOYALTY_CARD",
                 name: generate_random_string(),
                 voucher: VoucherifySdk::CampaignLoyaltyVoucher.new({
                     type: "LOYALTY_CARD",
