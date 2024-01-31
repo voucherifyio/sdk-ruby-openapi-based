@@ -36,7 +36,7 @@ def create_discount_campaign(campaigns_api_instance, validation_rule_id)
                     })
                 }),
                 validation_rules: [validation_rule_id]
-            })    
+            })
         })
 
         return campaign
@@ -67,14 +67,14 @@ def create_promotion_campaign(campaigns_api_instance)
         })
 
         return campaign
-    end 
+    end
 end
 
 def create_loyalty_campaign(campaigns_api_instance)
     begin
         campaign = campaigns_api_instance.create_campaign({
             campaigns_create_request_body: VoucherifySdk::CampaignsCreateLoyaltyCampaign.new({
-                campaign_type: "LOYALTY_CARD",
+                campaign_type: "LOYALTY_PROGRAM",
                 name: generate_random_string(),
                 voucher: VoucherifySdk::CampaignLoyaltyVoucher.new({
                     type: "LOYALTY_CARD",
@@ -96,6 +96,6 @@ def delete_campaign(campaigns_api_instance, campaign_id)
         return nil
     end
 end
-        
-        
+
+
 
