@@ -2,7 +2,7 @@ require_relative '../lib/config.rb'
 require_relative '../lib/voucherify_data.rb'
 require_relative '../lib/stackables.rb'
 
-RSpec.describe 'Stackables API', :order => :defined do
+RSpec.describe 'Redemptions API', :order => :defined do
   before(:each) do
     @redemptions_api_instance = Config.redemptions_api_instance()
     @voucherify_data = VoucherifyData.instance()
