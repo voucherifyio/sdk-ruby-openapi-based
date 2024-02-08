@@ -48,5 +48,3 @@ build/
 /test-requirements.txt
 /.env
 /.idea/
-.rubocop.yml
-

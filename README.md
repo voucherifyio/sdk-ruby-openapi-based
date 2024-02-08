@@ -40,19 +40,19 @@ gem install voucherify
 
 ### 🚀 Running code
 
-When You have Voucherify gem installed You could use pre-created [main.rb](./main.rb) with example code for testing purpose.
+When You have Voucherify gem installed You could use pre-created [example.rb](./example.rb) with example code for testing purpose.
 Remember to fill Your Voucherify keys for the valid authorization.
 
-Go into root directory and run:
+Then, go into root directory and run:
 
 ```shell
-ruby main.rb
+ruby example.rb
 ```
 
 Or, if You're using bundler:
 
 ```shell
-bundle exec ruby script.rb
+bundle exec ruby example.rb
 ```
 
 ## 🔄 Alternative ways for installing a gem
@@ -86,7 +86,7 @@ bundle install
 Finally, exec script with bundler:
 
 ```shell
-bundle exec ruby script.rb
+bundle exec ruby example.rb
 ```
 
 ### 📦 Install from Git
@@ -94,7 +94,7 @@ bundle exec ruby script.rb
 If the Ruby gem is hosted at a git repository: https://github.com/GIT_USER_ID/GIT_REPO_ID, then add the following in the Gemfile:
 
 ```shell
-gem 'VoucherifySdk', :git => 'https://github.com/GIT_USER_ID/GIT_REPO_ID.git', branch: 'main'
+gem 'VoucherifySdk', :git => 'https://github.com/voucherifyio/voucherify-js-sdk.git', branch: 'main'
 ```
 
 Then install dependencies with bundler
@@ -106,7 +106,7 @@ bundle install
 Finally, exec script with bundler:
 
 ```shell
-bundle exec ruby script.rb
+bundle exec ruby example.rb
 ```
 
 ## 🐳 Running local tests with docker
@@ -115,12 +115,11 @@ bundle exec ruby script.rb
 2. Run `docker build -t ruby .` to build the image.
 3. Run `docker run --rm ruby` to run the tests and delete container immediately after.
 
-
 ## 🛠️ Contributing
 
 Bug reports and pull requests are welcome through GitHub Issues.
 
-Read more about how to Contribute to Voucherify Ruby SDK by visiting CONTRIBUTING.md
+Read more about how to Contribute to Voucherify Ruby SDK by visiting [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ## 🔐 Documentation for Authorization
 
