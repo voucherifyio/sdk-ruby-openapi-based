@@ -36,7 +36,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [PromotionsStacksCreateRequestBody] :promotions_stacks_create_request_body Specify the order of promotion tiers for the promotion stack.
     # @return [Array<(PromotionsStacksCreateResponseBody, Integer, Hash)>] PromotionsStacksCreateResponseBody data, response status code and response headers
-    def create_promotion_stack_with_http_info(campaign_id, opts = {})
+    private def create_promotion_stack_with_http_info(campaign_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PromotionsApi.create_promotion_stack ...'
       end
@@ -106,7 +106,7 @@ module VoucherifySdk
     # @param stack_id [String] Promotion stack ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def delete_promotion_stack_with_http_info(campaign_id, stack_id, opts = {})
+    private def delete_promotion_stack_with_http_info(campaign_id, stack_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PromotionsApi.delete_promotion_stack ...'
       end
@@ -171,7 +171,7 @@ module VoucherifySdk
     # @param promotion_tier_id [String] Unique promotion tier ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def delete_promotion_tier_with_http_info(promotion_tier_id, opts = {})
+    private def delete_promotion_tier_with_http_info(promotion_tier_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PromotionsApi.delete_promotion_tier ...'
       end
@@ -232,7 +232,7 @@ module VoucherifySdk
     # @param promotion_tier_id [String] Unique promotion tier ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(PromotionsTiersDisableResponseBody, Integer, Hash)>] PromotionsTiersDisableResponseBody data, response status code and response headers
-    def disable_promotion_tier_with_http_info(promotion_tier_id, opts = {})
+    private def disable_promotion_tier_with_http_info(promotion_tier_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PromotionsApi.disable_promotion_tier ...'
       end
@@ -295,7 +295,7 @@ module VoucherifySdk
     # @param promotion_tier_id [String] Unique promotion tier ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(PromotionsTiersEnableResponseBody, Integer, Hash)>] PromotionsTiersEnableResponseBody data, response status code and response headers
-    def enable_promotion_tier_with_http_info(promotion_tier_id, opts = {})
+    private def enable_promotion_tier_with_http_info(promotion_tier_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PromotionsApi.enable_promotion_tier ...'
       end
@@ -360,7 +360,7 @@ module VoucherifySdk
     # @param stack_id [String] Promotion stack ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(PromotionsStacksGetResponseBody, Integer, Hash)>] PromotionsStacksGetResponseBody data, response status code and response headers
-    def get_promotion_stack_with_http_info(campaign_id, stack_id, opts = {})
+    private def get_promotion_stack_with_http_info(campaign_id, stack_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PromotionsApi.get_promotion_stack ...'
       end
@@ -427,7 +427,7 @@ module VoucherifySdk
     # @param promotion_tier_id [String] Unique promotion tier ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(PromotionsTiersGetResponseBody, Integer, Hash)>] PromotionsTiersGetResponseBody data, response status code and response headers
-    def get_promotion_tier_with_http_info(promotion_tier_id, opts = {})
+    private def get_promotion_tier_with_http_info(promotion_tier_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PromotionsApi.get_promotion_tier ...'
       end
@@ -498,7 +498,7 @@ module VoucherifySdk
     # @option opts [ParameterCreatedBeforeAfter] :created_at A filter on the list based on the object &#x60;created_at&#x60; field. The value is a dictionary with the following options: &#x60;before&#x60;, &#x60;after&#x60;. A date value must be presented in ISO 8601 format (&#x60;2016-11-16T14:14:31Z&#x60; or &#x60;2016-11-16&#x60;). An example: &#x60;[created_at][before]&#x3D;2017-09-08T13:52:18.227Z&#x60;
     # @option opts [ParameterUpdatedBeforeAfter] :updated_at A filter on the list based on the object &#x60;updated_at&#x60; field. The value is a dictionary with the following options: &#x60;before&#x60;, &#x60;after&#x60;. A date value must be presented in ISO 8601 format (&#x60;2016-11-16T14:14:31Z&#x60; or &#x60;2016-11-16&#x60;). An example: &#x60;[updated_at][before]&#x3D;2017-09-08T13:52:18.227Z&#x60;
     # @return [Array<(PromotionsStacksListResponseBody, Integer, Hash)>] PromotionsStacksListResponseBody data, response status code and response headers
-    def list_all_promotion_stacks_with_http_info(opts = {})
+    private def list_all_promotion_stacks_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PromotionsApi.list_all_promotion_stacks ...'
       end
@@ -574,7 +574,7 @@ module VoucherifySdk
     # @param campaign_id [String] Unique campaign ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(PromotionsStacksListResponseBody, Integer, Hash)>] PromotionsStacksListResponseBody data, response status code and response headers
-    def list_promotion_stacks_in_campaign_with_http_info(campaign_id, opts = {})
+    private def list_promotion_stacks_in_campaign_with_http_info(campaign_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PromotionsApi.list_promotion_stacks_in_campaign ...'
       end
@@ -637,7 +637,7 @@ module VoucherifySdk
     # @param campaign_id [String] Unique campaign ID assigned by Voucherify.
     # @param [Hash] opts the optional parameters
     # @return [Array<(PromotionsTiersListResponseBody, Integer, Hash)>] PromotionsTiersListResponseBody data, response status code and response headers
-    def list_promotion_tiers_from_campaign_with_http_info(campaign_id, opts = {})
+    private def list_promotion_tiers_from_campaign_with_http_info(campaign_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PromotionsApi.list_promotion_tiers_from_campaign ...'
       end
@@ -704,7 +704,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [PromotionsStacksUpdateRequestBody] :promotions_stacks_update_request_body Specify the promotion stack parameters that you would like to update.
     # @return [Array<(PromotionsStacksUpdateResponseBody, Integer, Hash)>] PromotionsStacksUpdateResponseBody data, response status code and response headers
-    def update_promotion_stack_with_http_info(campaign_id, stack_id, opts = {})
+    private def update_promotion_stack_with_http_info(campaign_id, stack_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PromotionsApi.update_promotion_stack ...'
       end

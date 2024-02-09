@@ -34,7 +34,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [OrdersCreateRequestBody] :orders_create_request_body Specify the order parameters.
     # @return [Array<(OrdersCreateResponseBody, Integer, Hash)>] OrdersCreateResponseBody data, response status code and response headers
-    def create_order_with_http_info(opts = {})
+    private def create_order_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OrdersApi.create_order ...'
       end
@@ -98,7 +98,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [OrdersExportCreateRequestBody] :orders_export_create_request_body Specify which order parameters you would like to export.
     # @return [Array<(OrdersExportCreateResponseBody, Integer, Hash)>] OrdersExportCreateResponseBody data, response status code and response headers
-    def create_order_export_with_http_info(opts = {})
+    private def create_order_export_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OrdersApi.create_order_export ...'
       end
@@ -162,7 +162,7 @@ module VoucherifySdk
     # @param order_id [String] Unique Voucherify order ID or order source ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(OrdersGetResponseBody, Integer, Hash)>] OrdersGetResponseBody data, response status code and response headers
-    def get_order_with_http_info(order_id, opts = {})
+    private def get_order_with_http_info(order_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OrdersApi.get_order ...'
       end
@@ -225,7 +225,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [Array<OrdersImportCreateRequestBodyItem>] :orders_import_create_request_body_item The request body is sent in the form of an array of order objects.
     # @return [Array<(OrdersImportCreateResponseBody, Integer, Hash)>] OrdersImportCreateResponseBody data, response status code and response headers
-    def import_orders_with_http_info(opts = {})
+    private def import_orders_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OrdersApi.import_orders ...'
       end
@@ -293,7 +293,7 @@ module VoucherifySdk
     # @option opts [Integer] :page Which page of results to return.
     # @option opts [ParameterOrderListOrders] :order This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash &#x60;-&#x60; preceding a sorting option means sorting in a descending order.
     # @return [Array<(OrdersListResponseBody, Integer, Hash)>] OrdersListResponseBody data, response status code and response headers
-    def list_orders_with_http_info(opts = {})
+    private def list_orders_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OrdersApi.list_orders ...'
       end
@@ -369,7 +369,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [OrdersUpdateRequestBody] :orders_update_request_body Specify the parameters of the order that are to be updated.
     # @return [Array<(OrdersUpdateResponseBody, Integer, Hash)>] OrdersUpdateResponseBody data, response status code and response headers
-    def update_order_with_http_info(order_id, opts = {})
+    private def update_order_with_http_info(order_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OrdersApi.update_order ...'
       end

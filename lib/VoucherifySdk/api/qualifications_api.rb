@@ -34,7 +34,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [QualificationsCheckEligibilityRequestBody] :qualifications_check_eligibility_request_body Define order and customer context.
     # @return [Array<(QualificationsCheckEligibilityResponseBody, Integer, Hash)>] QualificationsCheckEligibilityResponseBody data, response status code and response headers
-    def check_eligibility_with_http_info(opts = {})
+    private def check_eligibility_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: QualificationsApi.check_eligibility ...'
       end

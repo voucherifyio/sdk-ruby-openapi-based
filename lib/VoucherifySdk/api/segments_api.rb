@@ -34,7 +34,7 @@ module VoucherifySdk
     # @param segment_id [String] A unique customer segment ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def delete_segment_with_http_info(segment_id, opts = {})
+    private def delete_segment_with_http_info(segment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SegmentsApi.delete_segment ...'
       end

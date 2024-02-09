@@ -34,7 +34,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [EventsCreateRequestBody] :events_create_request_body Specify the details of the custom event.
     # @return [Array<(EventsCreateResponseBody, Integer, Hash)>] EventsCreateResponseBody data, response status code and response headers
-    def track_custom_event_with_http_info(opts = {})
+    private def track_custom_event_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: EventsApi.track_custom_event ...'
       end

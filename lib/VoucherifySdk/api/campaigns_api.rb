@@ -38,7 +38,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [CampaignsVouchersCreateRequestBody] :campaigns_vouchers_create_request_body Specify the voucher parameters that you would like to overwrite.
     # @return [Array<(CampaignsVouchersCreateResponseBody, Integer, Hash)>] CampaignsVouchersCreateResponseBody data, response status code and response headers
-    def add_voucher_with_specific_code_to_campaign_with_http_info(campaign_id, code, opts = {})
+    private def add_voucher_with_specific_code_to_campaign_with_http_info(campaign_id, code, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CampaignsApi.add_voucher_with_specific_code_to_campaign ...'
       end
@@ -114,7 +114,7 @@ module VoucherifySdk
     # @option opts [Integer] :vouchers_count Number of vouchers that should be added.
     # @option opts [CampaignsVouchersCreateInBulkRequestBody] :campaigns_vouchers_create_in_bulk_request_body Specify the voucher parameters that you would like to overwrite.
     # @return [Array<(CampaignsVouchersCreateResponseBody, Integer, Hash)>] CampaignsVouchersCreateResponseBody data, response status code and response headers
-    def add_vouchers_to_campaign_with_http_info(campaign_id, opts = {})
+    private def add_vouchers_to_campaign_with_http_info(campaign_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CampaignsApi.add_vouchers_to_campaign ...'
       end
@@ -183,7 +183,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [CampaignsCreateRequestBody] :campaigns_create_request_body Specify the details of the campaign that you would like to create.
     # @return [Array<(CampaignsCreateResponseBody, Integer, Hash)>] CampaignsCreateResponseBody data, response status code and response headers
-    def create_campaign_with_http_info(opts = {})
+    private def create_campaign_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CampaignsApi.create_campaign ...'
       end
@@ -249,7 +249,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :force If this flag is set to &#x60;true&#x60;, the campaign and related vouchers will be removed permanently. Going forward, the user will be able to create the next campaign with exactly the same name.
     # @return [Array<(CampaignsDeleteResponseBody, Integer, Hash)>] CampaignsDeleteResponseBody data, response status code and response headers
-    def delete_campaign_with_http_info(campaign_id, opts = {})
+    private def delete_campaign_with_http_info(campaign_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CampaignsApi.delete_campaign ...'
       end
@@ -313,7 +313,7 @@ module VoucherifySdk
     # @param campaign_id [String] The campaign ID or name of the campaign being disabled. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
     # @param [Hash] opts the optional parameters
     # @return [Array<(CampaignsDisableResponseBody, Integer, Hash)>] CampaignsDisableResponseBody data, response status code and response headers
-    def disable_campaign_with_http_info(campaign_id, opts = {})
+    private def disable_campaign_with_http_info(campaign_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CampaignsApi.disable_campaign ...'
       end
@@ -376,7 +376,7 @@ module VoucherifySdk
     # @param campaign_id [String] The campaign ID or name of the campaign being enabled. You can either pass the campaign ID, which was assigned by Voucherify or the name of the campaign as the path parameter value.
     # @param [Hash] opts the optional parameters
     # @return [Array<(CampaignsEnableResponseBody, Integer, Hash)>] CampaignsEnableResponseBody data, response status code and response headers
-    def enable_campaign_with_http_info(campaign_id, opts = {})
+    private def enable_campaign_with_http_info(campaign_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CampaignsApi.enable_campaign ...'
       end
@@ -439,7 +439,7 @@ module VoucherifySdk
     # @param campaign_id [String] You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
     # @param [Hash] opts the optional parameters
     # @return [Array<(CampaignsGetResponseBody, Integer, Hash)>] CampaignsGetResponseBody data, response status code and response headers
-    def get_campaign_with_http_info(campaign_id, opts = {})
+    private def get_campaign_with_http_info(campaign_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CampaignsApi.get_campaign ...'
       end
@@ -504,7 +504,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [Array<CampaignsImportVoucherItem>] :campaigns_import_voucher_item Discount type, expiration date and the remaining attributes will be taken from the &lt;!-- [Campaign](OpenAPI.json/components/schemas/Campaign) --&gt;[Campaign](ref:get-campaign) settings.
     # @return [Array<(CampaignsImportCreateResponseBody, Integer, Hash)>] CampaignsImportCreateResponseBody data, response status code and response headers
-    def import_vouchers_to_campaign_with_http_info(campaign_id, opts = {})
+    private def import_vouchers_to_campaign_with_http_info(campaign_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CampaignsApi.import_vouchers_to_campaign ...'
       end
@@ -574,7 +574,7 @@ module VoucherifySdk
     # @param file [File] File path.
     # @param [Hash] opts the optional parameters
     # @return [Array<(CampaignsImportCsvCreateResponseBody, Integer, Hash)>] CampaignsImportCsvCreateResponseBody data, response status code and response headers
-    def import_vouchers_to_campaign_using_csv_with_http_info(campaign_id, file, opts = {})
+    private def import_vouchers_to_campaign_using_csv_with_http_info(campaign_id, file, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CampaignsApi.import_vouchers_to_campaign_using_csv ...'
       end
@@ -655,7 +655,7 @@ module VoucherifySdk
     # @option opts [ParameterExpandListCampaigns] :expand Include an expanded &#x60;categories&#x60; object in the response. (default to 'category')
     # @option opts [ParameterOrderListCampaigns] :order Sorts the results using one of the filtering options, where the dash &#x60;-&#x60; preceding a sorting option means sorting in a descending order.
     # @return [Array<(CampaignsListResponseBody, Integer, Hash)>] CampaignsListResponseBody data, response status code and response headers
-    def list_campaigns_with_http_info(opts = {})
+    private def list_campaigns_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CampaignsApi.list_campaigns ...'
       end
@@ -733,7 +733,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [CampaignsUpdateRequestBody] :campaigns_update_request_body Specify the campaign parameters to be updated.
     # @return [Array<(CampaignsUpdateResponseBody, Integer, Hash)>] CampaignsUpdateResponseBody data, response status code and response headers
-    def update_campaign_with_http_info(campaign_id, opts = {})
+    private def update_campaign_with_http_info(campaign_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CampaignsApi.update_campaign ...'
       end
