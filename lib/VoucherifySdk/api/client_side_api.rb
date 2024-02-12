@@ -34,7 +34,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [ClientQualificationsCheckEligibilityRequestBody] :client_qualifications_check_eligibility_request_body Define order and customer context.
     # @return [Array<(ClientQualificationsCheckEligibilityResponseBody, Integer, Hash)>] ClientQualificationsCheckEligibilityResponseBody data, response status code and response headers
-    def check_eligibility_client_side_with_http_info(opts = {})
+    private def check_eligibility_client_side_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ClientSideApi.check_eligibility_client_side ...'
       end
@@ -100,7 +100,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [ClientRedemptionsRedeemRequestBody] :client_redemptions_redeem_request_body 
     # @return [Array<(ClientRedemptionsRedeemResponseBody, Integer, Hash)>] ClientRedemptionsRedeemResponseBody data, response status code and response headers
-    def redeem_stacked_discounts_client_side_with_http_info(origin, opts = {})
+    private def redeem_stacked_discounts_client_side_with_http_info(origin, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ClientSideApi.redeem_stacked_discounts_client_side ...'
       end
@@ -171,7 +171,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [ClientEventsCreateRequestBody] :client_events_create_request_body Specify the details of the custom event.
     # @return [Array<(ClientEventsCreateResponseBody, Integer, Hash)>] ClientEventsCreateResponseBody data, response status code and response headers
-    def track_custom_event_client_side_with_http_info(origin, opts = {})
+    private def track_custom_event_client_side_with_http_info(origin, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ClientSideApi.track_custom_event_client_side ...'
       end
@@ -242,7 +242,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [Object] :body Key-value pairs where the key is the consent identifier and value is a boolean that identifies if a customer has given the consent or not. To deny all consents use \&quot;unsubscribed\&quot; as a consent identifier and \&quot;true\&quot; as its value.    #### Examples  &lt;!-- title: \&quot;Request Body\&quot; lineNumbers: true --&gt; &#x60;&#x60;&#x60;json {     \&quot;cnst_aIdUulAh0SCsOCaS3005y7yS\&quot;: true,     \&quot;cnst_aIdUulAhwewqaS31213fdsfds\&quot;: false } &#x60;&#x60;&#x60;  Opt-out from all communication:  &lt;!-- title: \&quot;Request Body\&quot; lineNumbers: true --&gt; &#x60;&#x60;&#x60;json {     \&quot;unsubscribed\&quot;: true } &#x60;&#x60;&#x60;
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def update_customers_consents_client_side_with_http_info(customer_id, opts = {})
+    private def update_customers_consents_client_side_with_http_info(customer_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ClientSideApi.update_customers_consents_client_side ...'
       end
@@ -310,7 +310,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [ClientValidationsValidateRequestBody] :client_validations_validate_request_body 
     # @return [Array<(ClientValidationsValidateResponseBody, Integer, Hash)>] ClientValidationsValidateResponseBody data, response status code and response headers
-    def validate_stacked_discounts_client_side_with_http_info(origin, opts = {})
+    private def validate_stacked_discounts_client_side_with_http_info(origin, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ClientSideApi.validate_stacked_discounts_client_side ...'
       end

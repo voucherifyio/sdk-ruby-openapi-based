@@ -34,7 +34,7 @@ module VoucherifySdk
     # @param redemption_id [String] ID of previously created redemption.
     # @param [Hash] opts the optional parameters
     # @return [Array<(RedemptionsGetResponseBody, Integer, Hash)>] RedemptionsGetResponseBody data, response status code and response headers
-    def get_redemption_with_http_info(redemption_id, opts = {})
+    private def get_redemption_with_http_info(redemption_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RedemptionsApi.get_redemption ...'
       end
@@ -97,7 +97,7 @@ module VoucherifySdk
     # @param code [String] A **code** that identifies the voucher.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VouchersRedemptionGetResponseBody, Integer, Hash)>] VouchersRedemptionGetResponseBody data, response status code and response headers
-    def get_voucher_redemptions_with_http_info(code, opts = {})
+    private def get_voucher_redemptions_with_http_info(code, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RedemptionsApi.get_voucher_redemptions ...'
       end
@@ -174,7 +174,7 @@ module VoucherifySdk
     # @option opts [ParameterCreatedBeforeAfter] :created_at A filter on the list based on the object &#x60;created_at&#x60; field. The value is a dictionary with the following options: &#x60;before&#x60;, &#x60;after&#x60;. A date value must be presented in ISO 8601 format (&#x60;2016-11-16T14:14:31Z&#x60; or &#x60;2016-11-16&#x60;). An example: &#x60;[created_at][before]&#x3D;2017-09-08T13:52:18.227Z&#x60;
     # @option opts [ParameterFiltersListRedemptions] :filters Filters for listing responses.
     # @return [Array<(RedemptionsListResponseBody, Integer, Hash)>] RedemptionsListResponseBody data, response status code and response headers
-    def list_redemptions_with_http_info(opts = {})
+    private def list_redemptions_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RedemptionsApi.list_redemptions ...'
       end
@@ -253,7 +253,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [RedemptionsRedeemRequestBody] :redemptions_redeem_request_body 
     # @return [Array<(RedemptionsRedeemResponseBody, Integer, Hash)>] RedemptionsRedeemResponseBody data, response status code and response headers
-    def redeem_stacked_discounts_with_http_info(opts = {})
+    private def redeem_stacked_discounts_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RedemptionsApi.redeem_stacked_discounts ...'
       end
@@ -323,7 +323,7 @@ module VoucherifySdk
     # @option opts [String] :tracking_id Customer&#39;s &#x60;source_id&#x60;.
     # @option opts [RedemptionsRollbackCreateRequestBody] :redemptions_rollback_create_request_body Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body.
     # @return [Array<(RedemptionsRollbackCreateResponseBody, Integer, Hash)>] RedemptionsRollbackCreateResponseBody data, response status code and response headers
-    def rollback_redemption_with_http_info(redemption_id, opts = {})
+    private def rollback_redemption_with_http_info(redemption_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RedemptionsApi.rollback_redemption ...'
       end
@@ -399,7 +399,7 @@ module VoucherifySdk
     # @option opts [String] :tracking_id Customer&#39;s &#x60;source_id&#x60;.
     # @option opts [RedemptionsRollbacksCreateRequestBody] :redemptions_rollbacks_create_request_body Add information about the original customer and order. Customer data and Redemption metadata can be updated in Voucherify when passing the customer data in the request body.
     # @return [Array<(RedemptionsRollbacksCreateResponseBody, Integer, Hash)>] RedemptionsRollbacksCreateResponseBody data, response status code and response headers
-    def rollback_stacked_redemptions_with_http_info(parent_redemption_id, opts = {})
+    private def rollback_stacked_redemptions_with_http_info(parent_redemption_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RedemptionsApi.rollback_stacked_redemptions ...'
       end

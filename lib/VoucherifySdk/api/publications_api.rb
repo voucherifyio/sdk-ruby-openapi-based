@@ -36,7 +36,7 @@ module VoucherifySdk
     # @option opts [Boolean] :join_once Through this flag, you can control if a particular person gets only one and always the same code even if the app sends multiple publication requests. It means that if you have a referral program, a referrer is assigned only to one code if an integration sends publication requests more than once for the same customer.
     # @option opts [PublicationsCreateRequestBody] :publications_create_request_body Specify the publication parameters.
     # @return [Array<(PublicationsCreateResponseBody, Integer, Hash)>] PublicationsCreateResponseBody data, response status code and response headers
-    def create_publication_with_http_info(opts = {})
+    private def create_publication_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicationsApi.create_publication ...'
       end
@@ -111,7 +111,7 @@ module VoucherifySdk
     # @option opts [String] :source_id The merchant’s publication ID if it is different from the Voucherify publication ID. It&#39;s an optional tracking identifier of a publication. It is really useful in case of an integration between multiple systems. It can be a publication ID from a CRM system, database or 3rd-party service. If &#x60;source_id&#x60; is provided only 1 voucher can be published per request.
     # @option opts [Object] :metadata The metadata object stores all custom attributes assigned to the publication. A set of key/value pairs that you can attach to a publication object. It can be useful for storing additional information about the publication in a structured format.
     # @return [Array<(PublicationsCreateResponseBody, Integer, Hash)>] PublicationsCreateResponseBody data, response status code and response headers
-    def create_publication1_with_http_info(customer, opts = {})
+    private def create_publication1_with_http_info(customer, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicationsApi.create_publication1 ...'
       end
@@ -200,7 +200,7 @@ module VoucherifySdk
     # @option opts [String] :filters Allows for combining the filters mentioned in the endpoint description.
     # @option opts [String] :source_id Using this endpoint with a particular publication &#x60;source_id&#x60;, which was sent with the original request to create a publication, returns in the response, exactly the same code published initially because the code was assigned to the given publication. As a result, you can use this endpoint as a reference and return a code that was assigned in a publication by using a particular &#x60;source_id&#x60;.
     # @return [Array<(PublicationsListResponseBody, Integer, Hash)>] PublicationsListResponseBody data, response status code and response headers
-    def list_publications_with_http_info(opts = {})
+    private def list_publications_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicationsApi.list_publications ...'
       end

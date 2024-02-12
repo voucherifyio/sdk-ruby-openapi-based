@@ -34,7 +34,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [ExportsCreateRequestBody] :exports_create_request_body Specify the details of the export that you would like to create.
     # @return [Array<(ExportsCreateResponseBody, Integer, Hash)>] ExportsCreateResponseBody data, response status code and response headers
-    def create_export_with_http_info(opts = {})
+    private def create_export_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ExportsApi.create_export ...'
       end
@@ -98,7 +98,7 @@ module VoucherifySdk
     # @param export_id [String] Unique export object ID of previously created export. This object can be a: &#x60;voucher&#x60;, &#x60;redemption&#x60;, &#x60;publication&#x60;, &#x60;customer&#x60;, &#x60;order&#x60;, &#x60;points_expiration&#x60;, or &#x60;voucher_transactions&#x60;.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def delete_export_with_http_info(export_id, opts = {})
+    private def delete_export_with_http_info(export_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ExportsApi.delete_export ...'
       end
@@ -161,7 +161,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [String] :token Token that was issued to the export, to get this token, get the export first
     # @return [Array<(String, Integer, Hash)>] String data, response status code and response headers
-    def download_export_with_http_info(export_id, opts = {})
+    private def download_export_with_http_info(export_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ExportsApi.download_export ...'
       end
@@ -225,7 +225,7 @@ module VoucherifySdk
     # @param export_id [String] Unique export object ID of previously created export. This object can be a: &#x60;voucher&#x60;, &#x60;redemption&#x60;, &#x60;publication&#x60;, &#x60;customer&#x60;, &#x60;order&#x60;, &#x60;points_expiration&#x60;, or &#x60;voucher_transactions&#x60;.
     # @param [Hash] opts the optional parameters
     # @return [Array<(ExportsGetResponseBody, Integer, Hash)>] ExportsGetResponseBody data, response status code and response headers
-    def get_export_with_http_info(export_id, opts = {})
+    private def get_export_with_http_info(export_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ExportsApi.get_export ...'
       end
@@ -292,7 +292,7 @@ module VoucherifySdk
     # @option opts [Integer] :page Which page of results to return.
     # @option opts [ParameterOrderListExports] :order Sorts the results using one of the filtering options, where the dash &#x60;-&#x60; preceding a sorting option means sorting in a descending order.
     # @return [Array<(ExportsListResponseBody, Integer, Hash)>] ExportsListResponseBody data, response status code and response headers
-    def list_exports_with_http_info(opts = {})
+    private def list_exports_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ExportsApi.list_exports ...'
       end

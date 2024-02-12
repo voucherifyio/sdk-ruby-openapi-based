@@ -34,7 +34,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [ProductCollectionsCreateRequestBody] :product_collections_create_request_body 
     # @return [Array<(ProductCollectionsCreateResponseBody, Integer, Hash)>] ProductCollectionsCreateResponseBody data, response status code and response headers
-    def create_product_collection_with_http_info(opts = {})
+    private def create_product_collection_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProductCollectionsApi.create_product_collection ...'
       end
@@ -98,7 +98,7 @@ module VoucherifySdk
     # @param product_collection_id [String] A unique product collection ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def delete_product_collection_with_http_info(product_collection_id, opts = {})
+    private def delete_product_collection_with_http_info(product_collection_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProductCollectionsApi.delete_product_collection ...'
       end
@@ -159,7 +159,7 @@ module VoucherifySdk
     # @param product_collection_id [String] A unique product collection ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(ProductCollectionsGetResponseBody, Integer, Hash)>] ProductCollectionsGetResponseBody data, response status code and response headers
-    def get_product_collection_with_http_info(product_collection_id, opts = {})
+    private def get_product_collection_with_http_info(product_collection_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProductCollectionsApi.get_product_collection ...'
       end
@@ -226,7 +226,7 @@ module VoucherifySdk
     # @option opts [Integer] :page Which page of results to return.
     # @option opts [ParameterOrder] :order Sorts the results using one of the filtering options, where the dash &#x60;-&#x60; preceding a sorting option means sorting in a descending order.
     # @return [Array<(ProductCollectionsListResponseBody, Integer, Hash)>] ProductCollectionsListResponseBody data, response status code and response headers
-    def list_product_collections_with_http_info(opts = {})
+    private def list_product_collections_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProductCollectionsApi.list_product_collections ...'
       end
@@ -308,7 +308,7 @@ module VoucherifySdk
     # @option opts [ParameterOrder] :order Sorts the results using one of the filtering options, where the dash &#x60;-&#x60; preceding a sorting option means sorting in a descending order.
     # @option opts [Time] :starting_after Timestamp representing the date and time to use in starting_after cursor to get more data. Represented in ISO 8601 format.
     # @return [Array<(ProductCollectionsProductsListResponseBody, Integer, Hash)>] ProductCollectionsProductsListResponseBody data, response status code and response headers
-    def list_products_in_collection_with_http_info(product_collection_id, opts = {})
+    private def list_products_in_collection_with_http_info(product_collection_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProductCollectionsApi.list_products_in_collection ...'
       end

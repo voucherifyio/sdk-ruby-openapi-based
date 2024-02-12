@@ -34,7 +34,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [ValidationRulesCreateRequestBody] :validation_rules_create_request_body Specify the validation rules parameters.
     # @return [Array<(ValidationRulesCreateResponseBody, Integer, Hash)>] ValidationRulesCreateResponseBody data, response status code and response headers
-    def create_validation_rules_with_http_info(opts = {})
+    private def create_validation_rules_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ValidationRulesApi.create_validation_rules ...'
       end
@@ -100,7 +100,7 @@ module VoucherifySdk
     # @param assignment_id [String] A unique validation rule assignment ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def delete_validation_rule_assignment_with_http_info(validation_rule_id, assignment_id, opts = {})
+    private def delete_validation_rule_assignment_with_http_info(validation_rule_id, assignment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ValidationRulesApi.delete_validation_rule_assignment ...'
       end
@@ -165,7 +165,7 @@ module VoucherifySdk
     # @param validation_rule_id [String] A unique validation rule ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def delete_validation_rules_with_http_info(validation_rule_id, opts = {})
+    private def delete_validation_rules_with_http_info(validation_rule_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ValidationRulesApi.delete_validation_rules ...'
       end
@@ -226,7 +226,7 @@ module VoucherifySdk
     # @param validation_rule_id [String] A unique validation rule ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(ValidationRulesGetResponseBody, Integer, Hash)>] ValidationRulesGetResponseBody data, response status code and response headers
-    def get_validation_rule_with_http_info(validation_rule_id, opts = {})
+    private def get_validation_rule_with_http_info(validation_rule_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ValidationRulesApi.get_validation_rule ...'
       end
@@ -295,7 +295,7 @@ module VoucherifySdk
     # @option opts [Integer] :page Which page of results to return.
     # @option opts [ParameterOrderListValidationRuleAssignments] :order This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash &#x60;-&#x60; preceding a sorting option means sorting in a descending order.
     # @return [Array<(ValidationRulesAssignmentsListResponseBody, Integer, Hash)>] ValidationRulesAssignmentsListResponseBody data, response status code and response headers
-    def list_validation_rule_assignments_with_http_info(validation_rule_id, opts = {})
+    private def list_validation_rule_assignments_with_http_info(validation_rule_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ValidationRulesApi.list_validation_rule_assignments ...'
       end
@@ -381,7 +381,7 @@ module VoucherifySdk
     # @option opts [Time] :start_date Timestamp representing the date and time which results must start on. Represented in ISO 8601 format.
     # @option opts [Time] :end_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
     # @return [Array<(ValidationRulesListResponseBody, Integer, Hash)>] ValidationRulesListResponseBody data, response status code and response headers
-    def list_validation_rules_with_http_info(opts = {})
+    private def list_validation_rules_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ValidationRulesApi.list_validation_rules ...'
       end
@@ -465,7 +465,7 @@ module VoucherifySdk
     # @option opts [Integer] :limit A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
     # @option opts [String] :order Sorts the results using one of the filtering options: &#x60;-created_at&#x60;, &#x60;created_at&#x60;, where the dash &#x60;-&#x60; preceding a sorting option means sorting in a descending order.
     # @return [Array<(ValidationRulesAssignmentsListResponseBody, Integer, Hash)>] ValidationRulesAssignmentsListResponseBody data, response status code and response headers
-    def list_validation_rules_assignments_with_http_info(opts = {})
+    private def list_validation_rules_assignments_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ValidationRulesApi.list_validation_rules_assignments ...'
       end
@@ -543,7 +543,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [ValidationRulesUpdateRequestBody] :validation_rules_update_request_body Specify the parameters to be updated.
     # @return [Array<(ValidationRulesUpdateResponseBody, Integer, Hash)>] ValidationRulesUpdateResponseBody data, response status code and response headers
-    def update_validation_rule_with_http_info(validation_rule_id, opts = {})
+    private def update_validation_rule_with_http_info(validation_rule_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ValidationRulesApi.update_validation_rule ...'
       end

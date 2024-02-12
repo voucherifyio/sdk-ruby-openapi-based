@@ -34,7 +34,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [CustomersCreateRequestBody] :customers_create_request_body Create a customer with specified parameters.
     # @return [Array<(CustomersCreateResponseBody, Integer, Hash)>] CustomersCreateResponseBody data, response status code and response headers
-    def create_customer_with_http_info(opts = {})
+    private def create_customer_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CustomersApi.create_customer ...'
       end
@@ -98,7 +98,7 @@ module VoucherifySdk
     # @param customer_id [String] A Voucherify customer&#39;s &#x60;id&#x60; or &#x60;source_id&#x60;.
     # @param [Hash] opts the optional parameters
     # @return [Array<(CustomersPermanentDeletionCreateResponseBody, Integer, Hash)>] CustomersPermanentDeletionCreateResponseBody data, response status code and response headers
-    def customer_permanently_deletion_with_http_info(customer_id, opts = {})
+    private def customer_permanently_deletion_with_http_info(customer_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CustomersApi.customer_permanently_deletion ...'
       end
@@ -161,7 +161,7 @@ module VoucherifySdk
     # @param customer_id [String] A Voucherify customer&#39;s &#x60;id&#x60; or &#x60;source_id&#x60;.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def delete_customer_with_http_info(customer_id, opts = {})
+    private def delete_customer_with_http_info(customer_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CustomersApi.delete_customer ...'
       end
@@ -222,7 +222,7 @@ module VoucherifySdk
     # @param customer_id [String] A Voucherify customer&#39;s &#x60;id&#x60; or &#x60;source_id&#x60;.
     # @param [Hash] opts the optional parameters
     # @return [Array<(CustomersGetResponseBody, Integer, Hash)>] CustomersGetResponseBody data, response status code and response headers
-    def get_customer_with_http_info(customer_id, opts = {})
+    private def get_customer_with_http_info(customer_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CustomersApi.get_customer ...'
       end
@@ -285,7 +285,7 @@ module VoucherifySdk
     # @param file [File] File path.
     # @param [Hash] opts the optional parameters
     # @return [Array<(CustomersImportCsvCreateResponseBody, Integer, Hash)>] CustomersImportCsvCreateResponseBody data, response status code and response headers
-    def import_customers_using_csv_with_http_info(file, opts = {})
+    private def import_customers_using_csv_with_http_info(file, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CustomersApi.import_customers_using_csv ...'
       end
@@ -372,7 +372,7 @@ module VoucherifySdk
     # @option opts [Time] :start_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
     # @option opts [Time] :end_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
     # @return [Array<(CustomersActivitiesListResponseBody, Integer, Hash)>] CustomersActivitiesListResponseBody data, response status code and response headers
-    def list_customer_activities_with_http_info(customer_id, opts = {})
+    private def list_customer_activities_with_http_info(customer_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CustomersApi.list_customer_activities ...'
       end
@@ -452,7 +452,7 @@ module VoucherifySdk
     # @param customer_id [String] Unique identifier of a customer represented by an internal customer ID or customer source ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(CustomersSegmentsListResponseBody, Integer, Hash)>] CustomersSegmentsListResponseBody data, response status code and response headers
-    def list_customer_segments_with_http_info(customer_id, opts = {})
+    private def list_customer_segments_with_http_info(customer_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CustomersApi.list_customer_segments ...'
       end
@@ -537,7 +537,7 @@ module VoucherifySdk
     # @option opts [ParameterOrderListCustomers] :order This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash &#x60;-&#x60; preceding a sorting option means sorting in a descending order.
     # @option opts [Time] :starting_after A cursor for use in pagination. This is a date-time value that defines your place in the list based on &#x60;created_at&#x60; property from the customer object. For instance, if you make a list request and receive 100 objects, ending with an object created at &#x60;2020-05-24T13:43:09.024Z&#x60;, your subsequent call can include &#x60;starting_after&#x3D;2020-05-24T13:43:09.024Z&#x60; in order to fetch the next page of the list.  &lt;!-- title: Options --&gt; | **Option** | **Format** | **Sorting** | |:---|:---|:---| | Return customers **before** a specific creation date  | - set &#x60;starting_after&#x60; parameter to the breakpoint date | Sorting order is **descending**; the most recent dates first and least recent dates last. | | Return customers **after** a specific create or update date | - include the &#x60;order&#x60; parameter set to &#x60;created_at&#x60; or &#x60;updated_at&#x60;&lt;br&gt;- set &#x60;starting_after&#x60; to the breakpoint date | Sorting order is **ascending**; the least recent dates first and the most recent dates last. | 
     # @return [Array<(CustomersListResponseBody, Integer, Hash)>] CustomersListResponseBody data, response status code and response headers
-    def list_customers_with_http_info(opts = {})
+    private def list_customers_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CustomersApi.list_customers ...'
       end
@@ -622,7 +622,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [CustomersUpdateRequestBody] :customers_update_request_body Specify the parameters to be updated.
     # @return [Array<(CustomersUpdateResponseBody, Integer, Hash)>] CustomersUpdateResponseBody data, response status code and response headers
-    def update_customer_with_http_info(customer_id, opts = {})
+    private def update_customer_with_http_info(customer_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CustomersApi.update_customer ...'
       end
@@ -692,7 +692,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [Object] :body Key-value pairs where the key is the consent identifier and value is a boolean that identifies if a customer has given the consent or not. To deny all consents use \&quot;unsubscribed\&quot; as a consent identifier and \&quot;true\&quot; as its value.    #### Examples  &lt;!-- title: \&quot;Request Body\&quot; lineNumbers: true --&gt; &#x60;&#x60;&#x60;json {     \&quot;cnst_aIdUulAh0SCsOCaS3005y7yS\&quot;: true,     \&quot;cnst_aIdUulAhwewqaS31213fdsfds\&quot;: false } &#x60;&#x60;&#x60;  Opt-out from all communication:  &lt;!-- title: \&quot;Request Body\&quot; lineNumbers: true --&gt; &#x60;&#x60;&#x60;json {     \&quot;unsubscribed\&quot;: true } &#x60;&#x60;&#x60;
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def update_customers_consents_with_http_info(customer_id, opts = {})
+    private def update_customers_consents_with_http_info(customer_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CustomersApi.update_customers_consents ...'
       end
@@ -758,7 +758,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [Array<CustomersUpdateInBulkRequestBody>] :customers_update_in_bulk_request_body Specify the customer fields that you would like to update in each customer object.
     # @return [Array<(CustomersUpdateInBulkResponseBody, Integer, Hash)>] CustomersUpdateInBulkResponseBody data, response status code and response headers
-    def update_customers_in_bulk_with_http_info(opts = {})
+    private def update_customers_in_bulk_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CustomersApi.update_customers_in_bulk ...'
       end
@@ -822,7 +822,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [CustomersMetadataUpdateInBulkRequestBody] :customers_metadata_update_in_bulk_request_body List the &#x60;source_ids&#x60; of the customer&#39;s you would like to update along with the metadata key value pairs.
     # @return [Array<(CustomersMetadataUpdateInBulkResponseBody, Integer, Hash)>] CustomersMetadataUpdateInBulkResponseBody data, response status code and response headers
-    def update_customers_metadata_in_bulk_with_http_info(opts = {})
+    private def update_customers_metadata_in_bulk_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CustomersApi.update_customers_metadata_in_bulk ...'
       end

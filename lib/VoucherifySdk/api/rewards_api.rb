@@ -36,7 +36,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [RewardsAssignmentsCreateRequestBody] :rewards_assignments_create_request_body Provide the campaign ID of the campaign to which the reward is to be assigned and define the cost of the reward in terms of loyalty points.
     # @return [Array<(RewardsAssignmentsCreateResponseBody, Integer, Hash)>] RewardsAssignmentsCreateResponseBody data, response status code and response headers
-    def create_reward_assignment_with_http_info(reward_id, opts = {})
+    private def create_reward_assignment_with_http_info(reward_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RewardsApi.create_reward_assignment ...'
       end
@@ -104,7 +104,7 @@ module VoucherifySdk
     # @param reward_id [String] A unique reward ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def delete_reward_with_http_info(reward_id, opts = {})
+    private def delete_reward_with_http_info(reward_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RewardsApi.delete_reward ...'
       end
@@ -167,7 +167,7 @@ module VoucherifySdk
     # @param assignment_id [String] A unique reward assignment ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def delete_reward_assignment_with_http_info(reward_id, assignment_id, opts = {})
+    private def delete_reward_assignment_with_http_info(reward_id, assignment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RewardsApi.delete_reward_assignment ...'
       end
@@ -234,7 +234,7 @@ module VoucherifySdk
     # @param assignment_id [String] A unique reward assignment ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(RewardsAssignmentsGetResponseBody, Integer, Hash)>] RewardsAssignmentsGetResponseBody data, response status code and response headers
-    def get_reward_assignment_with_http_info(reward_id, assignment_id, opts = {})
+    private def get_reward_assignment_with_http_info(reward_id, assignment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RewardsApi.get_reward_assignment ...'
       end
@@ -305,7 +305,7 @@ module VoucherifySdk
     # @option opts [Integer] :limit A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
     # @option opts [Integer] :page Which page of results to return.
     # @return [Array<(RewardsAssignmentsListResponseBody, Integer, Hash)>] RewardsAssignmentsListResponseBody data, response status code and response headers
-    def list_reward_assignments_with_http_info(reward_id, opts = {})
+    private def list_reward_assignments_with_http_info(reward_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RewardsApi.list_reward_assignments ...'
       end
@@ -386,7 +386,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [RewardsAssignmentsUpdateRequestBody] :rewards_assignments_update_request_body Define the number of points required to exchange for the reward.
     # @return [Array<(RewardsAssignmentsUpdateResponseBody, Integer, Hash)>] RewardsAssignmentsUpdateResponseBody data, response status code and response headers
-    def update_reward_assignment_with_http_info(reward_id, assignment_id, opts = {})
+    private def update_reward_assignment_with_http_info(reward_id, assignment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: RewardsApi.update_reward_assignment ...'
       end

@@ -7,8 +7,9 @@ assignees: ''
 
 ---
 
-Please remember that this repository is mainly for reporting bug with Ruby SDK. 
-To report Voucherify / documentation bugs please report this to our support. 
+**Note** Please remember that this repository is primarily for reporting bugs related to the Ruby SDK. 
+If you encounter bugs within the product or its documentation, 
+please consider reporting them to [our support team](https://www.voucherify.io/contact-support)
 
 **Describe the bug**
 A clear and concise description of what the bug is.

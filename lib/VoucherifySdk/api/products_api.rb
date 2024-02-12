@@ -34,7 +34,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [ProductsCreateRequestBody] :products_create_request_body Specify the product parameters.
     # @return [Array<(ProductsCreateResponseBody, Integer, Hash)>] ProductsCreateResponseBody data, response status code and response headers
-    def create_product_with_http_info(opts = {})
+    private def create_product_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProductsApi.create_product ...'
       end
@@ -100,7 +100,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [ProductsSkusCreateRequestBody] :products_skus_create_request_body Specify the SKU parameters to be created.
     # @return [Array<(ProductsSkusCreateResponseBody, Integer, Hash)>] ProductsSkusCreateResponseBody data, response status code and response headers
-    def create_sku_with_http_info(product_id, opts = {})
+    private def create_sku_with_http_info(product_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProductsApi.create_sku ...'
       end
@@ -170,7 +170,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :force If this flag is set to &#x60;true&#x60;, the product will be removed permanently. Going forward, the user will be able to create another product with exactly the same &#x60;source_id&#x60;.
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def delete_product_with_http_info(product_id, opts = {})
+    private def delete_product_with_http_info(product_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProductsApi.delete_product ...'
       end
@@ -236,7 +236,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :force If this flag is set to &#x60;true&#x60;, the SKU will be removed permanently. Going forward, the user will be able to create another SKU with exactly the same &#x60;source_id&#x60;.
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def delete_sku_with_http_info(product_id, sku_id, opts = {})
+    private def delete_sku_with_http_info(product_id, sku_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProductsApi.delete_sku ...'
       end
@@ -302,7 +302,7 @@ module VoucherifySdk
     # @param product_id [String] A Voucherify product ID or source ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(ProductsGetResponseBody, Integer, Hash)>] ProductsGetResponseBody data, response status code and response headers
-    def get_product_with_http_info(product_id, opts = {})
+    private def get_product_with_http_info(product_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProductsApi.get_product ...'
       end
@@ -365,7 +365,7 @@ module VoucherifySdk
     # @param sku_id [String] A Voucherify SKU identifier or SKU source ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(SkusGetResponseBody, Integer, Hash)>] SkusGetResponseBody data, response status code and response headers
-    def get_sku_with_http_info(sku_id, opts = {})
+    private def get_sku_with_http_info(sku_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProductsApi.get_sku ...'
       end
@@ -428,7 +428,7 @@ module VoucherifySdk
     # @param file [File] File path.
     # @param [Hash] opts the optional parameters
     # @return [Array<(ProductsImportCsvCreateResponseBody, Integer, Hash)>] ProductsImportCsvCreateResponseBody data, response status code and response headers
-    def import_products_using_csv_with_http_info(file, opts = {})
+    private def import_products_using_csv_with_http_info(file, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProductsApi.import_products_using_csv ...'
       end
@@ -497,7 +497,7 @@ module VoucherifySdk
     # @param file [File] File path.
     # @param [Hash] opts the optional parameters
     # @return [Array<(SkusImportCsvCreateResponseBody, Integer, Hash)>] SkusImportCsvCreateResponseBody data, response status code and response headers
-    def import_skus_using_csv_with_http_info(file, opts = {})
+    private def import_skus_using_csv_with_http_info(file, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProductsApi.import_skus_using_csv ...'
       end
@@ -574,7 +574,7 @@ module VoucherifySdk
     # @option opts [Time] :start_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
     # @option opts [Time] :end_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
     # @return [Array<(ProductsListResponseBody, Integer, Hash)>] ProductsListResponseBody data, response status code and response headers
-    def list_products_with_http_info(opts = {})
+    private def list_products_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProductsApi.list_products ...'
       end
@@ -660,7 +660,7 @@ module VoucherifySdk
     # @option opts [Time] :start_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
     # @option opts [Time] :end_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
     # @return [Array<(ProductsSkusListResponseBody, Integer, Hash)>] ProductsSkusListResponseBody data, response status code and response headers
-    def list_skus_in_product_with_http_info(product_id, opts = {})
+    private def list_skus_in_product_with_http_info(product_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProductsApi.list_skus_in_product ...'
       end
@@ -742,7 +742,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [ProductsUpdateRequestBody] :products_update_request_body Specify the parameters of the product that are to be updated.
     # @return [Array<(ProductsUpdateResponseBody, Integer, Hash)>] ProductsUpdateResponseBody data, response status code and response headers
-    def update_product_with_http_info(product_id, opts = {})
+    private def update_product_with_http_info(product_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProductsApi.update_product ...'
       end
@@ -810,7 +810,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [Array<ProductsUpdateInBulkRequestBody>] :products_update_in_bulk_request_body Create an array of product objects, each with the parameters which you want to update.
     # @return [Array<(ProductsUpdateInBulkResponseBody, Integer, Hash)>] ProductsUpdateInBulkResponseBody data, response status code and response headers
-    def update_products_in_bulk_with_http_info(opts = {})
+    private def update_products_in_bulk_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProductsApi.update_products_in_bulk ...'
       end
@@ -874,7 +874,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [ProductsMetadataUpdateInBulkRequestBody] :products_metadata_update_in_bulk_request_body Specify the list of product source IDs and the metadata key value pairs to be udpated for these products.
     # @return [Array<(ProductsMetadataUpdateInBulkResponseBody, Integer, Hash)>] ProductsMetadataUpdateInBulkResponseBody data, response status code and response headers
-    def update_products_metadata_in_bulk_with_http_info(opts = {})
+    private def update_products_metadata_in_bulk_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProductsApi.update_products_metadata_in_bulk ...'
       end
@@ -942,7 +942,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [ProductsSkusUpdateRequestBody] :products_skus_update_request_body Specify the parameters to be updated.
     # @return [Array<(ProductsSkusUpdateResponseBody, Integer, Hash)>] ProductsSkusUpdateResponseBody data, response status code and response headers
-    def update_sku_with_http_info(product_id, sku_id, opts = {})
+    private def update_sku_with_http_info(product_id, sku_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ProductsApi.update_sku ...'
       end

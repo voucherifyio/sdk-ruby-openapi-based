@@ -36,7 +36,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [Array<LoyaltiesTiersCreateInBulkRequestBodyItem>] :loyalties_tiers_create_in_bulk_request_body_item Provide tier definitions you want to add to existing loyalty campaign.
     # @return [Array<(Array<LoyaltyTier>, Integer, Hash)>] Array<LoyaltyTier> data, response status code and response headers
-    def create_in_bulk_loyalty_tiers_with_http_info(campaign_id, opts = {})
+    private def create_in_bulk_loyalty_tiers_with_http_info(campaign_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoyaltiesApi.create_in_bulk_loyalty_tiers ...'
       end
@@ -106,7 +106,7 @@ module VoucherifySdk
     # @param earning_rule_id [String] A unique earning rule ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def delete_earning_rule_with_http_info(campaign_id, earning_rule_id, opts = {})
+    private def delete_earning_rule_with_http_info(campaign_id, earning_rule_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoyaltiesApi.delete_earning_rule ...'
       end
@@ -173,7 +173,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :force If this flag is set to &#x60;true&#x60;, the campaign and related vouchers will be removed permanently. Going forward, the user will be able to create the next campaign with the same name.
     # @return [Array<(LoyaltiesDeleteResponseBody, Integer, Hash)>] LoyaltiesDeleteResponseBody data, response status code and response headers
-    def delete_loyalty_program_with_http_info(campaign_id, opts = {})
+    private def delete_loyalty_program_with_http_info(campaign_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoyaltiesApi.delete_loyalty_program ...'
       end
@@ -239,7 +239,7 @@ module VoucherifySdk
     # @param assignment_id [String] A unique reward assignment ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def delete_reward_assignment1_with_http_info(campaign_id, assignment_id, opts = {})
+    private def delete_reward_assignment1_with_http_info(campaign_id, assignment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoyaltiesApi.delete_reward_assignment1 ...'
       end
@@ -306,7 +306,7 @@ module VoucherifySdk
     # @param earning_rule_id [String] Unique earning rule ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(LoyaltiesEarningRulesDisableResponseBody, Integer, Hash)>] LoyaltiesEarningRulesDisableResponseBody data, response status code and response headers
-    def disable_earning_rule_with_http_info(campaign_id, earning_rule_id, opts = {})
+    private def disable_earning_rule_with_http_info(campaign_id, earning_rule_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoyaltiesApi.disable_earning_rule ...'
       end
@@ -375,7 +375,7 @@ module VoucherifySdk
     # @param earning_rule_id [String] Unique earning rule ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(LoyaltiesEarningRulesEnableResponseBody, Integer, Hash)>] LoyaltiesEarningRulesEnableResponseBody data, response status code and response headers
-    def enable_earning_rule_with_http_info(campaign_id, earning_rule_id, opts = {})
+    private def enable_earning_rule_with_http_info(campaign_id, earning_rule_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoyaltiesApi.enable_earning_rule ...'
       end
@@ -444,7 +444,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [LoyaltiesMembersTransactionsExportCreateRequestBody] :loyalties_members_transactions_export_create_request_body Specify the parameters and filters for the transaction export.
     # @return [Array<(LoyaltiesMembersTransactionsExportCreateResponseBody, Integer, Hash)>] LoyaltiesMembersTransactionsExportCreateResponseBody data, response status code and response headers
-    def export_loyalty_card_transactions_with_http_info(member_id, opts = {})
+    private def export_loyalty_card_transactions_with_http_info(member_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoyaltiesApi.export_loyalty_card_transactions ...'
       end
@@ -516,7 +516,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [LoyaltiesMembersTransactionsExportCreateRequestBody] :loyalties_members_transactions_export_create_request_body Specify the parameters and filters for the transaction export.
     # @return [Array<(LoyaltiesMembersTransactionsExportCreateResponseBody, Integer, Hash)>] LoyaltiesMembersTransactionsExportCreateResponseBody data, response status code and response headers
-    def export_loyalty_card_transactions1_with_http_info(campaign_id, member_id, opts = {})
+    private def export_loyalty_card_transactions1_with_http_info(campaign_id, member_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoyaltiesApi.export_loyalty_card_transactions1 ...'
       end
@@ -590,7 +590,7 @@ module VoucherifySdk
     # @param earning_rule_id [String] A unique earning rule ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(LoyaltiesEarningRulesGetResponseBody, Integer, Hash)>] LoyaltiesEarningRulesGetResponseBody data, response status code and response headers
-    def get_earning_rule_with_http_info(campaign_id, earning_rule_id, opts = {})
+    private def get_earning_rule_with_http_info(campaign_id, earning_rule_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoyaltiesApi.get_earning_rule ...'
       end
@@ -659,7 +659,7 @@ module VoucherifySdk
     # @param loyalty_tier_id [String] Unique loyalty tier ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(LoyaltiesTiersGetResponseBody, Integer, Hash)>] LoyaltiesTiersGetResponseBody data, response status code and response headers
-    def get_loyalty_tier_with_http_info(campaign_id, loyalty_tier_id, opts = {})
+    private def get_loyalty_tier_with_http_info(campaign_id, loyalty_tier_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoyaltiesApi.get_loyalty_tier ...'
       end
@@ -728,7 +728,7 @@ module VoucherifySdk
     # @param assignment_id [String] Unique reward assignment ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(LoyaltiesRewardAssignmentsGetResponseBody, Integer, Hash)>] LoyaltiesRewardAssignmentsGetResponseBody data, response status code and response headers
-    def get_reward_assignment1_with_http_info(campaign_id, assignment_id, opts = {})
+    private def get_reward_assignment1_with_http_info(campaign_id, assignment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoyaltiesApi.get_reward_assignment1 ...'
       end
@@ -797,7 +797,7 @@ module VoucherifySdk
     # @param assignment_id [String] A unique reward assignment ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(LoyaltiesRewardsGetResponseBody, Integer, Hash)>] LoyaltiesRewardsGetResponseBody data, response status code and response headers
-    def get_reward_assignment2_with_http_info(campaign_id, assignment_id, opts = {})
+    private def get_reward_assignment2_with_http_info(campaign_id, assignment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoyaltiesApi.get_reward_assignment2 ...'
       end
@@ -866,7 +866,7 @@ module VoucherifySdk
     # @param assignment_id [String] Unique reward assignment ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(LoyaltiesRewardAssignmentsRewardGetResponseBody, Integer, Hash)>] LoyaltiesRewardAssignmentsRewardGetResponseBody data, response status code and response headers
-    def get_reward_details_with_http_info(campaign_id, assignment_id, opts = {})
+    private def get_reward_details_with_http_info(campaign_id, assignment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoyaltiesApi.get_reward_details ...'
       end
@@ -937,7 +937,7 @@ module VoucherifySdk
     # @option opts [Integer] :limit A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
     # @option opts [Integer] :page Which page of results to return.
     # @return [Array<(LoyaltiesMembersTransactionsListResponseBody, Integer, Hash)>] LoyaltiesMembersTransactionsListResponseBody data, response status code and response headers
-    def list_loyalty_card_transactions_with_http_info(member_id, opts = {})
+    private def list_loyalty_card_transactions_with_http_info(member_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoyaltiesApi.list_loyalty_card_transactions ...'
       end
@@ -1020,7 +1020,7 @@ module VoucherifySdk
     # @option opts [Integer] :limit A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
     # @option opts [Integer] :page Which page of results to return.
     # @return [Array<(LoyaltiesMembersTransactionsListResponseBody, Integer, Hash)>] LoyaltiesMembersTransactionsListResponseBody data, response status code and response headers
-    def list_loyalty_card_transactions1_with_http_info(campaign_id, member_id, opts = {})
+    private def list_loyalty_card_transactions1_with_http_info(campaign_id, member_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoyaltiesApi.list_loyalty_card_transactions1 ...'
       end
@@ -1107,7 +1107,7 @@ module VoucherifySdk
     # @option opts [Integer] :limit A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
     # @option opts [Integer] :page Which page of results to return.
     # @return [Array<(LoyaltiesTiersEarningRulesListResponseBody, Integer, Hash)>] LoyaltiesTiersEarningRulesListResponseBody data, response status code and response headers
-    def list_loyalty_tier_earning_rules_with_http_info(campaign_id, loyalty_tier_id, opts = {})
+    private def list_loyalty_tier_earning_rules_with_http_info(campaign_id, loyalty_tier_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoyaltiesApi.list_loyalty_tier_earning_rules ...'
       end
@@ -1190,7 +1190,7 @@ module VoucherifySdk
     # @param loyalty_tier_id [String] Unique loyalty tier ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(LoyaltiesTiersRewardsListResponseBody, Integer, Hash)>] LoyaltiesTiersRewardsListResponseBody data, response status code and response headers
-    def list_loyalty_tier_rewards_with_http_info(campaign_id, loyalty_tier_id, opts = {})
+    private def list_loyalty_tier_rewards_with_http_info(campaign_id, loyalty_tier_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoyaltiesApi.list_loyalty_tier_rewards ...'
       end
@@ -1261,7 +1261,7 @@ module VoucherifySdk
     # @option opts [Integer] :limit A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
     # @option opts [ParameterOrderListLoyaltyTiers] :order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
     # @return [Array<(LoyaltiesTiersListResponseBody, Integer, Hash)>] LoyaltiesTiersListResponseBody data, response status code and response headers
-    def list_loyalty_tiers_with_http_info(campaign_id, opts = {})
+    private def list_loyalty_tiers_with_http_info(campaign_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoyaltiesApi.list_loyalty_tiers ...'
       end
@@ -1334,7 +1334,7 @@ module VoucherifySdk
     # @param member_id [String] Unique loyalty card assigned to a particular customer.
     # @param [Hash] opts the optional parameters
     # @return [Array<(LoyaltiesMembersTiersListResponseBody, Integer, Hash)>] LoyaltiesMembersTiersListResponseBody data, response status code and response headers
-    def list_member_loyalty_tier_with_http_info(member_id, opts = {})
+    private def list_member_loyalty_tier_with_http_info(member_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoyaltiesApi.list_member_loyalty_tier ...'
       end
@@ -1399,7 +1399,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :affordable_only Limit the results to rewards that the customer can actually afford (only rewards whose price in points is not higher than the loyalty points balance on a loyalty card). Set this flag to &#x60;true&#x60; to return rewards which the customer can actually afford.
     # @return [Array<(LoyaltiesMembersRewardsListResponseBody, Integer, Hash)>] LoyaltiesMembersRewardsListResponseBody data, response status code and response headers
-    def list_member_rewards_with_http_info(member_id, opts = {})
+    private def list_member_rewards_with_http_info(member_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoyaltiesApi.list_member_rewards ...'
       end
@@ -1469,7 +1469,7 @@ module VoucherifySdk
     # @option opts [Integer] :limit A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
     # @option opts [Integer] :page Which page of results to return.
     # @return [Array<(LoyaltiesMembersPointsExpirationListResponseBody, Integer, Hash)>] LoyaltiesMembersPointsExpirationListResponseBody data, response status code and response headers
-    def list_points_expiration_with_http_info(campaign_id, member_id, opts = {})
+    private def list_points_expiration_with_http_info(campaign_id, member_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoyaltiesApi.list_points_expiration ...'
       end
@@ -1552,7 +1552,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [LoyaltiesMembersRedemptionRedeemRequestBody] :loyalties_members_redemption_redeem_request_body Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order.
     # @return [Array<(LoyaltiesMembersRedemptionRedeemResponseBody, Integer, Hash)>] LoyaltiesMembersRedemptionRedeemResponseBody data, response status code and response headers
-    def redeem_reward_with_http_info(member_id, opts = {})
+    private def redeem_reward_with_http_info(member_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoyaltiesApi.redeem_reward ...'
       end
@@ -1624,7 +1624,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [LoyaltiesMembersRedemptionRedeemRequestBody] :loyalties_members_redemption_redeem_request_body Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order.
     # @return [Array<(LoyaltiesMembersRedemptionRedeemResponseBody, Integer, Hash)>] LoyaltiesMembersRedemptionRedeemResponseBody data, response status code and response headers
-    def redeem_reward1_with_http_info(campaign_id, member_id, opts = {})
+    private def redeem_reward1_with_http_info(campaign_id, member_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoyaltiesApi.redeem_reward1 ...'
       end
@@ -1700,7 +1700,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [Array<LoyaltiesTransferPoints>] :loyalties_transfer_points Provide the loyalty cards you want the points to be transferred from and the number of points to transfer from each card.
     # @return [Array<(LoyaltiesMembersTransfersCreateResponseBody, Integer, Hash)>] LoyaltiesMembersTransfersCreateResponseBody data, response status code and response headers
-    def transfer_points_with_http_info(campaign_id, member_id, opts = {})
+    private def transfer_points_with_http_info(campaign_id, member_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoyaltiesApi.transfer_points ...'
       end
@@ -1774,7 +1774,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [LoyaltiesMembersBalanceUpdateRequestBody] :loyalties_members_balance_update_request_body Specify the point adjustment along with the expiration mechanism.
     # @return [Array<(LoyaltiesMembersBalanceUpdateResponseBody, Integer, Hash)>] LoyaltiesMembersBalanceUpdateResponseBody data, response status code and response headers
-    def update_loyalty_card_balance_with_http_info(member_id, opts = {})
+    private def update_loyalty_card_balance_with_http_info(member_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoyaltiesApi.update_loyalty_card_balance ...'
       end
@@ -1846,7 +1846,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [LoyaltiesMembersBalanceUpdateRequestBody] :loyalties_members_balance_update_request_body Specify the point adjustment along with the expiration mechanism.
     # @return [Array<(LoyaltiesMembersBalanceUpdateResponseBody, Integer, Hash)>] LoyaltiesMembersBalanceUpdateResponseBody data, response status code and response headers
-    def update_loyalty_card_balance1_with_http_info(campaign_id, member_id, opts = {})
+    private def update_loyalty_card_balance1_with_http_info(campaign_id, member_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoyaltiesApi.update_loyalty_card_balance1 ...'
       end

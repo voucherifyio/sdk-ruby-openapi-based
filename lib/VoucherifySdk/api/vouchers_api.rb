@@ -36,7 +36,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :force If this flag is set to &#x60;true&#x60;, the voucher will be removed permanently. Going forward, the user will be able to create another voucher with exactly the same code.
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def delete_voucher_with_http_info(code, opts = {})
+    private def delete_voucher_with_http_info(code, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VouchersApi.delete_voucher ...'
       end
@@ -98,7 +98,7 @@ module VoucherifySdk
     # @param code [String] A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify, i.e. &#x60;v_TzD19aeNiqGc9LWciMWknyEZT8IW7u4u&#x60;.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VouchersDisableResponseBody, Integer, Hash)>] VouchersDisableResponseBody data, response status code and response headers
-    def disable_voucher_with_http_info(code, opts = {})
+    private def disable_voucher_with_http_info(code, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VouchersApi.disable_voucher ...'
       end
@@ -161,7 +161,7 @@ module VoucherifySdk
     # @param code [String] A **code** that identifies the voucher or a unique voucher ID assigned by Voucherify, i.e. &#x60;v_TzD19aeNiqGc9LWciMWknyEZT8IW7u4u&#x60;.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VouchersEnableResponseBody, Integer, Hash)>] VouchersEnableResponseBody data, response status code and response headers
-    def enable_voucher_with_http_info(code, opts = {})
+    private def enable_voucher_with_http_info(code, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VouchersApi.enable_voucher ...'
       end
@@ -226,7 +226,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [VouchersTransactionsExportCreateRequestBody] :vouchers_transactions_export_create_request_body Specify the parameters for the transaction export.
     # @return [Array<(VouchersTransactionsExportCreateResponseBody, Integer, Hash)>] VouchersTransactionsExportCreateResponseBody data, response status code and response headers
-    def export_voucher_transactions_with_http_info(code, opts = {})
+    private def export_voucher_transactions_with_http_info(code, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VouchersApi.export_voucher_transactions ...'
       end
@@ -294,7 +294,7 @@ module VoucherifySdk
     # @param code [String] A unique **code** that identifies the voucher.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VouchersGetResponseBody, Integer, Hash)>] VouchersGetResponseBody data, response status code and response headers
-    def get_voucher_with_http_info(code, opts = {})
+    private def get_voucher_with_http_info(code, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VouchersApi.get_voucher ...'
       end
@@ -357,7 +357,7 @@ module VoucherifySdk
     # @param file [File] File path.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VouchersImportCsvCreateResponseBody, Integer, Hash)>] VouchersImportCsvCreateResponseBody data, response status code and response headers
-    def import_vouchers_using_csv_with_http_info(file, opts = {})
+    private def import_vouchers_using_csv_with_http_info(file, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VouchersApi.import_vouchers_using_csv ...'
       end
@@ -430,7 +430,7 @@ module VoucherifySdk
     # @option opts [Integer] :limit A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
     # @option opts [Integer] :page Which page of results to return.
     # @return [Array<(VouchersTransactionsListResponseBody, Integer, Hash)>] VouchersTransactionsListResponseBody data, response status code and response headers
-    def list_voucher_transactions_with_http_info(code, opts = {})
+    private def list_voucher_transactions_with_http_info(code, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VouchersApi.list_voucher_transactions ...'
       end
@@ -509,7 +509,7 @@ module VoucherifySdk
     # @param session_key [String] A unique session identifier.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def release_validation_session_with_http_info(code, session_key, opts = {})
+    private def release_validation_session_with_http_info(code, session_key, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VouchersApi.release_validation_session ...'
       end
@@ -576,7 +576,7 @@ module VoucherifySdk
     # @param vouchers_balance_update_request_body [VouchersBalanceUpdateRequestBody] Provide the amount to be added to/subtracted from the voucher.
     # @param [Hash] opts the optional parameters
     # @return [Array<(VouchersBalanceUpdateResponseBody, Integer, Hash)>] VouchersBalanceUpdateResponseBody data, response status code and response headers
-    def update_voucher_balance_with_http_info(code, vouchers_balance_update_request_body, opts = {})
+    private def update_voucher_balance_with_http_info(code, vouchers_balance_update_request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: VouchersApi.update_voucher_balance ...'
       end

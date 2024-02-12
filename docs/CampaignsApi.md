@@ -44,7 +44,7 @@ VoucherifySdk.configure do |config|
 end
 
 api_instance = VoucherifySdk::CampaignsApi.new
-campaign_id = 'campaign_id_example' # String | The campaign ID or name of the campaign to which voucher will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
+campaign_id = 'ABC' # String | The campaign ID or name of the campaign to which voucher will be added. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value.
 code = 'code_example' # String | A custom **code** that identifies the voucher.
 opts = {
   campaigns_vouchers_create_request_body: VoucherifySdk::CampaignsVouchersCreateRequestBody.new # CampaignsVouchersCreateRequestBody | Specify the voucher parameters that you would like to overwrite.
