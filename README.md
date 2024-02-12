@@ -19,20 +19,19 @@ The legacy version of Ruby SDK could be found [here](https://github.com/voucheri
 
 You will find detailed description and example responses at our [official documentation](https://docs.voucherify.io/reference). Most method headers point to more detailed descriptions of arguments you can use.
 
-You can also use our detailed documentation provided by our package [here](https://voucherifyio.github.io/voucherify-js-sdk/).
-
 📚 Want to learn more? Visit our [official site](https://www.voucherify.io) or our [Success Portal](https://success.voucherify.io).
 
 👽 Having troubles? Check our [Help center](https://support.voucherify.io/).
 
 🧪 Looking for promotion ideas? Check our [Cookbook](https://cookbook.voucherify.io/) to get an inspiration.
 
+🐛 Encounter a bug? Please file a report in the [Issues](https://github.com/voucherifyio/sdk-ruby-openapi-based/issues).
+
 ## ⚙️ Installation
 
 ### Gem Repository
 
 The SDK is hosted in [RubeGems](https://rubygems.org/gems/voucherify) and could be easy obtained by adding this line to Your application's Gemfile:
-
 
 ```ruby
 gem 'voucherify'
@@ -129,9 +128,9 @@ bundle exec ruby example.rb
 
 ## 🛠️ Contributing
 
-🐛 Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/voucherifyio/sdk-ruby-openapi-based/issues).
+Read more about how to Contribute to Voucherify Ruby SDK by visiting [CONTRIBUTING.md](./CONTRIBUTING.md)
 
-Read more about how to Contribute to Voucherify Ruby SDK by visiting [main repository GENERATING-SDKS.md guideline](https://github.com/voucherifyio/voucherify-openapi/blob/master/GENERATING-SDKS.md).
+Remember that this SDK is auto generated (except of the tests) so changes made here will be overwritten by generator.
 
 ## 🔐 Documentation for Authorization
 
