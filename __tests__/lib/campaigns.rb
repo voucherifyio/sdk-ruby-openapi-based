@@ -36,7 +36,7 @@ def create_discount_campaign(campaigns_api_instance, validation_rule_id)
                     })
                 }),
                 validation_rules: [validation_rule_id]
-            })    
+            })
         })
 
         return campaign
@@ -67,7 +67,7 @@ def create_promotion_campaign(campaigns_api_instance)
         })
 
         return campaign
-    end 
+    end
 end
 
 def create_loyalty_campaign(campaigns_api_instance)
@@ -96,6 +96,6 @@ def delete_campaign(campaigns_api_instance, campaign_id)
         return nil
     end
 end
-        
-        
+
+
 

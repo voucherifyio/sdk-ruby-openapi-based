@@ -13,33 +13,33 @@ OpenAPI Generator version: 7.0.1
 require 'cgi'
 
 module VoucherifySdk
-  class EventsApi
+  class ValidationsApi
     attr_accessor :api_client
 
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Track Custom Event
-    # To track a custom event, you create an event object.    The event object must be linked to the customer who performs the action. If a customer doesn't exist in Voucherify, the customer will be created.
+    # Validate Stackable Discounts
+    # Verify redeemables provided in the request. This method is designed for server side integration which means that it is accessible only through private keys.
     # @param [Hash] opts the optional parameters
-    # @option opts [EventsCreateRequestBody] :events_create_request_body Specify the details of the custom event.
-    # @return [EventsCreateResponseBody]
-    def track_custom_event(opts = {})
-      data, _status_code, _headers = track_custom_event_with_http_info(opts)
+    # @option opts [ValidationsValidateRequestBody] :validations_validate_request_body 
+    # @return [ValidationsValidateResponseBody]
+    def validate_stacked_discounts(opts = {})
+      data, _status_code, _headers = validate_stacked_discounts_with_http_info(opts)
       data
     end
 
-    # Track Custom Event
-    # To track a custom event, you create an event object.    The event object must be linked to the customer who performs the action. If a customer doesn&#39;t exist in Voucherify, the customer will be created.
+    # Validate Stackable Discounts
+    # Verify redeemables provided in the request. This method is designed for server side integration which means that it is accessible only through private keys.
     # @param [Hash] opts the optional parameters
-    # @option opts [EventsCreateRequestBody] :events_create_request_body Specify the details of the custom event.
-    # @return [Array<(EventsCreateResponseBody, Integer, Hash)>] EventsCreateResponseBody data, response status code and response headers
-    def track_custom_event_with_http_info(opts = {})
+    # @option opts [ValidationsValidateRequestBody] :validations_validate_request_body 
+    # @return [Array<(ValidationsValidateResponseBody, Integer, Hash)>] ValidationsValidateResponseBody data, response status code and response headers
+    def validate_stacked_discounts_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: EventsApi.track_custom_event ...'
+        @api_client.config.logger.debug 'Calling API: ValidationsApi.validate_stacked_discounts ...'
       end
       # resource path
-      local_var_path = '/v1/events'
+      local_var_path = '/v1/validations'
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -58,16 +58,16 @@ module VoucherifySdk
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'events_create_request_body'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'validations_validate_request_body'])
 
       # return_type
-      return_type = opts[:debug_return_type] || 'EventsCreateResponseBody'
+      return_type = opts[:debug_return_type] || 'ValidationsValidateResponseBody'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['X-App-Id', 'X-App-Token']
 
       new_options = opts.merge(
-        :operation => :"EventsApi.track_custom_event",
+        :operation => :"ValidationsApi.validate_stacked_discounts",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -78,7 +78,7 @@ module VoucherifySdk
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EventsApi#track_custom_event\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ValidationsApi#validate_stacked_discounts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

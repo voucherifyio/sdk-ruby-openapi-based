@@ -48,8 +48,8 @@ module Config
       return VoucherifySdk::QualificationsApi.new()
     end
 
-    def self.stackable_discounts_api_instance
-      return VoucherifySdk::StackableDiscountsApi.new()
+    def self.validations_api_instance
+      return VoucherifySdk::ValidationsApi.new()
     end
 
     def self.vouchers_api_instance

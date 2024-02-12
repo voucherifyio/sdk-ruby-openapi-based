@@ -10,9 +10,9 @@ def create_request_body_redeemable(voucher_id)
 end
 
 
-def validate_stacked_discounts(stackable_discounts_api_instance, voucher_id)
+def validate_stacked_discounts(validations_api_instance, voucher_id)
   begin
-    result = stackable_discounts_api_instance.validate_stacked_discounts({
+    result = validations_api_instance.validate_stacked_discounts({
       validations_validate_request_body: VoucherifySdk::ValidationsValidateRequestBody.new({
         redeemables: create_request_body_redeemable(voucher_id),
         order: VoucherifySdk::Order.new(amount: 20000)
@@ -24,9 +24,9 @@ def validate_stacked_discounts(stackable_discounts_api_instance, voucher_id)
   end
 end
 
-def redeem_stacked_discounts(stackable_discounts_api_instance, voucher_id)
+def redeem_stacked_discounts(redemptions_api_instance, voucher_id)
   begin
-    result = stackable_discounts_api_instance.redeem_stacked_discounts({
+    result = redemptions_api_instance.redeem_stacked_discounts({
       redemptions_redeem_request_body: VoucherifySdk::RedemptionsRedeemRequestBody.new({
         redeemables: create_request_body_redeemable(voucher_id),
         order: VoucherifySdk::Order.new(amount: 20000)
