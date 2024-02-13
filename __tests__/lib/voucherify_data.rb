@@ -11,6 +11,7 @@ class VoucherifyData
     @discount_campaign = nil
     @loyalty_campaign = nil
     @voucher = nil
+    @voucher_with_more_than_validation_rule = nil
     @loyalty_card = nil
     @product_ids = []
     @sku = nil
@@ -18,6 +19,10 @@ class VoucherifyData
 
   def set_discount_campaign(discount_campaign)
     @discount_campaign = discount_campaign
+  end
+
+  def get_discount_campaign
+    return @discount_campaign
   end
 
   def set_product(product)
@@ -34,6 +39,14 @@ class VoucherifyData
 
   def get_product_ids
     @product_ids
+  end
+
+  def get_voucher_with_more_than_validation_rule
+    @voucher_with_more_than_validation_rule
+  end
+
+  def set_voucher_with_more_than_validation_rule(voucher)
+    @voucher_with_more_than_validation_rule = voucher
   end
 
   def set_sku(sku)
@@ -54,7 +67,7 @@ class VoucherifyData
 
   def get_customer
     @customer
-  end 
+  end
 
   def get_discount_campaign
     @discount_campaign

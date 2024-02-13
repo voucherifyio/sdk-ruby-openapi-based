@@ -13,17 +13,19 @@ RSpec.describe 'Campaigns API', :order => :defined do
   $created_discount_campaign = nil
   $created_promotion_campaign = nil
   $created_loyalty_campaign = nil
+  $created_validation_rule_applicable_to = nil
+  $created_campaign_with_validation_rule = nil
 
-  it 'create a campaign with validation rule', :order => :first do
-    created_validation_rule = create_validation_rule(@validation_rules_api_instance, @voucherify_data.get_product.id)
+  it 'create a validation rule with applicable_to', :order => :first do
+    validation_rule = create_validation_rule_applicable_to(@validation_rules_api_instance, @voucherify_data.get_product.id)
 
-    expect(created_validation_rule).not_to be_nil
+    expect(validation_rule).not_to be_nil
 
-    $created_validation_rule = created_validation_rule
+    $created_validation_rule_applicable_to = validation_rule
   end
 
-  it 'create a discount campaign', :order => :second do
-    created_discount_campaign = create_discount_campaign(@campaigns_api_instance, $created_validation_rule.id)
+  it 'create a discount campaign with applicable_to validation rule', :order => :second do
+    created_discount_campaign = create_discount_campaign(@campaigns_api_instance, $created_validation_rule_applicable_to.id)
 
     expect(created_discount_campaign).not_to be_nil
 
@@ -47,7 +49,7 @@ RSpec.describe 'Campaigns API', :order => :defined do
     $created_loyalty_campaign = created_loyalty_campaign
     @voucherify_data.set_loyalty_campaign(created_loyalty_campaign)
   end
-  
+
   it 'delete the promotion campaign', :order => :fifth do
     deleted_promotion_campaign = delete_campaign(@campaigns_api_instance, $created_promotion_campaign.id)
 
@@ -69,11 +71,25 @@ RSpec.describe 'Campaigns API', :order => :defined do
     expect(async_action).not_to be_nil
   end
 
-  it 'create a loyalty card', :order => :sixth do
+  it 'create a loyalty card', :order => :eigth do
     created_loyalty_card = @campaigns_api_instance.add_vouchers_to_campaign($created_loyalty_campaign.id, {
         vouchers_count: 1,
     })
     @voucherify_data.set_loyalty_card(created_loyalty_card)
     expect(created_loyalty_card).not_to be_nil
+  end
+
+  it 'create a campaign with validation rule and add voucher', :order => :ninth do
+    validation_rule = create_validation_rule_more_than(@validation_rules_api_instance, @voucherify_data.get_product.id)
+    expect(validation_rule).not_to be_nil
+
+    campaign = create_discount_campaign(@campaigns_api_instance, validation_rule.id)
+    expect(campaign).not_to be_nil
+
+    voucher = @campaigns_api_instance.add_vouchers_to_campaign(campaign.id, {
+        vouchers_count: 1,
+    })
+
+    @voucherify_data.set_voucher_with_more_than_validation_rule(voucher)
   end
 end

@@ -10,16 +10,36 @@ def create_request_body_redeemable(voucher_id)
 end
 
 
-def validate_stacked_discounts(validations_api_instance, voucher_id)
+def validate_stacked_discounts(validations_api_instance, voucher_id, product_id, customer, amount)
   begin
     result = validations_api_instance.validate_stacked_discounts({
       validations_validate_request_body: VoucherifySdk::ValidationsValidateRequestBody.new({
         redeemables: create_request_body_redeemable(voucher_id),
-        order: VoucherifySdk::Order.new(amount: 20000)
+        order: {
+          items: [{
+            related_object: "product",
+            quantity: 1,
+            discount_quantity: 1,
+            amount: amount,
+            price: amount,
+            product_id: product_id,
+            product: {
+              id: product_id
+            }
+          }],
+          amount: amount,
+          customer: {
+            id: customer.id
+          }
+        },
+        customer: {
+          source_id: customer.source_id
+        }
       })
     })
     return result;
   rescue VoucherifySdk::ApiError => e
+    puts(e)
     return nil;
   end
 end
