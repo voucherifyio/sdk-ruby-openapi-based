@@ -97,9 +97,12 @@ RSpec.describe 'Validations API', :order => :defined do
     expect($validation_result_failed.valid).to be(false)
   end
 
-  it 'validates presence of the redeemables array (failed)', :order => :ninth do
+  it 'validates presence of the redeemables and inapplicable_redeemables (failed)', :order => :ninth do
       expect($validation_result_failed.redeemables).not_to be_nil
       expect($validation_result_failed.redeemables).to be_an(Array)
+
+      expect($validation_result_failed.inapplicable_redeemables).not_to be_nil
+      expect($validation_result_failed.inapplicable_redeemables).to be_an(Array)
   end
 
   it 'checks if redeemables items have necessary keys (failed)', :order => :tenth do
@@ -108,7 +111,12 @@ RSpec.describe 'Validations API', :order => :defined do
     expect(redeemable.status).to eq("INAPPLICABLE")
     expect(redeemable.id).to eq(@voucherify_data.get_voucher_with_more_than_validation_rule().code)
     expect(redeemable.object).to eq("voucher")
+
+    expect(redeemable.result).not_to be_nil
     expect(redeemable.result).to be_a(VoucherifySdk::ValidationsRedeemableInapplicableResult)
+
+    expect(redeemable.result.error).not_to be_nil
+    expect(redeemable.result.error).to be_an(VoucherifySdk::Error)
   end
 
   it 'checks validation customer response is valid (failed)', :order => :eleventh do
