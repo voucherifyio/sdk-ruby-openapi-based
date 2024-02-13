@@ -51,24 +51,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the create_product_collection_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ProductCollectionsCreateResponseBody>, Integer, Hash)> create_product_collection_with_http_info(opts)
-
-```ruby
-begin
-  # Create Product Collection
-  data, status_code, headers = api_instance.create_product_collection_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ProductCollectionsCreateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling ProductCollectionsApi->create_product_collection_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -123,24 +105,6 @@ begin
   api_instance.delete_product_collection(product_collection_id)
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling ProductCollectionsApi->delete_product_collection: #{e}"
-end
-```
-
-#### Using the delete_product_collection_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_product_collection_with_http_info(product_collection_id)
-
-```ruby
-begin
-  # Delete Product Collection
-  data, status_code, headers = api_instance.delete_product_collection_with_http_info(product_collection_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling ProductCollectionsApi->delete_product_collection_with_http_info: #{e}"
 end
 ```
 
@@ -199,24 +163,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling ProductCollectionsApi->get_product_collection: #{e}"
-end
-```
-
-#### Using the get_product_collection_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ProductCollectionsGetResponseBody>, Integer, Hash)> get_product_collection_with_http_info(product_collection_id)
-
-```ruby
-begin
-  # Get Product Collection
-  data, status_code, headers = api_instance.get_product_collection_with_http_info(product_collection_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ProductCollectionsGetResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling ProductCollectionsApi->get_product_collection_with_http_info: #{e}"
 end
 ```
 
@@ -279,24 +225,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling ProductCollectionsApi->list_product_collections: #{e}"
-end
-```
-
-#### Using the list_product_collections_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ProductCollectionsListResponseBody>, Integer, Hash)> list_product_collections_with_http_info(opts)
-
-```ruby
-begin
-  # List Product Collections
-  data, status_code, headers = api_instance.list_product_collections_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ProductCollectionsListResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling ProductCollectionsApi->list_product_collections_with_http_info: #{e}"
 end
 ```
 
@@ -363,24 +291,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling ProductCollectionsApi->list_products_in_collection: #{e}"
-end
-```
-
-#### Using the list_products_in_collection_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ProductCollectionsProductsListResponseBody>, Integer, Hash)> list_products_in_collection_with_http_info(product_collection_id, opts)
-
-```ruby
-begin
-  # List Products in Collection
-  data, status_code, headers = api_instance.list_products_in_collection_with_http_info(product_collection_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ProductCollectionsProductsListResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling ProductCollectionsApi->list_products_in_collection_with_http_info: #{e}"
 end
 ```
 

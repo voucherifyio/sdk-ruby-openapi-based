@@ -18,7 +18,7 @@ All URIs are relative to *https://api.voucherify.io*
 
 Create Order
 
-Creates an order object and triggers an order creation event.  <!-- theme: info -->  > 📘 Upsert Mode > > If you pass an `id` or a `source_id` that already exists in the order database, Voucherify will return a related order object with updated fields.
+Creates an order object and triggers an order creation event.    > 📘 Upsert Mode > > If you pass an `id` or a `source_id` that already exists in the order database, Voucherify will return a related order object with updated fields.
 
 ### Examples
 
@@ -52,24 +52,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the create_order_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<OrdersCreateResponseBody>, Integer, Hash)> create_order_with_http_info(opts)
-
-```ruby
-begin
-  # Create Order
-  data, status_code, headers = api_instance.create_order_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <OrdersCreateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling OrdersApi->create_order_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -96,7 +78,7 @@ end
 
 Create Orders Export
 
-Creates a downloadable CSV file containing a list of orders.  The parameters listed in the payload resembles headers in the CSV file. To include a parameter to the file, add it to the `parameters.fields` object in the request body.  The available filters are all <!-- [order object](OpenAPI.json/components/schemas/OrdersUpdateResponseBody) -->[order object](ref:get-order) attributes. Additionally, any metadata defined in the metadata schema can be exported.  Passing an empty JSON will generate a file containing three default fields: `id`, `source_id`, and `status`.  The fields array is an array of strings containing the data in the export. These fields define the headers in the CSV file. The array can be a combination of any of the following available fields:  | **Field** | **Definition** | **Example Export** | |:---|:---|:---| | id | Unique order ID. | ord_A69RIxEdRsPuC6i8gFGVHUft | | source_id | Unique order source ID. | 8638 | | created_at | Timestamp in ISO 8601 format representing the date and time when the order was created. | 2022-03-09T09:16:32.521Z | | updated_at | Timestamp in ISO 8601 format representing the date and time when the order was last updated. | 2022-03-09T09:16:33.331Z | | status | Order status. | `PAID`, `CREATED`, `FULFILLED`, `CANCELED` | | amount | Total amount of order items. | 7700 | | discount_amount | Represents total amount of the discount applied to whole cart. | 500 | | items_discount_amount | Represents total amount of the discount applied to order line items. | 100 | | total_discount_amount | All discounts applied to the order including discounts applied to particular order line items and discounts applied to the whole cart. | 600 | | total_amount | Total order amount after applying all discounts. | 7100 | | customer_id | Customer unique ID. | cust_2G4fUQdCXUqp35nXNleav7bO | | referrer_id | Referrer unique ID. | cust_IkrTR674vvQvr9a4rDMiqglY | | metadata | Returns all order metadata. | Response will include all order metadata. | | metadata.X | Where X is the name of a particular order metadata property. | The returned value will depend on the type of data defined in the Dashboard > Project Settings > Metdata Schemas > Order. |
+Creates a downloadable CSV file containing a list of orders.  The parameters listed in the payload resembles headers in the CSV file. To include a parameter to the file, add it to the `parameters.fields` object in the request body.  The available filters are all [order object](ref:get-order) attributes. Additionally, any metadata defined in the metadata schema can be exported.  Passing an empty JSON will generate a file containing three default fields: `id`, `source_id`, and `status`.  The fields array is an array of strings containing the data in the export. These fields define the headers in the CSV file. The array can be a combination of any of the following available fields:  | **Field** | **Definition** | **Example Export** | |:---|:---|:---| | id | Unique order ID. | ord_A69RIxEdRsPuC6i8gFGVHUft | | source_id | Unique order source ID. | 8638 | | created_at | Timestamp in ISO 8601 format representing the date and time when the order was created. | 2022-03-09T09:16:32.521Z | | updated_at | Timestamp in ISO 8601 format representing the date and time when the order was last updated. | 2022-03-09T09:16:33.331Z | | status | Order status. | `PAID`, `CREATED`, `FULFILLED`, `CANCELED` | | amount | Total amount of order items. | 7700 | | discount_amount | Represents total amount of the discount applied to whole cart. | 500 | | items_discount_amount | Represents total amount of the discount applied to order line items. | 100 | | total_discount_amount | All discounts applied to the order including discounts applied to particular order line items and discounts applied to the whole cart. | 600 | | total_amount | Total order amount after applying all discounts. | 7100 | | customer_id | Customer unique ID. | cust_2G4fUQdCXUqp35nXNleav7bO | | referrer_id | Referrer unique ID. | cust_IkrTR674vvQvr9a4rDMiqglY | | metadata | Returns all order metadata. | Response will include all order metadata. | | metadata.X | Where X is the name of a particular order metadata property. | The returned value will depend on the type of data defined in the Dashboard > Project Settings > Metdata Schemas > Order. |
 
 ### Examples
 
@@ -127,24 +109,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling OrdersApi->create_order_export: #{e}"
-end
-```
-
-#### Using the create_order_export_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<OrdersExportCreateResponseBody>, Integer, Hash)> create_order_export_with_http_info(opts)
-
-```ruby
-begin
-  # Create Orders Export
-  data, status_code, headers = api_instance.create_order_export_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <OrdersExportCreateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling OrdersApi->create_order_export_with_http_info: #{e}"
 end
 ```
 
@@ -206,24 +170,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the get_order_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<OrdersGetResponseBody>, Integer, Hash)> get_order_with_http_info(order_id)
-
-```ruby
-begin
-  # Get Order
-  data, status_code, headers = api_instance.get_order_with_http_info(order_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <OrdersGetResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling OrdersApi->get_order_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -250,7 +196,7 @@ end
 
 Import Orders
 
-<!-- theme: info -->  > 🚧 Historical orders > > This endpoint should only be used to import historical orders into Voucherify. For on-going synchronization, the <!-- [create order](OpenAPI.json/paths/~1orders/post) -->[create order](ref:create-order) and <!-- [update order](OpenAPI.json/paths/~1orders~1{orderId}/put) -->[update order](ref:update-order) endpoints should be used. This is critical because this endpoint does not store events or launch distributions.  ## Limitations  ### Import volume  There can be only a single on-going order import per tenant per project at a given time. The user can schedule more imports but those extra imports will be scheduled to run in sequence one by one.    ### Maximum count of orders in single import  There is a `2000` limit but we might decide to change it to a lower / higher value at any given time depending if we find this value is too high or too low with time.  ## Notifications  There are no notifications on the Dashboard because this import is launched via the API.  ## Triggered actions    If you import orders with customers, then a logic will be scheduled responsible for placing these customers into segments and refreshing the segment's summary. Consequently, this update will trigger  - **customers entering into segments**  - **distributions** based on any rules tied to customer entering segment(s) - **earning rules** based on the customer entering segment(s)  ## What is not triggered  1. No webhooks are triggered during the import of orders - for both orders and upserted products / skus.    2. Distributions based on Order Update, Order Paid, Order Created and Order Cancelled. In other words if you have a distribution based on Order Paid and you import an order with a PAID status, the distribution is not going to be triggered.      3. No events are created during the import of orders - for both orders and upserted products / skus. In other words you won't see any events in the Activity tab in the Dashboard such as Order created or Order paid. If you are additionally upserting products / skus, then you won't see the Product created events listed, etc.     4. Earning rules based on Order Paid won't be triggered.  This API request starts a process that affects Voucherify data in bulk.   In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.   The result will return the async ID. You can verify the status of your request via this [API request](ref:get-async-action).
+  > 🚧 Historical orders > > This endpoint should only be used to import historical orders into Voucherify. For on-going synchronization, the [create order](ref:create-order) and [update order](ref:update-order) endpoints should be used. This is critical because this endpoint does not store events or launch distributions.  ## Limitations  ### Import volume  There can be only a single on-going order import per tenant per project at a given time. The user can schedule more imports but those extra imports will be scheduled to run in sequence one by one.    ### Maximum count of orders in single import  There is a `2000` limit but we might decide to change it to a lower / higher value at any given time depending if we find this value is too high or too low with time.  ## Notifications  There are no notifications on the Dashboard because this import is launched via the API.  ## Triggered actions    If you import orders with customers, then a logic will be scheduled responsible for placing these customers into segments and refreshing the segment's summary. Consequently, this update will trigger  - **customers entering into segments**  - **distributions** based on any rules tied to customer entering segment(s) - **earning rules** based on the customer entering segment(s)  ## What is not triggered  1. No webhooks are triggered during the import of orders - for both orders and upserted products / skus.    2. Distributions based on Order Update, Order Paid, Order Created and Order Cancelled. In other words if you have a distribution based on Order Paid and you import an order with a PAID status, the distribution is not going to be triggered.      3. No events are created during the import of orders - for both orders and upserted products / skus. In other words you won't see any events in the Activity tab in the Dashboard such as Order created or Order paid. If you are additionally upserting products / skus, then you won't see the Product created events listed, etc.     4. Earning rules based on Order Paid won't be triggered.  This API request starts a process that affects Voucherify data in bulk.   In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.   The result will return the async ID. You can verify the status of your request via this [API request](ref:get-async-action).
 
 ### Examples
 
@@ -281,24 +227,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling OrdersApi->import_orders: #{e}"
-end
-```
-
-#### Using the import_orders_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<OrdersImportCreateResponseBody>, Integer, Hash)> import_orders_with_http_info(opts)
-
-```ruby
-begin
-  # Import Orders
-  data, status_code, headers = api_instance.import_orders_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <OrdersImportCreateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling OrdersApi->import_orders_with_http_info: #{e}"
 end
 ```
 
@@ -364,24 +292,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the list_orders_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<OrdersListResponseBody>, Integer, Hash)> list_orders_with_http_info(opts)
-
-```ruby
-begin
-  # List Orders
-  data, status_code, headers = api_instance.list_orders_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <OrdersListResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling OrdersApi->list_orders_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -442,24 +352,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling OrdersApi->update_order: #{e}"
-end
-```
-
-#### Using the update_order_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<OrdersUpdateResponseBody>, Integer, Hash)> update_order_with_http_info(order_id, opts)
-
-```ruby
-begin
-  # Update Order
-  data, status_code, headers = api_instance.update_order_with_http_info(order_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <OrdersUpdateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling OrdersApi->update_order_with_http_info: #{e}"
 end
 ```
 

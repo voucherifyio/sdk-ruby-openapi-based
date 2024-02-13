@@ -51,24 +51,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the check_eligibility_client_side_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ClientQualificationsCheckEligibilityResponseBody>, Integer, Hash)> check_eligibility_client_side_with_http_info(opts)
-
-```ruby
-begin
-  # Check Eligibility (client-side)
-  data, status_code, headers = api_instance.check_eligibility_client_side_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ClientQualificationsCheckEligibilityResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling ClientSideApi->check_eligibility_client_side_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -95,7 +77,7 @@ end
 
 Redeem Stackable Discounts (client-side)
 
-This method is accessible through public keys which you can use in client side requests coming from mobile and web browser applications.  ## How API returns calculated discounts and order amounts in the response  In the table below, you can see the logic the API follows to calculate discounts and amounts:  | **Field** | **Calculation** | **Description** | |:---|:---|:---| | amount | N/A | This field shows the order amount before applying any discount | | total_amount | `total_amount` = `amount` - `total_discount_amount` | This field shows the order amount after applying all the discounts | | discount_amount | `discount_amount` = `previous_discount_amount` + `applied_discount_amount` | This field sums up all order-level discounts up to and including the specific discount being calculated for the stacked redemption. | | items_discount_amount | sum(items, i => i.discount_amount) | This field sums up all product-specific discounts | | total_discount_amount | `total_discount_amount` = `discount_amount` + `items_discount_amount` | This field sums up all order-level and all product-specific discounts | | applied_discount_amount | N/A | This field shows the order-level discount applied in a particular request | | items_applied_discount_amount | sum(items, i => i.applied_discount_amount) | This field sums up all product-specific discounts applied in a particular request | | total_applied_discount_amount | `total_applied_discount_amount` = `applied_discount_amount` + `items_applied_discount_amount` | This field sums up all order-level and all product-specific discounts applied in a particular request |  <!-- theme: info --> > 📘 Rollbacks > > You can't roll back a child redemption. When you call rollback on a stacked redemption, all child redemptions will be rolled back. You need to refer to a parent redemption ID in your <!-- [rollback request](OpenAPI.json/paths/~1redemptions~1{parentRedemptionId}~1rollbacks/post) -->[rollback request](ref:rollback-stacked-redemptions).
+This method is accessible through public keys which you can use in client side requests coming from mobile and web browser applications.  ## How API returns calculated discounts and order amounts in the response  In the table below, you can see the logic the API follows to calculate discounts and amounts:  | **Field** | **Calculation** | **Description** | |:---|:---|:---| | amount | N/A | This field shows the order amount before applying any discount | | total_amount | `total_amount` = `amount` - `total_discount_amount` | This field shows the order amount after applying all the discounts | | discount_amount | `discount_amount` = `previous_discount_amount` + `applied_discount_amount` | This field sums up all order-level discounts up to and including the specific discount being calculated for the stacked redemption. | | items_discount_amount | sum(items, i => i.discount_amount) | This field sums up all product-specific discounts | | total_discount_amount | `total_discount_amount` = `discount_amount` + `items_discount_amount` | This field sums up all order-level and all product-specific discounts | | applied_discount_amount | N/A | This field shows the order-level discount applied in a particular request | | items_applied_discount_amount | sum(items, i => i.applied_discount_amount) | This field sums up all product-specific discounts applied in a particular request | | total_applied_discount_amount | `total_applied_discount_amount` = `applied_discount_amount` + `items_applied_discount_amount` | This field sums up all order-level and all product-specific discounts applied in a particular request |   > 📘 Rollbacks > > You can't roll back a child redemption. When you call rollback on a stacked redemption, all child redemptions will be rolled back. You need to refer to a parent redemption ID in your [rollback request](ref:rollback-stacked-redemptions).
 
 ### Examples
 
@@ -127,24 +109,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling ClientSideApi->redeem_stacked_discounts_client_side: #{e}"
-end
-```
-
-#### Using the redeem_stacked_discounts_client_side_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ClientRedemptionsRedeemResponseBody>, Integer, Hash)> redeem_stacked_discounts_client_side_with_http_info(origin, opts)
-
-```ruby
-begin
-  # Redeem Stackable Discounts (client-side)
-  data, status_code, headers = api_instance.redeem_stacked_discounts_client_side_with_http_info(origin, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ClientRedemptionsRedeemResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling ClientSideApi->redeem_stacked_discounts_client_side_with_http_info: #{e}"
 end
 ```
 
@@ -210,24 +174,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the track_custom_event_client_side_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ClientEventsCreateResponseBody>, Integer, Hash)> track_custom_event_client_side_with_http_info(origin, opts)
-
-```ruby
-begin
-  # Track Custom Event (client-side)
-  data, status_code, headers = api_instance.track_custom_event_client_side_with_http_info(origin, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ClientEventsCreateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling ClientSideApi->track_custom_event_client_side_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -286,24 +232,6 @@ begin
   api_instance.update_customers_consents_client_side(customer_id, opts)
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling ClientSideApi->update_customers_consents_client_side: #{e}"
-end
-```
-
-#### Using the update_customers_consents_client_side_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> update_customers_consents_client_side_with_http_info(customer_id, opts)
-
-```ruby
-begin
-  # Update Customer's consents (client-side)
-  data, status_code, headers = api_instance.update_customers_consents_client_side_with_http_info(customer_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling ClientSideApi->update_customers_consents_client_side_with_http_info: #{e}"
 end
 ```
 
@@ -366,24 +294,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling ClientSideApi->validate_stacked_discounts_client_side: #{e}"
-end
-```
-
-#### Using the validate_stacked_discounts_client_side_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ClientValidationsValidateResponseBody>, Integer, Hash)> validate_stacked_discounts_client_side_with_http_info(origin, opts)
-
-```ruby
-begin
-  # Validate Stackable Discounts (client-side)
-  data, status_code, headers = api_instance.validate_stacked_discounts_client_side_with_http_info(origin, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ClientValidationsValidateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling ClientSideApi->validate_stacked_discounts_client_side_with_http_info: #{e}"
 end
 ```
 

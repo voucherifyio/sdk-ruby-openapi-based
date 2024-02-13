@@ -50,24 +50,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the get_redemption_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<RedemptionsGetResponseBody>, Integer, Hash)> get_redemption_with_http_info(redemption_id)
-
-```ruby
-begin
-  # Get Redemption
-  data, status_code, headers = api_instance.get_redemption_with_http_info(redemption_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <RedemptionsGetResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling RedemptionsApi->get_redemption_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -123,24 +105,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling RedemptionsApi->get_voucher_redemptions: #{e}"
-end
-```
-
-#### Using the get_voucher_redemptions_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<VouchersRedemptionGetResponseBody>, Integer, Hash)> get_voucher_redemptions_with_http_info(code)
-
-```ruby
-begin
-  # Get Voucher's Redemptions
-  data, status_code, headers = api_instance.get_voucher_redemptions_with_http_info(code)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <VouchersRedemptionGetResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling RedemptionsApi->get_voucher_redemptions_with_http_info: #{e}"
 end
 ```
 
@@ -211,24 +175,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the list_redemptions_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<RedemptionsListResponseBody>, Integer, Hash)> list_redemptions_with_http_info(opts)
-
-```ruby
-begin
-  # List Redemptions
-  data, status_code, headers = api_instance.list_redemptions_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <RedemptionsListResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling RedemptionsApi->list_redemptions_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -262,7 +208,7 @@ end
 
 Redeem Stackable Discounts
 
-## How API returns calculated discounts and order amounts in the response  In the table below, you can see the logic the API follows to calculate discounts and amounts:  | **Field** | **Calculation** | **Description** | |:---|:---|:---| | amount | N/A | This field shows the order amount before applying any discount | | total_amount | `total_amount` = `amount` - `total_discount_amount` | This field shows the order amount after applying all the discounts | | discount_amount | `discount_amount` = `previous_discount_amount` + `applied_discount_amount` | This field sums up all order-level discounts up to and including the specific discount being calculated for the stacked redemption. | | items_discount_amount | sum(items, i => i.discount_amount) | This field sums up all product-specific discounts | | total_discount_amount | `total_discount_amount` = `discount_amount` + `items_discount_amount` | This field sums up all order-level and all product-specific discounts | | applied_discount_amount | N/A | This field shows the order-level discount applied in a particular request | | items_applied_discount_amount | sum(items, i => i.applied_discount_amount) | This field sums up all product-specific discounts applied in a particular request | | total_applied_discount_amount | `total_applied_discount_amount` = `applied_discount_amount` + `items_applied_discount_amount` | This field sums up all order-level and all product-specific discounts applied in a particular request |  <!-- theme: info --> > 📘 Rollbacks > > You can't roll back a child redemption. When you call rollback on a stacked redemption, all child redemptions will be rolled back. You need to refer to a parent redemption ID in your <!-- [rollback request](OpenAPI.json/paths/~1redemptions~1{parentRedemptionId}~1rollbacks/post) -->[rollback request](ref:rollback-stacked-redemptions).      <!-- theme: info --> > 📘 Also available on client-side > > This method is also accessible through public keys which you can use in client-side​ apps: mobile and web browser apps. Go to the dedicated [endpoint](ref:redeem-stacked-discounts-client-side) to learn more. > - Use `X-Client-Application-Id` as the application ID header. > - Use `X-Client-Token` as the appliction secret key header. > - Use client-side base URL. > - Use an `origin` header for your custom domain.
+## How API returns calculated discounts and order amounts in the response  In the table below, you can see the logic the API follows to calculate discounts and amounts:  | **Field** | **Calculation** | **Description** | |:---|:---|:---| | amount | N/A | This field shows the order amount before applying any discount | | total_amount | `total_amount` = `amount` - `total_discount_amount` | This field shows the order amount after applying all the discounts | | discount_amount | `discount_amount` = `previous_discount_amount` + `applied_discount_amount` | This field sums up all order-level discounts up to and including the specific discount being calculated for the stacked redemption. | | items_discount_amount | sum(items, i => i.discount_amount) | This field sums up all product-specific discounts | | total_discount_amount | `total_discount_amount` = `discount_amount` + `items_discount_amount` | This field sums up all order-level and all product-specific discounts | | applied_discount_amount | N/A | This field shows the order-level discount applied in a particular request | | items_applied_discount_amount | sum(items, i => i.applied_discount_amount) | This field sums up all product-specific discounts applied in a particular request | | total_applied_discount_amount | `total_applied_discount_amount` = `applied_discount_amount` + `items_applied_discount_amount` | This field sums up all order-level and all product-specific discounts applied in a particular request |   > 📘 Rollbacks > > You can't roll back a child redemption. When you call rollback on a stacked redemption, all child redemptions will be rolled back. You need to refer to a parent redemption ID in your [rollback request](ref:rollback-stacked-redemptions).       > 📘 Also available on client-side > > This method is also accessible through public keys which you can use in client-side​ apps: mobile and web browser apps. Go to the dedicated [endpoint](ref:redeem-stacked-discounts-client-side) to learn more. > - Use `X-Client-Application-Id` as the application ID header. > - Use `X-Client-Token` as the appliction secret key header. > - Use client-side base URL. > - Use an `origin` header for your custom domain.
 
 ### Examples
 
@@ -293,24 +239,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling RedemptionsApi->redeem_stacked_discounts: #{e}"
-end
-```
-
-#### Using the redeem_stacked_discounts_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<RedemptionsRedeemResponseBody>, Integer, Hash)> redeem_stacked_discounts_with_http_info(opts)
-
-```ruby
-begin
-  # Redeem Stackable Discounts
-  data, status_code, headers = api_instance.redeem_stacked_discounts_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <RedemptionsRedeemResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling RedemptionsApi->redeem_stacked_discounts_with_http_info: #{e}"
 end
 ```
 
@@ -377,24 +305,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the rollback_redemption_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<RedemptionsRollbackCreateResponseBody>, Integer, Hash)> rollback_redemption_with_http_info(redemption_id, opts)
-
-```ruby
-begin
-  # Rollback Redemption
-  data, status_code, headers = api_instance.rollback_redemption_with_http_info(redemption_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <RedemptionsRollbackCreateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling RedemptionsApi->rollback_redemption_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -458,24 +368,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling RedemptionsApi->rollback_stacked_redemptions: #{e}"
-end
-```
-
-#### Using the rollback_stacked_redemptions_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<RedemptionsRollbacksCreateResponseBody>, Integer, Hash)> rollback_stacked_redemptions_with_http_info(parent_redemption_id, opts)
-
-```ruby
-begin
-  # Rollback Stackable Redemptions
-  data, status_code, headers = api_instance.rollback_stacked_redemptions_with_http_info(parent_redemption_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <RedemptionsRollbacksCreateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling RedemptionsApi->rollback_stacked_redemptions_with_http_info: #{e}"
 end
 ```
 

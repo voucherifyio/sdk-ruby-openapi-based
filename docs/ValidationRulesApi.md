@@ -54,24 +54,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the create_validation_rules_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ValidationRulesCreateResponseBody>, Integer, Hash)> create_validation_rules_with_http_info(opts)
-
-```ruby
-begin
-  # Create Validation Rules
-  data, status_code, headers = api_instance.create_validation_rules_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ValidationRulesCreateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling ValidationRulesApi->create_validation_rules_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -127,24 +109,6 @@ begin
   api_instance.delete_validation_rule_assignment(validation_rule_id, assignment_id)
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling ValidationRulesApi->delete_validation_rule_assignment: #{e}"
-end
-```
-
-#### Using the delete_validation_rule_assignment_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_validation_rule_assignment_with_http_info(validation_rule_id, assignment_id)
-
-```ruby
-begin
-  # Delete Validation Rule Assignment
-  data, status_code, headers = api_instance.delete_validation_rule_assignment_with_http_info(validation_rule_id, assignment_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling ValidationRulesApi->delete_validation_rule_assignment_with_http_info: #{e}"
 end
 ```
 
@@ -206,24 +170,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the delete_validation_rules_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_validation_rules_with_http_info(validation_rule_id)
-
-```ruby
-begin
-  # Delete Validation Rule
-  data, status_code, headers = api_instance.delete_validation_rules_with_http_info(validation_rule_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling ValidationRulesApi->delete_validation_rules_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -279,24 +225,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling ValidationRulesApi->get_validation_rule: #{e}"
-end
-```
-
-#### Using the get_validation_rule_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ValidationRulesGetResponseBody>, Integer, Hash)> get_validation_rule_with_http_info(validation_rule_id)
-
-```ruby
-begin
-  # Get Validation Rule
-  data, status_code, headers = api_instance.get_validation_rule_with_http_info(validation_rule_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ValidationRulesGetResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling ValidationRulesApi->get_validation_rule_with_http_info: #{e}"
 end
 ```
 
@@ -360,24 +288,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling ValidationRulesApi->list_validation_rule_assignments: #{e}"
-end
-```
-
-#### Using the list_validation_rule_assignments_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ValidationRulesAssignmentsListResponseBody>, Integer, Hash)> list_validation_rule_assignments_with_http_info(validation_rule_id, opts)
-
-```ruby
-begin
-  # List Validation Rule Assignments
-  data, status_code, headers = api_instance.list_validation_rule_assignments_with_http_info(validation_rule_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ValidationRulesAssignmentsListResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling ValidationRulesApi->list_validation_rule_assignments_with_http_info: #{e}"
 end
 ```
 
@@ -448,24 +358,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the list_validation_rules_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ValidationRulesListResponseBody>, Integer, Hash)> list_validation_rules_with_http_info(opts)
-
-```ruby
-begin
-  # List Validation Rules
-  data, status_code, headers = api_instance.list_validation_rules_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ValidationRulesListResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling ValidationRulesApi->list_validation_rules_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -496,7 +388,7 @@ end
 
 List Validation Rules' Assignment(s)
 
-List all validation rules' assignments or filter the results using the related object ID or the validation rule ID query parameters.   ## How to retrieve specific validation rule assignments(s)  ### Related object ID  To find an assignment for a particular resource, you can use the ID of the object to which the validation rule was assigned. This could be, for example, an ID of a: voucher, campaign, distribution, reward assignment, earning rule, promotion tier.     <!-- title: \"Request\" lineNumbers: true --> ```curl curl -X GET \\   -H \"X-App-Id: c70a6f00-cf91-4756-9df5-47628850002b\" \\   -H \"X-App-Token: 3266b9f8-e246-4f79-bdf0-833929b1380c\" \\   -H \"Content-Type: application/json\" \\   https://api.voucherify.io/v1/validation-rules-assignments?related_object_id=promo_kJliy076IuJYtuYWSHE9fSuT ``` <!-- title: \"Response\" lineNumbers: true --> ```json {     \"object\": \"list\",     \"data_ref\": \"data\",     \"data\": [         {             \"id\": \"asgm_tZaqxeO8gP4q91jG\",             \"rule_id\": \"val_WB6ETAiFztw5\",             \"related_object_id\": \"promo_kJliy076IuJYtuYWSHE9fSuT\",             \"related_object_type\": \"promotion_tier\",             \"created_at\": \"2022-08-10T10:30:39.986Z\",             \"object\": \"validation_rules_assignment\"         }     ],     \"total\": 1 } ```  ### Validation rule ID  You can use the validation rule ID to find assignment(s) for a specific validation rule.   <!-- title: \"Request\" lineNumbers: true --> ```curl curl -X GET \\   -H \"X-App-Id: c70a6f00-cf91-4756-9df5-47628850002b\" \\   -H \"X-App-Token: 3266b9f8-e246-4f79-bdf0-833929b1380c\" \\   -H \"Content-Type: application/json\" \\   https://api.voucherify.io/v1/validation-rules-assignments?rule=val_ZEZmA9oit8aU ``` <!-- title: \"Response\" lineNumbers: true --> ```json {     \"object\": \"list\",     \"data_ref\": \"data\",     \"data\": [         {             \"id\": \"asgm_vef0G6d9Al0rABxq\",             \"rule_id\": \"val_ZEZmA9oit8aU\",             \"related_object_id\": \"camp_rRsfatlwN7unSeUIJDCYedal\",             \"related_object_type\": \"campaign\",             \"created_at\": \"2022-06-29T11:43:52.953Z\",             \"object\": \"validation_rules_assignment\"         },         {             \"id\": \"asgm_sFV4wEFvldwIvgfb\",             \"rule_id\": \"val_ZEZmA9oit8aU\",             \"related_object_id\": \"distr_9QKI02wqgjWyvZXeQkFEPmkkYe\",             \"related_object_type\": \"distribution\",             \"created_at\": \"2022-06-29T11:41:07.680Z\",             \"object\": \"validation_rules_assignment\"         },         {             \"id\": \"asgm_69Qifyv6UZynFIIQ\",             \"rule_id\": \"val_ZEZmA9oit8aU\",             \"related_object_id\": \"promo_g83qUzYZpfX0OMAFOVoQuOYG\",             \"related_object_type\": \"promotion_tier\",             \"created_at\": \"2022-06-29T11:29:41.906Z\",             \"object\": \"validation_rules_assignment\"         }     ],     \"total\": 3 } ``` 
+List all validation rules' assignments or filter the results using the related object ID or the validation rule ID query parameters.   ## How to retrieve specific validation rule assignments(s)  ### Related object ID  To find an assignment for a particular resource, you can use the ID of the object to which the validation rule was assigned. This could be, for example, an ID of a: voucher, campaign, distribution, reward assignment, earning rule, promotion tier.      ```curl curl -X GET \\   -H \"X-App-Id: c70a6f00-cf91-4756-9df5-47628850002b\" \\   -H \"X-App-Token: 3266b9f8-e246-4f79-bdf0-833929b1380c\" \\   -H \"Content-Type: application/json\" \\   https://api.voucherify.io/v1/validation-rules-assignments?related_object_id=promo_kJliy076IuJYtuYWSHE9fSuT ```  ```json {     \"object\": \"list\",     \"data_ref\": \"data\",     \"data\": [         {             \"id\": \"asgm_tZaqxeO8gP4q91jG\",             \"rule_id\": \"val_WB6ETAiFztw5\",             \"related_object_id\": \"promo_kJliy076IuJYtuYWSHE9fSuT\",             \"related_object_type\": \"promotion_tier\",             \"created_at\": \"2022-08-10T10:30:39.986Z\",             \"object\": \"validation_rules_assignment\"         }     ],     \"total\": 1 } ```  ### Validation rule ID  You can use the validation rule ID to find assignment(s) for a specific validation rule.    ```curl curl -X GET \\   -H \"X-App-Id: c70a6f00-cf91-4756-9df5-47628850002b\" \\   -H \"X-App-Token: 3266b9f8-e246-4f79-bdf0-833929b1380c\" \\   -H \"Content-Type: application/json\" \\   https://api.voucherify.io/v1/validation-rules-assignments?rule=val_ZEZmA9oit8aU ```  ```json {     \"object\": \"list\",     \"data_ref\": \"data\",     \"data\": [         {             \"id\": \"asgm_vef0G6d9Al0rABxq\",             \"rule_id\": \"val_ZEZmA9oit8aU\",             \"related_object_id\": \"camp_rRsfatlwN7unSeUIJDCYedal\",             \"related_object_type\": \"campaign\",             \"created_at\": \"2022-06-29T11:43:52.953Z\",             \"object\": \"validation_rules_assignment\"         },         {             \"id\": \"asgm_sFV4wEFvldwIvgfb\",             \"rule_id\": \"val_ZEZmA9oit8aU\",             \"related_object_id\": \"distr_9QKI02wqgjWyvZXeQkFEPmkkYe\",             \"related_object_type\": \"distribution\",             \"created_at\": \"2022-06-29T11:41:07.680Z\",             \"object\": \"validation_rules_assignment\"         },         {             \"id\": \"asgm_69Qifyv6UZynFIIQ\",             \"rule_id\": \"val_ZEZmA9oit8aU\",             \"related_object_id\": \"promo_g83qUzYZpfX0OMAFOVoQuOYG\",             \"related_object_type\": \"promotion_tier\",             \"created_at\": \"2022-06-29T11:29:41.906Z\",             \"object\": \"validation_rules_assignment\"         }     ],     \"total\": 3 } ``` 
 
 ### Examples
 
@@ -531,24 +423,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling ValidationRulesApi->list_validation_rules_assignments: #{e}"
-end
-```
-
-#### Using the list_validation_rules_assignments_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ValidationRulesAssignmentsListResponseBody>, Integer, Hash)> list_validation_rules_assignments_with_http_info(opts)
-
-```ruby
-begin
-  # List Validation Rules' Assignment(s)
-  data, status_code, headers = api_instance.list_validation_rules_assignments_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ValidationRulesAssignmentsListResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling ValidationRulesApi->list_validation_rules_assignments_with_http_info: #{e}"
 end
 ```
 
@@ -614,24 +488,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling ValidationRulesApi->update_validation_rule: #{e}"
-end
-```
-
-#### Using the update_validation_rule_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ValidationRulesUpdateResponseBody>, Integer, Hash)> update_validation_rule_with_http_info(validation_rule_id, opts)
-
-```ruby
-begin
-  # Update Validation Rule
-  data, status_code, headers = api_instance.update_validation_rule_with_http_info(validation_rule_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ValidationRulesUpdateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling ValidationRulesApi->update_validation_rule_with_http_info: #{e}"
 end
 ```
 

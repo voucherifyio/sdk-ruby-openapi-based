@@ -24,7 +24,7 @@ All URIs are relative to *https://api.voucherify.io*
 
 Create Customer
 
-Creates a customer object.  <!-- theme: info -->  > 📘 Upsert Mode > > If you pass an `id` or a `source_id` that already exists in the customer database, Voucherify will return a related customer object with updated fields.
+Creates a customer object.    > 📘 Upsert Mode > > If you pass an `id` or a `source_id` that already exists in the customer database, Voucherify will return a related customer object with updated fields.
 
 ### Examples
 
@@ -55,24 +55,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling CustomersApi->create_customer: #{e}"
-end
-```
-
-#### Using the create_customer_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CustomersCreateResponseBody>, Integer, Hash)> create_customer_with_http_info(opts)
-
-```ruby
-begin
-  # Create Customer
-  data, status_code, headers = api_instance.create_customer_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CustomersCreateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling CustomersApi->create_customer_with_http_info: #{e}"
 end
 ```
 
@@ -134,24 +116,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the customer_permanently_deletion_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CustomersPermanentDeletionCreateResponseBody>, Integer, Hash)> customer_permanently_deletion_with_http_info(customer_id)
-
-```ruby
-begin
-  # Delete Customer Permanently
-  data, status_code, headers = api_instance.customer_permanently_deletion_with_http_info(customer_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CustomersPermanentDeletionCreateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling CustomersApi->customer_permanently_deletion_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -206,24 +170,6 @@ begin
   api_instance.delete_customer(customer_id)
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling CustomersApi->delete_customer: #{e}"
-end
-```
-
-#### Using the delete_customer_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_customer_with_http_info(customer_id)
-
-```ruby
-begin
-  # Delete Customer
-  data, status_code, headers = api_instance.delete_customer_with_http_info(customer_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling CustomersApi->delete_customer_with_http_info: #{e}"
 end
 ```
 
@@ -285,24 +231,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the get_customer_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CustomersGetResponseBody>, Integer, Hash)> get_customer_with_http_info(customer_id)
-
-```ruby
-begin
-  # Get Customer
-  data, status_code, headers = api_instance.get_customer_with_http_info(customer_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CustomersGetResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling CustomersApi->get_customer_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -329,7 +257,7 @@ end
 
 Import and Update Customers using CSV
 
-This API method lets you import or update customer data. To get a proper and valid response, please send a CSV file with data separated by commas.    ## Request Example <!-- title: \"Example Request\" lineNumbers: true --> ```cURL curl -X POST \\   https://api.voucherify.io/v1/customers/importCSV \\   -F file=@/path/to/customers.csv \\   -H \"X-App-Id: c70a6f00-cf91-4756-9df5-47628850002b\" \\   -H \"X-App-Token: 3266b9f8-e246-4f79-bdf0-833929b1380c\" ``` ## CSV File Format  The CSV file has to include headers in the first line. All properties which cannot be mapped to standard customer fields will be added to the metadata object.  <!-- theme: info --> > 📘 Standard customer fields mapping > > **No spaces allowed in field names**   > Id, Name, Email, Phone, Birthdate, Source_id, Address_line_1, Address_line_2, Address_Postal_Code, Address_City, Address_State, Address_Country, Description, Metadata_name_1, Metadata_name_2  ## Update Customers using CSV  If you would like to update customer's data, you can do it using the CSV file with new data. However, remember to include a `source_id` in your CSV file to manage the update successfully.  This API request starts a process that affects Voucherify data in bulk.   In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the `IN_PROGRESS` status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.   The result will return the async ID. You can verify the status of your request via this [API request](ref:get-async-action).
+This API method lets you import or update customer data. To get a proper and valid response, please send a CSV file with data separated by commas.    ## Request Example  ```cURL curl -X POST \\   https://api.voucherify.io/v1/customers/importCSV \\   -F file=@/path/to/customers.csv \\   -H \"X-App-Id: c70a6f00-cf91-4756-9df5-47628850002b\" \\   -H \"X-App-Token: 3266b9f8-e246-4f79-bdf0-833929b1380c\" ``` ## CSV File Format  The CSV file has to include headers in the first line. All properties which cannot be mapped to standard customer fields will be added to the metadata object.   > 📘 Standard customer fields mapping > > **No spaces allowed in field names**   > Id, Name, Email, Phone, Birthdate, Source_id, Address_line_1, Address_line_2, Address_Postal_Code, Address_City, Address_State, Address_Country, Description, Metadata_name_1, Metadata_name_2  ## Update Customers using CSV  If you would like to update customer's data, you can do it using the CSV file with new data. However, remember to include a `source_id` in your CSV file to manage the update successfully.  This API request starts a process that affects Voucherify data in bulk.   In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the `IN_PROGRESS` status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.   The result will return the async ID. You can verify the status of your request via this [API request](ref:get-async-action).
 
 ### Examples
 
@@ -358,24 +286,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling CustomersApi->import_customers_using_csv: #{e}"
-end
-```
-
-#### Using the import_customers_using_csv_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CustomersImportCsvCreateResponseBody>, Integer, Hash)> import_customers_using_csv_with_http_info(file)
-
-```ruby
-begin
-  # Import and Update Customers using CSV
-  data, status_code, headers = api_instance.import_customers_using_csv_with_http_info(file)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CustomersImportCsvCreateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling CustomersApi->import_customers_using_csv_with_http_info: #{e}"
 end
 ```
 
@@ -448,24 +358,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the list_customer_activities_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CustomersActivitiesListResponseBody>, Integer, Hash)> list_customer_activities_with_http_info(customer_id, opts)
-
-```ruby
-begin
-  # List Customer Activities
-  data, status_code, headers = api_instance.list_customer_activities_with_http_info(customer_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CustomersActivitiesListResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling CustomersApi->list_customer_activities_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -530,24 +422,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling CustomersApi->list_customer_segments: #{e}"
-end
-```
-
-#### Using the list_customer_segments_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CustomersSegmentsListResponseBody>, Integer, Hash)> list_customer_segments_with_http_info(customer_id)
-
-```ruby
-begin
-  # List Customer's Segments
-  data, status_code, headers = api_instance.list_customer_segments_with_http_info(customer_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CustomersSegmentsListResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling CustomersApi->list_customer_segments_with_http_info: #{e}"
 end
 ```
 
@@ -619,24 +493,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling CustomersApi->list_customers: #{e}"
-end
-```
-
-#### Using the list_customers_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CustomersListResponseBody>, Integer, Hash)> list_customers_with_http_info(opts)
-
-```ruby
-begin
-  # List Customers
-  data, status_code, headers = api_instance.list_customers_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CustomersListResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling CustomersApi->list_customers_with_http_info: #{e}"
 end
 ```
 
@@ -712,24 +568,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the update_customer_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CustomersUpdateResponseBody>, Integer, Hash)> update_customer_with_http_info(customer_id, opts)
-
-```ruby
-begin
-  # Update Customer
-  data, status_code, headers = api_instance.update_customer_with_http_info(customer_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CustomersUpdateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling CustomersApi->update_customer_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -791,24 +629,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the update_customers_consents_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> update_customers_consents_with_http_info(customer_id, opts)
-
-```ruby
-begin
-  # Update Customer's consents
-  data, status_code, headers = api_instance.update_customers_consents_with_http_info(customer_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling CustomersApi->update_customers_consents_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -836,7 +656,7 @@ nil (empty response body)
 
 Update Customers in bulk
 
-Update several customers in one asynchronous operation.   In one request, it is possible to update a maximum of **100** records. In the response body, you get a unique async action identifier.    If a requested customer object is not found, then an **upsert** occurs. This is reflected in the <!-- [Get Async Action](OpenAPI.json/paths/~1async-actions~1{asyncActionId}/get) -->[Get Async Action](ref:get-async-action) endpoint as follows:    <!-- title: \"Response\" lineNumbers: true --> ```json {     \"found\": false,     \"updated\": true } ```  This API request starts a process that affects Voucherify data in bulk.   In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the `IN_PROGRESS` status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.   The result will return the async ID. You can verify the status of your request via this [API request](ref:get-async-action).
+Update several customers in one asynchronous operation.   In one request, it is possible to update a maximum of **100** records. In the response body, you get a unique async action identifier.    If a requested customer object is not found, then an **upsert** occurs. This is reflected in the [Get Async Action](ref:get-async-action) endpoint as follows:     ```json {     \"found\": false,     \"updated\": true } ```  This API request starts a process that affects Voucherify data in bulk.   In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the `IN_PROGRESS` status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.   The result will return the async ID. You can verify the status of your request via this [API request](ref:get-async-action).
 
 ### Examples
 
@@ -870,24 +690,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the update_customers_in_bulk_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CustomersUpdateInBulkResponseBody>, Integer, Hash)> update_customers_in_bulk_with_http_info(opts)
-
-```ruby
-begin
-  # Update Customers in bulk
-  data, status_code, headers = api_instance.update_customers_in_bulk_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CustomersUpdateInBulkResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling CustomersApi->update_customers_in_bulk_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -914,7 +716,7 @@ end
 
 Update Customers' Metadata in bulk
 
-Update several customers metadata properties in one asynchronous operation.   In one request, it is possible to update a maximum of **100** records. In the response body, you get a unique async action identifier.    If a requested customer object is not found, then an **upsert** occurs. This is reflected in the <!-- [Get Async Action](OpenAPI.json/paths/~1async-actions~1{asyncActionId}/get) -->[Get Async Action](ref:get-async-action) endpoint as follows:    <!-- title: \"Response\" lineNumbers: true --> ```json {     \"found\": false,     \"updated\": true } ```  This API request starts a process that affects Voucherify data in bulk.   In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the `IN_PROGRESS` status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.   The result will return the async ID. You can verify the status of your request via this [API request](ref:get-async-action).
+Update several customers metadata properties in one asynchronous operation.   In one request, it is possible to update a maximum of **100** records. In the response body, you get a unique async action identifier.    If a requested customer object is not found, then an **upsert** occurs. This is reflected in the [Get Async Action](ref:get-async-action) endpoint as follows:     ```json {     \"found\": false,     \"updated\": true } ```  This API request starts a process that affects Voucherify data in bulk.   In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the `IN_PROGRESS` status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.   The result will return the async ID. You can verify the status of your request via this [API request](ref:get-async-action).
 
 ### Examples
 
@@ -945,24 +747,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling CustomersApi->update_customers_metadata_in_bulk: #{e}"
-end
-```
-
-#### Using the update_customers_metadata_in_bulk_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CustomersMetadataUpdateInBulkResponseBody>, Integer, Hash)> update_customers_metadata_in_bulk_with_http_info(opts)
-
-```ruby
-begin
-  # Update Customers' Metadata in bulk
-  data, status_code, headers = api_instance.update_customers_metadata_in_bulk_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CustomersMetadataUpdateInBulkResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling CustomersApi->update_customers_metadata_in_bulk_with_http_info: #{e}"
 end
 ```
 

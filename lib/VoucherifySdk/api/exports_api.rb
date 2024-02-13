@@ -145,7 +145,7 @@ module VoucherifySdk
     end
 
     # Download Export
-    # Download the contents of the exported CSV file.   <!-- theme: info -->  > 📘 Important notes > > **Base URL:**  > - `https://download.voucherify.io` (Europe)  > - `https://us1.download.voucherify.io` (US)  > - `https://as1.download.voucherify.io` (Asia)  > > **Token:** Can be found within the `result` parameter of the <!-- [Get Export](OpenAPI.json/paths/~1exports~1{exportId}/get) -->[Get Export](ref:get-export) method response.
+    # Download the contents of the exported CSV file.     > 📘 Important notes > > **Base URL:**  > - `https://download.voucherify.io` (Europe)  > - `https://us1.download.voucherify.io` (US)  > - `https://as1.download.voucherify.io` (Asia)  > > **Token:** Can be found within the `result` parameter of the [Get Export](ref:get-export) method response.
     # @param export_id [String] Unique export object ID.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :token Token that was issued to the export, to get this token, get the export first
@@ -156,7 +156,7 @@ module VoucherifySdk
     end
 
     # Download Export
-    # Download the contents of the exported CSV file.   &lt;!-- theme: info --&gt;  &gt; 📘 Important notes &gt; &gt; **Base URL:**  &gt; - &#x60;https://download.voucherify.io&#x60; (Europe)  &gt; - &#x60;https://us1.download.voucherify.io&#x60; (US)  &gt; - &#x60;https://as1.download.voucherify.io&#x60; (Asia)  &gt; &gt; **Token:** Can be found within the &#x60;result&#x60; parameter of the &lt;!-- [Get Export](OpenAPI.json/paths/~1exports~1{exportId}/get) --&gt;[Get Export](ref:get-export) method response.
+    # Download the contents of the exported CSV file.     &gt; 📘 Important notes &gt; &gt; **Base URL:**  &gt; - &#x60;https://download.voucherify.io&#x60; (Europe)  &gt; - &#x60;https://us1.download.voucherify.io&#x60; (US)  &gt; - &#x60;https://as1.download.voucherify.io&#x60; (Asia)  &gt; &gt; **Token:** Can be found within the &#x60;result&#x60; parameter of the [Get Export](ref:get-export) method response.
     # @param export_id [String] Unique export object ID.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :token Token that was issued to the export, to get this token, get the export first
@@ -211,7 +211,7 @@ module VoucherifySdk
     end
 
     # Get Export
-    # Retrieves the URL of the downloadable file, which was generated via the <!-- [Create Export](OpenAPI.json/paths/~1exports/post) -->[Create Export](ref:create-export) method.
+    # Retrieves the URL of the downloadable file, which was generated via the [Create Export](ref:create-export) method.
     # @param export_id [String] Unique export object ID of previously created export. This object can be a: &#x60;voucher&#x60;, &#x60;redemption&#x60;, &#x60;publication&#x60;, &#x60;customer&#x60;, &#x60;order&#x60;, &#x60;points_expiration&#x60;, or &#x60;voucher_transactions&#x60;.
     # @param [Hash] opts the optional parameters
     # @return [ExportsGetResponseBody]
@@ -221,7 +221,7 @@ module VoucherifySdk
     end
 
     # Get Export
-    # Retrieves the URL of the downloadable file, which was generated via the &lt;!-- [Create Export](OpenAPI.json/paths/~1exports/post) --&gt;[Create Export](ref:create-export) method.
+    # Retrieves the URL of the downloadable file, which was generated via the [Create Export](ref:create-export) method.
     # @param export_id [String] Unique export object ID of previously created export. This object can be a: &#x60;voucher&#x60;, &#x60;redemption&#x60;, &#x60;publication&#x60;, &#x60;customer&#x60;, &#x60;order&#x60;, &#x60;points_expiration&#x60;, or &#x60;voucher_transactions&#x60;.
     # @param [Hash] opts the optional parameters
     # @return [Array<(ExportsGetResponseBody, Integer, Hash)>] ExportsGetResponseBody data, response status code and response headers

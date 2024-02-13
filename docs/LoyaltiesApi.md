@@ -73,24 +73,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the create_in_bulk_loyalty_tiers_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<Array<LoyaltyTier>>, Integer, Hash)> create_in_bulk_loyalty_tiers_with_http_info(campaign_id, opts)
-
-```ruby
-begin
-  # Create loyalty tiers
-  data, status_code, headers = api_instance.create_in_bulk_loyalty_tiers_with_http_info(campaign_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <Array<LoyaltyTier>>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling LoyaltiesApi->create_in_bulk_loyalty_tiers_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -147,24 +129,6 @@ begin
   api_instance.delete_earning_rule(campaign_id, earning_rule_id)
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling LoyaltiesApi->delete_earning_rule: #{e}"
-end
-```
-
-#### Using the delete_earning_rule_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_earning_rule_with_http_info(campaign_id, earning_rule_id)
-
-```ruby
-begin
-  # Delete Earning Rule
-  data, status_code, headers = api_instance.delete_earning_rule_with_http_info(campaign_id, earning_rule_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling LoyaltiesApi->delete_earning_rule_with_http_info: #{e}"
 end
 ```
 
@@ -230,24 +194,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the delete_loyalty_program_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<LoyaltiesDeleteResponseBody>, Integer, Hash)> delete_loyalty_program_with_http_info(campaign_id, opts)
-
-```ruby
-begin
-  # Delete Loyalty Campaign
-  data, status_code, headers = api_instance.delete_loyalty_program_with_http_info(campaign_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <LoyaltiesDeleteResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling LoyaltiesApi->delete_loyalty_program_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -304,24 +250,6 @@ begin
   api_instance.delete_reward_assignment1(campaign_id, assignment_id)
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling LoyaltiesApi->delete_reward_assignment1: #{e}"
-end
-```
-
-#### Using the delete_reward_assignment1_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_reward_assignment1_with_http_info(campaign_id, assignment_id)
-
-```ruby
-begin
-  # Delete Reward Assignment
-  data, status_code, headers = api_instance.delete_reward_assignment1_with_http_info(campaign_id, assignment_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling LoyaltiesApi->delete_reward_assignment1_with_http_info: #{e}"
 end
 ```
 
@@ -385,24 +313,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the disable_earning_rule_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<LoyaltiesEarningRulesDisableResponseBody>, Integer, Hash)> disable_earning_rule_with_http_info(campaign_id, earning_rule_id)
-
-```ruby
-begin
-  # Disable Earning Rule
-  data, status_code, headers = api_instance.disable_earning_rule_with_http_info(campaign_id, earning_rule_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <LoyaltiesEarningRulesDisableResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling LoyaltiesApi->disable_earning_rule_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -460,24 +370,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling LoyaltiesApi->enable_earning_rule: #{e}"
-end
-```
-
-#### Using the enable_earning_rule_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<LoyaltiesEarningRulesEnableResponseBody>, Integer, Hash)> enable_earning_rule_with_http_info(campaign_id, earning_rule_id)
-
-```ruby
-begin
-  # Enable Earning Rule
-  data, status_code, headers = api_instance.enable_earning_rule_with_http_info(campaign_id, earning_rule_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <LoyaltiesEarningRulesEnableResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling LoyaltiesApi->enable_earning_rule_with_http_info: #{e}"
 end
 ```
 
@@ -540,24 +432,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling LoyaltiesApi->export_loyalty_card_transactions: #{e}"
-end
-```
-
-#### Using the export_loyalty_card_transactions_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<LoyaltiesMembersTransactionsExportCreateResponseBody>, Integer, Hash)> export_loyalty_card_transactions_with_http_info(member_id, opts)
-
-```ruby
-begin
-  # Export Loyalty Card Transactions
-  data, status_code, headers = api_instance.export_loyalty_card_transactions_with_http_info(member_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <LoyaltiesMembersTransactionsExportCreateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling LoyaltiesApi->export_loyalty_card_transactions_with_http_info: #{e}"
 end
 ```
 
@@ -624,24 +498,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the export_loyalty_card_transactions1_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<LoyaltiesMembersTransactionsExportCreateResponseBody>, Integer, Hash)> export_loyalty_card_transactions1_with_http_info(campaign_id, member_id, opts)
-
-```ruby
-begin
-  # Export Loyalty Card Transactions
-  data, status_code, headers = api_instance.export_loyalty_card_transactions1_with_http_info(campaign_id, member_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <LoyaltiesMembersTransactionsExportCreateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling LoyaltiesApi->export_loyalty_card_transactions1_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -700,24 +556,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling LoyaltiesApi->get_earning_rule: #{e}"
-end
-```
-
-#### Using the get_earning_rule_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<LoyaltiesEarningRulesGetResponseBody>, Integer, Hash)> get_earning_rule_with_http_info(campaign_id, earning_rule_id)
-
-```ruby
-begin
-  # Get Earning Rule
-  data, status_code, headers = api_instance.get_earning_rule_with_http_info(campaign_id, earning_rule_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <LoyaltiesEarningRulesGetResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling LoyaltiesApi->get_earning_rule_with_http_info: #{e}"
 end
 ```
 
@@ -781,24 +619,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the get_loyalty_tier_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<LoyaltiesTiersGetResponseBody>, Integer, Hash)> get_loyalty_tier_with_http_info(campaign_id, loyalty_tier_id)
-
-```ruby
-begin
-  # Get Loyalty Tier
-  data, status_code, headers = api_instance.get_loyalty_tier_with_http_info(campaign_id, loyalty_tier_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <LoyaltiesTiersGetResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling LoyaltiesApi->get_loyalty_tier_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -856,24 +676,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling LoyaltiesApi->get_reward_assignment1: #{e}"
-end
-```
-
-#### Using the get_reward_assignment1_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<LoyaltiesRewardAssignmentsGetResponseBody>, Integer, Hash)> get_reward_assignment1_with_http_info(campaign_id, assignment_id)
-
-```ruby
-begin
-  # Get Reward Assignment
-  data, status_code, headers = api_instance.get_reward_assignment1_with_http_info(campaign_id, assignment_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <LoyaltiesRewardAssignmentsGetResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling LoyaltiesApi->get_reward_assignment1_with_http_info: #{e}"
 end
 ```
 
@@ -937,24 +739,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the get_reward_assignment2_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<LoyaltiesRewardsGetResponseBody>, Integer, Hash)> get_reward_assignment2_with_http_info(campaign_id, assignment_id)
-
-```ruby
-begin
-  # Get Reward Assignment
-  data, status_code, headers = api_instance.get_reward_assignment2_with_http_info(campaign_id, assignment_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <LoyaltiesRewardsGetResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling LoyaltiesApi->get_reward_assignment2_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -1012,24 +796,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling LoyaltiesApi->get_reward_details: #{e}"
-end
-```
-
-#### Using the get_reward_details_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<LoyaltiesRewardAssignmentsRewardGetResponseBody>, Integer, Hash)> get_reward_details_with_http_info(campaign_id, assignment_id)
-
-```ruby
-begin
-  # Get Reward Details
-  data, status_code, headers = api_instance.get_reward_details_with_http_info(campaign_id, assignment_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <LoyaltiesRewardAssignmentsRewardGetResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling LoyaltiesApi->get_reward_details_with_http_info: #{e}"
 end
 ```
 
@@ -1096,24 +862,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the list_loyalty_card_transactions_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<LoyaltiesMembersTransactionsListResponseBody>, Integer, Hash)> list_loyalty_card_transactions_with_http_info(member_id, opts)
-
-```ruby
-begin
-  # List Loyalty Card Transactions
-  data, status_code, headers = api_instance.list_loyalty_card_transactions_with_http_info(member_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <LoyaltiesMembersTransactionsListResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling LoyaltiesApi->list_loyalty_card_transactions_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -1176,24 +924,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling LoyaltiesApi->list_loyalty_card_transactions1: #{e}"
-end
-```
-
-#### Using the list_loyalty_card_transactions1_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<LoyaltiesMembersTransactionsListResponseBody>, Integer, Hash)> list_loyalty_card_transactions1_with_http_info(campaign_id, member_id, opts)
-
-```ruby
-begin
-  # List Loyalty Card Transactions
-  data, status_code, headers = api_instance.list_loyalty_card_transactions1_with_http_info(campaign_id, member_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <LoyaltiesMembersTransactionsListResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling LoyaltiesApi->list_loyalty_card_transactions1_with_http_info: #{e}"
 end
 ```
 
@@ -1263,24 +993,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the list_loyalty_tier_earning_rules_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<LoyaltiesTiersEarningRulesListResponseBody>, Integer, Hash)> list_loyalty_tier_earning_rules_with_http_info(campaign_id, loyalty_tier_id, opts)
-
-```ruby
-begin
-  # List Loyalty Tier Earning Rules
-  data, status_code, headers = api_instance.list_loyalty_tier_earning_rules_with_http_info(campaign_id, loyalty_tier_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <LoyaltiesTiersEarningRulesListResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling LoyaltiesApi->list_loyalty_tier_earning_rules_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -1340,24 +1052,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling LoyaltiesApi->list_loyalty_tier_rewards: #{e}"
-end
-```
-
-#### Using the list_loyalty_tier_rewards_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<LoyaltiesTiersRewardsListResponseBody>, Integer, Hash)> list_loyalty_tier_rewards_with_http_info(campaign_id, loyalty_tier_id)
-
-```ruby
-begin
-  # List Loyalty Tier Rewards
-  data, status_code, headers = api_instance.list_loyalty_tier_rewards_with_http_info(campaign_id, loyalty_tier_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <LoyaltiesTiersRewardsListResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling LoyaltiesApi->list_loyalty_tier_rewards_with_http_info: #{e}"
 end
 ```
 
@@ -1424,24 +1118,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the list_loyalty_tiers_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<LoyaltiesTiersListResponseBody>, Integer, Hash)> list_loyalty_tiers_with_http_info(campaign_id, opts)
-
-```ruby
-begin
-  # List Loyalty Tiers
-  data, status_code, headers = api_instance.list_loyalty_tiers_with_http_info(campaign_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <LoyaltiesTiersListResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling LoyaltiesApi->list_loyalty_tiers_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -1499,24 +1175,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling LoyaltiesApi->list_member_loyalty_tier: #{e}"
-end
-```
-
-#### Using the list_member_loyalty_tier_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<LoyaltiesMembersTiersListResponseBody>, Integer, Hash)> list_member_loyalty_tier_with_http_info(member_id)
-
-```ruby
-begin
-  # List Member's Loyalty Tiers
-  data, status_code, headers = api_instance.list_member_loyalty_tier_with_http_info(member_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <LoyaltiesMembersTiersListResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling LoyaltiesApi->list_member_loyalty_tier_with_http_info: #{e}"
 end
 ```
 
@@ -1578,24 +1236,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling LoyaltiesApi->list_member_rewards: #{e}"
-end
-```
-
-#### Using the list_member_rewards_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<LoyaltiesMembersRewardsListResponseBody>, Integer, Hash)> list_member_rewards_with_http_info(member_id, opts)
-
-```ruby
-begin
-  # List Member Rewards
-  data, status_code, headers = api_instance.list_member_rewards_with_http_info(member_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <LoyaltiesMembersRewardsListResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling LoyaltiesApi->list_member_rewards_with_http_info: #{e}"
 end
 ```
 
@@ -1663,24 +1303,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the list_points_expiration_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<LoyaltiesMembersPointsExpirationListResponseBody>, Integer, Hash)> list_points_expiration_with_http_info(campaign_id, member_id, opts)
-
-```ruby
-begin
-  # Get Points Expiration
-  data, status_code, headers = api_instance.list_points_expiration_with_http_info(campaign_id, member_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <LoyaltiesMembersPointsExpirationListResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling LoyaltiesApi->list_points_expiration_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -1710,7 +1332,7 @@ end
 
 Redeem Reward
 
-<!-- theme: info --> > 📘 Alternative endpoint > > This endpoint is an alternative to this <!-- [endpoint](OpenAPI.json/paths/~1loyalties~1{campaignId}~1members~1{memberId}~1redemption) -->[endpoint](ref:redeem-reward-1). The URL was re-designed to allow you to redeem a reward without having to provide the `campaignId` as a path parameter.
+ > 📘 Alternative endpoint > > This endpoint is an alternative to this [endpoint](ref:redeem-reward-1). The URL was re-designed to allow you to redeem a reward without having to provide the `campaignId` as a path parameter.
 
 ### Examples
 
@@ -1742,24 +1364,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling LoyaltiesApi->redeem_reward: #{e}"
-end
-```
-
-#### Using the redeem_reward_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<LoyaltiesMembersRedemptionRedeemResponseBody>, Integer, Hash)> redeem_reward_with_http_info(member_id, opts)
-
-```ruby
-begin
-  # Redeem Reward
-  data, status_code, headers = api_instance.redeem_reward_with_http_info(member_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <LoyaltiesMembersRedemptionRedeemResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling LoyaltiesApi->redeem_reward_with_http_info: #{e}"
 end
 ```
 
@@ -1823,24 +1427,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling LoyaltiesApi->redeem_reward1: #{e}"
-end
-```
-
-#### Using the redeem_reward1_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<LoyaltiesMembersRedemptionRedeemResponseBody>, Integer, Hash)> redeem_reward1_with_http_info(campaign_id, member_id, opts)
-
-```ruby
-begin
-  # Redeem Reward
-  data, status_code, headers = api_instance.redeem_reward1_with_http_info(campaign_id, member_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <LoyaltiesMembersRedemptionRedeemResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling LoyaltiesApi->redeem_reward1_with_http_info: #{e}"
 end
 ```
 
@@ -1908,24 +1494,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the transfer_points_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<LoyaltiesMembersTransfersCreateResponseBody>, Integer, Hash)> transfer_points_with_http_info(campaign_id, member_id, opts)
-
-```ruby
-begin
-  # Transfer Loyalty Points
-  data, status_code, headers = api_instance.transfer_points_with_http_info(campaign_id, member_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <LoyaltiesMembersTransfersCreateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling LoyaltiesApi->transfer_points_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -1954,7 +1522,7 @@ end
 
 Add or Remove Loyalty Card Balance
 
-This method gives adds or removes balance to an existing loyalty card. The removal of points will consume the points that expire the soonest.   <!-- theme: info --> > 📘 Alternative endpoint > This endpoint is an alternative to this <!-- [endpoint](OpenAPI.json/paths/~1loyalties~1{campaignId}~1members~1{memberId}~1balance) -->[endpoint](ref:update-loyalty-card-balance-1). The URL was re-designed to allow you to add or remove loyalty card balance without having to provide the `campaignId` as a path parameter.
+This method gives adds or removes balance to an existing loyalty card. The removal of points will consume the points that expire the soonest.    > 📘 Alternative endpoint > This endpoint is an alternative to this [endpoint](ref:update-loyalty-card-balance-1). The URL was re-designed to allow you to add or remove loyalty card balance without having to provide the `campaignId` as a path parameter.
 
 ### Examples
 
@@ -1986,24 +1554,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling LoyaltiesApi->update_loyalty_card_balance: #{e}"
-end
-```
-
-#### Using the update_loyalty_card_balance_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<LoyaltiesMembersBalanceUpdateResponseBody>, Integer, Hash)> update_loyalty_card_balance_with_http_info(member_id, opts)
-
-```ruby
-begin
-  # Add or Remove Loyalty Card Balance
-  data, status_code, headers = api_instance.update_loyalty_card_balance_with_http_info(member_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <LoyaltiesMembersBalanceUpdateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling LoyaltiesApi->update_loyalty_card_balance_with_http_info: #{e}"
 end
 ```
 
@@ -2067,24 +1617,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling LoyaltiesApi->update_loyalty_card_balance1: #{e}"
-end
-```
-
-#### Using the update_loyalty_card_balance1_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<LoyaltiesMembersBalanceUpdateResponseBody>, Integer, Hash)> update_loyalty_card_balance1_with_http_info(campaign_id, member_id, opts)
-
-```ruby
-begin
-  # Add or Remove Loyalty Card Balance
-  data, status_code, headers = api_instance.update_loyalty_card_balance1_with_http_info(campaign_id, member_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <LoyaltiesMembersBalanceUpdateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling LoyaltiesApi->update_loyalty_card_balance1_with_http_info: #{e}"
 end
 ```
 

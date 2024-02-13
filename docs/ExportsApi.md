@@ -51,24 +51,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the create_export_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ExportsCreateResponseBody>, Integer, Hash)> create_export_with_http_info(opts)
-
-```ruby
-begin
-  # Create Export
-  data, status_code, headers = api_instance.create_export_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ExportsCreateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling ExportsApi->create_export_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -126,24 +108,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the delete_export_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_export_with_http_info(export_id)
-
-```ruby
-begin
-  # Delete Export
-  data, status_code, headers = api_instance.delete_export_with_http_info(export_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling ExportsApi->delete_export_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -170,7 +134,7 @@ nil (empty response body)
 
 Download Export
 
-Download the contents of the exported CSV file.   <!-- theme: info -->  > 📘 Important notes > > **Base URL:**  > - `https://download.voucherify.io` (Europe)  > - `https://us1.download.voucherify.io` (US)  > - `https://as1.download.voucherify.io` (Asia)  > > **Token:** Can be found within the `result` parameter of the <!-- [Get Export](OpenAPI.json/paths/~1exports~1{exportId}/get) -->[Get Export](ref:get-export) method response.
+Download the contents of the exported CSV file.     > 📘 Important notes > > **Base URL:**  > - `https://download.voucherify.io` (Europe)  > - `https://us1.download.voucherify.io` (US)  > - `https://as1.download.voucherify.io` (Asia)  > > **Token:** Can be found within the `result` parameter of the [Get Export](ref:get-export) method response.
 
 ### Examples
 
@@ -190,24 +154,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling ExportsApi->download_export: #{e}"
-end
-```
-
-#### Using the download_export_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(String, Integer, Hash)> download_export_with_http_info(export_id, opts)
-
-```ruby
-begin
-  # Download Export
-  data, status_code, headers = api_instance.download_export_with_http_info(export_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => String
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling ExportsApi->download_export_with_http_info: #{e}"
 end
 ```
 
@@ -238,7 +184,7 @@ No authorization required
 
 Get Export
 
-Retrieves the URL of the downloadable file, which was generated via the <!-- [Create Export](OpenAPI.json/paths/~1exports/post) -->[Create Export](ref:create-export) method.
+Retrieves the URL of the downloadable file, which was generated via the [Create Export](ref:create-export) method.
 
 ### Examples
 
@@ -267,24 +213,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling ExportsApi->get_export: #{e}"
-end
-```
-
-#### Using the get_export_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ExportsGetResponseBody>, Integer, Hash)> get_export_with_http_info(export_id)
-
-```ruby
-begin
-  # Get Export
-  data, status_code, headers = api_instance.get_export_with_http_info(export_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ExportsGetResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling ExportsApi->get_export_with_http_info: #{e}"
 end
 ```
 
@@ -347,24 +275,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling ExportsApi->list_exports: #{e}"
-end
-```
-
-#### Using the list_exports_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ExportsListResponseBody>, Integer, Hash)> list_exports_with_http_info(opts)
-
-```ruby
-begin
-  # List Exports
-  data, status_code, headers = api_instance.list_exports_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ExportsListResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling ExportsApi->list_exports_with_http_info: #{e}"
 end
 ```
 

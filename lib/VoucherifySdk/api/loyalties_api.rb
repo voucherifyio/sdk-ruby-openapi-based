@@ -1536,7 +1536,7 @@ module VoucherifySdk
     end
 
     # Redeem Reward
-    # <!-- theme: info --> > 📘 Alternative endpoint > > This endpoint is an alternative to this <!-- [endpoint](OpenAPI.json/paths/~1loyalties~1{campaignId}~1members~1{memberId}~1redemption) -->[endpoint](ref:redeem-reward-1). The URL was re-designed to allow you to redeem a reward without having to provide the `campaignId` as a path parameter.
+    #  > 📘 Alternative endpoint > > This endpoint is an alternative to this [endpoint](ref:redeem-reward-1). The URL was re-designed to allow you to redeem a reward without having to provide the `campaignId` as a path parameter.
     # @param member_id [String] Unique loyalty card assigned to a particular customer.
     # @param [Hash] opts the optional parameters
     # @option opts [LoyaltiesMembersRedemptionRedeemRequestBody] :loyalties_members_redemption_redeem_request_body Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order.
@@ -1547,7 +1547,7 @@ module VoucherifySdk
     end
 
     # Redeem Reward
-    # &lt;!-- theme: info --&gt; &gt; 📘 Alternative endpoint &gt; &gt; This endpoint is an alternative to this &lt;!-- [endpoint](OpenAPI.json/paths/~1loyalties~1{campaignId}~1members~1{memberId}~1redemption) --&gt;[endpoint](ref:redeem-reward-1). The URL was re-designed to allow you to redeem a reward without having to provide the &#x60;campaignId&#x60; as a path parameter.
+    #  &gt; 📘 Alternative endpoint &gt; &gt; This endpoint is an alternative to this [endpoint](ref:redeem-reward-1). The URL was re-designed to allow you to redeem a reward without having to provide the &#x60;campaignId&#x60; as a path parameter.
     # @param member_id [String] Unique loyalty card assigned to a particular customer.
     # @param [Hash] opts the optional parameters
     # @option opts [LoyaltiesMembersRedemptionRedeemRequestBody] :loyalties_members_redemption_redeem_request_body Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order.
@@ -1758,7 +1758,7 @@ module VoucherifySdk
     end
 
     # Add or Remove Loyalty Card Balance
-    # This method gives adds or removes balance to an existing loyalty card. The removal of points will consume the points that expire the soonest.   <!-- theme: info --> > 📘 Alternative endpoint > This endpoint is an alternative to this <!-- [endpoint](OpenAPI.json/paths/~1loyalties~1{campaignId}~1members~1{memberId}~1balance) -->[endpoint](ref:update-loyalty-card-balance-1). The URL was re-designed to allow you to add or remove loyalty card balance without having to provide the `campaignId` as a path parameter.
+    # This method gives adds or removes balance to an existing loyalty card. The removal of points will consume the points that expire the soonest.    > 📘 Alternative endpoint > This endpoint is an alternative to this [endpoint](ref:update-loyalty-card-balance-1). The URL was re-designed to allow you to add or remove loyalty card balance without having to provide the `campaignId` as a path parameter.
     # @param member_id [String] Unique loyalty card assigned to a particular customer.
     # @param [Hash] opts the optional parameters
     # @option opts [LoyaltiesMembersBalanceUpdateRequestBody] :loyalties_members_balance_update_request_body Specify the point adjustment along with the expiration mechanism.
@@ -1769,7 +1769,7 @@ module VoucherifySdk
     end
 
     # Add or Remove Loyalty Card Balance
-    # This method gives adds or removes balance to an existing loyalty card. The removal of points will consume the points that expire the soonest.   &lt;!-- theme: info --&gt; &gt; 📘 Alternative endpoint &gt; This endpoint is an alternative to this &lt;!-- [endpoint](OpenAPI.json/paths/~1loyalties~1{campaignId}~1members~1{memberId}~1balance) --&gt;[endpoint](ref:update-loyalty-card-balance-1). The URL was re-designed to allow you to add or remove loyalty card balance without having to provide the &#x60;campaignId&#x60; as a path parameter.
+    # This method gives adds or removes balance to an existing loyalty card. The removal of points will consume the points that expire the soonest.    &gt; 📘 Alternative endpoint &gt; This endpoint is an alternative to this [endpoint](ref:update-loyalty-card-balance-1). The URL was re-designed to allow you to add or remove loyalty card balance without having to provide the &#x60;campaignId&#x60; as a path parameter.
     # @param member_id [String] Unique loyalty card assigned to a particular customer.
     # @param [Hash] opts the optional parameters
     # @option opts [LoyaltiesMembersBalanceUpdateRequestBody] :loyalties_members_balance_update_request_body Specify the point adjustment along with the expiration mechanism.

@@ -44,24 +44,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the delete_segment_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_segment_with_http_info(segment_id)
-
-```ruby
-begin
-  # Delete Segment
-  data, status_code, headers = api_instance.delete_segment_with_http_info(segment_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling SegmentsApi->delete_segment_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |

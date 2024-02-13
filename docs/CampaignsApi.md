@@ -59,24 +59,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the add_voucher_with_specific_code_to_campaign_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CampaignsVouchersCreateResponseBody>, Integer, Hash)> add_voucher_with_specific_code_to_campaign_with_http_info(campaign_id, code, opts)
-
-```ruby
-begin
-  # Add Voucher with Specific Code to Campaign
-  data, status_code, headers = api_instance.add_voucher_with_specific_code_to_campaign_with_http_info(campaign_id, code, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CampaignsVouchersCreateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling CampaignsApi->add_voucher_with_specific_code_to_campaign_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -141,24 +123,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the add_vouchers_to_campaign_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CampaignsVouchersCreateResponseBody>, Integer, Hash)> add_vouchers_to_campaign_with_http_info(campaign_id, opts)
-
-```ruby
-begin
-  # Add Vouchers to Campaign
-  data, status_code, headers = api_instance.add_vouchers_to_campaign_with_http_info(campaign_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CampaignsVouchersCreateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling CampaignsApi->add_vouchers_to_campaign_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -187,7 +151,7 @@ end
 
 Create Campaign
 
-Method to create a batch of vouchers aggregated in one campaign. You can choose a variety of voucher types and define a unique pattern for generating codes.   <!-- theme: info -->  > 📘 Global uniqueness > > All campaign codes are unique across the whole project. Voucherify will not allow you to generate 2 campaigns with the same coupon code.   <!-- theme: warning --> > 🚧 Code generation status > > This is an asynchronous action; you can't read or modify a newly created campaign until the code generation is completed. See the `creation_status` field in the <!-- [campaign object](OpenAPI.json/components/schemas/Campaign) -->[campaign object](ref:get-campaign) description.
+Method to create a batch of vouchers aggregated in one campaign. You can choose a variety of voucher types and define a unique pattern for generating codes.     > 📘 Global uniqueness > > All campaign codes are unique across the whole project. Voucherify will not allow you to generate 2 campaigns with the same coupon code.    > 🚧 Code generation status > > This is an asynchronous action; you can't read or modify a newly created campaign until the code generation is completed. See the `creation_status` field in the [campaign object](ref:get-campaign) description.
 
 ### Examples
 
@@ -218,24 +182,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling CampaignsApi->create_campaign: #{e}"
-end
-```
-
-#### Using the create_campaign_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CampaignsCreateResponseBody>, Integer, Hash)> create_campaign_with_http_info(opts)
-
-```ruby
-begin
-  # Create Campaign
-  data, status_code, headers = api_instance.create_campaign_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CampaignsCreateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling CampaignsApi->create_campaign_with_http_info: #{e}"
 end
 ```
 
@@ -300,24 +246,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the delete_campaign_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CampaignsDeleteResponseBody>, Integer, Hash)> delete_campaign_with_http_info(campaign_id, opts)
-
-```ruby
-begin
-  # Delete Campaign
-  data, status_code, headers = api_instance.delete_campaign_with_http_info(campaign_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CampaignsDeleteResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling CampaignsApi->delete_campaign_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -374,24 +302,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling CampaignsApi->disable_campaign: #{e}"
-end
-```
-
-#### Using the disable_campaign_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CampaignsDisableResponseBody>, Integer, Hash)> disable_campaign_with_http_info(campaign_id)
-
-```ruby
-begin
-  # Disable Campaign
-  data, status_code, headers = api_instance.disable_campaign_with_http_info(campaign_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CampaignsDisableResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling CampaignsApi->disable_campaign_with_http_info: #{e}"
 end
 ```
 
@@ -453,24 +363,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the enable_campaign_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CampaignsEnableResponseBody>, Integer, Hash)> enable_campaign_with_http_info(campaign_id)
-
-```ruby
-begin
-  # Enable Campaign
-  data, status_code, headers = api_instance.enable_campaign_with_http_info(campaign_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CampaignsEnableResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling CampaignsApi->enable_campaign_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -526,24 +418,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling CampaignsApi->get_campaign: #{e}"
-end
-```
-
-#### Using the get_campaign_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CampaignsGetResponseBody>, Integer, Hash)> get_campaign_with_http_info(campaign_id)
-
-```ruby
-begin
-  # Get Campaign
-  data, status_code, headers = api_instance.get_campaign_with_http_info(campaign_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CampaignsGetResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling CampaignsApi->get_campaign_with_http_info: #{e}"
 end
 ```
 
@@ -608,24 +482,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the import_vouchers_to_campaign_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CampaignsImportCreateResponseBody>, Integer, Hash)> import_vouchers_to_campaign_with_http_info(campaign_id, opts)
-
-```ruby
-begin
-  # Import Vouchers to Campaign
-  data, status_code, headers = api_instance.import_vouchers_to_campaign_with_http_info(campaign_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CampaignsImportCreateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling CampaignsApi->import_vouchers_to_campaign_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -653,7 +509,7 @@ end
 
 Import Vouchers to Campaign by CSV
 
-Imports vouchers to an **existing** campaign.     The CSV file has to include headers in the first line.   Curl Example <!-- title: \"Example Request\" lineNumbers: true --> ```cURL curl -X POST \\   https://api.voucherify.io/v1/campaigns/TEST-CAMPAIGN/importCSV \\   -F file=@/path/to/campaigns.csv \\   -H \"X-App-Id: c70a6f00-cf91-4756-9df5-47628850002b\" \\   -H \"X-App-Token: 3266b9f8-e246-4f79-bdf0-833929b1380c\" ```  You can import values for the following fields: `Code` (**required**), `Category`, `Active`. In a gift cards import, you can also include the current card balance using the `Gift Amount` header and the amount that was redeemed using the `Redeemed Amount` header. In a loyalty cards import, you can also include the current loyalty card score in points using the `Loyalty Points` header. Remaining CSV columns will be mapped to metadata properties.   Discount type, time limits, and validation rules will be taken from the <!-- [campaign object](OpenAPI.json/components/schemas/Campaign) -->[campaign object](ref:get-campaign) settings.    | **Active** | **Code** | **Loyalty Points** | **Gift Amount** | **Redeemed Amount** | **Redeemed Quantity** | **Category** | **Custom_metadata_property** | |---|---|---|---|---|---|---|---| | Use `true` or `false` to enable or disable the voucher; this flag can be used to turn off the ability to redeem a voucher even though it is within the campaign's start/end validity timeframe. | The unique voucher code. | The number of points to be added to the loyalty card. If you leave this undefined, then the initial number of points will be set according to the campaign settings.<br>Context: `LOYALTY_PROGRAM` | The initial gift card balance.<br>Context: `GIFT_VOUCHERS` | The amount that was redeemed from the available balance on a gift card. | The number of times the voucher has been redeemed. | A custom tag for the voucher to help you filter codes; you can either import the category name or a unique Voucherify-assigned category ID. | Any additional data that you would like to store for the given loyalty card as a Custom attribute. Remember to define the metadata schema in the Dashboard prior to importing codes. | |<!-- theme: info -->  > 📘 Active > > The CSV file is allowed in two versions; either with or without a column titled `Active`. It indicates whether the voucher is enabled after the import event.    This API request starts a process that affects Voucherify data in bulk.   In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the `IN_PROGRESS` status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.   The result will return the async ID. You can verify the status of your request via this [API request](ref:get-async-action).
+Imports vouchers to an **existing** campaign.     The CSV file has to include headers in the first line.   Curl Example  ```cURL curl -X POST \\   https://api.voucherify.io/v1/campaigns/TEST-CAMPAIGN/importCSV \\   -F file=@/path/to/campaigns.csv \\   -H \"X-App-Id: c70a6f00-cf91-4756-9df5-47628850002b\" \\   -H \"X-App-Token: 3266b9f8-e246-4f79-bdf0-833929b1380c\" ```  You can import values for the following fields: `Code` (**required**), `Category`, `Active`. In a gift cards import, you can also include the current card balance using the `Gift Amount` header and the amount that was redeemed using the `Redeemed Amount` header. In a loyalty cards import, you can also include the current loyalty card score in points using the `Loyalty Points` header. Remaining CSV columns will be mapped to metadata properties.   Discount type, time limits, and validation rules will be taken from the [campaign object](ref:get-campaign) settings.    | **Active** | **Code** | **Loyalty Points** | **Gift Amount** | **Redeemed Amount** | **Redeemed Quantity** | **Category** | **Custom_metadata_property** | |---|---|---|---|---|---|---|---| | Use `true` or `false` to enable or disable the voucher; this flag can be used to turn off the ability to redeem a voucher even though it is within the campaign's start/end validity timeframe. | The unique voucher code. | The number of points to be added to the loyalty card. If you leave this undefined, then the initial number of points will be set according to the campaign settings.<br>Context: `LOYALTY_PROGRAM` | The initial gift card balance.<br>Context: `GIFT_VOUCHERS` | The amount that was redeemed from the available balance on a gift card. | The number of times the voucher has been redeemed. | A custom tag for the voucher to help you filter codes; you can either import the category name or a unique Voucherify-assigned category ID. | Any additional data that you would like to store for the given loyalty card as a Custom attribute. Remember to define the metadata schema in the Dashboard prior to importing codes. | |  > 📘 Active > > The CSV file is allowed in two versions; either with or without a column titled `Active`. It indicates whether the voucher is enabled after the import event.    This API request starts a process that affects Voucherify data in bulk.   In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the `IN_PROGRESS` status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.   The result will return the async ID. You can verify the status of your request via this [API request](ref:get-async-action).
 
 ### Examples
 
@@ -683,24 +539,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling CampaignsApi->import_vouchers_to_campaign_using_csv: #{e}"
-end
-```
-
-#### Using the import_vouchers_to_campaign_using_csv_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CampaignsImportCsvCreateResponseBody>, Integer, Hash)> import_vouchers_to_campaign_using_csv_with_http_info(campaign_id, file)
-
-```ruby
-begin
-  # Import Vouchers to Campaign by CSV
-  data, status_code, headers = api_instance.import_vouchers_to_campaign_using_csv_with_http_info(campaign_id, file)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CampaignsImportCsvCreateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling CampaignsApi->import_vouchers_to_campaign_using_csv_with_http_info: #{e}"
 end
 ```
 
@@ -769,24 +607,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the list_campaigns_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CampaignsListResponseBody>, Integer, Hash)> list_campaigns_with_http_info(opts)
-
-```ruby
-begin
-  # List Campaigns
-  data, status_code, headers = api_instance.list_campaigns_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CampaignsListResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling CampaignsApi->list_campaigns_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -817,7 +637,7 @@ end
 
 Update Campaign
 
-Updates the specified campaign by setting the values of the parameters passed in the request body. Any parameters not provided in the payload will be left unchanged.   Fields other than the ones listed in the request body won't be modified. Even if provided, they will be silently skipped.    <!-- theme: warning --> > #### Vouchers will be affected > > This method will update vouchers aggregated in the campaign. It will affect all vouchers that are not published or redeemed yet.
+Updates the specified campaign by setting the values of the parameters passed in the request body. Any parameters not provided in the payload will be left unchanged.   Fields other than the ones listed in the request body won't be modified. Even if provided, they will be silently skipped.     > #### Vouchers will be affected > > This method will update vouchers aggregated in the campaign. It will affect all vouchers that are not published or redeemed yet.
 
 ### Examples
 
@@ -849,24 +669,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling CampaignsApi->update_campaign: #{e}"
-end
-```
-
-#### Using the update_campaign_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CampaignsUpdateResponseBody>, Integer, Hash)> update_campaign_with_http_info(campaign_id, opts)
-
-```ruby
-begin
-  # Update Campaign
-  data, status_code, headers = api_instance.update_campaign_with_http_info(campaign_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CampaignsUpdateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling CampaignsApi->update_campaign_with_http_info: #{e}"
 end
 ```
 
