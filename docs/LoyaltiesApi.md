@@ -400,7 +400,7 @@ end
 
 Export Loyalty Card Transactions
 
-Export transactions that are associated with point movements on a loyalty card.  | **Field** | **Definition** | **Example Export** | |:---|:---|:---| | id | Unique transaction ID assigned by Voucherify. | vtx_0cb7811f1c07765800 | | type | Transaction type. | - `POINTS_EXPIRATION` <br> - `POINTS_ADDITION` <br> - `POINTS_REMOVAL` <br> - `POINTS_TRANSFER_OUT` <br> - `POINTS_ACCRUAL` <br> - `POINTS_REFUND` <br> - `POINTS_REDEMPTION` | | source_id | Custom source ID of the transaction if one was included originally. | source_id_custom | | reason | Contains the reason for the transaction if one was included originally. |  | | balance | The loyalty card balance after the transaction. |  | | amount | The amount of loyalty points being allocated during the transaction. This value can either be negative or positive depending on the nature of the transaction. |  | | created_at | Timestamp in ISO 8601 format representing the date and time when the transaction was created. | 2022-03-09T09:16:32.521Z  | | voucher_id | Unique Voucher ID. | v_dky7ksKfPX50Wb2Bxvcoeb1xT20b6tcp | | campaign_id | Parent campaign ID. | camp_FNYR4jhqZBM9xTptxDGgeNBV | | source|  Channel through which the transaction was initiated. | - `API` <br> - `voucherify-web-ui` <br> - `Automation` | | details | More detailed information stored in the form of a JSON. | Provides more details related to the transaction in the form of an object. | | related_transaction_id | Unique transaction ID related to a receiver/donor card in the case of a points transfer from/to another card. | vtx_0c9afe802593b34b80 |
+Export transactions that are associated with point movements on a loyalty card.   
 
 ### Examples
 
@@ -462,7 +462,7 @@ end
 
 Export Loyalty Card Transactions
 
-Export transactions that are associated with point movements on a loyalty card.  | **Field** | **Definition** | **Example Export** | |:---|:---|:---| | id | Unique transaction ID assigned by Voucherify. | vtx_0cb7811f1c07765800 | | type | Transaction type. | - `POINTS_EXPIRATION` <br> - `POINTS_ADDITION` <br> - `POINTS_REMOVAL` <br> - `POINTS_TRANSFER_OUT` <br> - `POINTS_ACCRUAL` <br> - `POINTS_REFUND` <br> - `POINTS_REDEMPTION` | | source_id | Custom source ID of the transaction if one was included originally. | source_id_custom | | reason | Contains the reason for the transaction if one was included originally. |  | | balance | The loyalty card balance after the transaction. |  | | amount | The amount of loyalty points being allocated during the transaction. This value can either be negative or positive depending on the nature of the transaction. |  | | created_at | Timestamp in ISO 8601 format representing the date and time when the transaction was created. | 2022-03-09T09:16:32.521Z  | | voucher_id | Unique Voucher ID. | v_dky7ksKfPX50Wb2Bxvcoeb1xT20b6tcp | | campaign_id | Parent campaign ID. | camp_FNYR4jhqZBM9xTptxDGgeNBV | | source|  Channel through which the transaction was initiated. | - `API` <br> - `voucherify-web-ui` <br> - `Automation` | | details | More detailed information stored in the form of a JSON. | Provides more details related to the transaction in the form of an object. | | related_transaction_id | Unique transaction ID related to a receiver/donor card in the case of a points transfer from/to another card. | vtx_0c9afe802593b34b80 |
+Export transactions that are associated with point movements on a loyalty card.   
 
 ### Examples
 
@@ -706,7 +706,7 @@ end
 
 Get Reward Assignment
 
-Retrieve specific reward assignment.  > 📘 Alternative endpoint > > This endpoint is an alternative to this [endpoint](ref:get-reward-assignment-2). 
+Retrieve specific reward assignment.  📘 Alternative endpoint  This endpoint is an alternative to this endpoint. 
 
 ### Examples
 
@@ -1204,7 +1204,7 @@ end
 
 List Member Rewards
 
-Retrieves the list of rewards that the given customer (identified by `member_id`, which is a loyalty card assigned to a particular customer) **can get in exchange for loyalty points**.    You can use the `affordable_only` parameter to limit the results to rewards that the customer can actually afford (only rewards whose price in points is not higher than the loyalty points balance on a loyalty card).    Please note that rewards that are disabled (i.e. set to `Not Available` in the Dashboard) for a given loyalty tier reward mapping will not be returned in this endpoint.
+Retrieves the list of rewards that the given customer (identified by `member_id`, which is a loyalty card assigned to a particular customer) **can get in exchange for loyalty points**.   You can use the `affordable_only` parameter to limit the results to rewards that the customer can actually afford (only rewards whose price in points is not higher than the loyalty points balance on a loyalty card).   Please note that rewards that are disabled (i.e. set to `Not Available` in the Dashboard) for a given loyalty tier reward mapping will not be returned in this endpoint.
 
 ### Examples
 
@@ -1266,7 +1266,7 @@ end
 
 Get Points Expiration
 
-Retrieve loyalty point expiration buckets for a given loyalty card. Expired point buckets are not returned in this endpoint. You can use the [Exports API](ref:create-export) to retrieve a list of both `ACTIVE` and `EXPIRED` point buckets.
+Retrieve loyalty point expiration buckets for a given loyalty card. Expired point buckets are not returned in this endpoint. You can use the Exports API to retrieve a list of both `ACTIVE` and `EXPIRED` point buckets.
 
 ### Examples
 
@@ -1332,7 +1332,7 @@ end
 
 Redeem Reward
 
- > 📘 Alternative endpoint > > This endpoint is an alternative to this [endpoint](ref:redeem-reward-1). The URL was re-designed to allow you to redeem a reward without having to provide the `campaignId` as a path parameter.
+  📘 Alternative endpoint  This endpoint is an alternative to this endpoint. The URL was re-designed to allow you to redeem a reward without having to provide the `campaignId` as a path parameter.
 
 ### Examples
 
@@ -1522,7 +1522,7 @@ end
 
 Add or Remove Loyalty Card Balance
 
-This method gives adds or removes balance to an existing loyalty card. The removal of points will consume the points that expire the soonest.    > 📘 Alternative endpoint > This endpoint is an alternative to this [endpoint](ref:update-loyalty-card-balance-1). The URL was re-designed to allow you to add or remove loyalty card balance without having to provide the `campaignId` as a path parameter.
+This method gives adds or removes balance to an existing loyalty card. The removal of points will consume the points that expire the soonest.   📘 Alternative endpoint  This endpoint is an alternative to this endpoint. The URL was re-designed to allow you to add or remove loyalty card balance without having to provide the `campaignId` as a path parameter.
 
 ### Examples
 

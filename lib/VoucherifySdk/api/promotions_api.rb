@@ -476,7 +476,7 @@ module VoucherifySdk
     end
 
     # List Promotion Stacks
-    # This method enables you to list promotion stacks irrespective of the campaign they are associated with.   You can use filters in the query parameters to specify the stacks to be returned in the response.  ## Advanced filters for fetching promotion stacks  | **Filters** | **Examples** | | :--- | :--- | | Created Before | - `[created_at][before]=2021-12-30T13:52:18.227Z`<br>- `[filters][created_at][conditions][$before][0]=2021-12-30T13:52:18.227Z` | | Created After | - `[created_at][after]=2021-12-30T13:52:18.227Z`<br>- `[filters][created_at][conditions][$after][0]=2021-12-30T13:52:18.227Z` | | Updated Before | - `[updated_at][before]=2021-12-30T13:52:18.227Z`<br>- `[filters][updated_at][conditions][$before][0]=2021-12-30T13:52:18.227Z` | | Updated After | - `[updated_at][after]=2021-12-30T13:52:18.227Z`<br>- `[filters][updated_at][conditions][$after][0]=2021-12-30T13:52:18.227Z` |
+    # This method enables you to list promotion stacks irrespective of the campaign they are associated with.  You can use filters in the query parameters to specify the stacks to be returned in the response. # Advanced filters for fetching promotion stacks  
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
     # @option opts [Integer] :page Which page of results to return.
@@ -490,7 +490,7 @@ module VoucherifySdk
     end
 
     # List Promotion Stacks
-    # This method enables you to list promotion stacks irrespective of the campaign they are associated with.   You can use filters in the query parameters to specify the stacks to be returned in the response.  ## Advanced filters for fetching promotion stacks  | **Filters** | **Examples** | | :--- | :--- | | Created Before | - &#x60;[created_at][before]&#x3D;2021-12-30T13:52:18.227Z&#x60;&lt;br&gt;- &#x60;[filters][created_at][conditions][$before][0]&#x3D;2021-12-30T13:52:18.227Z&#x60; | | Created After | - &#x60;[created_at][after]&#x3D;2021-12-30T13:52:18.227Z&#x60;&lt;br&gt;- &#x60;[filters][created_at][conditions][$after][0]&#x3D;2021-12-30T13:52:18.227Z&#x60; | | Updated Before | - &#x60;[updated_at][before]&#x3D;2021-12-30T13:52:18.227Z&#x60;&lt;br&gt;- &#x60;[filters][updated_at][conditions][$before][0]&#x3D;2021-12-30T13:52:18.227Z&#x60; | | Updated After | - &#x60;[updated_at][after]&#x3D;2021-12-30T13:52:18.227Z&#x60;&lt;br&gt;- &#x60;[filters][updated_at][conditions][$after][0]&#x3D;2021-12-30T13:52:18.227Z&#x60; |
+    # This method enables you to list promotion stacks irrespective of the campaign they are associated with.  You can use filters in the query parameters to specify the stacks to be returned in the response. # Advanced filters for fetching promotion stacks  
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
     # @option opts [Integer] :page Which page of results to return.
