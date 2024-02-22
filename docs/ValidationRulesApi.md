@@ -279,7 +279,7 @@ validation_rule_id = 'validation_rule_id_example' # String | Unique validation r
 opts = {
   limit: 56, # Integer | A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
   page: 56, # Integer | Which page of results to return.
-  order: VoucherifySdk::ParameterOrderListValidationRuleAssignments::CREATED_AT # ParameterOrderListValidationRuleAssignments | This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash `-` preceding a sorting option means sorting in a descending order.
+  order: VoucherifySdk::ParameterOrderListValidationRuleAssignments::CREATED_AT # ParameterOrderListValidationRuleAssignments | This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
 }
 
 begin
@@ -298,7 +298,7 @@ end
 | **validation_rule_id** | **String** | Unique validation rule ID. |  |
 | **limit** | **Integer** | A limit on the number of objects to be returned. Limit can range between 1 and 100 items. | [optional] |
 | **page** | **Integer** | Which page of results to return. | [optional] |
-| **order** | [**ParameterOrderListValidationRuleAssignments**](.md) | This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash &#x60;-&#x60; preceding a sorting option means sorting in a descending order. | [optional] |
+| **order** | [**ParameterOrderListValidationRuleAssignments**](.md) | This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
 
 ### Return type
 
@@ -344,7 +344,7 @@ api_instance = VoucherifySdk::ValidationRulesApi.new
 opts = {
   limit: 56, # Integer | A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
   page: 56, # Integer | Which page of results to return.
-  order: VoucherifySdk::ParameterOrderListValidationRules::CREATED_AT, # ParameterOrderListValidationRules | This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash `-` preceding a sorting option means sorting in a descending order.
+  order: VoucherifySdk::ParameterOrderListValidationRules::CREATED_AT, # ParameterOrderListValidationRules | This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
   start_date: Time.parse('2013-10-20T19:20:30+01:00'), # Time | Timestamp representing the date and time which results must start on. Represented in ISO 8601 format.
   end_date: Time.parse('2013-10-20T19:20:30+01:00') # Time | Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
 }
@@ -364,7 +364,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **limit** | **Integer** | A limit on the number of objects to be returned. Limit can range between 1 and 100 items. | [optional] |
 | **page** | **Integer** | Which page of results to return. | [optional] |
-| **order** | [**ParameterOrderListValidationRules**](.md) | This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash &#x60;-&#x60; preceding a sorting option means sorting in a descending order. | [optional] |
+| **order** | [**ParameterOrderListValidationRules**](.md) | This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
 | **start_date** | **Time** | Timestamp representing the date and time which results must start on. Represented in ISO 8601 format. | [optional] |
 | **end_date** | **Time** | Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. | [optional] |
 
@@ -388,7 +388,7 @@ end
 
 List Validation Rules' Assignment(s)
 
-List all validation rules' assignments or filter the results using the related object ID or the validation rule ID query parameters.  # How to retrieve specific validation rule assignments(s) ## Related object ID To find an assignment for a particular resource, you can use the ID of the object to which the validation rule was assigned. This could be, for example, an ID of a: voucher, campaign, distribution, reward assignment, earning rule, promotion tier.   ```curl curl -X GET \\   -H \"X-App-Id: c70a6f00-cf91-4756-9df5-47628850002b\" \\   -H \"X-App-Token: 3266b9f8-e246-4f79-bdf0-833929b1380c\" \\   -H \"Content-Type: application/json\" \\   https://api.voucherify.io/v1/validation-rules-assignments?related_object_id=promo_kJliy076IuJYtuYWSHE9fSuT ``` ```json {     \"object\": \"list\",     \"data_ref\": \"data\",     \"data\": [         {             \"id\": \"asgm_tZaqxeO8gP4q91jG\",             \"rule_id\": \"val_WB6ETAiFztw5\",             \"related_object_id\": \"promo_kJliy076IuJYtuYWSHE9fSuT\",             \"related_object_type\": \"promotion_tier\",             \"created_at\": \"2022-08-10T10:30:39.986Z\",             \"object\": \"validation_rules_assignment\"         }     ],     \"total\": 1 } ``` ## Validation rule ID You can use the validation rule ID to find assignment(s) for a specific validation rule. ```curl curl -X GET \\   -H \"X-App-Id: c70a6f00-cf91-4756-9df5-47628850002b\" \\   -H \"X-App-Token: 3266b9f8-e246-4f79-bdf0-833929b1380c\" \\   -H \"Content-Type: application/json\" \\   https://api.voucherify.io/v1/validation-rules-assignments?rule=val_ZEZmA9oit8aU ``` ```json {     \"object\": \"list\",     \"data_ref\": \"data\",     \"data\": [         {             \"id\": \"asgm_vef0G6d9Al0rABxq\",             \"rule_id\": \"val_ZEZmA9oit8aU\",             \"related_object_id\": \"camp_rRsfatlwN7unSeUIJDCYedal\",             \"related_object_type\": \"campaign\",             \"created_at\": \"2022-06-29T11:43:52.953Z\",             \"object\": \"validation_rules_assignment\"         },         {             \"id\": \"asgm_sFV4wEFvldwIvgfb\",             \"rule_id\": \"val_ZEZmA9oit8aU\",             \"related_object_id\": \"distr_9QKI02wqgjWyvZXeQkFEPmkkYe\",             \"related_object_type\": \"distribution\",             \"created_at\": \"2022-06-29T11:41:07.680Z\",             \"object\": \"validation_rules_assignment\"         },         {             \"id\": \"asgm_69Qifyv6UZynFIIQ\",             \"rule_id\": \"val_ZEZmA9oit8aU\",             \"related_object_id\": \"promo_g83qUzYZpfX0OMAFOVoQuOYG\",             \"related_object_type\": \"promotion_tier\",             \"created_at\": \"2022-06-29T11:29:41.906Z\",             \"object\": \"validation_rules_assignment\"         }     ],     \"total\": 3 } ``` 
+List all validation rules assignments or filter the results using the related object ID or the validation rule ID query parameters.  # How to retrieve specific validation rule assignments(s) ## Related object ID To find an assignment for a particular resource, you can use the ID of the object to which the validation rule was assigned. This could be, for example, an ID of a: voucher, campaign, distribution, reward assignment, earning rule, promotion tier.    ## Validation rule ID You can use the validation rule ID to find assignment(s) for a specific validation rule.  
 
 ### Examples
 
@@ -414,7 +414,7 @@ opts = {
   rule: 'rule_example', # String | Validation rule ID.
   page: 56, # Integer | Which page of results to return.
   limit: 56, # Integer | A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
-  order: 'order_example' # String | Sorts the results using one of the filtering options: `-created_at`, `created_at`, where the dash `-` preceding a sorting option means sorting in a descending order.
+  order: 'order_example' # String | Sorts the results using one of the filtering options: -created_at, created_at, where the dash - preceding a sorting option means sorting in a descending order.
 }
 
 begin
@@ -434,7 +434,7 @@ end
 | **rule** | **String** | Validation rule ID. | [optional] |
 | **page** | **Integer** | Which page of results to return. | [optional] |
 | **limit** | **Integer** | A limit on the number of objects to be returned. Limit can range between 1 and 100 items. | [optional] |
-| **order** | **String** | Sorts the results using one of the filtering options: &#x60;-created_at&#x60;, &#x60;created_at&#x60;, where the dash &#x60;-&#x60; preceding a sorting option means sorting in a descending order. | [optional] |
+| **order** | **String** | Sorts the results using one of the filtering options: -created_at, created_at, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
 
 ### Return type
 

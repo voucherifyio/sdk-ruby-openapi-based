@@ -17,7 +17,7 @@ All URIs are relative to *https://api.voucherify.io*
 
 Create Export
 
-Create export object. The export can be any of the following types: `voucher`, `redemption`, `publication`, `customer`, `order`, `points_expiration`, or `voucher_transactions`.   # Defaults If you only specify the object type in the request body without specifying the fields, the API will return the following fields per export object:   # Fetching particular data sets Using the `parameters` body parameter, you can narrow down which fields to export and how to filter the results. The fields are an array of strings containing the data that you would like to export. These fields define the headers in the CSV file. The array can be a combintation of any of the following available fields: # Orders     # Vouchers        # Publications   # Redemptions    # Customers       # Points Expirations    # Gift Card Transactions    # Loyalty Card Transactions   
+Create export object. The export can be any of the following types: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions.   # Defaults If you only specify the object type in the request body without specifying the fields, the API will return the following fields per export object:   # Fetching particular data sets Using the parameters body parameter, you can narrow down which fields to export and how to filter the results. The fields are an array of strings containing the data that you would like to export. These fields define the headers in the CSV file. The array can be a combintation of any of the following available fields: # Orders     # Vouchers        # Publications   # Redemptions    # Customers       # Points Expirations    # Gift Card Transactions    # Loyalty Card Transactions   
 
 ### Examples
 
@@ -98,7 +98,7 @@ VoucherifySdk.configure do |config|
 end
 
 api_instance = VoucherifySdk::ExportsApi.new
-export_id = 'export_id_example' # String | Unique export object ID of previously created export. This object can be a: `voucher`, `redemption`, `publication`, `customer`, `order`, `points_expiration`, or `voucher_transactions`.
+export_id = 'export_id_example' # String | Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions.
 
 begin
   # Delete Export
@@ -112,7 +112,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **export_id** | **String** | Unique export object ID of previously created export. This object can be a: &#x60;voucher&#x60;, &#x60;redemption&#x60;, &#x60;publication&#x60;, &#x60;customer&#x60;, &#x60;order&#x60;, &#x60;points_expiration&#x60;, or &#x60;voucher_transactions&#x60;. |  |
+| **export_id** | **String** | Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. |  |
 
 ### Return type
 
@@ -134,7 +134,7 @@ nil (empty response body)
 
 Download Export
 
-Download the contents of the exported CSV file.   📘 Important notes  **Base URL:**   - `https://download.voucherify.io` (Europe)   - `https://us1.download.voucherify.io` (US)   - `https://as1.download.voucherify.io` (Asia)   **Token:** Can be found within the `result` parameter of the Get Export method response.
+Download the contents of the exported CSV file.   📘 Important notes  **Base URL:**   - https://download.voucherify.io (Europe)   - https://us1.download.voucherify.io (US)   - https://as1.download.voucherify.io (Asia)   **Token:** Can be found within the result parameter of the Get Export method response.
 
 ### Examples
 
@@ -205,7 +205,7 @@ VoucherifySdk.configure do |config|
 end
 
 api_instance = VoucherifySdk::ExportsApi.new
-export_id = 'export_id_example' # String | Unique export object ID of previously created export. This object can be a: `voucher`, `redemption`, `publication`, `customer`, `order`, `points_expiration`, or `voucher_transactions`.
+export_id = 'export_id_example' # String | Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions.
 
 begin
   # Get Export
@@ -220,7 +220,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **export_id** | **String** | Unique export object ID of previously created export. This object can be a: &#x60;voucher&#x60;, &#x60;redemption&#x60;, &#x60;publication&#x60;, &#x60;customer&#x60;, &#x60;order&#x60;, &#x60;points_expiration&#x60;, or &#x60;voucher_transactions&#x60;. |  |
+| **export_id** | **String** | Unique export object ID of previously created export. This object can be a: voucher, redemption, publication, customer, order, points_expiration, or voucher_transactions. |  |
 
 ### Return type
 
@@ -266,7 +266,7 @@ api_instance = VoucherifySdk::ExportsApi.new
 opts = {
   limit: 56, # Integer | A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
   page: 56, # Integer | Which page of results to return.
-  order: VoucherifySdk::ParameterOrderListExports::CREATED_AT # ParameterOrderListExports | Sorts the results using one of the filtering options, where the dash `-` preceding a sorting option means sorting in a descending order.
+  order: VoucherifySdk::ParameterOrderListExports::CREATED_AT # ParameterOrderListExports | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
 }
 
 begin
@@ -284,7 +284,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **limit** | **Integer** | A limit on the number of objects to be returned. Limit can range between 1 and 100 items. | [optional] |
 | **page** | **Integer** | Which page of results to return. | [optional] |
-| **order** | [**ParameterOrderListExports**](.md) | Sorts the results using one of the filtering options, where the dash &#x60;-&#x60; preceding a sorting option means sorting in a descending order. | [optional] |
+| **order** | [**ParameterOrderListExports**](.md) | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
 
 ### Return type
 

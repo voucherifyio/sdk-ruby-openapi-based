@@ -216,7 +216,7 @@ api_instance = VoucherifySdk::ProductCollectionsApi.new
 opts = {
   limit: 56, # Integer | A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
   page: 56, # Integer | Which page of results to return.
-  order: VoucherifySdk::ParameterOrder::CREATED_AT # ParameterOrder | Sorts the results using one of the filtering options, where the dash `-` preceding a sorting option means sorting in a descending order.
+  order: VoucherifySdk::ParameterOrder::CREATED_AT # ParameterOrder | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
 }
 
 begin
@@ -234,7 +234,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **limit** | **Integer** | A limit on the number of objects to be returned. Limit can range between 1 and 100 items. | [optional] |
 | **page** | **Integer** | Which page of results to return. | [optional] |
-| **order** | [**ParameterOrder**](.md) | Sorts the results using one of the filtering options, where the dash &#x60;-&#x60; preceding a sorting option means sorting in a descending order. | [optional] |
+| **order** | [**ParameterOrder**](.md) | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
 
 ### Return type
 
@@ -281,7 +281,7 @@ product_collection_id = 'product_collection_id_example' # String | Unique produc
 opts = {
   limit: 56, # Integer | A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
   page: 56, # Integer | Which page of results to return.
-  order: VoucherifySdk::ParameterOrder::CREATED_AT, # ParameterOrder | Sorts the results using one of the filtering options, where the dash `-` preceding a sorting option means sorting in a descending order.
+  order: VoucherifySdk::ParameterOrder::CREATED_AT, # ParameterOrder | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
   starting_after: Time.parse('2013-10-20T19:20:30+01:00') # Time | Timestamp representing the date and time to use in starting_after cursor to get more data. Represented in ISO 8601 format.
 }
 
@@ -301,7 +301,7 @@ end
 | **product_collection_id** | **String** | Unique product collection ID. |  |
 | **limit** | **Integer** | A limit on the number of objects to be returned. Limit can range between 1 and 100 items. | [optional] |
 | **page** | **Integer** | Which page of results to return. | [optional] |
-| **order** | [**ParameterOrder**](.md) | Sorts the results using one of the filtering options, where the dash &#x60;-&#x60; preceding a sorting option means sorting in a descending order. | [optional] |
+| **order** | [**ParameterOrder**](.md) | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
 | **starting_after** | **Time** | Timestamp representing the date and time to use in starting_after cursor to get more data. Represented in ISO 8601 format. | [optional] |
 
 ### Return type

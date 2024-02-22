@@ -26,7 +26,7 @@ All URIs are relative to *https://api.voucherify.io*
 
 Create Product
 
-Creates a product object.  📘 Upsert Mode  If you pass an `id` or a `source_id` that already exists in the product database, Voucherify will return a related product object with updated fields.
+Creates a product object.  📘 Upsert Mode  If you pass an id or a source_id that already exists in the product database, Voucherify will return a related product object with updated fields.
 
 ### Examples
 
@@ -86,7 +86,7 @@ end
 
 Create SKU
 
-This method adds product variants to a created product.   📘 Upsert Mode  If you pass an `id` or a `source_id` that already exists in the sku database, Voucherify will return a related sku object with updated fields.
+This method adds product variants to a created product.   📘 Upsert Mode  If you pass an id or a source_id that already exists in the sku database, Voucherify will return a related sku object with updated fields.
 
 ### Examples
 
@@ -107,7 +107,7 @@ VoucherifySdk.configure do |config|
 end
 
 api_instance = VoucherifySdk::ProductsApi.new
-product_id = 'product_id_example' # String | A Voucherify <!-- [product](OpenAPI.json/components/schemas/Product) -->[product](ref:get-product) ID or product source ID.
+product_id = 'product_id_example' # String | A Voucherify product ID or product source ID.
 opts = {
   products_skus_create_request_body: VoucherifySdk::ProductsSkusCreateRequestBody.new # ProductsSkusCreateRequestBody | Specify the SKU parameters to be created.
 }
@@ -125,7 +125,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **product_id** | **String** | A Voucherify &lt;!-- [product](OpenAPI.json/components/schemas/Product) --&gt;[product](ref:get-product) ID or product source ID. |  |
+| **product_id** | **String** | A Voucherify product ID or product source ID. |  |
 | **products_skus_create_request_body** | [**ProductsSkusCreateRequestBody**](ProductsSkusCreateRequestBody.md) | Specify the SKU parameters to be created. | [optional] |
 
 ### Return type
@@ -171,7 +171,7 @@ end
 api_instance = VoucherifySdk::ProductsApi.new
 product_id = 'product_id_example' # String | A Voucherify product ID or source ID.
 opts = {
-  force: true # Boolean | If this flag is set to `true`, the product will be removed permanently. Going forward, the user will be able to create another product with exactly the same `source_id`.
+  force: true # Boolean | If this flag is set to true, the product will be removed permanently. Going forward, the user will be able to create another product with exactly the same source_id.
 }
 
 begin
@@ -187,7 +187,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **product_id** | **String** | A Voucherify product ID or source ID. |  |
-| **force** | **Boolean** | If this flag is set to &#x60;true&#x60;, the product will be removed permanently. Going forward, the user will be able to create another product with exactly the same &#x60;source_id&#x60;. | [optional] |
+| **force** | **Boolean** | If this flag is set to true, the product will be removed permanently. Going forward, the user will be able to create another product with exactly the same source_id. | [optional] |
 
 ### Return type
 
@@ -230,10 +230,10 @@ VoucherifySdk.configure do |config|
 end
 
 api_instance = VoucherifySdk::ProductsApi.new
-product_id = 'product_id_example' # String | A unique Voucherify <!-- [product](OpenAPI.json/components/schemas/Product) -->[product](ref:get-product) ID or product source ID.
-sku_id = 'sku_id_example' # String | A Voucherify <!-- [SKU](OpenAPI.json/components/schemas/Sku) -->[SKU ID](ref:get-sku) or SKU source ID.
+product_id = 'product_id_example' # String | A unique Voucherify product ID or product source ID.
+sku_id = 'sku_id_example' # String | A Voucherify SKU ID or SKU source ID.
 opts = {
-  force: true # Boolean | If this flag is set to `true`, the SKU will be removed permanently. Going forward, the user will be able to create another SKU with exactly the same `source_id`.
+  force: true # Boolean | If this flag is set to true, the SKU will be removed permanently. Going forward, the user will be able to create another SKU with exactly the same source_id.
 }
 
 begin
@@ -248,9 +248,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **product_id** | **String** | A unique Voucherify &lt;!-- [product](OpenAPI.json/components/schemas/Product) --&gt;[product](ref:get-product) ID or product source ID. |  |
-| **sku_id** | **String** | A Voucherify &lt;!-- [SKU](OpenAPI.json/components/schemas/Sku) --&gt;[SKU ID](ref:get-sku) or SKU source ID. |  |
-| **force** | **Boolean** | If this flag is set to &#x60;true&#x60;, the SKU will be removed permanently. Going forward, the user will be able to create another SKU with exactly the same &#x60;source_id&#x60;. | [optional] |
+| **product_id** | **String** | A unique Voucherify product ID or product source ID. |  |
+| **sku_id** | **String** | A Voucherify SKU ID or SKU source ID. |  |
+| **force** | **Boolean** | If this flag is set to true, the SKU will be removed permanently. Going forward, the user will be able to create another SKU with exactly the same source_id. | [optional] |
 
 ### Return type
 
@@ -388,7 +388,7 @@ end
 
 Import Products using CSV
 
-Import products into the repository using a CSV file.   Curl Example ```cURL curl -X POST \\   https://api.voucherify.io/v1/products/importCSV \\   -F file=@/path/to/products.csv \\   -H \"X-App-Id: c70a6f00-cf91-4756-9df5-47628850002b\" \\   -H \"X-App-Token: 3266b9f8-e246-4f79-bdf0-833929b1380c\" ``` The CSV file has to include headers in the first line.  📘 Standard product fields mapping  - Create a **comma separated value (CSV) file** or download our CSV import template. You can find an example template [here](https://s3.amazonaws.com/helpscout.net/docs/assets/5902f1c12c7d3a057f88a36d/attachments/627b82ed68d51e779443f550/Import_products_template.csv).  - Supported CSV file headers: `name,source_id,price,attributes,image_url,Metadata_property_name`  - **Name** is a **required** field. The remaining fields in the CSV template are optional.  - Override/Update products' **names** in Voucherify using this method. Data will be updated for each product included in the CSV file whose **source_id** matches a source ID in Voucherify. No other data can be updated other than the product name.  - Note that dates and date-time attributes need to be provided in compliance with the **ISO 8601 norms**. For example, 2022-03-11T09:00:00.000Z or 2022-03-11     - `YYYY-MM-DD`     - `YYYY-MM-DDTHH`     - `YYYY-MM-DDTHH:mm`     - `YYYY-MM-DDTHH:mm:ss`     - `YYYY-MM-DDTHH:mm:ssZ`     - `YYYY-MM-DDTHH:mm:ssZ`     - `YYYY-MM-DDTHH:mm:ss.SSSZ`  - Columns that can't be mapped to standard fields, will be mapped to **Custom attributes** and added as **products' metadata**. There is no limit on the number of custom attributes that you can import as metadata.   - To provide the proper data type, you need to add all custom attributes to the metadata schema **before importing the file**. Read more [here](https://support.voucherify.io/article/99-schema-validation-metadata#add-metadata).  - **Product attributes** (not custom attributes) need to be separated by a comma and enclosed in double quotes, i.e \"attribute1,attribute2\".  - Headers with metadata names **can't contain white-space characters**.  - If you import metadata defined in the schema as **arrays (multiple)**, you need to separate each value using a comma, for example:       - array of strings: \"subscribed,premium\"       - array of numbers: \"123,234\".      - array of dates: \"2000-01-01,2000-01-02\" This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the `IN_PROGRESS` status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this API request.
+Import products into the repository using a CSV file.   This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this API request.
 
 ### Examples
 
@@ -446,7 +446,7 @@ end
 
 Import SKUs using CSV
 
-Import SKUs into the repository using a CSV file. The CSV file has to include headers in the first line. All properties which cannot be mapped to standard SKU fields will be added to the metadata object. You can find an example template [here](https://s3.amazonaws.com/helpscout.net/docs/assets/5902f1c12c7d3a057f88a36d/attachments/627b98d08c9b585083488a4c/Import_SKUS_template.csv).  Curl Example ```cURL curl -X POST \\   https://api.voucherify.io/v1/skus/importCSV \\   -F file=@/path/to/skus.csv \\   -H \"X-App-Id: c70a6f00-cf91-4756-9df5-47628850002b\" \\   -H \"X-App-Token: 3266b9f8-e246-4f79-bdf0-833929b1380c\" ```  🚧 Import sequence  First import products using the dedicated endpoint, then import SKUs using this endpoint to properly match SKUs to products.  📘 Standard SKU fields mapping  - **Required** fields are source_id and product_id.  - Supported CSV file headers: `product_id,sku,source_id,price,image_url,attributes`  - SKU **source_id**'s must be unique in the entire product catalog, no duplicates allowed.  - SKU attributes need to be in the form of a stringy-fied json, i.e.`\"{'color':'blue'}\"`. These attributes must be defined in the **product** beforehand in order for you to be able to import them to the SKU.  - You can use this method to update the following parameters in bulk: **sku** and the sku **price**. This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the `IN_PROGRESS` status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this API request.
+Import SKUs into the repository using a CSV file. The CSV file has to include headers in the first line. All properties which cannot be mapped to standard SKU fields will be added to the metadata object. You can find an example template [here](https://s3.amazonaws.com/helpscout.net/docs/assets/5902f1c12c7d3a057f88a36d/attachments/627b98d08c9b585083488a4c/Import_SKUS_template.csv).  This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this API request.
 
 ### Examples
 
@@ -528,7 +528,7 @@ api_instance = VoucherifySdk::ProductsApi.new
 opts = {
   limit: 56, # Integer | A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
   page: 56, # Integer | Which page of results to return.
-  order: VoucherifySdk::ParameterOrder::CREATED_AT, # ParameterOrder | Sorts the results using one of the filtering options, where the dash `-` preceding a sorting option means sorting in a descending order.
+  order: VoucherifySdk::ParameterOrder::CREATED_AT, # ParameterOrder | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
   start_date: Time.parse('2013-10-20T19:20:30+01:00'), # Time | Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
   end_date: Time.parse('2013-10-20T19:20:30+01:00') # Time | Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
 }
@@ -548,7 +548,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **limit** | **Integer** | A limit on the number of objects to be returned. Limit can range between 1 and 100 items. | [optional] |
 | **page** | **Integer** | Which page of results to return. | [optional] |
-| **order** | [**ParameterOrder**](.md) | Sorts the results using one of the filtering options, where the dash &#x60;-&#x60; preceding a sorting option means sorting in a descending order. | [optional] |
+| **order** | [**ParameterOrder**](.md) | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
 | **start_date** | **Time** | Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. | [optional] |
 | **end_date** | **Time** | Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. | [optional] |
 
@@ -593,11 +593,11 @@ VoucherifySdk.configure do |config|
 end
 
 api_instance = VoucherifySdk::ProductsApi.new
-product_id = 'product_id_example' # String | A Voucherify <!-- [product](OpenAPI.json/components/schemas/Product) -->[product](ref:get-product) ID or product source ID.
+product_id = 'product_id_example' # String | A Voucherify product ID or product source ID.
 opts = {
   limit: 56, # Integer | A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
   page: 56, # Integer | Which page of results to return.
-  order: VoucherifySdk::ParameterOrder::CREATED_AT, # ParameterOrder | Sorts the results using one of the filtering options, where the dash `-` preceding a sorting option means sorting in a descending order.
+  order: VoucherifySdk::ParameterOrder::CREATED_AT, # ParameterOrder | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
   start_date: Time.parse('2013-10-20T19:20:30+01:00'), # Time | Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
   end_date: Time.parse('2013-10-20T19:20:30+01:00') # Time | Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
 }
@@ -615,10 +615,10 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **product_id** | **String** | A Voucherify &lt;!-- [product](OpenAPI.json/components/schemas/Product) --&gt;[product](ref:get-product) ID or product source ID. |  |
+| **product_id** | **String** | A Voucherify product ID or product source ID. |  |
 | **limit** | **Integer** | A limit on the number of objects to be returned. Limit can range between 1 and 100 items. | [optional] |
 | **page** | **Integer** | Which page of results to return. | [optional] |
-| **order** | [**ParameterOrder**](.md) | Sorts the results using one of the filtering options, where the dash &#x60;-&#x60; preceding a sorting option means sorting in a descending order. | [optional] |
+| **order** | [**ParameterOrder**](.md) | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
 | **start_date** | **Time** | Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. | [optional] |
 | **end_date** | **Time** | Timestamp representing the date and time which results must end on. Represented in ISO 8601 format. | [optional] |
 
@@ -704,7 +704,7 @@ end
 
 Update Products in bulk
 
-Update several products in one asynchronous operation.  In one request, it is possible to update a maximum of **100** records. In the response body, you get a unique async action identifier. If a requested product object is not found, then an **upsert** occurs. This is reflected in the Get Async Action endpoint as follows:   ```json {     \"found\": false,     \"updated\": true } ``` This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the `IN_PROGRESS` status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this API request.
+Update several products in one asynchronous operation.  In one request, it is possible to update a maximum of **100** records. In the response body, you get a unique async action identifier. If a requested product object is not found, then an **upsert** occurs. This is reflected in the Get Async Action endpoint as follows:    This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this API request.
 
 ### Examples
 
@@ -764,7 +764,7 @@ end
 
 Update Products' Metadata in bulk
 
-Update several product metadata properties in one asynchronous operation.  In one request, it is possible to update a maximum of **100** records. In the response body, you get a unique async action identifier. If a requested product object is not found, then an **upsert** occurs. This is reflected in the Get Async Action endpoint as follows:   ```json {     \"found\": false,     \"updated\": true } ``` This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the `IN_PROGRESS` status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this API request.
+Update several product metadata properties in one asynchronous operation.  In one request, it is possible to update a maximum of **100** records. In the response body, you get a unique async action identifier. If a requested product object is not found, then an **upsert** occurs. This is reflected in the Get Async Action endpoint as follows:    This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this API request.
 
 ### Examples
 
@@ -824,7 +824,7 @@ end
 
 Update SKU
 
-Updates the specified SKU by setting the values of the parameters passed in the request body. Any parameters not provided in the payload will be left unchanged. Fields other than the ones listed in the request body schema won't be modified. Even if provided, they will be silently skipped.
+Updates the specified SKU by setting the values of the parameters passed in the request body. Any parameters not provided in the payload will be left unchanged. Fields other than the ones listed in the request body schema wont be modified. Even if provided, they will be silently skipped.
 
 ### Examples
 
@@ -845,8 +845,8 @@ VoucherifySdk.configure do |config|
 end
 
 api_instance = VoucherifySdk::ProductsApi.new
-product_id = 'product_id_example' # String | A unique Voucherify <!-- [product](OpenAPI.json/components/schemas/Product) -->[product](ref:get-product) ID or product source ID.
-sku_id = 'sku_id_example' # String | A Voucherify <!-- [SKU](OpenAPI.json/components/schemas/Sku) -->[SKU ID](ref:get-sku) or SKU source ID.
+product_id = 'product_id_example' # String | A unique Voucherify product ID or product source ID.
+sku_id = 'sku_id_example' # String | A Voucherify SKU ID or SKU source ID.
 opts = {
   products_skus_update_request_body: VoucherifySdk::ProductsSkusUpdateRequestBody.new # ProductsSkusUpdateRequestBody | Specify the parameters to be updated.
 }
@@ -864,8 +864,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **product_id** | **String** | A unique Voucherify &lt;!-- [product](OpenAPI.json/components/schemas/Product) --&gt;[product](ref:get-product) ID or product source ID. |  |
-| **sku_id** | **String** | A Voucherify &lt;!-- [SKU](OpenAPI.json/components/schemas/Sku) --&gt;[SKU ID](ref:get-sku) or SKU source ID. |  |
+| **product_id** | **String** | A unique Voucherify product ID or product source ID. |  |
+| **sku_id** | **String** | A Voucherify SKU ID or SKU source ID. |  |
 | **products_skus_update_request_body** | [**ProductsSkusUpdateRequestBody**](ProductsSkusUpdateRequestBody.md) | Specify the parameters to be updated. | [optional] |
 
 ### Return type

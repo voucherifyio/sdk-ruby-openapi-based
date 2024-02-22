@@ -91,7 +91,7 @@ module VoucherifySdk
 
     # Delete Earning Rule
     # This method deletes an earning rule for a specific loyalty campaign.
-    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the &#x60;name&#x60; of the campaign as the path parameter value, e.g., &#x60;Loyalty%20Campaign&#x60;. 
+    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
     # @param earning_rule_id [String] A unique earning rule ID.
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -102,7 +102,7 @@ module VoucherifySdk
 
     # Delete Earning Rule
     # This method deletes an earning rule for a specific loyalty campaign.
-    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the &#x60;name&#x60; of the campaign as the path parameter value, e.g., &#x60;Loyalty%20Campaign&#x60;. 
+    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
     # @param earning_rule_id [String] A unique earning rule ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
@@ -158,9 +158,9 @@ module VoucherifySdk
 
     # Delete Loyalty Campaign
     # This method permanently deletes a loyalty campaign and all related loyalty cards. This action cannot be undone. Also, it immediately removes any redemptions on loyalty cards.
-    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the &#x60;name&#x60; of the campaign as the path parameter value, e.g., &#x60;Loyalty%20Campaign&#x60;. 
+    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
     # @param [Hash] opts the optional parameters
-    # @option opts [Boolean] :force If this flag is set to &#x60;true&#x60;, the campaign and related vouchers will be removed permanently. Going forward, the user will be able to create the next campaign with the same name.
+    # @option opts [Boolean] :force If this flag is set to true, the campaign and related vouchers will be removed permanently. Going forward, the user will be able to create the next campaign with the same name.
     # @return [LoyaltiesDeleteResponseBody]
     def delete_loyalty_program(campaign_id, opts = {})
       data, _status_code, _headers = delete_loyalty_program_with_http_info(campaign_id, opts)
@@ -169,9 +169,9 @@ module VoucherifySdk
 
     # Delete Loyalty Campaign
     # This method permanently deletes a loyalty campaign and all related loyalty cards. This action cannot be undone. Also, it immediately removes any redemptions on loyalty cards.
-    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the &#x60;name&#x60; of the campaign as the path parameter value, e.g., &#x60;Loyalty%20Campaign&#x60;. 
+    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
     # @param [Hash] opts the optional parameters
-    # @option opts [Boolean] :force If this flag is set to &#x60;true&#x60;, the campaign and related vouchers will be removed permanently. Going forward, the user will be able to create the next campaign with the same name.
+    # @option opts [Boolean] :force If this flag is set to true, the campaign and related vouchers will be removed permanently. Going forward, the user will be able to create the next campaign with the same name.
     # @return [Array<(LoyaltiesDeleteResponseBody, Integer, Hash)>] LoyaltiesDeleteResponseBody data, response status code and response headers
     private def delete_loyalty_program_with_http_info(campaign_id, opts = {})
       if @api_client.config.debugging
@@ -224,7 +224,7 @@ module VoucherifySdk
 
     # Delete Reward Assignment
     # This method deletes a reward assignment for a particular loyalty campaign.
-    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the &#x60;name&#x60; of the campaign as the path parameter value, e.g., &#x60;Loyalty%20Campaign&#x60;. 
+    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
     # @param assignment_id [String] A unique reward assignment ID.
     # @param [Hash] opts the optional parameters
     # @return [nil]
@@ -235,7 +235,7 @@ module VoucherifySdk
 
     # Delete Reward Assignment
     # This method deletes a reward assignment for a particular loyalty campaign.
-    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the &#x60;name&#x60; of the campaign as the path parameter value, e.g., &#x60;Loyalty%20Campaign&#x60;. 
+    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
     # @param assignment_id [String] A unique reward assignment ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
@@ -575,7 +575,7 @@ module VoucherifySdk
 
     # Get Earning Rule
     # Retrieves an earning rule assigned to a campaign.
-    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the &#x60;name&#x60; of the campaign as the path parameter value, e.g., &#x60;Loyalty%20Campaign&#x60;. 
+    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
     # @param earning_rule_id [String] A unique earning rule ID.
     # @param [Hash] opts the optional parameters
     # @return [LoyaltiesEarningRulesGetResponseBody]
@@ -586,7 +586,7 @@ module VoucherifySdk
 
     # Get Earning Rule
     # Retrieves an earning rule assigned to a campaign.
-    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the &#x60;name&#x60; of the campaign as the path parameter value, e.g., &#x60;Loyalty%20Campaign&#x60;. 
+    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
     # @param earning_rule_id [String] A unique earning rule ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(LoyaltiesEarningRulesGetResponseBody, Integer, Hash)>] LoyaltiesEarningRulesGetResponseBody data, response status code and response headers
@@ -713,7 +713,7 @@ module VoucherifySdk
 
     # Get Reward Assignment
     # Retrieve specific reward assignment.
-    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the &#x60;name&#x60; of the campaign as the path parameter value, e.g., &#x60;Loyalty%20Campaign&#x60;. 
+    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
     # @param assignment_id [String] Unique reward assignment ID.
     # @param [Hash] opts the optional parameters
     # @return [LoyaltiesRewardAssignmentsGetResponseBody]
@@ -724,7 +724,7 @@ module VoucherifySdk
 
     # Get Reward Assignment
     # Retrieve specific reward assignment.
-    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the &#x60;name&#x60; of the campaign as the path parameter value, e.g., &#x60;Loyalty%20Campaign&#x60;. 
+    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
     # @param assignment_id [String] Unique reward assignment ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(LoyaltiesRewardAssignmentsGetResponseBody, Integer, Hash)>] LoyaltiesRewardAssignmentsGetResponseBody data, response status code and response headers
@@ -782,7 +782,7 @@ module VoucherifySdk
 
     # Get Reward Assignment
     # Retrieve specific reward assignment.  📘 Alternative endpoint  This endpoint is an alternative to this endpoint. 
-    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the &#x60;name&#x60; of the campaign as the path parameter value, e.g., &#x60;Loyalty%20Campaign&#x60;. 
+    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
     # @param assignment_id [String] A unique reward assignment ID.
     # @param [Hash] opts the optional parameters
     # @return [LoyaltiesRewardsGetResponseBody]
@@ -793,7 +793,7 @@ module VoucherifySdk
 
     # Get Reward Assignment
     # Retrieve specific reward assignment.  📘 Alternative endpoint  This endpoint is an alternative to this endpoint. 
-    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the &#x60;name&#x60; of the campaign as the path parameter value, e.g., &#x60;Loyalty%20Campaign&#x60;. 
+    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
     # @param assignment_id [String] A unique reward assignment ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(LoyaltiesRewardsGetResponseBody, Integer, Hash)>] LoyaltiesRewardsGetResponseBody data, response status code and response headers
@@ -851,7 +851,7 @@ module VoucherifySdk
 
     # Get Reward Details
     # Get reward details in the context of a loyalty campaign and reward assignment ID.
-    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the &#x60;name&#x60; of the campaign as the path parameter value, e.g., &#x60;Loyalty%20Campaign&#x60;. 
+    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
     # @param assignment_id [String] Unique reward assignment ID.
     # @param [Hash] opts the optional parameters
     # @return [LoyaltiesRewardAssignmentsRewardGetResponseBody]
@@ -862,7 +862,7 @@ module VoucherifySdk
 
     # Get Reward Details
     # Get reward details in the context of a loyalty campaign and reward assignment ID.
-    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the &#x60;name&#x60; of the campaign as the path parameter value, e.g., &#x60;Loyalty%20Campaign&#x60;. 
+    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
     # @param assignment_id [String] Unique reward assignment ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(LoyaltiesRewardAssignmentsRewardGetResponseBody, Integer, Hash)>] LoyaltiesRewardAssignmentsRewardGetResponseBody data, response status code and response headers
@@ -1383,10 +1383,10 @@ module VoucherifySdk
     end
 
     # List Member Rewards
-    # Retrieves the list of rewards that the given customer (identified by `member_id`, which is a loyalty card assigned to a particular customer) **can get in exchange for loyalty points**.   You can use the `affordable_only` parameter to limit the results to rewards that the customer can actually afford (only rewards whose price in points is not higher than the loyalty points balance on a loyalty card).   Please note that rewards that are disabled (i.e. set to `Not Available` in the Dashboard) for a given loyalty tier reward mapping will not be returned in this endpoint.
+    # Retrieves the list of rewards that the given customer (identified by member_id, which is a loyalty card assigned to a particular customer) **can get in exchange for loyalty points**.   You can use the affordable_only parameter to limit the results to rewards that the customer can actually afford (only rewards whose price in points is not higher than the loyalty points balance on a loyalty card).   Please note that rewards that are disabled (i.e. set to Not Available in the Dashboard) for a given loyalty tier reward mapping will not be returned in this endpoint.
     # @param member_id [String] Unique loyalty card assigned to a particular customer.
     # @param [Hash] opts the optional parameters
-    # @option opts [Boolean] :affordable_only Limit the results to rewards that the customer can actually afford (only rewards whose price in points is not higher than the loyalty points balance on a loyalty card). Set this flag to &#x60;true&#x60; to return rewards which the customer can actually afford.
+    # @option opts [Boolean] :affordable_only Limit the results to rewards that the customer can actually afford (only rewards whose price in points is not higher than the loyalty points balance on a loyalty card). Set this flag to true to return rewards which the customer can actually afford.
     # @return [LoyaltiesMembersRewardsListResponseBody]
     def list_member_rewards(member_id, opts = {})
       data, _status_code, _headers = list_member_rewards_with_http_info(member_id, opts)
@@ -1394,10 +1394,10 @@ module VoucherifySdk
     end
 
     # List Member Rewards
-    # Retrieves the list of rewards that the given customer (identified by &#x60;member_id&#x60;, which is a loyalty card assigned to a particular customer) **can get in exchange for loyalty points**.   You can use the &#x60;affordable_only&#x60; parameter to limit the results to rewards that the customer can actually afford (only rewards whose price in points is not higher than the loyalty points balance on a loyalty card).   Please note that rewards that are disabled (i.e. set to &#x60;Not Available&#x60; in the Dashboard) for a given loyalty tier reward mapping will not be returned in this endpoint.
+    # Retrieves the list of rewards that the given customer (identified by member_id, which is a loyalty card assigned to a particular customer) **can get in exchange for loyalty points**.   You can use the affordable_only parameter to limit the results to rewards that the customer can actually afford (only rewards whose price in points is not higher than the loyalty points balance on a loyalty card).   Please note that rewards that are disabled (i.e. set to Not Available in the Dashboard) for a given loyalty tier reward mapping will not be returned in this endpoint.
     # @param member_id [String] Unique loyalty card assigned to a particular customer.
     # @param [Hash] opts the optional parameters
-    # @option opts [Boolean] :affordable_only Limit the results to rewards that the customer can actually afford (only rewards whose price in points is not higher than the loyalty points balance on a loyalty card). Set this flag to &#x60;true&#x60; to return rewards which the customer can actually afford.
+    # @option opts [Boolean] :affordable_only Limit the results to rewards that the customer can actually afford (only rewards whose price in points is not higher than the loyalty points balance on a loyalty card). Set this flag to true to return rewards which the customer can actually afford.
     # @return [Array<(LoyaltiesMembersRewardsListResponseBody, Integer, Hash)>] LoyaltiesMembersRewardsListResponseBody data, response status code and response headers
     private def list_member_rewards_with_http_info(member_id, opts = {})
       if @api_client.config.debugging
@@ -1449,8 +1449,8 @@ module VoucherifySdk
     end
 
     # Get Points Expiration
-    # Retrieve loyalty point expiration buckets for a given loyalty card. Expired point buckets are not returned in this endpoint. You can use the Exports API to retrieve a list of both `ACTIVE` and `EXPIRED` point buckets.
-    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the &#x60;name&#x60; of the campaign as the path parameter value, e.g., &#x60;Loyalty%20Campaign&#x60;. 
+    # Retrieve loyalty point expiration buckets for a given loyalty card. Expired point buckets are not returned in this endpoint. You can use the Exports API to retrieve a list of both ACTIVE and EXPIRED point buckets.
+    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
     # @param member_id [String] Loyalty card code.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
@@ -1462,8 +1462,8 @@ module VoucherifySdk
     end
 
     # Get Points Expiration
-    # Retrieve loyalty point expiration buckets for a given loyalty card. Expired point buckets are not returned in this endpoint. You can use the Exports API to retrieve a list of both &#x60;ACTIVE&#x60; and &#x60;EXPIRED&#x60; point buckets.
-    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the &#x60;name&#x60; of the campaign as the path parameter value, e.g., &#x60;Loyalty%20Campaign&#x60;. 
+    # Retrieve loyalty point expiration buckets for a given loyalty card. Expired point buckets are not returned in this endpoint. You can use the Exports API to retrieve a list of both ACTIVE and EXPIRED point buckets.
+    # @param campaign_id [String] The campaign ID or name of the loyalty campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty%20Campaign. 
     # @param member_id [String] Loyalty card code.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
@@ -1536,7 +1536,7 @@ module VoucherifySdk
     end
 
     # Redeem Reward
-    #   📘 Alternative endpoint  This endpoint is an alternative to this endpoint. The URL was re-designed to allow you to redeem a reward without having to provide the `campaignId` as a path parameter.
+    #   📘 Alternative endpoint  This endpoint is an alternative to this endpoint. The URL was re-designed to allow you to redeem a reward without having to provide the campaignId as a path parameter.
     # @param member_id [String] Unique loyalty card assigned to a particular customer.
     # @param [Hash] opts the optional parameters
     # @option opts [LoyaltiesMembersRedemptionRedeemRequestBody] :loyalties_members_redemption_redeem_request_body Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order.
@@ -1547,7 +1547,7 @@ module VoucherifySdk
     end
 
     # Redeem Reward
-    #   📘 Alternative endpoint  This endpoint is an alternative to this endpoint. The URL was re-designed to allow you to redeem a reward without having to provide the &#x60;campaignId&#x60; as a path parameter.
+    #   📘 Alternative endpoint  This endpoint is an alternative to this endpoint. The URL was re-designed to allow you to redeem a reward without having to provide the campaignId as a path parameter.
     # @param member_id [String] Unique loyalty card assigned to a particular customer.
     # @param [Hash] opts the optional parameters
     # @option opts [LoyaltiesMembersRedemptionRedeemRequestBody] :loyalties_members_redemption_redeem_request_body Specify the reward to be redeemed. In case of a pay with points reward, specify the order and the number of points to be applied to the order. Please note that if you do not specify the amount of points, the application will default to applying the number of points to pay for the remainder of the order. If the limit of available points on the card is reached, then only the available points on the card will be applied to the order.
@@ -1758,7 +1758,7 @@ module VoucherifySdk
     end
 
     # Add or Remove Loyalty Card Balance
-    # This method gives adds or removes balance to an existing loyalty card. The removal of points will consume the points that expire the soonest.   📘 Alternative endpoint  This endpoint is an alternative to this endpoint. The URL was re-designed to allow you to add or remove loyalty card balance without having to provide the `campaignId` as a path parameter.
+    # This method gives adds or removes balance to an existing loyalty card. The removal of points will consume the points that expire the soonest.   📘 Alternative endpoint  This endpoint is an alternative to this endpoint. The URL was re-designed to allow you to add or remove loyalty card balance without having to provide the campaignId as a path parameter.
     # @param member_id [String] Unique loyalty card assigned to a particular customer.
     # @param [Hash] opts the optional parameters
     # @option opts [LoyaltiesMembersBalanceUpdateRequestBody] :loyalties_members_balance_update_request_body Specify the point adjustment along with the expiration mechanism.
@@ -1769,7 +1769,7 @@ module VoucherifySdk
     end
 
     # Add or Remove Loyalty Card Balance
-    # This method gives adds or removes balance to an existing loyalty card. The removal of points will consume the points that expire the soonest.   📘 Alternative endpoint  This endpoint is an alternative to this endpoint. The URL was re-designed to allow you to add or remove loyalty card balance without having to provide the &#x60;campaignId&#x60; as a path parameter.
+    # This method gives adds or removes balance to an existing loyalty card. The removal of points will consume the points that expire the soonest.   📘 Alternative endpoint  This endpoint is an alternative to this endpoint. The URL was re-designed to allow you to add or remove loyalty card balance without having to provide the campaignId as a path parameter.
     # @param member_id [String] Unique loyalty card assigned to a particular customer.
     # @param [Hash] opts the optional parameters
     # @option opts [LoyaltiesMembersBalanceUpdateRequestBody] :loyalties_members_balance_update_request_body Specify the point adjustment along with the expiration mechanism.
