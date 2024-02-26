@@ -71,7 +71,7 @@ RSpec.describe 'Campaigns API', :order => :defined do
     expect(async_action).not_to be_nil
   end
 
-  it 'create a loyalty card', :order => :eigth do
+  it 'create a loyalty card', :order => :eighth do
     created_loyalty_card = @campaigns_api_instance.add_vouchers_to_campaign($created_loyalty_campaign.id, {
         vouchers_count: 1,
     })

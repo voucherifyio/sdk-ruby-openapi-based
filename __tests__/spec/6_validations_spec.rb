@@ -84,7 +84,7 @@ RSpec.describe 'Validations API', :order => :defined do
   #########
   #########
 
-  it 'validate stacked discounts (failed)', :order => :eigth do
+  it 'validate stacked discounts (failed)', :order => :eighth do
     $validation_result_failed = validate_stacked_discounts(
       @validations_api_instance,
       @voucherify_data.get_voucher_with_more_than_validation_rule().code,
@@ -106,17 +106,17 @@ RSpec.describe 'Validations API', :order => :defined do
   end
 
   it 'checks if redeemables items have necessary keys (failed)', :order => :tenth do
-    redeemable = $validation_result_failed.redeemables.first
+    inapplicable_redeemables = $validation_result_failed.inapplicable_redeemables.first
 
-    expect(redeemable.status).to eq("INAPPLICABLE")
-    expect(redeemable.id).to eq(@voucherify_data.get_voucher_with_more_than_validation_rule().code)
-    expect(redeemable.object).to eq("voucher")
+    expect(inapplicable_redeemables.status).to eq("INAPPLICABLE")
+    expect(inapplicable_redeemables.id).to eq(@voucherify_data.get_voucher_with_more_than_validation_rule().code)
+    expect(inapplicable_redeemables.object).to eq("voucher")
 
-    expect(redeemable.result).not_to be_nil
-    expect(redeemable.result).to be_a(VoucherifySdk::ValidationsRedeemableInapplicableResult)
+    expect(inapplicable_redeemables.result).not_to be_nil
+    expect(inapplicable_redeemables.result).to be_a(VoucherifySdk::ValidationsRedeemableInapplicableResult)
 
-    expect(redeemable.result.error).not_to be_nil
-    expect(redeemable.result.error).to be_an(VoucherifySdk::Error)
+    expect(inapplicable_redeemables.result.error).not_to be_nil
+    expect(inapplicable_redeemables.result.error).to be_an(VoucherifySdk::Error)
   end
 
   it 'checks validation customer response is valid (failed)', :order => :eleventh do
