@@ -16,7 +16,7 @@ $:.push File.expand_path("../lib", __FILE__)
 require "VoucherifySdk/version"
 
 Gem::Specification.new do |s|
-  s.name        = "VoucherifySdk"
+  s.name        = "voucherify"
   s.version     = VoucherifySdk::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ['pawelrychlik']
