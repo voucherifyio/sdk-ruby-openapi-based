@@ -53,24 +53,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the create_reward_assignment_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<RewardsAssignmentsCreateResponseBody>, Integer, Hash)> create_reward_assignment_with_http_info(reward_id, opts)
-
-```ruby
-begin
-  # Create Reward Assignment
-  data, status_code, headers = api_instance.create_reward_assignment_with_http_info(reward_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <RewardsAssignmentsCreateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling RewardsApi->create_reward_assignment_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -126,24 +108,6 @@ begin
   api_instance.delete_reward(reward_id)
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling RewardsApi->delete_reward: #{e}"
-end
-```
-
-#### Using the delete_reward_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_reward_with_http_info(reward_id)
-
-```ruby
-begin
-  # Delete Reward
-  data, status_code, headers = api_instance.delete_reward_with_http_info(reward_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling RewardsApi->delete_reward_with_http_info: #{e}"
 end
 ```
 
@@ -205,24 +169,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the delete_reward_assignment_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_reward_assignment_with_http_info(reward_id, assignment_id)
-
-```ruby
-begin
-  # Delete Reward Assignment
-  data, status_code, headers = api_instance.delete_reward_assignment_with_http_info(reward_id, assignment_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling RewardsApi->delete_reward_assignment_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -280,24 +226,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling RewardsApi->get_reward_assignment: #{e}"
-end
-```
-
-#### Using the get_reward_assignment_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<RewardsAssignmentsGetResponseBody>, Integer, Hash)> get_reward_assignment_with_http_info(reward_id, assignment_id)
-
-```ruby
-begin
-  # Get Reward Assignment
-  data, status_code, headers = api_instance.get_reward_assignment_with_http_info(reward_id, assignment_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <RewardsAssignmentsGetResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling RewardsApi->get_reward_assignment_with_http_info: #{e}"
 end
 ```
 
@@ -364,24 +292,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the list_reward_assignments_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<RewardsAssignmentsListResponseBody>, Integer, Hash)> list_reward_assignments_with_http_info(reward_id, opts)
-
-```ruby
-begin
-  # List Reward Assignments
-  data, status_code, headers = api_instance.list_reward_assignments_with_http_info(reward_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <RewardsAssignmentsListResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling RewardsApi->list_reward_assignments_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -443,24 +353,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling RewardsApi->update_reward_assignment: #{e}"
-end
-```
-
-#### Using the update_reward_assignment_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<RewardsAssignmentsUpdateResponseBody>, Integer, Hash)> update_reward_assignment_with_http_info(reward_id, assignment_id, opts)
-
-```ruby
-begin
-  # Update Reward Assignment
-  data, status_code, headers = api_instance.update_reward_assignment_with_http_info(reward_id, assignment_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <RewardsAssignmentsUpdateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling RewardsApi->update_reward_assignment_with_http_info: #{e}"
 end
 ```
 

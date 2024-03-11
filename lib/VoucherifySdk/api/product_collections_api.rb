@@ -212,7 +212,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
     # @option opts [Integer] :page Which page of results to return.
-    # @option opts [ParameterOrder] :order Sorts the results using one of the filtering options, where the dash &#x60;-&#x60; preceding a sorting option means sorting in a descending order.
+    # @option opts [ParameterOrder] :order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
     # @return [ProductCollectionsListResponseBody]
     def list_product_collections(opts = {})
       data, _status_code, _headers = list_product_collections_with_http_info(opts)
@@ -224,7 +224,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
     # @option opts [Integer] :page Which page of results to return.
-    # @option opts [ParameterOrder] :order Sorts the results using one of the filtering options, where the dash &#x60;-&#x60; preceding a sorting option means sorting in a descending order.
+    # @option opts [ParameterOrder] :order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
     # @return [Array<(ProductCollectionsListResponseBody, Integer, Hash)>] ProductCollectionsListResponseBody data, response status code and response headers
     private def list_product_collections_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -291,7 +291,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
     # @option opts [Integer] :page Which page of results to return.
-    # @option opts [ParameterOrder] :order Sorts the results using one of the filtering options, where the dash &#x60;-&#x60; preceding a sorting option means sorting in a descending order.
+    # @option opts [ParameterOrder] :order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
     # @option opts [Time] :starting_after Timestamp representing the date and time to use in starting_after cursor to get more data. Represented in ISO 8601 format.
     # @return [ProductCollectionsProductsListResponseBody]
     def list_products_in_collection(product_collection_id, opts = {})
@@ -305,7 +305,7 @@ module VoucherifySdk
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
     # @option opts [Integer] :page Which page of results to return.
-    # @option opts [ParameterOrder] :order Sorts the results using one of the filtering options, where the dash &#x60;-&#x60; preceding a sorting option means sorting in a descending order.
+    # @option opts [ParameterOrder] :order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
     # @option opts [Time] :starting_after Timestamp representing the date and time to use in starting_after cursor to get more data. Represented in ISO 8601 format.
     # @return [Array<(ProductCollectionsProductsListResponseBody, Integer, Hash)>] ProductCollectionsProductsListResponseBody data, response status code and response headers
     private def list_products_in_collection_with_http_info(product_collection_id, opts = {})

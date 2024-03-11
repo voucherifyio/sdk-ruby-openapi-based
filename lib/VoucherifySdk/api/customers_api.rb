@@ -20,7 +20,7 @@ module VoucherifySdk
       @api_client = api_client
     end
     # Create Customer
-    # Creates a customer object.  <!-- theme: info -->  > 📘 Upsert Mode > > If you pass an `id` or a `source_id` that already exists in the customer database, Voucherify will return a related customer object with updated fields.
+    # Creates a customer object.  📘 Upsert Mode  If you pass an id or a source_id that already exists in the customer database, Voucherify will return a related customer object with updated fields.
     # @param [Hash] opts the optional parameters
     # @option opts [CustomersCreateRequestBody] :customers_create_request_body Create a customer with specified parameters.
     # @return [CustomersCreateResponseBody]
@@ -30,7 +30,7 @@ module VoucherifySdk
     end
 
     # Create Customer
-    # Creates a customer object.  &lt;!-- theme: info --&gt;  &gt; 📘 Upsert Mode &gt; &gt; If you pass an &#x60;id&#x60; or a &#x60;source_id&#x60; that already exists in the customer database, Voucherify will return a related customer object with updated fields.
+    # Creates a customer object.  📘 Upsert Mode  If you pass an id or a source_id that already exists in the customer database, Voucherify will return a related customer object with updated fields.
     # @param [Hash] opts the optional parameters
     # @option opts [CustomersCreateRequestBody] :customers_create_request_body Create a customer with specified parameters.
     # @return [Array<(CustomersCreateResponseBody, Integer, Hash)>] CustomersCreateResponseBody data, response status code and response headers
@@ -84,8 +84,8 @@ module VoucherifySdk
     end
 
     # Delete Customer Permanently
-    # The organization user can remove consumer data permanently from the Voucherify system by using this API method. It d​eletes all customer data and connected resources. It makes the customer profile forgotten by Voucherify.
-    # @param customer_id [String] A Voucherify customer&#39;s &#x60;id&#x60; or &#x60;source_id&#x60;.
+    # The organization user can remove consumer data permanently from the Voucherify system by using this API method. It deletes all customer data and connected resources. It makes the customer profile forgotten by Voucherify.
+    # @param customer_id [String] A Voucherify customers id or source_id.
     # @param [Hash] opts the optional parameters
     # @return [CustomersPermanentDeletionCreateResponseBody]
     def customer_permanently_deletion(customer_id, opts = {})
@@ -94,8 +94,8 @@ module VoucherifySdk
     end
 
     # Delete Customer Permanently
-    # The organization user can remove consumer data permanently from the Voucherify system by using this API method. It d​eletes all customer data and connected resources. It makes the customer profile forgotten by Voucherify.
-    # @param customer_id [String] A Voucherify customer&#39;s &#x60;id&#x60; or &#x60;source_id&#x60;.
+    # The organization user can remove consumer data permanently from the Voucherify system by using this API method. It deletes all customer data and connected resources. It makes the customer profile forgotten by Voucherify.
+    # @param customer_id [String] A Voucherify customers id or source_id.
     # @param [Hash] opts the optional parameters
     # @return [Array<(CustomersPermanentDeletionCreateResponseBody, Integer, Hash)>] CustomersPermanentDeletionCreateResponseBody data, response status code and response headers
     private def customer_permanently_deletion_with_http_info(customer_id, opts = {})
@@ -148,7 +148,7 @@ module VoucherifySdk
 
     # Delete Customer
     # This method deletes a customer.
-    # @param customer_id [String] A Voucherify customer&#39;s &#x60;id&#x60; or &#x60;source_id&#x60;.
+    # @param customer_id [String] A Voucherify customers id or source_id.
     # @param [Hash] opts the optional parameters
     # @return [nil]
     def delete_customer(customer_id, opts = {})
@@ -158,7 +158,7 @@ module VoucherifySdk
 
     # Delete Customer
     # This method deletes a customer.
-    # @param customer_id [String] A Voucherify customer&#39;s &#x60;id&#x60; or &#x60;source_id&#x60;.
+    # @param customer_id [String] A Voucherify customers id or source_id.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     private def delete_customer_with_http_info(customer_id, opts = {})
@@ -209,7 +209,7 @@ module VoucherifySdk
 
     # Get Customer
     # Retrieve customer details.
-    # @param customer_id [String] A Voucherify customer&#39;s &#x60;id&#x60; or &#x60;source_id&#x60;.
+    # @param customer_id [String] A Voucherify customers id or source_id.
     # @param [Hash] opts the optional parameters
     # @return [CustomersGetResponseBody]
     def get_customer(customer_id, opts = {})
@@ -219,7 +219,7 @@ module VoucherifySdk
 
     # Get Customer
     # Retrieve customer details.
-    # @param customer_id [String] A Voucherify customer&#39;s &#x60;id&#x60; or &#x60;source_id&#x60;.
+    # @param customer_id [String] A Voucherify customers id or source_id.
     # @param [Hash] opts the optional parameters
     # @return [Array<(CustomersGetResponseBody, Integer, Hash)>] CustomersGetResponseBody data, response status code and response headers
     private def get_customer_with_http_info(customer_id, opts = {})
@@ -271,7 +271,7 @@ module VoucherifySdk
     end
 
     # Import and Update Customers using CSV
-    # This API method lets you import or update customer data. To get a proper and valid response, please send a CSV file with data separated by commas.    ## Request Example <!-- title: \"Example Request\" lineNumbers: true --> ```cURL curl -X POST \\   https://api.voucherify.io/v1/customers/importCSV \\   -F file=@/path/to/customers.csv \\   -H \"X-App-Id: c70a6f00-cf91-4756-9df5-47628850002b\" \\   -H \"X-App-Token: 3266b9f8-e246-4f79-bdf0-833929b1380c\" ``` ## CSV File Format  The CSV file has to include headers in the first line. All properties which cannot be mapped to standard customer fields will be added to the metadata object.  <!-- theme: info --> > 📘 Standard customer fields mapping > > **No spaces allowed in field names**   > Id, Name, Email, Phone, Birthdate, Source_id, Address_line_1, Address_line_2, Address_Postal_Code, Address_City, Address_State, Address_Country, Description, Metadata_name_1, Metadata_name_2  ## Update Customers using CSV  If you would like to update customer's data, you can do it using the CSV file with new data. However, remember to include a `source_id` in your CSV file to manage the update successfully.  This API request starts a process that affects Voucherify data in bulk.   In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the `IN_PROGRESS` status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.   The result will return the async ID. You can verify the status of your request via this [API request](ref:get-async-action).
+    # This API method lets you import or update customer data. To get a proper and valid response, please send a CSV file with data separated by commas.   # Request Example # CSV File Format The CSV file has to include headers in the first line. All properties which cannot be mapped to standard customer fields will be added to the metadata object.  📘 Standard customer fields mapping  **No spaces allowed in field names**    Id, Name, Email, Phone, Birthdate, Source_id, Address_line_1, Address_line_2, Address_Postal_Code, Address_City, Address_State, Address_Country, Description, Metadata_name_1, Metadata_name_2 # Update Customers using CSV If you would like to update customers data, you can do it using the CSV file with new data. However, remember to include a source_id in your CSV file to manage the update successfully. This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this API request.
     # @param file [File] File path.
     # @param [Hash] opts the optional parameters
     # @return [CustomersImportCsvCreateResponseBody]
@@ -281,7 +281,7 @@ module VoucherifySdk
     end
 
     # Import and Update Customers using CSV
-    # This API method lets you import or update customer data. To get a proper and valid response, please send a CSV file with data separated by commas.    ## Request Example &lt;!-- title: \&quot;Example Request\&quot; lineNumbers: true --&gt; &#x60;&#x60;&#x60;cURL curl -X POST \\   https://api.voucherify.io/v1/customers/importCSV \\   -F file&#x3D;@/path/to/customers.csv \\   -H \&quot;X-App-Id: c70a6f00-cf91-4756-9df5-47628850002b\&quot; \\   -H \&quot;X-App-Token: 3266b9f8-e246-4f79-bdf0-833929b1380c\&quot; &#x60;&#x60;&#x60; ## CSV File Format  The CSV file has to include headers in the first line. All properties which cannot be mapped to standard customer fields will be added to the metadata object.  &lt;!-- theme: info --&gt; &gt; 📘 Standard customer fields mapping &gt; &gt; **No spaces allowed in field names**   &gt; Id, Name, Email, Phone, Birthdate, Source_id, Address_line_1, Address_line_2, Address_Postal_Code, Address_City, Address_State, Address_Country, Description, Metadata_name_1, Metadata_name_2  ## Update Customers using CSV  If you would like to update customer&#39;s data, you can do it using the CSV file with new data. However, remember to include a &#x60;source_id&#x60; in your CSV file to manage the update successfully.  This API request starts a process that affects Voucherify data in bulk.   In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the &#x60;IN_PROGRESS&#x60; status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.   The result will return the async ID. You can verify the status of your request via this [API request](ref:get-async-action).
+    # This API method lets you import or update customer data. To get a proper and valid response, please send a CSV file with data separated by commas.   # Request Example # CSV File Format The CSV file has to include headers in the first line. All properties which cannot be mapped to standard customer fields will be added to the metadata object.  📘 Standard customer fields mapping  **No spaces allowed in field names**    Id, Name, Email, Phone, Birthdate, Source_id, Address_line_1, Address_line_2, Address_Postal_Code, Address_City, Address_State, Address_Country, Description, Metadata_name_1, Metadata_name_2 # Update Customers using CSV If you would like to update customers data, you can do it using the CSV file with new data. However, remember to include a source_id in your CSV file to manage the update successfully. This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this API request.
     # @param file [File] File path.
     # @param [Hash] opts the optional parameters
     # @return [Array<(CustomersImportCsvCreateResponseBody, Integer, Hash)>] CustomersImportCsvCreateResponseBody data, response status code and response headers
@@ -341,13 +341,13 @@ module VoucherifySdk
 
     # List Customer Activities
     # Retrieve customer activities.
-    # @param customer_id [String] A Voucherify customer&#39;s &#x60;id&#x60; or source ID of the customer who performed the activities.
+    # @param customer_id [String] A Voucherify customers id or source ID of the customer who performed the activities.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
-    # @option opts [ParameterOrder] :order Sorts the results using one of the filtering options, where the dash &#x60;-&#x60; preceding a sorting option means sorting in a descending order.
-    # @option opts [Time] :starting_after A cursor for use in pagination. &#x60;starting_after&#x60; is a date-time value that defines your place in the list based on &#x60;created_at&#x60; property from the activity object. For instance, if you make a list request and receive 100 objects, ending with an object created at &#x60;2020-05-24T13:43:09.024Z&#x60;, your subsequent call can include &#x60;starting_after&#x3D;2020-05-24T13:43:09.024Z&#x60; in order to fetch the next page of the list.
+    # @option opts [ParameterOrder] :order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
+    # @option opts [Time] :starting_after A cursor for use in pagination. starting_after is a date-time value that defines your place in the list based on created_at property from the activity object. For instance, if you make a list request and receive 100 objects, ending with an object created at 2020-05-24T13:43:09.024Z, your subsequent call can include starting_after 2020-05-24T13:43:09.024Z in order to fetch the next page of the list.
     # @option opts [String] :starting_after_id By applying this filter value, you will get events starting after an event with the given ID.
-    # @option opts [ParameterCampaignType] :campaign_type Through this parameter you can control a type of campaign by which Voucherify will filter related customer&#39;s activity. API will return only records related to that given type. Allowed values: DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM
+    # @option opts [ParameterCampaignType] :campaign_type Through this parameter you can control a type of campaign by which Voucherify will filter related customers activity. API will return only records related to that given type. Allowed values: DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM
     # @option opts [String] :campaign_id By applying this parameter you request only events related to specific campaign identified by its ID.
     # @option opts [String] :product_id By applying this parameter you request only events related to specific product identified by its ID.
     # @option opts [Time] :start_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
@@ -360,13 +360,13 @@ module VoucherifySdk
 
     # List Customer Activities
     # Retrieve customer activities.
-    # @param customer_id [String] A Voucherify customer&#39;s &#x60;id&#x60; or source ID of the customer who performed the activities.
+    # @param customer_id [String] A Voucherify customers id or source ID of the customer who performed the activities.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
-    # @option opts [ParameterOrder] :order Sorts the results using one of the filtering options, where the dash &#x60;-&#x60; preceding a sorting option means sorting in a descending order.
-    # @option opts [Time] :starting_after A cursor for use in pagination. &#x60;starting_after&#x60; is a date-time value that defines your place in the list based on &#x60;created_at&#x60; property from the activity object. For instance, if you make a list request and receive 100 objects, ending with an object created at &#x60;2020-05-24T13:43:09.024Z&#x60;, your subsequent call can include &#x60;starting_after&#x3D;2020-05-24T13:43:09.024Z&#x60; in order to fetch the next page of the list.
+    # @option opts [ParameterOrder] :order Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
+    # @option opts [Time] :starting_after A cursor for use in pagination. starting_after is a date-time value that defines your place in the list based on created_at property from the activity object. For instance, if you make a list request and receive 100 objects, ending with an object created at 2020-05-24T13:43:09.024Z, your subsequent call can include starting_after 2020-05-24T13:43:09.024Z in order to fetch the next page of the list.
     # @option opts [String] :starting_after_id By applying this filter value, you will get events starting after an event with the given ID.
-    # @option opts [ParameterCampaignType] :campaign_type Through this parameter you can control a type of campaign by which Voucherify will filter related customer&#39;s activity. API will return only records related to that given type. Allowed values: DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM
+    # @option opts [ParameterCampaignType] :campaign_type Through this parameter you can control a type of campaign by which Voucherify will filter related customers activity. API will return only records related to that given type. Allowed values: DISCOUNT_COUPONS, REFERRAL_PROGRAM, GIFT_VOUCHERS, PROMOTION, LOYALTY_PROGRAM
     # @option opts [String] :campaign_id By applying this parameter you request only events related to specific campaign identified by its ID.
     # @option opts [String] :product_id By applying this parameter you request only events related to specific product identified by its ID.
     # @option opts [Time] :start_date Timestamp representing the date and time which results must end on. Represented in ISO 8601 format.
@@ -438,7 +438,7 @@ module VoucherifySdk
     end
 
     # List Customer's Segments
-    # Returns the list of segments IDs to which the customer belongs to.    If you pass a `customerId` which is not stored and recognized by Voucherify as an existing customer in the system, the response will generate a list of segments that the customer would potentialy qualify for if they were to become a customer tracked in the system.
+    # Returns the list of segments IDs to which the customer belongs to.   If you pass a customerId which is not stored and recognized by Voucherify as an existing customer in the system, the response will generate a list of segments that the customer would potentialy qualify for if they were to become a customer tracked in the system.
     # @param customer_id [String] Unique identifier of a customer represented by an internal customer ID or customer source ID.
     # @param [Hash] opts the optional parameters
     # @return [CustomersSegmentsListResponseBody]
@@ -448,7 +448,7 @@ module VoucherifySdk
     end
 
     # List Customer&#39;s Segments
-    # Returns the list of segments IDs to which the customer belongs to.    If you pass a &#x60;customerId&#x60; which is not stored and recognized by Voucherify as an existing customer in the system, the response will generate a list of segments that the customer would potentialy qualify for if they were to become a customer tracked in the system.
+    # Returns the list of segments IDs to which the customer belongs to.   If you pass a customerId which is not stored and recognized by Voucherify as an existing customer in the system, the response will generate a list of segments that the customer would potentialy qualify for if they were to become a customer tracked in the system.
     # @param customer_id [String] Unique identifier of a customer represented by an internal customer ID or customer source ID.
     # @param [Hash] opts the optional parameters
     # @return [Array<(CustomersSegmentsListResponseBody, Integer, Hash)>] CustomersSegmentsListResponseBody data, response status code and response headers
@@ -513,8 +513,8 @@ module VoucherifySdk
     # @option opts [Time] :created_at_after Filter customers by date customer was created.
     # @option opts [Time] :updated_at_before Filter customers by date customer was updated last time.
     # @option opts [Time] :updated_at_after Filter customers by date customer was updated last time.
-    # @option opts [ParameterOrderListCustomers] :order This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash &#x60;-&#x60; preceding a sorting option means sorting in a descending order.
-    # @option opts [Time] :starting_after A cursor for use in pagination. This is a date-time value that defines your place in the list based on &#x60;created_at&#x60; property from the customer object. For instance, if you make a list request and receive 100 objects, ending with an object created at &#x60;2020-05-24T13:43:09.024Z&#x60;, your subsequent call can include &#x60;starting_after&#x3D;2020-05-24T13:43:09.024Z&#x60; in order to fetch the next page of the list.  &lt;!-- title: Options --&gt; | **Option** | **Format** | **Sorting** | |:---|:---|:---| | Return customers **before** a specific creation date  | - set &#x60;starting_after&#x60; parameter to the breakpoint date | Sorting order is **descending**; the most recent dates first and least recent dates last. | | Return customers **after** a specific create or update date | - include the &#x60;order&#x60; parameter set to &#x60;created_at&#x60; or &#x60;updated_at&#x60;&lt;br&gt;- set &#x60;starting_after&#x60; to the breakpoint date | Sorting order is **ascending**; the least recent dates first and the most recent dates last. | 
+    # @option opts [ParameterOrderListCustomers] :order This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
+    # @option opts [Time] :starting_after A cursor for use in pagination. This is a date-time value that defines your place in the list based on created_at property from the customer object. For instance, if you make a list request and receive 100 objects, ending with an object created at 2020-05-24T13:43:09.024Z, your subsequent call can include starting_after 2020-05-24T13:43:09.024Z in order to fetch the next page of the list.  
     # @return [CustomersListResponseBody]
     def list_customers(opts = {})
       data, _status_code, _headers = list_customers_with_http_info(opts)
@@ -534,8 +534,8 @@ module VoucherifySdk
     # @option opts [Time] :created_at_after Filter customers by date customer was created.
     # @option opts [Time] :updated_at_before Filter customers by date customer was updated last time.
     # @option opts [Time] :updated_at_after Filter customers by date customer was updated last time.
-    # @option opts [ParameterOrderListCustomers] :order This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash &#x60;-&#x60; preceding a sorting option means sorting in a descending order.
-    # @option opts [Time] :starting_after A cursor for use in pagination. This is a date-time value that defines your place in the list based on &#x60;created_at&#x60; property from the customer object. For instance, if you make a list request and receive 100 objects, ending with an object created at &#x60;2020-05-24T13:43:09.024Z&#x60;, your subsequent call can include &#x60;starting_after&#x3D;2020-05-24T13:43:09.024Z&#x60; in order to fetch the next page of the list.  &lt;!-- title: Options --&gt; | **Option** | **Format** | **Sorting** | |:---|:---|:---| | Return customers **before** a specific creation date  | - set &#x60;starting_after&#x60; parameter to the breakpoint date | Sorting order is **descending**; the most recent dates first and least recent dates last. | | Return customers **after** a specific create or update date | - include the &#x60;order&#x60; parameter set to &#x60;created_at&#x60; or &#x60;updated_at&#x60;&lt;br&gt;- set &#x60;starting_after&#x60; to the breakpoint date | Sorting order is **ascending**; the least recent dates first and the most recent dates last. | 
+    # @option opts [ParameterOrderListCustomers] :order This is a property that controls the sorting direction of the results. Sort the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
+    # @option opts [Time] :starting_after A cursor for use in pagination. This is a date-time value that defines your place in the list based on created_at property from the customer object. For instance, if you make a list request and receive 100 objects, ending with an object created at 2020-05-24T13:43:09.024Z, your subsequent call can include starting_after 2020-05-24T13:43:09.024Z in order to fetch the next page of the list.  
     # @return [Array<(CustomersListResponseBody, Integer, Hash)>] CustomersListResponseBody data, response status code and response headers
     private def list_customers_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -607,7 +607,7 @@ module VoucherifySdk
 
     # Update Customer
     # Updates the specified customer by setting the values of the parameters passed in the request body. Any parameters not provided in the payload will be left unchanged.
-    # @param customer_id [String] A Voucherify customer&#39;s &#x60;id&#x60; or &#x60;source_id&#x60;.
+    # @param customer_id [String] A Voucherify customers id or source_id.
     # @param [Hash] opts the optional parameters
     # @option opts [CustomersUpdateRequestBody] :customers_update_request_body Specify the parameters to be updated.
     # @return [CustomersUpdateResponseBody]
@@ -618,7 +618,7 @@ module VoucherifySdk
 
     # Update Customer
     # Updates the specified customer by setting the values of the parameters passed in the request body. Any parameters not provided in the payload will be left unchanged.
-    # @param customer_id [String] A Voucherify customer&#39;s &#x60;id&#x60; or &#x60;source_id&#x60;.
+    # @param customer_id [String] A Voucherify customers id or source_id.
     # @param [Hash] opts the optional parameters
     # @option opts [CustomersUpdateRequestBody] :customers_update_request_body Specify the parameters to be updated.
     # @return [Array<(CustomersUpdateResponseBody, Integer, Hash)>] CustomersUpdateResponseBody data, response status code and response headers
@@ -679,7 +679,7 @@ module VoucherifySdk
     # Update marketing permissions for the specified customer.
     # @param customer_id [String] A Voucherify unique customer identifier or source ID.
     # @param [Hash] opts the optional parameters
-    # @option opts [Object] :body Key-value pairs where the key is the consent identifier and value is a boolean that identifies if a customer has given the consent or not. To deny all consents use \&quot;unsubscribed\&quot; as a consent identifier and \&quot;true\&quot; as its value.    #### Examples  &lt;!-- title: \&quot;Request Body\&quot; lineNumbers: true --&gt; &#x60;&#x60;&#x60;json {     \&quot;cnst_aIdUulAh0SCsOCaS3005y7yS\&quot;: true,     \&quot;cnst_aIdUulAhwewqaS31213fdsfds\&quot;: false } &#x60;&#x60;&#x60;  Opt-out from all communication:  &lt;!-- title: \&quot;Request Body\&quot; lineNumbers: true --&gt; &#x60;&#x60;&#x60;json {     \&quot;unsubscribed\&quot;: true } &#x60;&#x60;&#x60;
+    # @option opts [Object] :body Key-value pairs where the key is the consent identifier and value is a boolean that identifies if a customer has given the consent or not. To deny all consents use unsubscribed as a consent identifier and true as its value.   ## Examples  Opt-out from all communication: 
     # @return [nil]
     def update_customers_consents(customer_id, opts = {})
       update_customers_consents_with_http_info(customer_id, opts)
@@ -690,7 +690,7 @@ module VoucherifySdk
     # Update marketing permissions for the specified customer.
     # @param customer_id [String] A Voucherify unique customer identifier or source ID.
     # @param [Hash] opts the optional parameters
-    # @option opts [Object] :body Key-value pairs where the key is the consent identifier and value is a boolean that identifies if a customer has given the consent or not. To deny all consents use \&quot;unsubscribed\&quot; as a consent identifier and \&quot;true\&quot; as its value.    #### Examples  &lt;!-- title: \&quot;Request Body\&quot; lineNumbers: true --&gt; &#x60;&#x60;&#x60;json {     \&quot;cnst_aIdUulAh0SCsOCaS3005y7yS\&quot;: true,     \&quot;cnst_aIdUulAhwewqaS31213fdsfds\&quot;: false } &#x60;&#x60;&#x60;  Opt-out from all communication:  &lt;!-- title: \&quot;Request Body\&quot; lineNumbers: true --&gt; &#x60;&#x60;&#x60;json {     \&quot;unsubscribed\&quot;: true } &#x60;&#x60;&#x60;
+    # @option opts [Object] :body Key-value pairs where the key is the consent identifier and value is a boolean that identifies if a customer has given the consent or not. To deny all consents use unsubscribed as a consent identifier and true as its value.   ## Examples  Opt-out from all communication: 
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     private def update_customers_consents_with_http_info(customer_id, opts = {})
       if @api_client.config.debugging
@@ -744,7 +744,7 @@ module VoucherifySdk
     end
 
     # Update Customers in bulk
-    # Update several customers in one asynchronous operation.   In one request, it is possible to update a maximum of **100** records. In the response body, you get a unique async action identifier.    If a requested customer object is not found, then an **upsert** occurs. This is reflected in the <!-- [Get Async Action](OpenAPI.json/paths/~1async-actions~1{asyncActionId}/get) -->[Get Async Action](ref:get-async-action) endpoint as follows:    <!-- title: \"Response\" lineNumbers: true --> ```json {     \"found\": false,     \"updated\": true } ```  This API request starts a process that affects Voucherify data in bulk.   In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the `IN_PROGRESS` status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.   The result will return the async ID. You can verify the status of your request via this [API request](ref:get-async-action).
+    # Update several customers in one asynchronous operation.  In one request, it is possible to update a maximum of **100** records. In the response body, you get a unique async action identifier.   If a requested customer object is not found, then an **upsert** occurs. This is reflected in the Get Async Action endpoint as follows:    This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this API request.
     # @param [Hash] opts the optional parameters
     # @option opts [Array<CustomersUpdateInBulkRequestBody>] :customers_update_in_bulk_request_body Specify the customer fields that you would like to update in each customer object.
     # @return [CustomersUpdateInBulkResponseBody]
@@ -754,7 +754,7 @@ module VoucherifySdk
     end
 
     # Update Customers in bulk
-    # Update several customers in one asynchronous operation.   In one request, it is possible to update a maximum of **100** records. In the response body, you get a unique async action identifier.    If a requested customer object is not found, then an **upsert** occurs. This is reflected in the &lt;!-- [Get Async Action](OpenAPI.json/paths/~1async-actions~1{asyncActionId}/get) --&gt;[Get Async Action](ref:get-async-action) endpoint as follows:    &lt;!-- title: \&quot;Response\&quot; lineNumbers: true --&gt; &#x60;&#x60;&#x60;json {     \&quot;found\&quot;: false,     \&quot;updated\&quot;: true } &#x60;&#x60;&#x60;  This API request starts a process that affects Voucherify data in bulk.   In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the &#x60;IN_PROGRESS&#x60; status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.   The result will return the async ID. You can verify the status of your request via this [API request](ref:get-async-action).
+    # Update several customers in one asynchronous operation.  In one request, it is possible to update a maximum of **100** records. In the response body, you get a unique async action identifier.   If a requested customer object is not found, then an **upsert** occurs. This is reflected in the Get Async Action endpoint as follows:    This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this API request.
     # @param [Hash] opts the optional parameters
     # @option opts [Array<CustomersUpdateInBulkRequestBody>] :customers_update_in_bulk_request_body Specify the customer fields that you would like to update in each customer object.
     # @return [Array<(CustomersUpdateInBulkResponseBody, Integer, Hash)>] CustomersUpdateInBulkResponseBody data, response status code and response headers
@@ -808,9 +808,9 @@ module VoucherifySdk
     end
 
     # Update Customers' Metadata in bulk
-    # Update several customers metadata properties in one asynchronous operation.   In one request, it is possible to update a maximum of **100** records. In the response body, you get a unique async action identifier.    If a requested customer object is not found, then an **upsert** occurs. This is reflected in the <!-- [Get Async Action](OpenAPI.json/paths/~1async-actions~1{asyncActionId}/get) -->[Get Async Action](ref:get-async-action) endpoint as follows:    <!-- title: \"Response\" lineNumbers: true --> ```json {     \"found\": false,     \"updated\": true } ```  This API request starts a process that affects Voucherify data in bulk.   In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the `IN_PROGRESS` status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.   The result will return the async ID. You can verify the status of your request via this [API request](ref:get-async-action).
+    # Update several customers metadata properties in one asynchronous operation.  In one request, it is possible to update a maximum of **100** records. In the response body, you get a unique async action identifier.   If a requested customer object is not found, then an **upsert** occurs. This is reflected in the Get Async Action endpoint as follows:    This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this API request.
     # @param [Hash] opts the optional parameters
-    # @option opts [CustomersMetadataUpdateInBulkRequestBody] :customers_metadata_update_in_bulk_request_body List the &#x60;source_ids&#x60; of the customer&#39;s you would like to update along with the metadata key value pairs.
+    # @option opts [CustomersMetadataUpdateInBulkRequestBody] :customers_metadata_update_in_bulk_request_body List the source_ids of the customers you would like to update along with the metadata key value pairs.
     # @return [CustomersMetadataUpdateInBulkResponseBody]
     def update_customers_metadata_in_bulk(opts = {})
       data, _status_code, _headers = update_customers_metadata_in_bulk_with_http_info(opts)
@@ -818,9 +818,9 @@ module VoucherifySdk
     end
 
     # Update Customers&#39; Metadata in bulk
-    # Update several customers metadata properties in one asynchronous operation.   In one request, it is possible to update a maximum of **100** records. In the response body, you get a unique async action identifier.    If a requested customer object is not found, then an **upsert** occurs. This is reflected in the &lt;!-- [Get Async Action](OpenAPI.json/paths/~1async-actions~1{asyncActionId}/get) --&gt;[Get Async Action](ref:get-async-action) endpoint as follows:    &lt;!-- title: \&quot;Response\&quot; lineNumbers: true --&gt; &#x60;&#x60;&#x60;json {     \&quot;found\&quot;: false,     \&quot;updated\&quot;: true } &#x60;&#x60;&#x60;  This API request starts a process that affects Voucherify data in bulk.   In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the &#x60;IN_PROGRESS&#x60; status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.   The result will return the async ID. You can verify the status of your request via this [API request](ref:get-async-action).
+    # Update several customers metadata properties in one asynchronous operation.  In one request, it is possible to update a maximum of **100** records. In the response body, you get a unique async action identifier.   If a requested customer object is not found, then an **upsert** occurs. This is reflected in the Get Async Action endpoint as follows:    This API request starts a process that affects Voucherify data in bulk.  In case of small jobs (like bulk update) the request is put into a queue and processed once every other bulk request placed in the queue prior to this request is finished. However, when the job takes a longer time (like vouchers generation) then it is processed in small portions in a round-robin fashion. When there is a list of vouchers generation scheduled, then they will all have the IN_PROGRESS status shortly. This way, small jobs added just after scheduling big jobs of the same type will be processed in a short time window.  The result will return the async ID. You can verify the status of your request via this API request.
     # @param [Hash] opts the optional parameters
-    # @option opts [CustomersMetadataUpdateInBulkRequestBody] :customers_metadata_update_in_bulk_request_body List the &#x60;source_ids&#x60; of the customer&#39;s you would like to update along with the metadata key value pairs.
+    # @option opts [CustomersMetadataUpdateInBulkRequestBody] :customers_metadata_update_in_bulk_request_body List the source_ids of the customers you would like to update along with the metadata key value pairs.
     # @return [Array<(CustomersMetadataUpdateInBulkResponseBody, Integer, Hash)>] CustomersMetadataUpdateInBulkResponseBody data, response status code and response headers
     private def update_customers_metadata_in_bulk_with_http_info(opts = {})
       if @api_client.config.debugging

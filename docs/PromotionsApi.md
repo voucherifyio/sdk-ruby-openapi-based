@@ -58,24 +58,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the create_promotion_stack_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<PromotionsStacksCreateResponseBody>, Integer, Hash)> create_promotion_stack_with_http_info(campaign_id, opts)
-
-```ruby
-begin
-  # Create Promotion Stack
-  data, status_code, headers = api_instance.create_promotion_stack_with_http_info(campaign_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <PromotionsStacksCreateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling PromotionsApi->create_promotion_stack_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -124,7 +106,7 @@ VoucherifySdk.configure do |config|
 end
 
 api_instance = VoucherifySdk::PromotionsApi.new
-campaign_id = 'campaign_id_example' # String | ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the `name` of the campaign as the path parameter value, e.g., `Loyalty Campaign`. 
+campaign_id = 'campaign_id_example' # String | ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. 
 stack_id = 'stack_id_example' # String | Promotion stack ID.
 
 begin
@@ -135,29 +117,11 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the delete_promotion_stack_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_promotion_stack_with_http_info(campaign_id, stack_id)
-
-```ruby
-begin
-  # Delete Promotion Stack
-  data, status_code, headers = api_instance.delete_promotion_stack_with_http_info(campaign_id, stack_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling PromotionsApi->delete_promotion_stack_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **campaign_id** | **String** | ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the &#x60;name&#x60; of the campaign as the path parameter value, e.g., &#x60;Loyalty Campaign&#x60;.  |  |
+| **campaign_id** | **String** | ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign.  |  |
 | **stack_id** | **String** | Promotion stack ID. |  |
 
 ### Return type
@@ -211,24 +175,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the delete_promotion_tier_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> delete_promotion_tier_with_http_info(promotion_tier_id)
-
-```ruby
-begin
-  # Delete Promotion Tier
-  data, status_code, headers = api_instance.delete_promotion_tier_with_http_info(promotion_tier_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling PromotionsApi->delete_promotion_tier_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -255,7 +201,7 @@ nil (empty response body)
 
 Disable Promotion Tier
 
-This method disables a promotion tier, i.e. makes the `active` parameter = `false`.
+This method disables a promotion tier, i.e. makes the active parameter   false.
 
 ### Examples
 
@@ -287,24 +233,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the disable_promotion_tier_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<PromotionsTiersDisableResponseBody>, Integer, Hash)> disable_promotion_tier_with_http_info(promotion_tier_id)
-
-```ruby
-begin
-  # Disable Promotion Tier
-  data, status_code, headers = api_instance.disable_promotion_tier_with_http_info(promotion_tier_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <PromotionsTiersDisableResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling PromotionsApi->disable_promotion_tier_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -331,7 +259,7 @@ end
 
 Enable Promotion Tier
 
-This method enables a promotion tier, i.e. makes the `active` parameter = `true`.
+This method enables a promotion tier, i.e. makes the active parameter   true.
 
 ### Examples
 
@@ -360,24 +288,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling PromotionsApi->enable_promotion_tier: #{e}"
-end
-```
-
-#### Using the enable_promotion_tier_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<PromotionsTiersEnableResponseBody>, Integer, Hash)> enable_promotion_tier_with_http_info(promotion_tier_id)
-
-```ruby
-begin
-  # Enable Promotion Tier
-  data, status_code, headers = api_instance.enable_promotion_tier_with_http_info(promotion_tier_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <PromotionsTiersEnableResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling PromotionsApi->enable_promotion_tier_with_http_info: #{e}"
 end
 ```
 
@@ -428,7 +338,7 @@ VoucherifySdk.configure do |config|
 end
 
 api_instance = VoucherifySdk::PromotionsApi.new
-campaign_id = 'campaign_id_example' # String | ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the `name` of the campaign as the path parameter value, e.g., `Loyalty Campaign`. 
+campaign_id = 'campaign_id_example' # String | ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. 
 stack_id = 'stack_id_example' # String | Promotion stack ID.
 
 begin
@@ -440,29 +350,11 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the get_promotion_stack_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<PromotionsStacksGetResponseBody>, Integer, Hash)> get_promotion_stack_with_http_info(campaign_id, stack_id)
-
-```ruby
-begin
-  # Get Promotion Stack
-  data, status_code, headers = api_instance.get_promotion_stack_with_http_info(campaign_id, stack_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <PromotionsStacksGetResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling PromotionsApi->get_promotion_stack_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **campaign_id** | **String** | ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the &#x60;name&#x60; of the campaign as the path parameter value, e.g., &#x60;Loyalty Campaign&#x60;.  |  |
+| **campaign_id** | **String** | ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign.  |  |
 | **stack_id** | **String** | Promotion stack ID. |  |
 
 ### Return type
@@ -517,24 +409,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the get_promotion_tier_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<PromotionsTiersGetResponseBody>, Integer, Hash)> get_promotion_tier_with_http_info(promotion_tier_id)
-
-```ruby
-begin
-  # Get Promotion Tier
-  data, status_code, headers = api_instance.get_promotion_tier_with_http_info(promotion_tier_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <PromotionsTiersGetResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling PromotionsApi->get_promotion_tier_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -561,7 +435,7 @@ end
 
 List Promotion Stacks
 
-This method enables you to list promotion stacks irrespective of the campaign they are associated with.   You can use filters in the query parameters to specify the stacks to be returned in the response.  ## Advanced filters for fetching promotion stacks  | **Filters** | **Examples** | | :--- | :--- | | Created Before | - `[created_at][before]=2021-12-30T13:52:18.227Z`<br>- `[filters][created_at][conditions][$before][0]=2021-12-30T13:52:18.227Z` | | Created After | - `[created_at][after]=2021-12-30T13:52:18.227Z`<br>- `[filters][created_at][conditions][$after][0]=2021-12-30T13:52:18.227Z` | | Updated Before | - `[updated_at][before]=2021-12-30T13:52:18.227Z`<br>- `[filters][updated_at][conditions][$before][0]=2021-12-30T13:52:18.227Z` | | Updated After | - `[updated_at][after]=2021-12-30T13:52:18.227Z`<br>- `[filters][updated_at][conditions][$after][0]=2021-12-30T13:52:18.227Z` |
+This method enables you to list promotion stacks irrespective of the campaign they are associated with.  You can use filters in the query parameters to specify the stacks to be returned in the response. # Advanced filters for fetching promotion stacks  
 
 ### Examples
 
@@ -585,9 +459,9 @@ api_instance = VoucherifySdk::PromotionsApi.new
 opts = {
   limit: 56, # Integer | A limit on the number of objects to be returned. Limit can range between 1 and 100 items.
   page: 56, # Integer | Which page of results to return.
-  order: VoucherifySdk::ParameterOrderListAllPromotionStacks::CREATED_AT, # ParameterOrderListAllPromotionStacks | Sorts the results using one of the filtering options, where the dash `-` preceding a sorting option means sorting in a descending order.
-  created_at: VoucherifySdk::ParameterCreatedBeforeAfter.new, # ParameterCreatedBeforeAfter | A filter on the list based on the object `created_at` field. The value is a dictionary with the following options: `before`, `after`. A date value must be presented in ISO 8601 format (`2016-11-16T14:14:31Z` or `2016-11-16`). An example: `[created_at][before]=2017-09-08T13:52:18.227Z`
-  updated_at: VoucherifySdk::ParameterUpdatedBeforeAfter.new # ParameterUpdatedBeforeAfter | A filter on the list based on the object `updated_at` field. The value is a dictionary with the following options: `before`, `after`. A date value must be presented in ISO 8601 format (`2016-11-16T14:14:31Z` or `2016-11-16`). An example: `[updated_at][before]=2017-09-08T13:52:18.227Z`
+  order: VoucherifySdk::ParameterOrderListAllPromotionStacks::CREATED_AT, # ParameterOrderListAllPromotionStacks | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order.
+  created_at: VoucherifySdk::ParameterCreatedBeforeAfter.new, # ParameterCreatedBeforeAfter | A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z
+  updated_at: VoucherifySdk::ParameterUpdatedBeforeAfter.new # ParameterUpdatedBeforeAfter | A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z
 }
 
 begin
@@ -599,33 +473,15 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the list_all_promotion_stacks_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<PromotionsStacksListResponseBody>, Integer, Hash)> list_all_promotion_stacks_with_http_info(opts)
-
-```ruby
-begin
-  # List Promotion Stacks
-  data, status_code, headers = api_instance.list_all_promotion_stacks_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <PromotionsStacksListResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling PromotionsApi->list_all_promotion_stacks_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **limit** | **Integer** | A limit on the number of objects to be returned. Limit can range between 1 and 100 items. | [optional] |
 | **page** | **Integer** | Which page of results to return. | [optional] |
-| **order** | [**ParameterOrderListAllPromotionStacks**](.md) | Sorts the results using one of the filtering options, where the dash &#x60;-&#x60; preceding a sorting option means sorting in a descending order. | [optional] |
-| **created_at** | [**ParameterCreatedBeforeAfter**](.md) | A filter on the list based on the object &#x60;created_at&#x60; field. The value is a dictionary with the following options: &#x60;before&#x60;, &#x60;after&#x60;. A date value must be presented in ISO 8601 format (&#x60;2016-11-16T14:14:31Z&#x60; or &#x60;2016-11-16&#x60;). An example: &#x60;[created_at][before]&#x3D;2017-09-08T13:52:18.227Z&#x60; | [optional] |
-| **updated_at** | [**ParameterUpdatedBeforeAfter**](.md) | A filter on the list based on the object &#x60;updated_at&#x60; field. The value is a dictionary with the following options: &#x60;before&#x60;, &#x60;after&#x60;. A date value must be presented in ISO 8601 format (&#x60;2016-11-16T14:14:31Z&#x60; or &#x60;2016-11-16&#x60;). An example: &#x60;[updated_at][before]&#x3D;2017-09-08T13:52:18.227Z&#x60; | [optional] |
+| **order** | [**ParameterOrderListAllPromotionStacks**](.md) | Sorts the results using one of the filtering options, where the dash - preceding a sorting option means sorting in a descending order. | [optional] |
+| **created_at** | [**ParameterCreatedBeforeAfter**](.md) | A filter on the list based on the object created_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [created_at][before] 2017-09-08T13:52:18.227Z | [optional] |
+| **updated_at** | [**ParameterUpdatedBeforeAfter**](.md) | A filter on the list based on the object updated_at field. The value is a dictionary with the following options: before, after. A date value must be presented in ISO 8601 format (2016-11-16T14:14:31Z or 2016-11-16). An example: [updated_at][before] 2017-09-08T13:52:18.227Z | [optional] |
 
 ### Return type
 
@@ -676,24 +532,6 @@ begin
   p result
 rescue VoucherifySdk::ApiError => e
   puts "Error when calling PromotionsApi->list_promotion_stacks_in_campaign: #{e}"
-end
-```
-
-#### Using the list_promotion_stacks_in_campaign_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<PromotionsStacksListResponseBody>, Integer, Hash)> list_promotion_stacks_in_campaign_with_http_info(campaign_id)
-
-```ruby
-begin
-  # List Promotion Stacks in Campaign
-  data, status_code, headers = api_instance.list_promotion_stacks_in_campaign_with_http_info(campaign_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <PromotionsStacksListResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling PromotionsApi->list_promotion_stacks_in_campaign_with_http_info: #{e}"
 end
 ```
 
@@ -755,24 +593,6 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the list_promotion_tiers_from_campaign_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<PromotionsTiersListResponseBody>, Integer, Hash)> list_promotion_tiers_from_campaign_with_http_info(campaign_id)
-
-```ruby
-begin
-  # List Promotion Tiers from Campaign
-  data, status_code, headers = api_instance.list_promotion_tiers_from_campaign_with_http_info(campaign_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <PromotionsTiersListResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling PromotionsApi->list_promotion_tiers_from_campaign_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
@@ -820,7 +640,7 @@ VoucherifySdk.configure do |config|
 end
 
 api_instance = VoucherifySdk::PromotionsApi.new
-campaign_id = 'campaign_id_example' # String | ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the `name` of the campaign as the path parameter value, e.g., `Loyalty Campaign`. 
+campaign_id = 'campaign_id_example' # String | ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign. 
 stack_id = 'stack_id_example' # String | Promotion stack ID.
 opts = {
   promotions_stacks_update_request_body: VoucherifySdk::PromotionsStacksUpdateRequestBody.new # PromotionsStacksUpdateRequestBody | Specify the promotion stack parameters that you would like to update.
@@ -835,29 +655,11 @@ rescue VoucherifySdk::ApiError => e
 end
 ```
 
-#### Using the update_promotion_stack_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<PromotionsStacksUpdateResponseBody>, Integer, Hash)> update_promotion_stack_with_http_info(campaign_id, stack_id, opts)
-
-```ruby
-begin
-  # Update Promotion Stack
-  data, status_code, headers = api_instance.update_promotion_stack_with_http_info(campaign_id, stack_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <PromotionsStacksUpdateResponseBody>
-rescue VoucherifySdk::ApiError => e
-  puts "Error when calling PromotionsApi->update_promotion_stack_with_http_info: #{e}"
-end
-```
-
 ### Parameters
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **campaign_id** | **String** | ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the &#x60;name&#x60; of the campaign as the path parameter value, e.g., &#x60;Loyalty Campaign&#x60;.  |  |
+| **campaign_id** | **String** | ID of the promotion campaign. You can either pass the campaign ID, which was assigned by Voucherify, or the name of the campaign as the path parameter value, e.g., Loyalty Campaign.  |  |
 | **stack_id** | **String** | Promotion stack ID. |  |
 | **promotions_stacks_update_request_body** | [**PromotionsStacksUpdateRequestBody**](PromotionsStacksUpdateRequestBody.md) | Specify the promotion stack parameters that you would like to update. | [optional] |
 

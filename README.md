@@ -52,9 +52,36 @@ gem install voucherify
 ### 🚀 Running code
 
 When You have Voucherify gem installed You could use pre-created [example.rb](./example.rb) with example code for testing purpose.
-Remember to fill Your Voucherify keys for the valid authorization.
 
-Then, go into root directory and run:
+```ruby example.rb
+# Load the gem
+require 'VoucherifySdk'
+
+# Setup authorization
+VoucherifySdk.configure do |config|
+    # Configure API key authorization: X-App-Id
+    config.api_key['X-App-Id'] = 'YOUR API KEY'
+
+    # Configure API key authorization: X-App-Token
+    config.api_key['X-App-Token'] = 'YOUR API KEY'
+
+    # (Optional) Configure Voucherify cluster, default is https://api.voucherify.io
+    # config.host = 'https://us1.api.voucherify.io'
+end
+
+# Creating API Instance
+api_instance = VoucherifySdk::CampaignsApi.new
+
+# Calling list_campaigns
+begin
+    result = api_instance.list_campaigns()
+    puts result
+rescue VoucherifySdk::ApiError => e
+    puts "Exception when calling VouchersApi->list_campaigns: #{e}"
+end
+```
+
+Code could be run from the directory where the file is placed (root for this repository), by using:
 
 ```shell
 ruby example.rb
@@ -66,59 +93,11 @@ Or, if You're using bundler:
 bundle exec ruby example.rb
 ```
 
-## 🔄 Alternative ways for installing a gem
+🛡️ This code does simple campaign list, so it won't affect Your Voucherify data.
 
-To build the Ruby code into a gem:
+🔒 Remember to fill Your Voucherify keys for the valid authorization.
 
-```shell
-gem build VoucherifySdk.gemspec
-```
-
-Then either install the gem locally:
-
-```shell
-gem install ./VoucherifySdk-1.0.0.gem
-```
-
-(for development, run `gem install --dev ./VoucherifySdk-1.0.0.gem` to install the development dependencies)
-
-Add this to the Gemfile:
-
-```shell
-gem 'VoucherifySdk', '~> 1.0.0'
-```
-
-Then install dependencies with bundler
-
-```shell
-bundle install
-```
-
-Finally, exec script with bundler:
-
-```shell
-bundle exec ruby example.rb
-```
-
-### 📦 Install from Git
-
-If the Ruby gem is hosted at a git repository: https://github.com/GIT_USER_ID/GIT_REPO_ID, then add the following in the Gemfile:
-
-```shell
-gem 'VoucherifySdk', :git => 'https://github.com/voucherifyio/voucherify-js-sdk.git', branch: 'main'
-```
-
-Then install dependencies with bundler
-
-```shell
-bundle install
-```
-
-Finally, exec script with bundler:
-
-```shell
-bundle exec ruby example.rb
-```
+💅 More examples and good practices You could find in the [EXAMPLES.md](./EXAMPLES.md) document.
 
 ## 🐳 Running local tests with docker
 
@@ -128,42 +107,28 @@ bundle exec ruby example.rb
 
 ## 🛠️ Contributing
 
-Read more about how to Contribute to Voucherify Ruby SDK by visiting [CONTRIBUTING.md](./CONTRIBUTING.md)
+Read more about how to Contribute to Voucherify Ruby SDK by visiting main repo [GENERATING-SDKS.md](https://github.com/voucherifyio/voucherify-openapi/blob/master/GENERATING-SDKS.md)
 
 Remember that this SDK is auto generated (except of the tests) so changes made here will be overwritten by generator.
 
 ## 🔐 Documentation for Authorization
 
+```ruby
+# Setup authorization
+VoucherifySdk.configure do |config|
+    # Application Keys
+    config.api_key['X-App-Id'] = 'YOUR API ID'
+    config.api_key['X-App-Token'] = 'YOUR API TOKEN'
 
-Authentication schemes defined for the API:
-### X-App-Id
+    # Client-side Keys
+    config.api_key['X-Client-Application-Id'] = 'YOUR CLIENT API ID'
+    config.api_key['X-Client-Token'] = 'YOUR CLIENT API TOKEN'
 
-
-- **Type**: API key
-- **API key parameter name**: X-App-Id
-- **Location**: HTTP header
-
-### X-App-Token
-
-
-- **Type**: API key
-- **API key parameter name**: X-App-Token
-- **Location**: HTTP header
-
-### X-Client-Token
-
-
-- **Type**: API key
-- **API key parameter name**: X-Client-Token
-- **Location**: HTTP header
-
-### X-Client-Application-Id
-
-
-- **Type**: API key
-- **API key parameter name**: X-Client-Application-Id
-- **Location**: HTTP header
-
+    # Cluster (Optional)
+    # default is https://api.voucherify.io
+    config.host = 'https://us1.api.voucherify.io'
+end
+```
 
 ## 🌐 Documentation for API Endpoints
 
