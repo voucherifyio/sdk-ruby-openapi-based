@@ -22,10 +22,6 @@ jobs:
 
       - name: Build GEM
         run: gem build *.gemspec
-
-      - name: Print secret
-        run: echo “My secret is ${{secrets.RUBYGEMS_AUTH_TOKEN}}”
-        shell: bash
         
       - name: Push GEM
         run: gem push *.gem --debug
